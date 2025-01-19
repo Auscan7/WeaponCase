@@ -26,7 +26,7 @@ public class CharacterStatManager : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            HandleDeath();
         }
 
         if (currentHealth == maxHealth)
@@ -44,5 +44,10 @@ public class CharacterStatManager : MonoBehaviour
         currentHealth -= damage;
 
         healthBar.fillAmount = currentHealth / maxHealth;
+    }
+
+    protected virtual void HandleDeath()
+    {
+        Destroy(gameObject);
     }
 }
