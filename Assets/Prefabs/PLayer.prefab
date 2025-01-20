@@ -27,8 +27,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7186793037216869759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -73,12 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b87fb16d38a054348a809da45e6ecdc6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.88, y: 0.88}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -190,7 +190,7 @@ MonoBehaviour:
   isGrounded: 1
   horizontalMovement: 0
   verticalMovement: 0
-  walkingSpeed: 5
+  walkingSpeed: 3.5
   movementSpeedMultiplier: 1
 --- !u!114 &5554626083066906392
 MonoBehaviour:
@@ -208,7 +208,7 @@ MonoBehaviour:
   fireRate: 1
   projectilePrefab: {fileID: 4722767060693112874, guid: 0a9df0e3d7515554cb9fc04784b5428e, type: 3}
   projectileSpawnPoint: {fileID: 2642464509737796994}
-  projectileSpeed: 10
+  projectileSpeed: 6
 --- !u!50 &1778345087761360857
 Rigidbody2D:
   serializedVersion: 4
@@ -224,7 +224,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.5
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

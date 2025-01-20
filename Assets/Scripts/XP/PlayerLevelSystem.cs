@@ -6,13 +6,16 @@ public class PlayerLevelSystem : MonoBehaviour
     public static PlayerLevelSystem instance;
 
     [Header("Level System Settings")]
-    public Slider levelBar; // Reference to the UI slider
-    public int baseXPPerLevel = 10; // Base XP required for level 1
-    public float xpMultiplier = 1.2f; // Multiplier for XP required for each new level
-    public int xpPerGem = 1; // Amount of XP a gem gives
-    private int currentXP = 0; // Current collected XP
-    private int currentLevel = 1; // Current player level
-    private int xpRequiredForNextLevel; // XP required for the next level
+    public Image levelBar;
+    public int baseXPPerLevel = 10;
+    public float xpMultiplier = 1.2f;
+    public int xpPerGem = 1;
+    private int currentXP = 0;
+    private int currentLevel = 1;
+    private int xpRequiredForNextLevel;
+    public GameObject upgradeScreen; // Reference to the upgrade screen (UI)
+    private bool isUpgradeScreenActive = false; // Flag to check if upgrade screen is active
+    private bool waitForKeyPress = false; // Flag to wait for a key press to resume the game
 
     private void Awake()
     {
@@ -43,10 +46,9 @@ public class PlayerLevelSystem : MonoBehaviour
         }
     }
 
-
     private void LevelUp()
     {
-        currentXP -= xpRequiredForNextLevel; // Carry over extra XP
+        currentXP -= xpRequiredForNextLevel;
         currentLevel++;
 
         Debug.Log("Level Up! Current Level: " + currentLevel);
@@ -54,7 +56,7 @@ public class PlayerLevelSystem : MonoBehaviour
         CalculateXPRequiredForNextLevel();
         UpdateLevelBar();
 
-        // Optional: Adjust difficulty, add rewards, etc.
+        ShowUpgradeScreen();
     }
 
     private void CalculateXPRequiredForNextLevel()
@@ -66,8 +68,46 @@ public class PlayerLevelSystem : MonoBehaviour
     {
         if (levelBar != null)
         {
-            levelBar.maxValue = xpRequiredForNextLevel;
-            levelBar.value = currentXP;
+            levelBar.fillAmount = (float)currentXP / xpRequiredForNextLevel;
         }
+    }
+
+    // Show upgrade screen and pause game
+    private void ShowUpgradeScreen()
+    {
+        if (upgradeScreen != null && !isUpgradeScreenActive)
+        {
+            upgradeScreen.SetActive(true); // Show the upgrade screen
+            Time.timeScale = 0; // Pause the game
+            isUpgradeScreenActive = true;
+            waitForKeyPress = false; // Reset wait flag
+        }
+    }
+
+    // Close upgrade screen and pause until key press
+    public void CloseUpgradeScreen()
+    {
+        if (upgradeScreen != null)
+        {
+            upgradeScreen.SetActive(false); // Hide the upgrade screen
+            isUpgradeScreenActive = false;
+            waitForKeyPress = true; // Wait for player input
+        }
+    }
+
+    private void Update()
+    {
+        // Check for key press to resume game
+        if (waitForKeyPress && Input.anyKeyDown)
+        {
+            ResumeGame();
+        }
+    }
+
+    // Resume the game
+    private void ResumeGame()
+    {
+        Time.timeScale = 1; // Resume the game
+        waitForKeyPress = false; // Reset wait flag
     }
 }
