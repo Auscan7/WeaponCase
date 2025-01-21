@@ -16,4 +16,18 @@ public class ClownFishEnemyStatManager : CharacterStatManager
         base.HandleDeath();
         gemDrop.DropGem();
     }
+
+    protected override void Update()
+    {
+        base.Update();
+
+        if (currentHealth == maxHealth)
+        {
+            healthBarParent.SetActive(false);
+        }
+        else
+        {
+            healthBarParent.SetActive(true);
+        }
+    }
 }

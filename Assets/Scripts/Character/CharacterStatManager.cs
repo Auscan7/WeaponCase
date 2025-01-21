@@ -10,8 +10,8 @@ public class CharacterStatManager : MonoBehaviour
     [Header("Health Bar")]
     [SerializeField] public float currentHealth;
     [SerializeField] public int maxHealth;
-    [SerializeField] private Image healthBar;
-    [SerializeField] private GameObject healthBarParent;
+    [SerializeField] public Image healthBar;
+    [SerializeField] public GameObject healthBarParent;
 
     protected virtual void Awake()
     {
@@ -27,15 +27,6 @@ public class CharacterStatManager : MonoBehaviour
         if (currentHealth <= 0)
         {
             HandleDeath();
-        }
-
-        if (currentHealth == maxHealth)
-        {
-            healthBarParent.SetActive(false);
-        }
-        else
-        {
-            healthBarParent.SetActive(true);
         }
     }
 

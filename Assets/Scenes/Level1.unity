@@ -923,6 +923,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &895033454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8646420890378131144, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+  m_PrefabInstance: {fileID: 5009774052823361831}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &944330088
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,6 +1176,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1335376857 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2426295791900962494, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+  m_PrefabInstance: {fileID: 5009774052823361831}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1523622016
@@ -1679,10 +1695,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6885125599670599767, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
+    - target: {fileID: 455522876061259310, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1335376857}
+    - target: {fileID: 455522876061259310, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: healthBarParent
+      value: 
+      objectReference: {fileID: 895033454}
     - target: {fileID: 7186793037216869759, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1829,6 +1849,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+--- !u!114 &5009774052823361832 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4738889345316219991, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+  m_PrefabInstance: {fileID: 5009774052823361831}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5179406331025292265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1885,6 +1916,10 @@ PrefabInstance:
       propertyPath: upgradeScreen
       value: 
       objectReference: {fileID: 815089458}
+    - target: {fileID: 2805381360816893158, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
+      propertyPath: currentLevelText
+      value: 
+      objectReference: {fileID: 5009774052823361832}
     - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
       propertyPath: upgradeCards.Array.data[0]
       value: 

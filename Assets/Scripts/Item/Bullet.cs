@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spit : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
-    [SerializeField] float spitDamage;
+    [SerializeField] float bulletDamage;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponentInParent<CharacterStatManager>().TakeDamage(spitDamage);
+            collision.gameObject.GetComponentInParent<CharacterStatManager>().TakeDamage(bulletDamage);
 
             Destroy(gameObject);
         }

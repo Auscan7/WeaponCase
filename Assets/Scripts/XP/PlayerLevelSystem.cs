@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ public class PlayerLevelSystem : MonoBehaviour
 
     [Header("Level System Settings")]
     public Image levelBar;
+    public TMP_Text currentLevelText;
     public int baseXPPerLevel = 10;
     public float xpMultiplier = 1.2f;
     public int xpPerGem = 1;
@@ -16,6 +18,7 @@ public class PlayerLevelSystem : MonoBehaviour
     public GameObject upgradeScreen; // Reference to the upgrade screen (UI)
     private bool isUpgradeScreenActive = false; // Flag to check if upgrade screen is active
     private bool waitForKeyPress = false; // Flag to wait for a key press to resume the game
+
 
     private void Awake()
     {
@@ -33,6 +36,7 @@ public class PlayerLevelSystem : MonoBehaviour
     {
         CalculateXPRequiredForNextLevel();
         UpdateLevelBar();
+        currentLevelText.text = "Level: " + currentLevel.ToString();
     }
 
     public void AddXP(int xpAmount)
@@ -50,6 +54,7 @@ public class PlayerLevelSystem : MonoBehaviour
     {
         currentXP -= xpRequiredForNextLevel;
         currentLevel++;
+        currentLevelText.text ="Level: " + currentLevel.ToString();
 
         Debug.Log("Level Up! Current Level: " + currentLevel);
 
