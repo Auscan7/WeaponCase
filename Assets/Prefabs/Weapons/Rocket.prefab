@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1723522420313041352}
   - component: {fileID: 7866912376874971303}
-  - component: {fileID: 740780206369278667}
   - component: {fileID: 2223137882470706351}
   - component: {fileID: 617021476422812016}
   - component: {fileID: 9144244881348185987}
   - component: {fileID: 3026551211028007920}
+  - component: {fileID: 4147568860903031374}
   m_Layer: 7
-  m_Name: PistolBullet
+  m_Name: Rocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.3447908, y: -3.488, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,9 +77,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 33b0f9b7c0c674443b9f7f69760eb178, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.7752991, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -89,19 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &740780206369278667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4722767060693112874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25e41ca8a47aa9541868bab2bc5ef643, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletDamage: 10
 --- !u!114 &2223137882470706351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,3 +186,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &4147568860903031374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4722767060693112874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5181065ff73ecac44aceb3fd13abb703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rocketDamage: 25
+  explosionDamage: 10
+  explosionRadius: 2
+  explosionEffectPrefab: {fileID: 4952325379883675290, guid: 1deeb24cd5dc6214bafaf18803b4c45c, type: 3}

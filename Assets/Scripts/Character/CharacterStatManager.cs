@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 
 public class CharacterStatManager : MonoBehaviour
@@ -13,10 +14,19 @@ public class CharacterStatManager : MonoBehaviour
     [SerializeField] public Image healthBar;
     [SerializeField] public GameObject healthBarParent;
 
+    [Header("Floating Damage")]
+    [SerializeField] private GameObject floatingDamagePrefab;
+
+    [Header("Floating Text Offset")]
+    [SerializeField] private Vector2 xOffsetRange = new Vector2(-0.5f, 0.5f);
+    [SerializeField] private Vector2 yOffsetRange = new Vector2(0.5f, 1f);
+
+
     protected virtual void Awake()
     {
         character = GetComponent<CharacterManager>();
     }
+
     protected virtual void Start()
     {
         currentHealth = maxHealth;
@@ -35,10 +45,33 @@ public class CharacterStatManager : MonoBehaviour
         currentHealth -= damage;
 
         healthBar.fillAmount = currentHealth / maxHealth;
+
+        ShowFloatingDamage(damage);
     }
 
     protected virtual void HandleDeath()
     {
         Destroy(gameObject);
     }
+
+    private void ShowFloatingDamage(float damage)
+    {
+        if (floatingDamagePrefab != null)
+        {
+            Vector3 randomOffset = new Vector3(Random.Range(xOffsetRange.x, xOffsetRange.y),Random.Range(yOffsetRange.x, yOffsetRange.y),0);
+
+            GameObject floatingText = Instantiate(floatingDamagePrefab, transform.position + Vector3.up + randomOffset, Quaternion.identity);
+            TMP_Text textComponent = floatingText.GetComponentInChildren<TMP_Text>();
+
+            if (textComponent != null)
+            {
+                textComponent.text = damage.ToString("F0");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Floating Damage Prefab is not assigned in the inspector.");
+        }
+    }
+
 }

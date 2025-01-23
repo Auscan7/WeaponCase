@@ -18,6 +18,7 @@ public class PlayerLevelSystem : MonoBehaviour
     public GameObject upgradeScreen; // Reference to the upgrade screen (UI)
     private bool isUpgradeScreenActive = false; // Flag to check if upgrade screen is active
     private bool waitForKeyPress = false; // Flag to wait for a key press to resume the game
+    UpgradeSelectionScript upgradeSelection;
 
 
     private void Awake()
@@ -30,6 +31,8 @@ public class PlayerLevelSystem : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        upgradeSelection = GetComponent<UpgradeSelectionScript>();
     }
 
     private void Start()
@@ -83,11 +86,20 @@ public class PlayerLevelSystem : MonoBehaviour
         if (upgradeScreen != null && !isUpgradeScreenActive)
         {
             upgradeScreen.SetActive(true); // Show the upgrade screen
+
+            // Call SetUpgradeCards on UpgradeSelectionScript
+            if (upgradeSelection != null)
+            {
+                Debug.Log("assigning..");  // Add this line to verify
+                upgradeSelection.SetUpgradeCards(); // Refresh upgrades
+            }
+
             Time.timeScale = 0; // Pause the game
             isUpgradeScreenActive = true;
             waitForKeyPress = false; // Reset wait flag
         }
     }
+
 
     // Close upgrade screen and pause until key press
     public void CloseUpgradeScreen()

@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] float bulletDamage;
+    [SerializeField] private float bulletDamage;
+
+    private void Awake()
+    {
+        bulletDamage = WeaponManager.Instance.pistolDamage;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,10 +18,6 @@ public class Bullet : MonoBehaviour
             collision.gameObject.GetComponentInParent<CharacterStatManager>().TakeDamage(bulletDamage);
 
             Destroy(gameObject);
-        }
-        else if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
-        {
-            Destroy(gameObject); // Destroy projectile on hitting an obstacle
         }
     }
 }
