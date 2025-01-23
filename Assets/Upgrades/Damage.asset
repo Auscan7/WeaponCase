@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Damage
   m_EditorClassIdentifier: 
   upgradeName: Damage
-  description: Boom
+  description: Damage + 10%
   icon: {fileID: 21300000, guid: 33b0f9b7c0c674443b9f7f69760eb178, type: 3}
+  UpgradeID: 0

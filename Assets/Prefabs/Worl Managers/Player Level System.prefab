@@ -102,3 +102,7 @@ MonoBehaviour:
   Pistol: {fileID: 0}
   Shotgun: {fileID: 0}
   Rocket: {fileID: 0}
+  pistolDamage: 10
+  shotgunDamage: 7
+  rocketDamage: 21
+  rocketAreaDamage: 9

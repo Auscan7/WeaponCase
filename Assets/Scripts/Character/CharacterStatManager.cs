@@ -15,11 +15,11 @@ public class CharacterStatManager : MonoBehaviour
     [SerializeField] public GameObject healthBarParent;
 
     [Header("Floating Damage")]
-    [SerializeField] private GameObject floatingDamagePrefab;
+    [SerializeField] public GameObject floatingDamagePrefab;
 
     [Header("Floating Text Offset")]
-    [SerializeField] private Vector2 xOffsetRange = new Vector2(-0.5f, 0.5f);
-    [SerializeField] private Vector2 yOffsetRange = new Vector2(0.5f, 1f);
+    [SerializeField] public Vector2 xOffsetRange = new Vector2(-0.5f, 0.5f);
+    [SerializeField] public Vector2 yOffsetRange = new Vector2(0.5f, 1f);
 
 
     protected virtual void Awake()
@@ -54,7 +54,7 @@ public class CharacterStatManager : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void ShowFloatingDamage(float damage)
+    protected virtual void ShowFloatingDamage(float damage)
     {
         if (floatingDamagePrefab != null)
         {

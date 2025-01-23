@@ -25,8 +25,7 @@ public class PlayerInputManager : MonoBehaviour
     //[SerializeField] bool jump_Input = false;
 
     [Header("UI")]
-    [SerializeField] bool inventory_Input = false;
-    [SerializeField] private Button inventoryButton;
+    [SerializeField] bool pause_input = false;
 
     private void Awake()
     {
@@ -100,7 +99,7 @@ public class PlayerInputManager : MonoBehaviour
             // Sprint
 
             //UI
-            playerControls.UI.Inventory.performed += i => inventory_Input = true;
+            playerControls.UI.Pause.performed += i => pause_input = true;
         }
 
         playerControls.Enable();
@@ -136,7 +135,7 @@ public class PlayerInputManager : MonoBehaviour
     private void HandleAllInputs()
     {
         HandlePlayerMovementInput();
-        HandleInventoryInput();
+        HandlePause();
     }
 
     // Movement
@@ -175,14 +174,20 @@ public class PlayerInputManager : MonoBehaviour
     //}
 
     //UI
-    public void HandleInventoryInput()
+    public void HandlePause()
     {
-        if (inventory_Input)
+        if (pause_input)
         {
-            inventory_Input = false;
+            pause_input = false;
 
-            if(inventoryButton != null)
-                inventoryButton.onClick.Invoke();
+            if (PauseManager.instance.isPauseMenuOpen == false)
+            {
+                PauseManager.instance.OpenPauseMenu();
+            }
+            else
+            {
+                PauseManager.instance.Continue();
+            }
         }
     }
 }

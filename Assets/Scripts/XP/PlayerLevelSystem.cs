@@ -94,7 +94,7 @@ public class PlayerLevelSystem : MonoBehaviour
                 upgradeSelection.SetUpgradeCards(); // Refresh upgrades
             }
 
-            Time.timeScale = 0; // Pause the game
+            PauseManager.instance.PauseGame();
             isUpgradeScreenActive = true;
             waitForKeyPress = false; // Reset wait flag
         }
@@ -124,7 +124,7 @@ public class PlayerLevelSystem : MonoBehaviour
     // Resume the game
     private void ResumeGame()
     {
-        Time.timeScale = 1; // Resume the game
+        PauseManager.instance.UnPauseGame();
         waitForKeyPress = false; // Reset wait flag
     }
 }

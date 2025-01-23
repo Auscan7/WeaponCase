@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1723522420313041352}
   - component: {fileID: 7866912376874971303}
-  - component: {fileID: 740780206369278667}
+  - component: {fileID: 3946622023889292950}
   - component: {fileID: -9118443158948513450}
   - component: {fileID: 617021476422812016}
   - component: {fileID: 9144244881348185987}
@@ -89,7 +89,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &740780206369278667
+--- !u!114 &3946622023889292950
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,10 +98,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4722767060693112874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25e41ca8a47aa9541868bab2bc5ef643, type: 3}
+  m_Script: {fileID: 11500000, guid: fe3ba4499bc8ffe42b8059c0db76d1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletDamage: 7
+  pelletDamage: 7
 --- !u!114 &-9118443158948513450
 MonoBehaviour:
   m_ObjectHideFlags: 0

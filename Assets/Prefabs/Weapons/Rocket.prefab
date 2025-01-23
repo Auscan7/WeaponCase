@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1723522420313041352}
   - component: {fileID: 7866912376874971303}
+  - component: {fileID: 4147568860903031374}
   - component: {fileID: 2223137882470706351}
   - component: {fileID: 617021476422812016}
   - component: {fileID: 9144244881348185987}
   - component: {fileID: 3026551211028007920}
-  - component: {fileID: 4147568860903031374}
   m_Layer: 7
   m_Name: Rocket
   m_TagString: Untagged
@@ -89,6 +89,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4147568860903031374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4722767060693112874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5181065ff73ecac44aceb3fd13abb703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rocketDamage: 25
+  rocketAreaDamage: 0
+  explosionRadius: 2
+  explosionEffectPrefab: {fileID: 4952325379883675290, guid: 1deeb24cd5dc6214bafaf18803b4c45c, type: 3}
 --- !u!114 &2223137882470706351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,19 +202,3 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &4147568860903031374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4722767060693112874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5181065ff73ecac44aceb3fd13abb703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rocketDamage: 25
-  explosionDamage: 10
-  explosionRadius: 2
-  explosionEffectPrefab: {fileID: 4952325379883675290, guid: 1deeb24cd5dc6214bafaf18803b4c45c, type: 3}
