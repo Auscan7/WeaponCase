@@ -278,13 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1549159e5c15a1c45a534ce0c2660e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  groundCheckSphereRadius: 0.1
-  groundCheckOffset: 0
   canMove: 1
-  isGrounded: 1
   moveSpeed: 1
   spriteTransform: {fileID: 7608606556829224412}
 --- !u!114 &-4820772247653231708
@@ -362,7 +356,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.47
+  m_Radius: 0.4
 --- !u!58 &8518377194627536839
 CircleCollider2D:
   m_ObjectHideFlags: 0

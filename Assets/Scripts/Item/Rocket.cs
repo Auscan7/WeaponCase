@@ -38,6 +38,8 @@ public class Rocket : MonoBehaviour
 
     private void Explode()
     {
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.rocketExplosionSFX);
+
         // Instantiate explosion visual effect (if assigned)
         if (explosionEffectPrefab != null)
         {

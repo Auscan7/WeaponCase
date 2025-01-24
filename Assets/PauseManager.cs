@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
@@ -11,6 +12,7 @@ public class PauseManager : MonoBehaviour
     public Button menuButton;
     public GameObject pauseMenu;
     [HideInInspector] public bool isPauseMenuOpen = false;
+    [HideInInspector] public bool isPaused = false;
 
     private void Awake()
     {
@@ -26,16 +28,27 @@ public class PauseManager : MonoBehaviour
 
     public void PauseGame()
     {
+        if(isPaused)
+            return;
+
         Time.timeScale = 0;
+        isPaused = true;
     }
 
     public void UnPauseGame()
     {
+        if(!isPaused)
+            return;
+
         Time.timeScale = 1;
+        isPaused = false;
     }
 
     public void OpenPauseMenu()
     {
+        if (isPaused)
+            return;
+
         PauseGame();
         pauseMenu.SetActive(true);
         isPauseMenuOpen = true;
@@ -45,6 +58,12 @@ public class PauseManager : MonoBehaviour
     {
         UnPauseGame();
         pauseMenu.SetActive(false);
-        isPauseMenuOpen = false;
+        isPauseMenuOpen = false;        
+    }
+
+    public void LoadMainMenu()
+    {
+        Continue();
+        SceneManager.LoadScene("Main Menu");
     }
 }

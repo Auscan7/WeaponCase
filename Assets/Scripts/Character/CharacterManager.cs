@@ -10,8 +10,6 @@ public class CharacterManager : MonoBehaviour
 
     protected virtual void Awake()
     {
-        DontDestroyOnLoad(this);
-
         rb = GetComponent<Rigidbody2D>();
         characterMovement = GetComponent<CharacterMovement>();
         characterStatManager = GetComponent<CharacterStatManager>();

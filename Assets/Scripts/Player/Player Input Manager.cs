@@ -11,7 +11,6 @@ public class PlayerInputManager : MonoBehaviour
 
     public int targetFrameRate = 60;
 
-    public PlayerManager player;
     PLayerControls playerControls;
 
     [Header("Movement Input")]
@@ -22,7 +21,7 @@ public class PlayerInputManager : MonoBehaviour
     public float moveAmount;
 
     [Header("Player Action Input")]
-    //[SerializeField] bool jump_Input = false;
+    //Dash -  to do
 
     [Header("UI")]
     [SerializeField] bool pause_input = false;
@@ -46,23 +45,23 @@ public class PlayerInputManager : MonoBehaviour
         // when the scene changes, run this logic
         SceneManager.activeSceneChanged += OnSceneChange;
 
-        //instance.enabled = false;
-        instance.enabled = true; // delete this and uncomment above line later when main menu logic is added
+        instance.enabled = false;
+        //instance.enabled = true; // delete this and uncomment above line later when main menu logic is added
 
         if (playerControls != null)
         {
-            //playerControls.Disable();
-            playerControls.Enable(); // delete this and uncomment above line later when main menu logic is added
+            playerControls.Disable();
+            //playerControls.Enable(); // delete this and uncomment above line later when main menu logic is added
         }
 
-        //Application.targetFrameRate = targetFrameRate;
-        //QualitySettings.vSyncCount = 0; // Make sure VSync is disabled to honor targetFrameRate
+        Application.targetFrameRate = targetFrameRate;
+        QualitySettings.vSyncCount = 0;
     }
 
     private void OnSceneChange(Scene oldScene, Scene newScene)
     {
         // If we are loading into our world scene, enable our players controls
-        if (newScene.buildIndex == 0)
+        if (newScene.buildIndex == 1)
         {
             instance.enabled = true;
 
@@ -72,7 +71,6 @@ public class PlayerInputManager : MonoBehaviour
             }
         }
         // otherwise we must be at the main menu, disable our player controls
-        // so that player cant move around if we are in the character creation menu ect.
         else
         {
             instance.enabled = false;
@@ -95,8 +93,6 @@ public class PlayerInputManager : MonoBehaviour
             playerControls.PlayerMovement.Vertical.performed += i => verticalInput = i.ReadValue<float>();
 
             // Actions
-            //playerControls.PlayerActions.Jump.performed += i => jump_Input = true;
-            // Sprint
 
             //UI
             playerControls.UI.Pause.performed += i => pause_input = true;
@@ -160,18 +156,6 @@ public class PlayerInputManager : MonoBehaviour
     }
 
     // Action
-    //private void HandleJumpInput()
-    //{
-    //    if (jump_Input)
-    //    {
-    //        jump_Input = false;
-
-    //        // note: return; if menu or UI window is open(?)
-
-    //        // attempt to perform jump
-    //        player.playerMovement.AttempToPerformJump();
-    //    }
-    //}
 
     //UI
     public void HandlePause()

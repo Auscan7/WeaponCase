@@ -84,6 +84,8 @@ public class PlayerProjectileFiring : MonoBehaviour
     {
         if (bulletPrefab != null)
         {
+            AudioManager.instance.PlaySoundSFX(AudioManager.instance.pistolFireSFX);
+
             // Instantiate projectile
             Vector3 spawnPosition = projectileSpawnPoint != null ? projectileSpawnPoint.position : transform.position;
             GameObject projectile = Instantiate(bulletPrefab, spawnPosition, Quaternion.identity);
@@ -108,6 +110,8 @@ public class PlayerProjectileFiring : MonoBehaviour
     {
         if (rocketPrefab != null)
         {
+            AudioManager.instance.PlaySoundSFX(AudioManager.instance.rocketFireSFX);
+
             // Instantiate projectile
             Vector3 spawnPosition = projectileSpawnPoint != null ? projectileSpawnPoint.position : transform.position;
             GameObject projectile = Instantiate(rocketPrefab, spawnPosition, Quaternion.identity);
@@ -132,6 +136,8 @@ public class PlayerProjectileFiring : MonoBehaviour
     {
         if (pelletPrefab != null)
         {
+            AudioManager.instance.PlaySoundSFX(AudioManager.instance.shotgunFireSFX);
+
             // Spawn point for projectiles
             Vector3 spawnPosition = projectileSpawnPoint != null ? projectileSpawnPoint.position : transform.position;
 
