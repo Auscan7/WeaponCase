@@ -14,6 +14,12 @@ public class WeaponManager : MonoBehaviour
     public float rocketDamage;
     public float rocketAreaDamage;
 
+    [Header("Weapon Firerates")]
+    public float pistolFirerate;
+    public float shotgunFirerate;
+    public float rocketFirerate;
+
+
     public static WeaponManager Instance;
 
     private void Awake()
@@ -33,6 +39,7 @@ public class WeaponManager : MonoBehaviour
         // Subscribe to the event to listen for upgrade selections
         UpgradeSelectionScript.OnUpgradeSelectedEvent += ActivateWeapons;
         UpgradeSelectionScript.OnUpgradeSelectedEvent += IncreaseDamage;
+        UpgradeSelectionScript.OnUpgradeSelectedEvent += Gunpowder;
     }
 
     private void OnDisable()
@@ -40,6 +47,7 @@ public class WeaponManager : MonoBehaviour
         // Unsubscribe when the object is disabled or destroyed to avoid memory leaks
         UpgradeSelectionScript.OnUpgradeSelectedEvent -= ActivateWeapons;
         UpgradeSelectionScript.OnUpgradeSelectedEvent -= IncreaseDamage;
+        UpgradeSelectionScript.OnUpgradeSelectedEvent -= Gunpowder;
     }
 
     private void ActivateWeapons(int selectedUpgradeID)
@@ -75,6 +83,25 @@ public class WeaponManager : MonoBehaviour
 
             rocketDamage = rocketDamage + (rocketDamage / 10) * damageUpgradePercentage;
             rocketAreaDamage = rocketAreaDamage + (rocketAreaDamage / 10) * damageUpgradePercentage;
+        }
+    }
+
+    private void Gunpowder(int selectedUpgradeID)
+    {
+        float damageUpgradePercentage = 2;
+        float fireRateDecreasePercentage = 1;
+
+        if (selectedUpgradeID == 5)
+        {
+            pistolDamage = pistolDamage + (pistolDamage / 10) * damageUpgradePercentage;
+            pistolFirerate = pistolFirerate - (pistolFirerate / 10) * fireRateDecreasePercentage;
+
+            shotgunDamage = shotgunDamage + (shotgunDamage / 10) * damageUpgradePercentage;
+            shotgunFirerate = shotgunFirerate - (shotgunFirerate / 10) * fireRateDecreasePercentage;
+
+            rocketDamage = rocketDamage + (rocketDamage / 10) * damageUpgradePercentage;
+            rocketAreaDamage = rocketAreaDamage + (rocketAreaDamage / 10) * damageUpgradePercentage;
+            rocketFirerate = rocketFirerate - (rocketFirerate / 10) * fireRateDecreasePercentage;
         }
     }
 }

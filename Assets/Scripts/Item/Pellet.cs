@@ -5,18 +5,11 @@ using UnityEngine;
 
 public class Pellet : MonoBehaviour
 {
-    [SerializeField] private float pelletDamage;
-
-    private void Awake()
-    {
-        pelletDamage = WeaponManager.Instance.shotgunDamage;
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponentInParent<CharacterStatManager>().TakeDamage(pelletDamage);
+            collision.gameObject.GetComponentInParent<CharacterStatManager>().TakeDamage(WeaponManager.Instance.shotgunDamage);
 
             Destroy(gameObject);
         }

@@ -32,9 +32,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.3447908, y: -3.488, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 1916341592962796731}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7866912376874971303
@@ -78,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 33b0f9b7c0c674443b9f7f69760eb178, type: 3}
-  m_Color: {r: 0, g: 0.7752991, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f265a3027bc0de0449643ffdd2e87be7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketDamage: 25
-  rocketAreaDamage: 0
+  rocketAreaDamage: 9
   explosionRadius: 2
   explosionEffectPrefab: {fileID: 4952325379883675290, guid: 1deeb24cd5dc6214bafaf18803b4c45c, type: 3}
 --- !u!114 &2223137882470706351
@@ -150,7 +151,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0479396, y: 0.003196597}
+  m_Offset: {x: 0.005962938, y: 0.0016993284}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -161,7 +162,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.33044636, y: 0.21585774}
+  m_Size: {x: 0.8035906, y: 0.27874446}
   m_EdgeRadius: 0
 --- !u!50 &9144244881348185987
 Rigidbody2D:
@@ -202,3 +203,65 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1001 &7535064732641016258
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1723522420313041352}
+    m_Modifications:
+    - target: {fileID: 4952325379883675290, guid: dfe7a3db553f9e34493fa26b5d78e34f, type: 3}
+      propertyPath: m_Name
+      value: Rocket Trail
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217340840972825977, guid: dfe7a3db553f9e34493fa26b5d78e34f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.389
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217340840972825977, guid: dfe7a3db553f9e34493fa26b5d78e34f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217340840972825977, guid: dfe7a3db553f9e34493fa26b5d78e34f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217340840972825977, guid: dfe7a3db553f9e34493fa26b5d78e34f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217340840972825977, guid: dfe7a3db553f9e34493fa26b5d78e34f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217340840972825977, guid: dfe7a3db553f9e34493fa26b5d78e34f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.4999993
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217340840972825977, guid: dfe7a3db553f9e34493fa26b5d78e34f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.4999993
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217340840972825977, guid: dfe7a3db553f9e34493fa26b5d78e34f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217340840972825977, guid: dfe7a3db553f9e34493fa26b5d78e34f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217340840972825977, guid: dfe7a3db553f9e34493fa26b5d78e34f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dfe7a3db553f9e34493fa26b5d78e34f, type: 3}
+--- !u!4 &1916341592962796731 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8217340840972825977, guid: dfe7a3db553f9e34493fa26b5d78e34f, type: 3}
+  m_PrefabInstance: {fileID: 7535064732641016258}
+  m_PrefabAsset: {fileID: 0}

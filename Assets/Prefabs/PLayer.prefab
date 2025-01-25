@@ -394,13 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1768c1374abab72418fe6a74851e918a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 1
-  groundCheckSphereRadius: 0.35
-  groundCheckOffset: 0.5
   canMove: 1
-  isGrounded: 1
   horizontalMovement: 0
   verticalMovement: 0
   walkingSpeed: 3.5

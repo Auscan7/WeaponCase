@@ -9,6 +9,7 @@ public class UpgradeSelectionScript : MonoBehaviour
     public TMP_Text[] upgradeDescriptions; // Descriptions for upgrade cards
     public TMP_Text[] upgradeNames; // Names for upgrade cards
     public Image[] upgradeIcons; // Icons for upgrade cards
+    public Image[] upgradeBorders; // Icons for upgrade cards
 
     [Header("Upgrade Pool")]
     public Upgrade[] upgradePool; // Array of ScriptableObjects representing upgrades
@@ -70,6 +71,7 @@ public class UpgradeSelectionScript : MonoBehaviour
             upgradeNames[i].text = selectedUpgrade.upgradeName;
             upgradeDescriptions[i].text = selectedUpgrade.description;
             upgradeIcons[i].sprite = selectedUpgrade.icon;
+            upgradeBorders[i].sprite = selectedUpgrade.border;
         }
     }
 

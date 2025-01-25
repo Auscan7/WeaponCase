@@ -1992,11 +1992,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5009774052823361833 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6643291537517106597, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+  m_PrefabInstance: {fileID: 5009774052823361831}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5009774052823361834 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2256049834612962971, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
   m_PrefabInstance: {fileID: 5009774052823361831}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5009774052823361835 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4998937390176103198, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+  m_PrefabInstance: {fileID: 5009774052823361831}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5009774052823361836 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3978726138180409753, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+  m_PrefabInstance: {fileID: 5009774052823361831}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5179406331025292265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2070,6 +2103,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 664042481}
     - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
+      propertyPath: upgradePool.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
+      propertyPath: upgradePool.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: b5d3917ea7d4fd143a56a06436f19d82, type: 2}
+    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
+      propertyPath: upgradePool.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 28b25496fe282eb4facc5b68f1658076, type: 2}
+    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
+      propertyPath: upgradePool.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 80f81aa12ffa32546ba32df616751d0b, type: 2}
+    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
+      propertyPath: upgradePool.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8a4e6317836991d448c8b7ffffa4ba7e, type: 2}
+    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
+      propertyPath: upgradePool.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: f66ec0aab35256f469e342387b074f1b, type: 2}
+    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
       propertyPath: upgradeCards.Array.data[0]
       value: 
       objectReference: {fileID: 1870763351}
@@ -2105,6 +2162,18 @@ PrefabInstance:
       propertyPath: upgradeNames.Array.data[2]
       value: 
       objectReference: {fileID: 1126289401}
+    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
+      propertyPath: upgradeBorders.Array.data[0]
+      value: 
+      objectReference: {fileID: 5009774052823361836}
+    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
+      propertyPath: upgradeBorders.Array.data[1]
+      value: 
+      objectReference: {fileID: 5009774052823361835}
+    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
+      propertyPath: upgradeBorders.Array.data[2]
+      value: 
+      objectReference: {fileID: 5009774052823361833}
     - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
       propertyPath: upgradeDescriptions.Array.data[0]
       value: 

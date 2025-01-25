@@ -3,19 +3,10 @@ using UnityEngine;
 public class Rocket : MonoBehaviour
 {
     [Header("Rocket Damage Settings")]
-    [SerializeField] float rocketDamage; // Damage for direct hit
-    [SerializeField] float rocketAreaDamage; // Damage for enemies within explosion radius
     [SerializeField] float explosionRadius = 1f; // Radius of the explosion
 
     [Header("Explosion Effects")]
     [SerializeField] GameObject explosionEffectPrefab; // Optional visual effect for explosion
-
-    private void Awake()
-    {
-        rocketDamage = WeaponManager.Instance.rocketDamage;
-        rocketAreaDamage = WeaponManager.Instance.rocketAreaDamage;
-    }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,7 +16,7 @@ public class Rocket : MonoBehaviour
             CharacterStatManager target = collision.gameObject.GetComponentInParent<CharacterStatManager>();
             if (target != null)
             {
-                target.TakeDamage(rocketDamage);
+                target.TakeDamage(WeaponManager.Instance.rocketDamage);
             }
 
             // Trigger the explosion
@@ -55,7 +46,7 @@ public class Rocket : MonoBehaviour
             CharacterStatManager enemyStats = enemy.GetComponentInParent<CharacterStatManager>();
             if (enemyStats != null)
             {
-                enemyStats.TakeDamage(rocketAreaDamage);
+                enemyStats.TakeDamage(WeaponManager.Instance.rocketAreaDamage);
             }
         }
     }

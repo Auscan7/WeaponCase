@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7082480bbdfbb04cbffebde699f642a, type: 3}
-  m_Name: RocketLauncher
+  m_Name: Gunpowder
   m_EditorClassIdentifier: 
-  upgradeName: Rocket Launcher
-  description: Boom
-  icon: {fileID: 21300000, guid: f265a3027bc0de0449643ffdd2e87be7, type: 3}
+  upgradeName: Gunpowder
+  description: Damage +20% Fire rate -10%
+  icon: {fileID: 21300000, guid: cfac9d0734511c045b3e088d9e8c0081, type: 3}
   border: {fileID: 21300000, guid: 61427d22e0ac7d7468c1bb696059b8d7, type: 3}
-  UpgradeID: 3
+  UpgradeID: 5
