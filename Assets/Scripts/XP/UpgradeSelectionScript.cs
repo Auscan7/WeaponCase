@@ -7,6 +7,7 @@ public class UpgradeSelectionScript : MonoBehaviour
 {
     public Button[] upgradeCards; // Buttons for upgrade cards
     public TMP_Text[] upgradeDescriptions; // Descriptions for upgrade cards
+    public TMP_Text[] negativeUpgradeDescriptions; // Descriptions for upgrade cards
     public TMP_Text[] upgradeNames; // Names for upgrade cards
     public Image[] upgradeIcons; // Icons for upgrade cards
     public Image[] upgradeBorders; // Icons for upgrade cards
@@ -69,7 +70,8 @@ public class UpgradeSelectionScript : MonoBehaviour
 
             // Assign name, description, and icon to the card
             upgradeNames[i].text = selectedUpgrade.upgradeName;
-            upgradeDescriptions[i].text = selectedUpgrade.description;
+            upgradeDescriptions[i].text = selectedUpgrade.positiveDescription;
+            negativeUpgradeDescriptions[i].text = selectedUpgrade.negativeDescription;
             upgradeIcons[i].sprite = selectedUpgrade.icon;
             upgradeBorders[i].sprite = selectedUpgrade.border;
         }

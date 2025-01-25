@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   upgradeName: Pistol
-  description: Fires a single projectile. Damage +25%
+  positiveDescription: Pistol Damage +25%
+  negativeDescription: 
   icon: {fileID: 21300000, guid: 2e78c1af7ff838743a5616277b9a3472, type: 3}
   border: {fileID: 21300000, guid: 61427d22e0ac7d7468c1bb696059b8d7, type: 3}
   UpgradeID: 2

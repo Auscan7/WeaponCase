@@ -341,6 +341,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &182412500 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 613846865720323607, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+  m_PrefabInstance: {fileID: 5009774052823361831}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &200156520 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7186793037216869759, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
@@ -1180,6 +1191,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1166996143 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4166127304063634023, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+  m_PrefabInstance: {fileID: 5009774052823361831}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1166996144 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1545688745161749460, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+  m_PrefabInstance: {fileID: 5009774052823361831}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1166996145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6180930046727305014, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+  m_PrefabInstance: {fileID: 5009774052823361831}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1240637130
@@ -2103,30 +2147,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 664042481}
     - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePool.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePool.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: b5d3917ea7d4fd143a56a06436f19d82, type: 2}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePool.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 28b25496fe282eb4facc5b68f1658076, type: 2}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePool.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 80f81aa12ffa32546ba32df616751d0b, type: 2}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePool.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 8a4e6317836991d448c8b7ffffa4ba7e, type: 2}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePool.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: f66ec0aab35256f469e342387b074f1b, type: 2}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
       propertyPath: upgradeCards.Array.data[0]
       value: 
       objectReference: {fileID: 1870763351}
@@ -2186,6 +2206,18 @@ PrefabInstance:
       propertyPath: upgradeDescriptions.Array.data[2]
       value: 
       objectReference: {fileID: 1309488140}
+    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
+      propertyPath: negativeUpgradeDescriptions.Array.data[0]
+      value: 
+      objectReference: {fileID: 1166996145}
+    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
+      propertyPath: negativeUpgradeDescriptions.Array.data[1]
+      value: 
+      objectReference: {fileID: 1166996144}
+    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
+      propertyPath: negativeUpgradeDescriptions.Array.data[2]
+      value: 
+      objectReference: {fileID: 1166996143}
     - target: {fileID: 6695807975822491399, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
       propertyPath: m_Name
       value: Player Level System
@@ -2203,6 +2235,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1556093721444185990, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 182412500}
     - target: {fileID: 1706525254934586072, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 995.4089

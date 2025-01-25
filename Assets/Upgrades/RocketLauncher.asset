@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: RocketLauncher
   m_EditorClassIdentifier: 
   upgradeName: Rocket Launcher
-  description: Boom
-  icon: {fileID: 21300000, guid: f265a3027bc0de0449643ffdd2e87be7, type: 3}
+  positiveDescription: Rocket Impact Damage +40%, Area Damage +15%
+  negativeDescription: 
+  icon: {fileID: 21300000, guid: 42cc65695e3f2774b8a6b534178fbf95, type: 3}
   border: {fileID: 21300000, guid: 61427d22e0ac7d7468c1bb696059b8d7, type: 3}
   UpgradeID: 3

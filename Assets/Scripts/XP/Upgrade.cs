@@ -4,7 +4,8 @@ using UnityEngine;
 public class Upgrade : ScriptableObject
 {
     public string upgradeName;
-    public string description;
+    public string positiveDescription;
+    public string negativeDescription;
     public Sprite icon;
     public Sprite border;
     public int UpgradeID;

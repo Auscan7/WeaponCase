@@ -40,6 +40,7 @@ public class WeaponManager : MonoBehaviour
         UpgradeSelectionScript.OnUpgradeSelectedEvent += ActivateWeapons;
         UpgradeSelectionScript.OnUpgradeSelectedEvent += IncreaseDamage;
         UpgradeSelectionScript.OnUpgradeSelectedEvent += Gunpowder;
+        UpgradeSelectionScript.OnUpgradeSelectedEvent += ExtraMagazine;
     }
 
     private void OnDisable()
@@ -48,6 +49,7 @@ public class WeaponManager : MonoBehaviour
         UpgradeSelectionScript.OnUpgradeSelectedEvent -= ActivateWeapons;
         UpgradeSelectionScript.OnUpgradeSelectedEvent -= IncreaseDamage;
         UpgradeSelectionScript.OnUpgradeSelectedEvent -= Gunpowder;
+        UpgradeSelectionScript.OnUpgradeSelectedEvent -= ExtraMagazine;
     }
 
     private void ActivateWeapons(int selectedUpgradeID)
@@ -102,6 +104,20 @@ public class WeaponManager : MonoBehaviour
             rocketDamage = rocketDamage + (rocketDamage / 10) * damageUpgradePercentage;
             rocketAreaDamage = rocketAreaDamage + (rocketAreaDamage / 10) * damageUpgradePercentage;
             rocketFirerate = rocketFirerate - (rocketFirerate / 10) * fireRateDecreasePercentage;
+        }
+    }
+
+    private void ExtraMagazine(int selectedUpgradeID)
+    {
+        float fireRatePercentage = 1;
+
+        if (selectedUpgradeID == 1)
+        {
+            pistolFirerate = pistolFirerate + (pistolFirerate / 10) * fireRatePercentage;
+
+            shotgunFirerate = shotgunFirerate + (shotgunFirerate / 10) * fireRatePercentage;
+
+            rocketFirerate = rocketFirerate + (rocketFirerate / 10) * fireRatePercentage;
         }
     }
 }

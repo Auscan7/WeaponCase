@@ -72,6 +72,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  negativeUpgradeDescriptions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   upgradeNames:
   - {fileID: 0}
   - {fileID: 0}
@@ -85,16 +89,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   upgradePool:
-  - {fileID: 11400000, guid: 8a4e6317836991d448c8b7ffffa4ba7e, type: 2}
-  - {fileID: 11400000, guid: f66ec0aab35256f469e342387b074f1b, type: 2}
-  - {fileID: 11400000, guid: 8a4e6317836991d448c8b7ffffa4ba7e, type: 2}
+  - {fileID: 11400000, guid: b5d3917ea7d4fd143a56a06436f19d82, type: 2}
   - {fileID: 11400000, guid: 28b25496fe282eb4facc5b68f1658076, type: 2}
   - {fileID: 11400000, guid: 80f81aa12ffa32546ba32df616751d0b, type: 2}
+  - {fileID: 11400000, guid: 8a4e6317836991d448c8b7ffffa4ba7e, type: 2}
+  - {fileID: 11400000, guid: f66ec0aab35256f469e342387b074f1b, type: 2}
   - {fileID: 11400000, guid: b2adbd67f6f43e24ab39d304d529805c, type: 2}
-  - {fileID: 11400000, guid: ef4d8567d2a3dcc4188f91b05daa62de, type: 2}
-  - {fileID: 11400000, guid: 1534958a6ef531743928e70710eb8bfb, type: 2}
-  - {fileID: 11400000, guid: b65c9d38db4d33540b3d8c0e03c26d09, type: 2}
-  - {fileID: 11400000, guid: b5d5a5b74d0c6f446bebfc20ef846410, type: 2}
 --- !u!114 &4003785959784732817
 MonoBehaviour:
   m_ObjectHideFlags: 0
