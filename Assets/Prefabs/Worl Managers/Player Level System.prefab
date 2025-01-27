@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 798272809707200220}
   - component: {fileID: 2805381360816893158}
   - component: {fileID: 6557275868810389589}
-  - component: {fileID: 4003785959784732817}
+  - component: {fileID: 1673084244522484919}
   m_Layer: 0
   m_Name: Player Level System
   m_TagString: Untagged
@@ -95,7 +95,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8a4e6317836991d448c8b7ffffa4ba7e, type: 2}
   - {fileID: 11400000, guid: f66ec0aab35256f469e342387b074f1b, type: 2}
   - {fileID: 11400000, guid: b2adbd67f6f43e24ab39d304d529805c, type: 2}
---- !u!114 &4003785959784732817
+  - {fileID: 11400000, guid: 259a983ffdb5fba4cabc7a8acba27b8b, type: 2}
+  - {fileID: 11400000, guid: 91d663fca6cde5648b3b9ef68e2b3b8b, type: 2}
+--- !u!114 &1673084244522484919
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,16 +106,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 6695807975822491399}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddc58a8087107704882691c87274010f, type: 3}
+  m_Script: {fileID: 11500000, guid: 77d2c99b1773cc14f9bfbad6190b4663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playercurrentHealth: 0
+  playerMaxHealth: 20
+  playerMovementSpeedMultiplier: 1
   Pistol: {fileID: 0}
   Shotgun: {fileID: 0}
   Rocket: {fileID: 0}
   pistolDamage: 10
-  shotgunDamage: 7
-  rocketDamage: 21
-  rocketAreaDamage: 9
+  shotgunDamage: 6
+  rocketDamage: 20
+  rocketAreaDamage: 8
   pistolFirerate: 1
-  shotgunFirerate: 0.5
-  rocketFirerate: 0.3
+  shotgunFirerate: 0.4
+  rocketFirerate: 0.25

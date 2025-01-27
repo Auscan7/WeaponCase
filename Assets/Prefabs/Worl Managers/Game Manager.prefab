@@ -63,4 +63,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 0}
-  triggerTime: 60
+  triggerTime: 150

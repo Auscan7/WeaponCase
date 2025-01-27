@@ -1,22 +1,50 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class PlayerStatManager : CharacterStatManager
 {
-    [SerializeField] private float damageCooldown = 0.3f;
+    [SerializeField] private float damageCooldown = 0.15f;
     private bool isOnCooldown = false;
+    public TMP_Text HPText;
+
+    protected override void Start()
+    {
+        UpgradeManager.Instance.playercurrentHealth = UpgradeManager.Instance.playerMaxHealth;
+    }
+
+    protected override void Update()
+    {
+        if (UpgradeManager.Instance.playercurrentHealth <= 0)
+        {
+            HandleDeath();
+        }
+
+        if (HPText != null)
+        {
+            HPText.text = "HP: " + UpgradeManager.Instance.playercurrentHealth.ToString();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        UpdateHealthBar();
+    }
 
     public override void TakeDamage(float damage)
     {
         if (isOnCooldown) return;
 
-        currentHealth -= damage;
-        healthBar.fillAmount = currentHealth / maxHealth;
+        UpgradeManager.Instance.playercurrentHealth -= damage;
+        UpdateHealthBar();
 
         ShowFloatingDamage(damage);
         StartCoroutine(DamageCooldownCoroutine());
+    }
+
+    private void UpdateHealthBar()
+    {
+        healthBar.fillAmount = UpgradeManager.Instance.playercurrentHealth / UpgradeManager.Instance.playerMaxHealth;
     }
 
     protected override void ShowFloatingDamage(float damage)

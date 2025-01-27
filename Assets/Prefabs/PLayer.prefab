@@ -30,8 +30,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8254187446837523302}
-  - {fileID: 8066911426757180195}
   - {fileID: 8227087643702409796}
+  - {fileID: 8066911426757180195}
   m_Father: {fileID: 7186793037216869759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1229226007688104451
@@ -82,7 +82,6 @@ MonoBehaviour:
   rocketPrefab: {fileID: 0}
   pelletPrefab: {fileID: 4722767060693112874, guid: 7f8b24733f23fa6489b96210706a555e, type: 3}
   detectionRange: 4
-  fireRate: 0.5
   projectileSpeed: 4
   projectileSpawnPoint: {fileID: 2642464509737796994}
   pelletCount: 4
@@ -135,7 +134,6 @@ MonoBehaviour:
   rocketPrefab: {fileID: 0}
   pelletPrefab: {fileID: 0}
   detectionRange: 5
-  fireRate: 1
   projectileSpeed: 6
   projectileSpawnPoint: {fileID: 2642464509737796994}
   pelletCount: 5
@@ -272,8 +270,7 @@ MonoBehaviour:
   rocketPrefab: {fileID: 4722767060693112874, guid: 5e8b3c35b967c2d48b7296bbd79ef5cb, type: 3}
   pelletPrefab: {fileID: 0}
   detectionRange: 6
-  fireRate: 0.3
-  projectileSpeed: 2
+  projectileSpeed: 2.5
   projectileSpawnPoint: {fileID: 2642464509737796994}
   pelletCount: 5
   spreadAngle: 45
@@ -382,6 +379,8 @@ MonoBehaviour:
   floatingDamagePrefab: {fileID: 7962031289539908288, guid: 751a1d81fff36504382fd81f0e083f86, type: 3}
   xOffsetRange: {x: -0.5, y: 0.5}
   yOffsetRange: {x: 0, y: 0.2}
+  damageCooldown: 0.3
+  HPText: {fileID: 0}
 --- !u!114 &4148250003860843838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,7 +397,6 @@ MonoBehaviour:
   horizontalMovement: 0
   verticalMovement: 0
   walkingSpeed: 3.5
-  movementSpeedMultiplier: 1
 --- !u!50 &1778345087761360857
 Rigidbody2D:
   serializedVersion: 4

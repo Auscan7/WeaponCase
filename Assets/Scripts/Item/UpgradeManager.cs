@@ -1,8 +1,13 @@
-using System.Collections;
+using TMPro;
 using UnityEngine;
 
-public class WeaponManager : MonoBehaviour
+public class UpgradeManager : MonoBehaviour
 {
+    [Header("Player Stats")]
+    public float playercurrentHealth;
+    public int playerMaxHealth;
+    public float playerMovementSpeedMultiplier = 1;
+
     [Header("Weapons")]
     public GameObject Pistol;
     public GameObject Shotgun;
@@ -20,7 +25,7 @@ public class WeaponManager : MonoBehaviour
     public float rocketFirerate;
 
 
-    public static WeaponManager Instance;
+    public static UpgradeManager Instance;
 
     private void Awake()
     {
@@ -41,6 +46,8 @@ public class WeaponManager : MonoBehaviour
         UpgradeSelectionScript.OnUpgradeSelectedEvent += IncreaseDamage;
         UpgradeSelectionScript.OnUpgradeSelectedEvent += Gunpowder;
         UpgradeSelectionScript.OnUpgradeSelectedEvent += ExtraMagazine;
+        UpgradeSelectionScript.OnUpgradeSelectedEvent += SteelPlates;
+        UpgradeSelectionScript.OnUpgradeSelectedEvent += Turbines;
     }
 
     private void OnDisable()
@@ -50,6 +57,8 @@ public class WeaponManager : MonoBehaviour
         UpgradeSelectionScript.OnUpgradeSelectedEvent -= IncreaseDamage;
         UpgradeSelectionScript.OnUpgradeSelectedEvent -= Gunpowder;
         UpgradeSelectionScript.OnUpgradeSelectedEvent -= ExtraMagazine;
+        UpgradeSelectionScript.OnUpgradeSelectedEvent -= SteelPlates;
+        UpgradeSelectionScript.OnUpgradeSelectedEvent -= Turbines;
     }
 
     private void ActivateWeapons(int selectedUpgradeID)
@@ -118,6 +127,27 @@ public class WeaponManager : MonoBehaviour
             shotgunFirerate = shotgunFirerate + (shotgunFirerate / 10) * fireRatePercentage;
 
             rocketFirerate = rocketFirerate + (rocketFirerate / 10) * fireRatePercentage;
+        }
+    }
+
+    private void SteelPlates(int selectedUpgradeID)
+    {
+        int extraHealth = 3;
+
+        if (selectedUpgradeID == 6)
+        {
+            playercurrentHealth += extraHealth;
+            playerMaxHealth += extraHealth;
+        }
+    }
+
+    private void Turbines(int selectedUpgradeID)
+    {
+        int extraMovementSpeedPercentage = 1;
+
+        if (selectedUpgradeID == 7)
+        {
+            playerMovementSpeedMultiplier = playerMovementSpeedMultiplier + (playerMovementSpeedMultiplier / 10) * extraMovementSpeedPercentage;
         }
     }
 }

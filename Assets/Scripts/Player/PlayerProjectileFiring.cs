@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerProjectileFiring : MonoBehaviour
@@ -46,21 +44,21 @@ public class PlayerProjectileFiring : MonoBehaviour
             if (Time.time >= nextPistolFireTime)
             {
                 FireBullet(closestEnemy.transform.position);
-                nextPistolFireTime = Time.time + 1f / WeaponManager.Instance.pistolFirerate;
+                nextPistolFireTime = Time.time + 1f / UpgradeManager.Instance.pistolFirerate;
             }
 
             // Fire shotgun if conditions are met
             if (Time.time >= nextShotgunFireTime)
             {
                 FireShotgun(closestEnemy.transform.position);
-                nextShotgunFireTime = Time.time + 1f / WeaponManager.Instance.shotgunFirerate;
+                nextShotgunFireTime = Time.time + 1f / UpgradeManager.Instance.shotgunFirerate;
             }
 
             // Fire rocket if conditions are met
             if (Time.time >= nextRocketFireTime)
             {
                 FireRocket(closestEnemy.transform.position);
-                nextRocketFireTime = Time.time + 1f / WeaponManager.Instance.rocketFirerate;
+                nextRocketFireTime = Time.time + 1f / UpgradeManager.Instance.rocketFirerate;
             }
         }
     }

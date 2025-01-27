@@ -9,7 +9,7 @@ public class Pellet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponentInParent<CharacterStatManager>().TakeDamage(WeaponManager.Instance.shotgunDamage);
+            collision.gameObject.GetComponentInParent<CharacterStatManager>().TakeDamage(UpgradeManager.Instance.shotgunDamage);
 
             Destroy(gameObject);
         }
