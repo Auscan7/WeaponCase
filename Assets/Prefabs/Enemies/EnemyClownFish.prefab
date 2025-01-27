@@ -296,7 +296,7 @@ MonoBehaviour:
   moveSpeed: 1.1
   coneAttackDamageAmount: 5
   player: {fileID: 0}
-  spriteTransform: {fileID: 0}
+  spriteTransform: {fileID: 7608606556829224412}
   hasConeAttack: 0
   attackDistance: 3
   indicatorDuration: 1
