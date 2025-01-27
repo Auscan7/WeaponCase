@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameTimeManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GameTimeManager : MonoBehaviour
 
     private float remainingTime;
     private bool timerRunning = true;
+    public GameObject WinScreen;
 
     void Start()
     {
@@ -28,7 +30,7 @@ public class GameTimeManager : MonoBehaviour
 
             if (remainingTime <= 0)
             {
-                TriggerCustomLogic();
+                LevelCompletedTrigger();
             }
         }
     }
@@ -40,10 +42,23 @@ public class GameTimeManager : MonoBehaviour
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    private void TriggerCustomLogic()
+    public void LevelCompletedTrigger()
     {
         timerRunning = false;
-        Debug.Log("Custom logic triggered! Countdown reached 0.");
-        // Add your custom logic here
+        PauseManager.instance.PauseGame();
+        WinScreen.SetActive(true);
+    }
+
+    public void RestartLevel()
+    {
+        PauseManager.instance.UnPauseGame();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void LoadMainMenu()
+    {
+        PauseManager.instance.UnPauseGame();
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
+        SceneManager.LoadScene("Main Menu");
     }
 }

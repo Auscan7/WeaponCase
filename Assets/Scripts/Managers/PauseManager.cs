@@ -49,6 +49,7 @@ public class PauseManager : MonoBehaviour
         if (isPaused)
             return;
 
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
         PauseGame();
         pauseMenu.SetActive(true);
         isPauseMenuOpen = true;
@@ -57,6 +58,7 @@ public class PauseManager : MonoBehaviour
     public void Continue()
     {
         UnPauseGame();
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
         pauseMenu.SetActive(false);
         isPauseMenuOpen = false;        
     }
@@ -64,6 +66,7 @@ public class PauseManager : MonoBehaviour
     public void LoadMainMenu()
     {
         Continue();
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
         SceneManager.LoadScene("Main Menu");
     }
 }

@@ -2352,7 +2352,7 @@ MonoBehaviour:
   - {fileID: 4871557909895165438, guid: ac5b319f2a5dd394a9dfed603b11cc08, type: 3}
   spawnInterval: 60
   maxSpawnAmount: 1
-  initialSpawnDelay: 1
+  initialSpawnDelay: 60
 --- !u!4 &1528625786
 Transform:
   m_ObjectHideFlags: 0
@@ -2379,6 +2379,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1577110700 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8181284824316893774, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+  m_PrefabInstance: {fileID: 5009774052823361831}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1578954213
 GameObject:
   m_ObjectHideFlags: 0
@@ -2594,6 +2599,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1838669062 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1710492785079556577, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+  m_PrefabInstance: {fileID: 5009774052823361831}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1838704143
 GameObject:
   m_ObjectHideFlags: 0
@@ -2691,7 +2701,7 @@ MonoBehaviour:
   - {fileID: 4871557909895165438, guid: ac5b319f2a5dd394a9dfed603b11cc08, type: 3}
   spawnInterval: 60
   maxSpawnAmount: 1
-  initialSpawnDelay: 120
+  initialSpawnDelay: 150
 --- !u!114 &1870763351 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5613743352739366421, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
@@ -2926,7 +2936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
+  - {fileID: 4871557909895165438, guid: c3634c317befa0747a956c13714bbc5d, type: 3}
   spawnInterval: 7
   maxSpawnAmount: 4
   initialSpawnDelay: 1
@@ -3061,6 +3071,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1335376857}
     - target: {fileID: 455522876061259310, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: DeadScreen
+      value: 
+      objectReference: {fileID: 1577110700}
+    - target: {fileID: 455522876061259310, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
       propertyPath: healthBarParent
       value: 
       objectReference: {fileID: 895033454}
@@ -3121,6 +3135,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 28878115655639231, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6294049362532824478}
     - target: {fileID: 1479251895875919017, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -3133,6 +3151,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 256142571}
+    - target: {fileID: 4729904062644746195, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6294049362532824478}
+    - target: {fileID: 6060625656634334316, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6294049362532824478}
+    - target: {fileID: 6809329954543253026, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6294049362532824478}
     - target: {fileID: 8946381825008429100, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3429,6 +3459,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1556093721444185990, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: WinScreen
+      value: 
+      objectReference: {fileID: 1838669062}
+    - target: {fileID: 1556093721444185990, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
       propertyPath: timerText
       value: 
       objectReference: {fileID: 182412500}
@@ -3493,6 +3527,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+--- !u!114 &6294049362532824478 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1556093721444185990, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+  m_PrefabInstance: {fileID: 6294049362532824477}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f714aa36ea3b844b66edfb4489e393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

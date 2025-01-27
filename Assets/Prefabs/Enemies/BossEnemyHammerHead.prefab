@@ -111,7 +111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.099, y: 0.523}
+  m_AnchoredPosition: {x: 0.099, y: 0.449}
   m_SizeDelta: {x: 105.1102, y: 38.5488}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1563687451161885962
@@ -135,7 +135,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &6866018312965699636
 MonoBehaviour:
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 8618715826072280849}
   - component: {fileID: 5535873446418844807}
   - component: {fileID: 2910664139029674070}
-  - component: {fileID: 8174975359401972439}
+  - component: {fileID: 3943874198617641015}
   - component: {fileID: -4820772247653231708}
   - component: {fileID: 2629275203821640451}
   - component: {fileID: 3456901814718195380}
@@ -211,7 +211,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.7209228, y: 3.3250318, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7608606556829224412}
@@ -260,13 +260,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 750
+  maxHealth: 500
   healthBar: {fileID: 1297005040029400982}
   healthBarParent: {fileID: 7141845522669670118}
   floatingDamagePrefab: {fileID: 7962031289539908288, guid: 751a1d81fff36504382fd81f0e083f86, type: 3}
   xOffsetRange: {x: -0.4, y: 0.4}
   yOffsetRange: {x: 0.2, y: 0.6}
---- !u!114 &8174975359401972439
+--- !u!114 &3943874198617641015
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,23 +275,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 4871557909895165438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1549159e5c15a1c45a534ce0c2660e76, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d2ef4881367e5a46b729b377a21c4e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canMove: 1
-  moveSpeed: 1
+  animator: {fileID: 6809502568064638600}
+  moveSpeed: 1.3
+  damageAmount: 6
   spriteTransform: {fileID: 7608606556829224412}
   hasConeAttack: 1
   attackDistance: 8
-  indicatorDuration: 1
+  indicatorDuration: 1.2
   coneAngle: 15
   coneRange: 10
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
   attackIndicator: {fileID: 5910781188211157733}
-  rotationSpeed: 5
-  cooldownTime: 2
+  rotationSpeed: 6
+  cooldownTime: 5
+  isAttacking: 0
+  isOnCooldown: 0
+  savedDirection: {x: 0, y: 0, z: 0}
 --- !u!114 &-4820772247653231708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,7 +371,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.45
+  m_Radius: 0.5
 --- !u!58 &8518377194627536839
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -402,7 +406,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.55
 --- !u!1 &5910781188211157733
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,8 +433,8 @@ Transform:
   m_GameObject: {fileID: 5910781188211157733}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.70710576, w: 0.7071079}
-  m_LocalPosition: {x: 1.5048, y: 0.0768, z: 0}
-  m_LocalScale: {x: 0.57265896, y: 1.6686835, z: 1}
+  m_LocalPosition: {x: 1.7878, y: 0.078, z: 0}
+  m_LocalScale: {x: 0.7139262, y: 2.4364436, z: 1.327}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7608606556829224412}

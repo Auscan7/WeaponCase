@@ -63,4 +63,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 0}
-  triggerTime: 150
+  triggerTime: 1200
+  WinScreen: {fileID: 0}

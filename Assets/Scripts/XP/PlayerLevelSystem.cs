@@ -106,6 +106,7 @@ public class PlayerLevelSystem : MonoBehaviour
     {
         if (upgradeScreen != null)
         {
+            AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
             upgradeScreen.SetActive(false); // Hide the upgrade screen
             isUpgradeScreenActive = false;
             waitForKeyPress = true; // Wait for player input

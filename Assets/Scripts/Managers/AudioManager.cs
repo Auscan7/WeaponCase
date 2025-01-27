@@ -13,11 +13,17 @@ public class AudioManager : MonoBehaviour
     public AudioClip menuMusic;
     public AudioClip levelMusic;
 
-    [Header("SFX")]
+    [Header("Weapon SFX")]
     public AudioClip[] pistolFireSFX;
     public AudioClip[] shotgunFireSFX;
     public AudioClip[] rocketFireSFX;
     public AudioClip[] rocketExplosionSFX;
+
+    [Header("Enemy SFX")]
+    public AudioClip[] hammerheadSFX;
+
+    [Header("UI")]
+    public AudioClip[] UIClickSFX;
 
     private int lastPlayedIndex = -1;
 

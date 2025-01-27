@@ -1,8 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
-public class BasicEnemyMovement : CharacterMovement
+public class BasicEnemyMovement : MonoBehaviour
 {
+    public Animator animator;
+
     public float moveSpeed = 5f;
     public float damageAmount = 5f;
     private Transform player;
@@ -17,13 +19,12 @@ public class BasicEnemyMovement : CharacterMovement
     public float rotationSpeed = 5f; // Speed of rotation smoothing
     public float cooldownTime = 2f; // Cooldown time for the attack
 
-    private bool isAttacking = false;
-    private bool isOnCooldown = false; // Track if the attack is on cooldown
-    private Vector3 savedDirection; // Save the direction to lock rotation during attack
+    public bool isAttacking = false;
+    public bool isOnCooldown = false; // Track if the attack is on cooldown
+    public Vector3 savedDirection; // Save the direction to lock rotation during attack
 
-    protected override void Start()
+    protected virtual void Start()
     {
-        base.Start();
 
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null)
@@ -38,10 +39,8 @@ public class BasicEnemyMovement : CharacterMovement
         }
     }
 
-    protected override void Update()
+    protected virtual void Update()
     {
-        base.Update();
-
         if (player == null || spriteTransform == null) return;
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
@@ -70,7 +69,7 @@ public class BasicEnemyMovement : CharacterMovement
         }
     }
 
-    private IEnumerator ConeAttackRoutine()
+    protected virtual IEnumerator ConeAttackRoutine()
     {
         isAttacking = true;
 
@@ -78,7 +77,6 @@ public class BasicEnemyMovement : CharacterMovement
         if (attackIndicator != null)
         {
             attackIndicator.SetActive(true);
-            //attackIndicator.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(savedDirection.y, savedDirection.x) * Mathf.Rad2Deg);
         }
 
         // Wait for the indicator duration
@@ -97,7 +95,6 @@ public class BasicEnemyMovement : CharacterMovement
             float angle = Vector2.Angle(savedDirection, toTarget);
             if (angle <= coneAngle / 2)
             {
-                Debug.Log("Player hit by cone attack!");
                 hit.gameObject.GetComponentInParent<CharacterStatManager>().TakeDamage(damageAmount);
             }
         }
@@ -113,7 +110,7 @@ public class BasicEnemyMovement : CharacterMovement
         StartCoroutine(SmoothTurnTowardsPlayer());
     }
 
-    private IEnumerator AttackCooldownRoutine()
+    protected virtual IEnumerator AttackCooldownRoutine()
     {
         isOnCooldown = true;
 
@@ -123,7 +120,7 @@ public class BasicEnemyMovement : CharacterMovement
         isOnCooldown = false;
     }
 
-    private IEnumerator SmoothTurnTowardsPlayer()
+    protected virtual IEnumerator SmoothTurnTowardsPlayer()
     {
         while (isAttacking == false)
         {

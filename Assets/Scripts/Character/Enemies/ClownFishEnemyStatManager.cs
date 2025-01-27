@@ -11,7 +11,7 @@ public class ClownFishEnemyStatManager : CharacterStatManager
         base.Awake();
         gemDrop = GetComponent<GemDrop>();
     }
-    protected override void HandleDeath()
+    public override void HandleDeath()
     {
         base.HandleDeath();
         gemDrop.DropGem();

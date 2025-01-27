@@ -47,7 +47,7 @@ public class CharacterStatManager : MonoBehaviour
         ShowFloatingDamage(damage);
     }
 
-    protected virtual void HandleDeath()
+    public virtual void HandleDeath()
     {
         Destroy(gameObject);
     }

@@ -8,6 +8,8 @@ public class PlayerStatManager : CharacterStatManager
     private bool isOnCooldown = false;
     public TMP_Text HPText;
 
+    public GameObject DeadScreen;
+
     protected override void Start()
     {
         UpgradeManager.Instance.playercurrentHealth = UpgradeManager.Instance.playerMaxHealth;
@@ -45,6 +47,12 @@ public class PlayerStatManager : CharacterStatManager
     private void UpdateHealthBar()
     {
         healthBar.fillAmount = UpgradeManager.Instance.playercurrentHealth / UpgradeManager.Instance.playerMaxHealth;
+    }
+
+    public override void HandleDeath()
+    {
+        DeadScreen.SetActive(true);
+        Destroy(gameObject);
     }
 
     protected override void ShowFloatingDamage(float damage)
