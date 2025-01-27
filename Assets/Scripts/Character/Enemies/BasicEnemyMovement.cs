@@ -6,9 +6,11 @@ public class BasicEnemyMovement : MonoBehaviour
     public Animator animator;
 
     public float moveSpeed = 5f;
-    public float damageAmount = 5f;
-    private Transform player;
+    public float coneAttackDamageAmount = 5f;
+    public Transform player;
     public Transform spriteTransform;
+
+    [Header("Cone Attack")]
     public bool hasConeAttack = false; // Toggle for cone attack
     public float attackDistance = 3f; // Distance to stop and attack
     public float indicatorDuration = 1f; // Time before attack happens
@@ -16,6 +18,14 @@ public class BasicEnemyMovement : MonoBehaviour
     public float coneRange = 5f; // Range of the cone attack
     public LayerMask playerLayer; // Layer to check for the player
     public GameObject attackIndicator; // Manually placed child GameObject for the attack indicator
+
+    [Header("Projectile Attack")]
+    public bool hasProjectileAttack = false; // Toggle for projectile attack
+    public GameObject projectilePrefab; // Prefab for the projectile
+    public Transform firePoint; // Transform from where the projectile is fired
+    public float projectileRange = 7f; // Range for firing projectiles
+    public float fireCooldown = 2f; // Cooldown between projectile attacks
+
     public float rotationSpeed = 5f; // Speed of rotation smoothing
     public float cooldownTime = 2f; // Cooldown time for the attack
 
@@ -25,7 +35,6 @@ public class BasicEnemyMovement : MonoBehaviour
 
     protected virtual void Start()
     {
-
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null)
         {
@@ -51,6 +60,13 @@ public class BasicEnemyMovement : MonoBehaviour
             {
                 savedDirection = (player.position - transform.position).normalized; // Save current direction
                 StartCoroutine(ConeAttackRoutine());
+            }
+        }
+        else if (hasProjectileAttack && !isOnCooldown && distanceToPlayer <= projectileRange)
+        {
+            if (!isAttacking)
+            {
+                StartCoroutine(ProjectileAttackRoutine());
             }
         }
         else if (!isAttacking)
@@ -95,7 +111,7 @@ public class BasicEnemyMovement : MonoBehaviour
             float angle = Vector2.Angle(savedDirection, toTarget);
             if (angle <= coneAngle / 2)
             {
-                hit.gameObject.GetComponentInParent<CharacterStatManager>().TakeDamage(damageAmount);
+                hit.gameObject.GetComponentInParent<CharacterStatManager>().TakeDamage(coneAttackDamageAmount);
             }
         }
 
@@ -108,6 +124,30 @@ public class BasicEnemyMovement : MonoBehaviour
 
         // Smoothly rotate back toward the player after attack ends
         StartCoroutine(SmoothTurnTowardsPlayer());
+    }
+
+    public virtual IEnumerator ProjectileAttackRoutine()
+    {
+        isAttacking = true;
+
+        // Fire the projectile
+        if (projectilePrefab != null && firePoint != null)
+        {
+            GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+            Vector2 direction = (player.position - transform.position).normalized;
+
+            Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.velocity = direction * moveSpeed; // Set the speed of the projectile
+            }
+        }
+
+        // Wait for the cooldown
+        yield return new WaitForSeconds(fireCooldown);
+
+        isAttacking = false;
+        isOnCooldown = false;
     }
 
     protected virtual IEnumerator AttackCooldownRoutine()
@@ -150,7 +190,6 @@ public class BasicEnemyMovement : MonoBehaviour
     {
         if (hasConeAttack)
         {
-            // Draw the cone area for debugging
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, coneRange);
 
@@ -159,6 +198,12 @@ public class BasicEnemyMovement : MonoBehaviour
 
             Gizmos.DrawLine(transform.position, transform.position + rightLimit);
             Gizmos.DrawLine(transform.position, transform.position + leftLimit);
+        }
+
+        if (hasProjectileAttack)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(transform.position, projectileRange);
         }
     }
 }

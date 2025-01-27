@@ -278,8 +278,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1549159e5c15a1c45a534ce0c2660e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canMove: 1
-  moveSpeed: 1
+  animator: {fileID: 0}
+  moveSpeed: 0.7
+  coneAttackDamageAmount: 5
+  player: {fileID: 0}
   spriteTransform: {fileID: 7608606556829224412}
   hasConeAttack: 0
   attackDistance: 3
@@ -290,8 +292,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   attackIndicator: {fileID: 0}
+  hasProjectileAttack: 0
+  projectilePrefab: {fileID: 0}
+  firePoint: {fileID: 0}
+  projectileRange: 7
+  fireCooldown: 2
   rotationSpeed: 5
   cooldownTime: 2
+  isAttacking: 0
+  isOnCooldown: 0
+  savedDirection: {x: 0, y: 0, z: 0}
 --- !u!114 &-4820772247653231708
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -37,7 +37,7 @@ public class HammerheadEnemyMovement : BasicEnemyMovement
             float angle = Vector2.Angle(savedDirection, toTarget);
             if (angle <= coneAngle / 2)
             {
-                hit.gameObject.GetComponentInParent<CharacterStatManager>().TakeDamage(damageAmount);
+                hit.gameObject.GetComponentInParent<CharacterStatManager>().TakeDamage(coneAttackDamageAmount);
             }
         }
 

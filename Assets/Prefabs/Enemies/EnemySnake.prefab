@@ -279,8 +279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  moveSpeed: 1.5
-  damageAmount: 5
+  moveSpeed: 2
+  coneAttackDamageAmount: 5
+  player: {fileID: 0}
   spriteTransform: {fileID: 7608606556829224412}
   hasConeAttack: 0
   attackDistance: 3
@@ -291,6 +292,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   attackIndicator: {fileID: 0}
+  hasProjectileAttack: 0
+  projectilePrefab: {fileID: 0}
+  firePoint: {fileID: 0}
+  projectileRange: 7
+  fireCooldown: 2
   rotationSpeed: 5
   cooldownTime: 2
   isAttacking: 0
