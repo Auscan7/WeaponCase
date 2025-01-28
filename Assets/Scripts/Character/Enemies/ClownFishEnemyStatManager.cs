@@ -6,6 +6,8 @@ public class ClownFishEnemyStatManager : CharacterStatManager
 {
     GemDrop gemDrop;
     EnemyDropHealth healthDrop;
+    private float damageTimer = 0f;
+    private float hideHealthBarDelay = 3f;
 
     protected override void Awake()
     {
@@ -13,6 +15,7 @@ public class ClownFishEnemyStatManager : CharacterStatManager
         gemDrop = GetComponent<GemDrop>();
         healthDrop = GetComponent<EnemyDropHealth>();
     }
+
     public override void HandleDeath()
     {
         base.HandleDeath();
@@ -23,6 +26,8 @@ public class ClownFishEnemyStatManager : CharacterStatManager
     protected override void Update()
     {
         base.Update();
+        if(healthBarParent == null)
+            return;
 
         if (currentHealth == maxHealth)
         {
@@ -30,7 +35,23 @@ public class ClownFishEnemyStatManager : CharacterStatManager
         }
         else
         {
-            healthBarParent.SetActive(true);
+            damageTimer += Time.deltaTime;
+
+            if (damageTimer >= hideHealthBarDelay)
+            {
+                healthBarParent.SetActive(false);
+            }
+            else
+            {
+                healthBarParent.SetActive(true);
+            }
         }
+    }
+
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
+
+        damageTimer = 0f;
     }
 }

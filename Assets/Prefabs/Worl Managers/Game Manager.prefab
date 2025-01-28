@@ -80,7 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vortexPrefab: {fileID: 2255980612579941563, guid: 0861bfb9e3abddf429b6b27f8877f173, type: 3}
   player: {fileID: 0}
-  spawnDistance: 10
+  spawnDistance: 13
   vortexSpeed: 1.4
   minSpawnTime: 20
-  maxSpawnTime: 60
+  maxSpawnTime: 55

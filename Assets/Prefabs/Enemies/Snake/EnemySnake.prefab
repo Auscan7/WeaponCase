@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1636436366441876291
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 143299159383346129}
-  m_Layer: 6
-  m_Name: FirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &143299159383346129
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636436366441876291}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.333, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7608606556829224412}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1838700070773257616
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -142,7 +111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.448}
+  m_AnchoredPosition: {x: 0, y: 0.495}
   m_SizeDelta: {x: 105.1102, y: 38.5488}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1563687451161885962
@@ -220,14 +189,14 @@ GameObject:
   - component: {fileID: 8618715826072280849}
   - component: {fileID: 5535873446418844807}
   - component: {fileID: 2910664139029674070}
+  - component: {fileID: 8174975359401972439}
   - component: {fileID: -4820772247653231708}
-  - component: {fileID: -1950178417842819965}
-  - component: {fileID: 4519943156570936133}
+  - component: {fileID: 2112740593251524207}
   - component: {fileID: 2629275203821640451}
   - component: {fileID: 211197695307320684}
   - component: {fileID: 3456901814718195380}
   m_Layer: 6
-  m_Name: EnemyLanternFish
+  m_Name: EnemySnake
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -243,7 +212,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.7209228, y: 3.3250318, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7608606556829224412}
@@ -278,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd89c699963f20945affd9d3a42eae65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 1
+  damageAmount: 3
 --- !u!114 &2910664139029674070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,12 +261,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 25
+  maxHealth: 10
   healthBar: {fileID: 1297005040029400982}
   healthBarParent: {fileID: 7141845522669670118}
   floatingDamagePrefab: {fileID: 7962031289539908288, guid: 751a1d81fff36504382fd81f0e083f86, type: 3}
   xOffsetRange: {x: -0.4, y: 0.4}
   yOffsetRange: {x: 0.2, y: 0.6}
+--- !u!114 &8174975359401972439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871557909895165438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1549159e5c15a1c45a534ce0c2660e76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  moveSpeed: 2
+  coneAttackDamageAmount: 5
+  player: {fileID: 0}
+  spriteTransform: {fileID: 7608606556829224412}
+  hasConeAttack: 0
+  attackDistance: 3
+  indicatorDuration: 1
+  coneAngle: 45
+  coneRange: 5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  attackIndicator: {fileID: 0}
+  hasProjectileAttack: 0
+  projectilePrefab: {fileID: 0}
+  firePoint: {fileID: 0}
+  projectileRange: 7
+  fireCooldown: 2
+  rotationSpeed: 5
+  cooldownTime: 2
+  isAttacking: 0
+  isOnCooldown: 0
+  savedDirection: {x: 0, y: 0, z: 0}
 --- !u!114 &-4820772247653231708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,7 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gemPrefab: {fileID: 7934407725544011141, guid: ab68bb7cfc3fb284da5aabefad1460d8, type: 3}
   dropPoint: {fileID: 2714442251322780456}
---- !u!114 &-1950178417842819965
+--- !u!114 &2112740593251524207
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -325,45 +330,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropItemPrefab: {fileID: 8977979752866054712, guid: 20e563ab5f0bc704f94df6a64d0c02cc, type: 3}
-  dropChance: 1.5
+  dropChance: 1
   positionOffset: {x: 0.5, y: 0.5}
   dropPoint: {fileID: 2714442251322780456}
---- !u!114 &4519943156570936133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4871557909895165438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 188ecb222e67492439366899a436ef0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  moveSpeed: 1.6
-  coneAttackDamageAmount: 5
-  player: {fileID: 0}
-  spriteTransform: {fileID: 7608606556829224412}
-  hasConeAttack: 0
-  attackDistance: 3
-  indicatorDuration: 1
-  coneAngle: 45
-  coneRange: 5
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  attackIndicator: {fileID: 0}
-  hasProjectileAttack: 1
-  projectilePrefab: {fileID: 4722767060693112874, guid: 074541abf24295344989af5f8ea4b9bf, type: 3}
-  firePoint: {fileID: 143299159383346129}
-  projectileRange: 6
-  fireCooldown: 4
-  rotationSpeed: 6
-  cooldownTime: 1
-  isAttacking: 0
-  isOnCooldown: 0
-  savedDirection: {x: 0, y: 0, z: 0}
 --- !u!50 &2629275203821640451
 Rigidbody2D:
   serializedVersion: 4
@@ -490,9 +459,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 143299159383346129}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
   m_Father: {fileID: 2714442251322780456}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &699542617674658730
@@ -536,7 +504,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 325662254, guid: a8538fa4002e3774aacd661237f54ff5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1d952f1ebf360f9408591a06e0319470, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -557,7 +525,7 @@ Animator:
   m_GameObject: {fileID: 6604457279454923096}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 57dcfc8df26985348b628e29388991ad, type: 2}
+  m_Controller: {fileID: 9100000, guid: dc251780dd231aa4897cf87923d24770, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -664,7 +632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -695,6 +663,22 @@ PrefabInstance:
     - target: {fileID: 4952325379883675290, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
       propertyPath: m_Name
       value: Particle System
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952325379883675290, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217340840972825977, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217340840972825977, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217340840972825977, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8217340840972825977, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -735,6 +719,10 @@ PrefabInstance:
     - target: {fileID: 8217340840972825977, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217340840972825977, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

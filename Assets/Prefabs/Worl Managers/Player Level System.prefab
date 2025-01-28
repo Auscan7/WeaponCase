@@ -48,8 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelBar: {fileID: 0}
   currentLevelText: {fileID: 0}
-  baseXPPerLevel: 5
-  xpMultiplier: 1.4
+  baseXPPerLevel: 3
+  xpMultiplier: 1.45
   xpPerGem: 1
   upgradeScreen: {fileID: 0}
 --- !u!114 &6557275868810389589
