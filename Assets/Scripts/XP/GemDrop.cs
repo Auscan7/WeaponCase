@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class GemDrop : MonoBehaviour
 {
-    public GameObject gemPrefab; // Prefab for the gem to drop
-    public Transform dropPoint; // Optional: A specific point to drop the gem
+    public GameObject gemPrefab;
+    public Transform dropPoint;
 
     public void DropGem()
     {

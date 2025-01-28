@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 5535873446418844807}
   - component: {fileID: 2910664139029674070}
   - component: {fileID: -4820772247653231708}
+  - component: {fileID: -5635052169131365987}
   - component: {fileID: -170583255615303253}
   - component: {fileID: 2629275203821640451}
   - component: {fileID: 211197695307320684}
@@ -279,6 +280,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gemPrefab: {fileID: 7934407725544011141, guid: ab68bb7cfc3fb284da5aabefad1460d8, type: 3}
+  dropPoint: {fileID: 2714442251322780456}
+--- !u!114 &-5635052169131365987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871557909895165438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 918b9dda63012b3448e0cc4f54b349b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropItemPrefab: {fileID: 8977979752866054712, guid: 20e563ab5f0bc704f94df6a64d0c02cc, type: 3}
+  dropChance: 0.5
+  positionOffset: {x: 0.5, y: 0.5}
   dropPoint: {fileID: 2714442251322780456}
 --- !u!114 &-170583255615303253
 MonoBehaviour:

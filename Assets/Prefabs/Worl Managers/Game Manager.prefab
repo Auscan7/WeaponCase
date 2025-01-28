@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1706525254934586072}
   - component: {fileID: 2089720890799046194}
   - component: {fileID: 1556093721444185990}
+  - component: {fileID: 8852489370544041741}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -65,3 +66,21 @@ MonoBehaviour:
   timerText: {fileID: 0}
   triggerTime: 1200
   WinScreen: {fileID: 0}
+--- !u!114 &8852489370544041741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3438171215213273933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa1c6c51c7738b46b1ffd5fc77eefb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vortexPrefab: {fileID: 2255980612579941563, guid: 0861bfb9e3abddf429b6b27f8877f173, type: 3}
+  player: {fileID: 0}
+  spawnDistance: 10
+  vortexSpeed: 1.4
+  minSpawnTime: 20
+  maxSpawnTime: 60

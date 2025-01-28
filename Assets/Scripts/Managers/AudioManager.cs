@@ -25,6 +25,9 @@ public class AudioManager : MonoBehaviour
     [Header("UI")]
     public AudioClip[] UIClickSFX;
 
+    [Header("DropSFX")]
+    public AudioClip[] wrenchPickUpSFX;
+
     private int lastPlayedIndex = -1;
 
     private void Awake()

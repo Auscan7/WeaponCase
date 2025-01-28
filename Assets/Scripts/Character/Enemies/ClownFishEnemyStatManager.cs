@@ -5,16 +5,19 @@ using UnityEngine;
 public class ClownFishEnemyStatManager : CharacterStatManager
 {
     GemDrop gemDrop;
+    EnemyDropHealth healthDrop;
 
     protected override void Awake()
     {
         base.Awake();
         gemDrop = GetComponent<GemDrop>();
+        healthDrop = GetComponent<EnemyDropHealth>();
     }
     public override void HandleDeath()
     {
         base.HandleDeath();
         gemDrop.DropGem();
+        healthDrop.DropHealthItem();
     }
 
     protected override void Update()

@@ -76,6 +76,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d97b1f41cbaace743804c8049710a517, type: 3}
   - {fileID: 8300000, guid: d97b1f41cbaace743804c8049710a517, type: 3}
   - {fileID: 8300000, guid: d97b1f41cbaace743804c8049710a517, type: 3}
+  wrenchPickUpSFX:
+  - {fileID: 8300000, guid: 46578e31047a4c84089678cf52b4cfe4, type: 3}
+  - {fileID: 8300000, guid: 634944ea6a7f4e141b1f3cfdec7933f0, type: 3}
+  - {fileID: 8300000, guid: 576d05e8c680de04a9fefcda92b8e719, type: 3}
 --- !u!82 &6041800605129208568
 AudioSource:
   m_ObjectHideFlags: 0
