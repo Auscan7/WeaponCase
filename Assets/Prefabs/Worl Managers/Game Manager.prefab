@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 0}
-  triggerTime: 1200
+  triggerTime: 900
   WinScreen: {fileID: 0}
 --- !u!114 &8852489370544041741
 MonoBehaviour:

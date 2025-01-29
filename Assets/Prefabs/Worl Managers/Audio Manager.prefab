@@ -80,6 +80,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 46578e31047a4c84089678cf52b4cfe4, type: 3}
   - {fileID: 8300000, guid: 634944ea6a7f4e141b1f3cfdec7933f0, type: 3}
   - {fileID: 8300000, guid: 576d05e8c680de04a9fefcda92b8e719, type: 3}
+  gemPickUp:
+  - {fileID: 8300000, guid: ccd481ebc89ed804882d898ae5033836, type: 3}
+  - {fileID: 8300000, guid: d4dfd2c513841d34eaeea314892ecfa9, type: 3}
+  - {fileID: 8300000, guid: b8964a1b6e05f8544af610264c3d3271, type: 3}
 --- !u!82 &6041800605129208568
 AudioSource:
   m_ObjectHideFlags: 0
@@ -92,7 +96,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

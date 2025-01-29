@@ -224,7 +224,6 @@ GameObject:
   - component: {fileID: -1950178417842819965}
   - component: {fileID: 4519943156570936133}
   - component: {fileID: 2629275203821640451}
-  - component: {fileID: 211197695307320684}
   - component: {fileID: 3456901814718195380}
   m_Layer: 6
   m_Name: EnemyLanternFish 2
@@ -292,7 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 25
+  maxHealth: 1800
   healthBar: {fileID: 1297005040029400982}
   healthBarParent: {fileID: 7141845522669670118}
   floatingDamagePrefab: {fileID: 7962031289539908288, guid: 751a1d81fff36504382fd81f0e083f86, type: 3}
@@ -310,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1df7696eb308124baf897059a30813b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gemPrefab: {fileID: 7934407725544011141, guid: ab68bb7cfc3fb284da5aabefad1460d8, type: 3}
+  gemPrefab: {fileID: 7934407725544011141, guid: 031e22321a5ab9a4ea799884f62a7941, type: 3}
   dropPoint: {fileID: 2714442251322780456}
 --- !u!114 &-1950178417842819965
 MonoBehaviour:
@@ -355,7 +354,7 @@ MonoBehaviour:
     m_Bits: 8
   attackIndicator: {fileID: 0}
   hasProjectileAttack: 1
-  projectilePrefab: {fileID: 4722767060693112874, guid: 074541abf24295344989af5f8ea4b9bf, type: 3}
+  projectilePrefab: {fileID: 4722767060693112874, guid: 7864445b171b1014fb03ca62f6cf830c, type: 3}
   firePoint: {fileID: 143299159383346129}
   projectileRange: 6
   fireCooldown: 4
@@ -391,41 +390,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &211197695307320684
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4871557909895165438}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.35
 --- !u!58 &3456901814718195380
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -101,7 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3ba4499bc8ffe42b8059c0db76d1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pelletDamage: 7
 --- !u!114 &-9118443158948513450
 MonoBehaviour:
   m_ObjectHideFlags: 0

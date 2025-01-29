@@ -193,7 +193,6 @@ GameObject:
   - component: {fileID: -4820772247653231708}
   - component: {fileID: 3739472119710998320}
   - component: {fileID: 2629275203821640451}
-  - component: {fileID: 211197695307320684}
   - component: {fileID: 6915088404101330236}
   m_Layer: 6
   m_Name: EnemyStingray
@@ -261,7 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 50
+  maxHealth: 225
   healthBar: {fileID: 1297005040029400982}
   healthBarParent: {fileID: 7141845522669670118}
   floatingDamagePrefab: {fileID: 7962031289539908288, guid: 751a1d81fff36504382fd81f0e083f86, type: 3}
@@ -315,7 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1df7696eb308124baf897059a30813b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gemPrefab: {fileID: 7934407725544011141, guid: c55d4aaa5bcdbe445ad391317fb1d598, type: 3}
+  gemPrefab: {fileID: 7934407725544011141, guid: aa0d3777448a27a4c8aff19a8d10540e, type: 3}
   dropPoint: {fileID: 2714442251322780456}
 --- !u!114 &3739472119710998320
 MonoBehaviour:
@@ -360,41 +359,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &211197695307320684
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4871557909895165438}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.55
 --- !u!58 &6915088404101330236
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class PlayerLevelSystem : MonoBehaviour
 {
@@ -15,11 +16,11 @@ public class PlayerLevelSystem : MonoBehaviour
     private int currentXP = 0;
     private int currentLevel = 1;
     private int xpRequiredForNextLevel;
-    public GameObject upgradeScreen; // Reference to the upgrade screen (UI)
-    private bool isUpgradeScreenActive = false; // Flag to check if upgrade screen is active
-    private bool waitForKeyPress = false; // Flag to wait for a key press to resume the game
+    public List<int> customXPRequirements; // Manually define XP for levels
+    public GameObject upgradeScreen;
+    private bool isUpgradeScreenActive = false;
+    private bool waitForKeyPress = false;
     UpgradeSelectionScript upgradeSelection;
-
 
     private void Awake()
     {
@@ -57,7 +58,7 @@ public class PlayerLevelSystem : MonoBehaviour
     {
         currentXP -= xpRequiredForNextLevel;
         currentLevel++;
-        currentLevelText.text ="Level: " + currentLevel.ToString();
+        currentLevelText.text = "Level: " + currentLevel.ToString();
 
         Debug.Log("Level Up! Current Level: " + currentLevel);
 
@@ -69,7 +70,14 @@ public class PlayerLevelSystem : MonoBehaviour
 
     private void CalculateXPRequiredForNextLevel()
     {
-        xpRequiredForNextLevel = Mathf.RoundToInt(baseXPPerLevel * Mathf.Pow(xpMultiplier, currentLevel - 1));
+        if (customXPRequirements != null && customXPRequirements.Count >= currentLevel)
+        {
+            xpRequiredForNextLevel = customXPRequirements[currentLevel - 1];
+        }
+        else
+        {
+            xpRequiredForNextLevel = Mathf.RoundToInt(baseXPPerLevel * Mathf.Pow(xpMultiplier, currentLevel - 1));
+        }
     }
 
     private void UpdateLevelBar()
@@ -80,52 +88,46 @@ public class PlayerLevelSystem : MonoBehaviour
         }
     }
 
-    // Show upgrade screen and pause game
     private void ShowUpgradeScreen()
     {
         if (upgradeScreen != null && !isUpgradeScreenActive)
         {
-            upgradeScreen.SetActive(true); // Show the upgrade screen
+            upgradeScreen.SetActive(true);
 
-            // Call SetUpgradeCards on UpgradeSelectionScript
             if (upgradeSelection != null)
             {
-                Debug.Log("assigning..");  // Add this line to verify
-                upgradeSelection.SetUpgradeCards(); // Refresh upgrades
+                Debug.Log("assigning...");
+                upgradeSelection.SetUpgradeCards();
             }
 
             PauseManager.instance.PauseGame();
             isUpgradeScreenActive = true;
-            waitForKeyPress = false; // Reset wait flag
+            waitForKeyPress = false;
         }
     }
 
-
-    // Close upgrade screen and pause until key press
     public void CloseUpgradeScreen()
     {
         if (upgradeScreen != null)
         {
             AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
-            upgradeScreen.SetActive(false); // Hide the upgrade screen
+            upgradeScreen.SetActive(false);
             isUpgradeScreenActive = false;
-            waitForKeyPress = true; // Wait for player input
+            waitForKeyPress = true;
         }
     }
 
     private void Update()
     {
-        // Check for key press to resume game
         if (waitForKeyPress && Input.anyKeyDown)
         {
             ResumeGame();
         }
     }
 
-    // Resume the game
     private void ResumeGame()
     {
         PauseManager.instance.UnPauseGame();
-        waitForKeyPress = false; // Reset wait flag
+        waitForKeyPress = false;
     }
 }

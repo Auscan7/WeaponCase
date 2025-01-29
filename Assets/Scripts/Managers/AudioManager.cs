@@ -27,6 +27,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("DropSFX")]
     public AudioClip[] wrenchPickUpSFX;
+    public AudioClip[] gemPickUp;
 
     private int lastPlayedIndex = -1;
 

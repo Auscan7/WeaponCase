@@ -37,6 +37,7 @@ public class Gem : MonoBehaviour
             // Check if the gem has reached the player's position
             if (Vector2.Distance(transform.position, playerTransform.position) < 0.1f)
             {
+                AudioManager.instance.PlaySoundSFX(AudioManager.instance.gemPickUp);
                 PlayerLevelSystem.instance.AddXP(xpValue); // Add XP
                 Destroy(gameObject); // Destroy the gem
             }
