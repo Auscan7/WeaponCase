@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 4000
+  maxHealth: 3000
   healthBar: {fileID: 1297005040029400982}
   healthBarParent: {fileID: 7141845522669670118}
   floatingDamagePrefab: {fileID: 7962031289539908288, guid: 751a1d81fff36504382fd81f0e083f86, type: 3}

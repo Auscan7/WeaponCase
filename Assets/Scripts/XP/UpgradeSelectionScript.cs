@@ -1,26 +1,31 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Collections.Generic; // Required for List
+using System.Collections.Generic;
 
 public class UpgradeSelectionScript : MonoBehaviour
 {
-    public Button[] upgradeCards; // Buttons for upgrade cards
-    public TMP_Text[] upgradeDescriptions; // Descriptions for upgrade cards
-    public TMP_Text[] negativeUpgradeDescriptions; // Descriptions for upgrade cards
-    public TMP_Text[] upgradeNames; // Names for upgrade cards
-    public Image[] upgradeIcons; // Icons for upgrade cards
-    public Image[] upgradeBorders; // Icons for upgrade cards
+    [System.Serializable]
+    public class UpgradePool
+    {
+        public string poolName;
+        public List<Upgrade> upgrades; // List of upgrades in this pool
+        public float selectionWeight; // Percentage chance of this pool being chosen
+    }
 
-    [Header("Upgrade Pool")]
-    public Upgrade[] upgradePool; // Array of ScriptableObjects representing upgrades
+    public Button[] upgradeCards;
+    public TMP_Text[] upgradeDescriptions;
+    public TMP_Text[] negativeUpgradeDescriptions;
+    public TMP_Text[] upgradeNames;
+    public Image[] upgradeIcons;
+    public Image[] upgradeBorders;
 
-    private Upgrade[] selectedUpgrades; // Stores the upgrades selected for this level
+    [Header("Upgrade Pools")]
+    public List<UpgradePool> upgradePools; // List of upgrade pools
 
-    // Define the delegate
+    private Upgrade[] selectedUpgrades;
+
     public delegate void UpgradeSelectedHandler(int upgradeID);
-
-    // Declare the event
     public static event UpgradeSelectedHandler OnUpgradeSelectedEvent;
 
     private void Start()
@@ -33,50 +38,84 @@ public class UpgradeSelectionScript : MonoBehaviour
 
     public void SetUpgradeCards()
     {
-        Debug.Log("Setting Upgrade Cards...");  // Add this line to verify
-                                                // Create a temporary list to ensure unique selections
-        List<Upgrade> availableUpgrades = new List<Upgrade>(upgradePool);
+        Debug.Log("Setting Upgrade Cards...");
         selectedUpgrades = new Upgrade[upgradeCards.Length];
 
-        // Use a HashSet to track selected UpgradeIDs
+        // Create a HashSet to track already selected upgrades
         HashSet<int> selectedUpgradeIDs = new HashSet<int>();
 
         for (int i = 0; i < upgradeCards.Length; i++)
         {
-            if (availableUpgrades.Count == 0)
-            {
-                Debug.LogWarning("Not enough unique upgrades in the pool to fill all cards.");
-                break;
-            }
-
-            // Select a random upgrade and check for duplicate UpgradeID
             Upgrade selectedUpgrade = null;
-            int randomIndex;
-            do
+
+            // Try selecting a unique upgrade
+            int attempts = 0; // Prevent infinite loops if pools are too small
+            while (attempts < 100) // Arbitrary limit to avoid potential infinite loops
             {
-                randomIndex = Random.Range(0, availableUpgrades.Count);
-                selectedUpgrade = availableUpgrades[randomIndex];
+                selectedUpgrade = SelectRandomUpgrade();
+                if (selectedUpgrade != null && !selectedUpgradeIDs.Contains(selectedUpgrade.UpgradeID))
+                {
+                    // Add the unique UpgradeID to the HashSet
+                    selectedUpgradeIDs.Add(selectedUpgrade.UpgradeID);
+                    break;
+                }
+                attempts++;
             }
-            while (selectedUpgradeIDs.Contains(selectedUpgrade.UpgradeID)); // Check for duplicates
 
-            // Add the selected UpgradeID to the HashSet
-            selectedUpgradeIDs.Add(selectedUpgrade.UpgradeID);
-
-            // Remove the selected upgrade from the available pool
-            availableUpgrades.RemoveAt(randomIndex);
-
-            // Assign the upgrade to the selected slot
-            selectedUpgrades[i] = selectedUpgrade;
-
-            // Assign name, description, and icon to the card
-            upgradeNames[i].text = selectedUpgrade.upgradeName;
-            upgradeDescriptions[i].text = selectedUpgrade.positiveDescription;
-            negativeUpgradeDescriptions[i].text = selectedUpgrade.negativeDescription;
-            upgradeIcons[i].sprite = selectedUpgrade.icon;
-            upgradeBorders[i].sprite = selectedUpgrade.border;
+            if (selectedUpgrade != null)
+            {
+                // Assign the upgrade to the current card
+                selectedUpgrades[i] = selectedUpgrade;
+                upgradeNames[i].text = selectedUpgrade.upgradeName;
+                upgradeDescriptions[i].text = selectedUpgrade.positiveDescription;
+                negativeUpgradeDescriptions[i].text = selectedUpgrade.negativeDescription;
+                upgradeIcons[i].sprite = selectedUpgrade.icon;
+                upgradeBorders[i].sprite = selectedUpgrade.border;
+            }
+            else
+            {
+                Debug.LogWarning("Failed to select a unique upgrade. Check your upgrade pool setup.");
+            }
         }
     }
 
+
+    private Upgrade SelectRandomUpgrade()
+    {
+        // Calculate the total weight
+        float totalWeight = 0f;
+        foreach (var pool in upgradePools)
+        {
+            totalWeight += pool.selectionWeight;
+        }
+
+        // Generate a random value between 0 and totalWeight
+        float randomValue = Random.Range(0, totalWeight);
+        float cumulativeWeight = 0f;
+
+        // Determine which pool to select based on the random value
+        foreach (var pool in upgradePools)
+        {
+            cumulativeWeight += pool.selectionWeight;
+            if (randomValue <= cumulativeWeight)
+            {
+                // Select a random upgrade from this pool
+                if (pool.upgrades.Count > 0)
+                {
+                    int randomIndex = Random.Range(0, pool.upgrades.Count);
+                    return pool.upgrades[randomIndex];
+                }
+                else
+                {
+                    Debug.LogWarning($"Upgrade pool '{pool.poolName}' is empty.");
+                }
+                break;
+            }
+        }
+
+        Debug.LogWarning("Failed to select an upgrade. Check your upgrade pool setup.");
+        return null;
+    }
 
     private void OnUpgradeSelected(Button clickedCard)
     {
@@ -86,10 +125,7 @@ public class UpgradeSelectionScript : MonoBehaviour
             Upgrade selectedUpgrade = selectedUpgrades[selectedIndex];
             Debug.Log($"Selected Upgrade: {selectedUpgrade.upgradeName}");
 
-            // Trigger the event and pass the upgrade ID
             OnUpgradeSelectedEvent?.Invoke(selectedUpgrade.UpgradeID);
-
-            // Close the upgrade screen
             PlayerLevelSystem.instance.CloseUpgradeScreen();
         }
     }
