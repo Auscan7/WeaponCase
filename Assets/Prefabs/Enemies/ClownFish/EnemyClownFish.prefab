@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropItemPrefab: {fileID: 8977979752866054712, guid: 20e563ab5f0bc704f94df6a64d0c02cc, type: 3}
-  dropChance: 0.5
+  dropChance: 0.75
   positionOffset: {x: 0.5, y: 0.5}
   dropPoint: {fileID: 2714442251322780456}
 --- !u!114 &-170583255615303253

@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropItemPrefab: {fileID: 8977979752866054712, guid: 20e563ab5f0bc704f94df6a64d0c02cc, type: 3}
-  dropChance: 50
+  dropChance: 100
   positionOffset: {x: 0.5, y: 0.5}
   dropPoint: {fileID: 2714442251322780456}
 --- !u!50 &2629275203821640451
@@ -391,9 +391,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.04, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
 --- !u!1 &5910781188211157733
 GameObject:
   m_ObjectHideFlags: 0

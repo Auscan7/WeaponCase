@@ -40656,10 +40656,6 @@ PrefabInstance:
       propertyPath: healthBarParent
       value: 
       objectReference: {fileID: 895033454}
-    - target: {fileID: 1050260841435261478, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7186793037216869759, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -40698,10 +40694,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7186793037216869759, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8391779984496116811, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
-      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8732246841202081208, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
