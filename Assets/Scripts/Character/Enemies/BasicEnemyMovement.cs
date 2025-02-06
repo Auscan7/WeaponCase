@@ -139,7 +139,7 @@ public class BasicEnemyMovement : MonoBehaviour
             Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
-                rb.velocity = direction * moveSpeed; // Set the speed of the projectile
+                rb.linearVelocity = direction * moveSpeed; // Set the speed of the projectile
             }
         }
 

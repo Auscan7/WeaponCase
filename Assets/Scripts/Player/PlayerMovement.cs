@@ -58,6 +58,6 @@ public class PlayerMovement : CharacterMovement
         float effectiveSpeed = (walkingSpeed * UpgradeManager.Instance.playerMovementSpeedMultiplier) * (speedMultiplier / 1.5f);
 
         // Apply movement
-        player.rb.velocity = new Vector2(inputVector.x * effectiveSpeed, inputVector.y * effectiveSpeed);
+        player.rb.linearVelocity = new Vector2(inputVector.x * effectiveSpeed, inputVector.y * effectiveSpeed);
     }
 }

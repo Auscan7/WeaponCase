@@ -95,7 +95,7 @@ public class PlayerProjectileFiring : MonoBehaviour
             Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
-                rb.velocity = direction * projectileSpeed;
+                rb.linearVelocity = direction * projectileSpeed;
             }
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -119,7 +119,7 @@ public class PlayerProjectileFiring : MonoBehaviour
             Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
-                rb.velocity = direction * projectileSpeed;
+                rb.linearVelocity = direction * projectileSpeed;
             }
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -153,7 +153,7 @@ public class PlayerProjectileFiring : MonoBehaviour
                 Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
                 if (rb != null)
                 {
-                    rb.velocity = direction * projectileSpeed;
+                    rb.linearVelocity = direction * projectileSpeed;
                 }
 
                 projectile.transform.rotation = Quaternion.Euler(0, 0, currentAngle);
