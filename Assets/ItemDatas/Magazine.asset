@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 371bb005b1ceb7e418673d353de0ef3b, type: 3}
   m_Name: Magazine
   m_EditorClassIdentifier: 
-  width: 1
+  width: 2
   height: 2
-  itemIcon: {fileID: 21300000, guid: e33e9211dd414134a916735c496768ec, type: 3}
+  itemIcon: {fileID: 21300000, guid: 2e78c1af7ff838743a5616277b9a3472, type: 3}

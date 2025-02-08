@@ -6,6 +6,9 @@ public class InventoryItem : MonoBehaviour
 {
     public ItemData itemData;
 
+    public int onGridPositionX;
+    public int onGridPositionY;
+
     public void Set(ItemData itemData)
     {
         this.itemData = itemData;

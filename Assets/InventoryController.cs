@@ -8,6 +8,7 @@ public class InventoryController : MonoBehaviour
     [HideInInspector] public ItemGrid selectedItemGrid;
 
     InventoryItem selectedItem;
+    InventoryItem overlapItem;
     RectTransform rectTransform;
 
     [SerializeField] List<ItemData> items;
@@ -60,8 +61,12 @@ public class InventoryController : MonoBehaviour
 
     private void PlaceItem(Vector2Int tileGridPosition)
     {
-        selectedItemGrid.PlaceItem(selectedItem, tileGridPosition.x, tileGridPosition.y);
-        selectedItem = null;
+        bool complete = selectedItemGrid.PlaceItem(selectedItem, tileGridPosition.x, tileGridPosition.y, ref overlapItem);
+
+        if (complete)
+        {
+            selectedItem = null;
+        }
     }
 
     private void PickUpItem(Vector2Int tileGridPosition)
