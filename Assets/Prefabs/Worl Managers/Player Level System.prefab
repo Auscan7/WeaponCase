@@ -100,7 +100,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 28b25496fe282eb4facc5b68f1658076, type: 2}
     - {fileID: 11400000, guid: 8a4e6317836991d448c8b7ffffa4ba7e, type: 2}
     - {fileID: 11400000, guid: 80f81aa12ffa32546ba32df616751d0b, type: 2}
-    selectionWeight: 70
+    selectionWeight: 74
   - poolName: Rare
     upgrades:
     - {fileID: 11400000, guid: e57b35f6b9a03d642bd42ac86dd9c4b0, type: 2}
@@ -111,7 +111,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: b4942ec88a63f6241af0ca2000080ff5, type: 2}
     - {fileID: 11400000, guid: c8a6147894cb64b48ba575c4894d9920, type: 2}
     - {fileID: 11400000, guid: fe1572e57c4ac0b4db898c5a3320e72d, type: 2}
-    selectionWeight: 12
+    selectionWeight: 11
   - poolName: Unique
     upgrades:
     - {fileID: 11400000, guid: ca6e0e2c78270224fa259506b761f07e, type: 2}
@@ -122,7 +122,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 589e7cf3f5e0d814a81bd71c0d68d859, type: 2}
     - {fileID: 11400000, guid: d51158157f359104fb9238072cc00420, type: 2}
     - {fileID: 11400000, guid: 004b0d52cbdf973428ce823b322d1571, type: 2}
-    selectionWeight: 8
+    selectionWeight: 7
   - poolName: Epic
     upgrades:
     - {fileID: 11400000, guid: 3981af1524300a848b64153363794c1c, type: 2}
@@ -133,7 +133,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 9bde7febac41bbb4da96d6fe25aa6d22, type: 2}
     - {fileID: 11400000, guid: b241e1898d10e664a9a8d08b4c8b3fbc, type: 2}
     - {fileID: 11400000, guid: abb2a0bfeef2ccf42a56ae1f7a9d87f9, type: 2}
-    selectionWeight: 6
+    selectionWeight: 5
   - poolName: Legendary
     upgrades:
     - {fileID: 11400000, guid: 4b538fa6ceae79f42a30105c76824d0d, type: 2}
@@ -144,7 +144,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 7f45640a77a07164da382216bdd0460b, type: 2}
     - {fileID: 11400000, guid: 2cd7c0378ff849f49a7dba6660511202, type: 2}
     - {fileID: 11400000, guid: c96d1018148bc5843b88546348bc70eb, type: 2}
-    selectionWeight: 4
+    selectionWeight: 3
 --- !u!114 &1673084244522484919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,16 +157,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d2c99b1773cc14f9bfbad6190b4663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playercurrentHealth: 0
+  playerCurrentHealth: 0
   playerMaxHealth: 20
   playerMovementSpeedMultiplier: 1
   Pistol: {fileID: 0}
   Shotgun: {fileID: 0}
   Rocket: {fileID: 0}
-  pistolDamage: 10
-  shotgunDamage: 6
-  rocketDamage: 20
-  rocketAreaDamage: 8
-  pistolFirerate: 1
-  shotgunFirerate: 0.4
-  rocketFirerate: 0.25
+  pistolStats:
+    damage: 10
+    areaDamage: 0
+    firerate: 1
+  shotgunStats:
+    damage: 6
+    areaDamage: 0
+    firerate: 0.5
+  rocketStats:
+    damage: 20
+    areaDamage: 8
+    firerate: 0.3

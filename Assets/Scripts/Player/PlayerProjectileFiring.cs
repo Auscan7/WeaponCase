@@ -44,21 +44,21 @@ public class PlayerProjectileFiring : MonoBehaviour
             if (Time.time >= nextPistolFireTime)
             {
                 FireBullet(closestEnemy.transform.position);
-                nextPistolFireTime = Time.time + 1f / UpgradeManager.Instance.pistolFirerate;
+                nextPistolFireTime = Time.time + 1f / UpgradeManager.Instance.pistolStats.firerate;
             }
 
             // Fire shotgun if conditions are met
             if (Time.time >= nextShotgunFireTime)
             {
                 FireShotgun(closestEnemy.transform.position);
-                nextShotgunFireTime = Time.time + 1f / UpgradeManager.Instance.shotgunFirerate;
+                nextShotgunFireTime = Time.time + 1f / UpgradeManager.Instance.shotgunStats.firerate;
             }
 
             // Fire rocket if conditions are met
             if (Time.time >= nextRocketFireTime)
             {
                 FireRocket(closestEnemy.transform.position);
-                nextRocketFireTime = Time.time + 1f / UpgradeManager.Instance.rocketFirerate;
+                nextRocketFireTime = Time.time + 1f / UpgradeManager.Instance.rocketStats.firerate;
             }
         }
     }

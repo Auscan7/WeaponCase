@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponentInParent<CharacterStatManager>().TakeDamage(UpgradeManager.Instance.pistolDamage);
+            collision.gameObject.GetComponentInParent<CharacterStatManager>().TakeDamage(UpgradeManager.Instance.pistolStats.damage);
 
             Destroy(gameObject);
         }

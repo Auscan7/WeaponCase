@@ -12,19 +12,19 @@ public class PlayerStatManager : CharacterStatManager
 
     protected override void Start()
     {
-        UpgradeManager.Instance.playercurrentHealth = UpgradeManager.Instance.playerMaxHealth;
+        UpgradeManager.Instance.playerCurrentHealth = UpgradeManager.Instance.playerMaxHealth;
     }
 
     protected override void Update()
     {
-        if (UpgradeManager.Instance.playercurrentHealth <= 0)
+        if (UpgradeManager.Instance.playerCurrentHealth <= 0)
         {
             HandleDeath();
         }
 
         if (HPText != null)
         {
-            HPText.text = "HP: " + UpgradeManager.Instance.playercurrentHealth.ToString();
+            HPText.text = "HP: " + UpgradeManager.Instance.playerCurrentHealth.ToString();
         }
     }
 
@@ -37,7 +37,7 @@ public class PlayerStatManager : CharacterStatManager
     {
         if (isOnCooldown) return;
 
-        UpgradeManager.Instance.playercurrentHealth -= damage;
+        UpgradeManager.Instance.playerCurrentHealth -= damage;
         UpdateHealthBar();
 
         ShowFloatingDamage(damage);
@@ -46,7 +46,7 @@ public class PlayerStatManager : CharacterStatManager
 
     private void UpdateHealthBar()
     {
-        healthBar.fillAmount = UpgradeManager.Instance.playercurrentHealth / UpgradeManager.Instance.playerMaxHealth;
+        healthBar.fillAmount = UpgradeManager.Instance.playerCurrentHealth / UpgradeManager.Instance.playerMaxHealth;
     }
 
     public override void HandleDeath()

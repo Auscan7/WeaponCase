@@ -1,10 +1,10 @@
-using TMPro;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class UpgradeManager : MonoBehaviour
 {
     [Header("Player Stats")]
-    public float playercurrentHealth;
+    public float playerCurrentHealth;
     public int playerMaxHealth;
     public float playerMovementSpeedMultiplier = 1;
 
@@ -13,19 +13,14 @@ public class UpgradeManager : MonoBehaviour
     public GameObject Shotgun;
     public GameObject Rocket;
 
-    [Header("Weapon Damages")]
-    public float pistolDamage;
-    public float shotgunDamage;
-    public float rocketDamage;
-    public float rocketAreaDamage;
-
-    [Header("Weapon Firerates")]
-    public float pistolFirerate;
-    public float shotgunFirerate;
-    public float rocketFirerate;
-
+    [Header("Weapon Stats")]
+    public WeaponStats pistolStats;
+    public WeaponStats shotgunStats;
+    public WeaponStats rocketStats;
 
     public static UpgradeManager Instance;
+
+    private Dictionary<int, System.Action> upgradeEffects;
 
     private void Awake()
     {
@@ -37,528 +32,144 @@ public class UpgradeManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        InitializeUpgradeEffects();
     }
 
     private void OnEnable()
     {
-        // Subscribe to the event to listen for upgrade selections
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += ActivateWeapons;
-
-        // Polymer Tip
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += PolymerTip1;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += PolymerTip2;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += PolymerTip3;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += PolymerTip4;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += PolymerTip5;
-
-        // Gunpowder
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += Gunpowder1;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += Gunpowder2;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += Gunpowder3;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += Gunpowder4;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += Gunpowder5;
-
-        // Extra Magazine
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += ExtraMagazine1;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += ExtraMagazine2;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += ExtraMagazine3;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += ExtraMagazine4;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += ExtraMagazine5;
-
-        // Steel Plates
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += SteelPlates1;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += SteelPlates2;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += SteelPlates3;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += SteelPlates4;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += SteelPlates5;
-
-        // Turbines
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += Turbines1;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += Turbines2;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += Turbines3;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += Turbines4;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent += Turbines5;
+        UpgradeSelectionScript.OnUpgradeSelectedEvent += ApplyUpgrade;
     }
 
     private void OnDisable()
     {
-        // Unsubscribe when the object is disabled or destroyed to avoid memory leaks
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= ActivateWeapons;
-
-        // Polymer Tip
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= PolymerTip1;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= PolymerTip2;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= PolymerTip3;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= PolymerTip4;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= PolymerTip5;
-
-        // Gunpowder
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= Gunpowder1;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= Gunpowder2;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= Gunpowder3;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= Gunpowder4;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= Gunpowder5;
-
-        // Extra Magazine
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= ExtraMagazine1;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= ExtraMagazine2;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= ExtraMagazine3;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= ExtraMagazine4;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= ExtraMagazine5;
-
-        // Steel Plates
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= SteelPlates1;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= SteelPlates2;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= SteelPlates3;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= SteelPlates4;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= SteelPlates5;
-
-        // Turbines
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= Turbines1;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= Turbines2;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= Turbines3;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= Turbines4;
-        UpgradeSelectionScript.OnUpgradeSelectedEvent -= Turbines5;
+        UpgradeSelectionScript.OnUpgradeSelectedEvent -= ApplyUpgrade;
     }
 
-    private void ActivateWeapons(int selectedUpgradeID)
+    private void InitializeUpgradeEffects()
     {
-        // Activate the selected weapon based on the upgradeID
+        upgradeEffects = new Dictionary<int, System.Action>
+        {
+            // Weapon Activation
+            { 1000, () => ActivateWeapon(Pistol, pistolStats, 2.5f) },
+            { 1001, () => ActivateWeapon(Pistol, pistolStats, 4f) },
+            { 1002, () => ActivateWeapon(Pistol, pistolStats, 5.5f) },
+            { 1003, () => ActivateWeapon(Pistol, pistolStats, 7f) },
+            { 1004, () => ActivateWeapon(Pistol, pistolStats, 12.5f) },
+            { 1005, () => ActivateWeapon(Shotgun, shotgunStats, 2f) },
+            { 1006, () => ActivateWeapon(Shotgun, shotgunStats, 3f) },
+            { 1007, () => ActivateWeapon(Shotgun, shotgunStats, 4f) },
+            { 1008, () => ActivateWeapon(Shotgun, shotgunStats, 5f) },
+            { 1009, () => ActivateWeapon(Shotgun, shotgunStats, 7.5f) },
+            { 1010, () => ActivateWeapon(Rocket, rocketStats, 3f, 1f) },
+            { 1011, () => ActivateWeapon(Rocket, rocketStats, 4f, 1.5f) },
+            { 1012, () => ActivateWeapon(Rocket, rocketStats, 5f, 2f) },
+            { 1013, () => ActivateWeapon(Rocket, rocketStats, 6f, 2.5f) },
+            { 1014, () => ActivateWeapon(Rocket, rocketStats, 12f, 5f) },
 
-        //Pistol
-        if (selectedUpgradeID == 1000)
-        {
-            Pistol.SetActive(true);
-            pistolDamage = pistolDamage + (pistolDamage / 10) * 2.5f;
-        }
-        else if (selectedUpgradeID == 1001)
-        {
-            Pistol.SetActive(true);
-            pistolDamage = pistolDamage + (pistolDamage / 10) * 4f;
-        }
-        else if (selectedUpgradeID == 1002)
-        {
-            Pistol.SetActive(true);
-            pistolDamage = pistolDamage + (pistolDamage / 10) * 5.5f;
-        }
-        else if (selectedUpgradeID == 1003)
-        {
-            Pistol.SetActive(true);
-            pistolDamage = pistolDamage + (pistolDamage / 10) * 7f;
-        }
-        else if (selectedUpgradeID == 1004)
-        {
-            Pistol.SetActive(true);
-            pistolDamage = pistolDamage + (pistolDamage / 10) * 12.5f;
-        }
+            // Polymer Tip
+            { 0, () => ApplyDamageUpgrade(1.5f) },
+            { 1, () => ApplyDamageUpgrade(2.5f) },
+            { 2, () => ApplyDamageUpgrade(3.5f) },
+            { 3, () => ApplyDamageUpgrade(4.5f) },
+            { 4, () => ApplyDamageUpgrade(7.5f) },
 
-        //Shotgun
-        if (selectedUpgradeID == 1005)
-        {
-            Shotgun.SetActive(true);
-            shotgunDamage = shotgunDamage + (shotgunDamage / 10) * 2f;
-        }
-        else if (selectedUpgradeID == 1006)
-        {
-            Shotgun.SetActive(true);
-            shotgunDamage = shotgunDamage + (shotgunDamage / 10) * 3f;
-        }
-        else if (selectedUpgradeID == 1007)
-        {
-            Shotgun.SetActive(true);
-            shotgunDamage = shotgunDamage + (shotgunDamage / 10) * 4f;
-        }
-        else if (selectedUpgradeID == 1008)
-        {
-            Shotgun.SetActive(true);
-            shotgunDamage = shotgunDamage + (shotgunDamage / 10) * 5f;
-        }
-        else if (selectedUpgradeID == 1009)
-        {
-            Shotgun.SetActive(true);
-            shotgunDamage = shotgunDamage + (shotgunDamage / 10) * 7.5f;
-        }
+            // Gunpowder
+            { 5, () => ApplyGunpowderUpgrade(2f, 1f) },
+            { 6, () => ApplyGunpowderUpgrade(3.5f, 1f) },
+            { 7, () => ApplyGunpowderUpgrade(5f, 1f) },
+            { 8, () => ApplyGunpowderUpgrade(6.5f, 1f) },
+            { 9, () => ApplyGunpowderUpgrade(10f, 1f) },
 
-        //Rocket
-        if (selectedUpgradeID == 1010)
+            // Extra Magazine
+            { 10, () => ApplyFirerateUpgrade(1f) },
+            { 11, () => ApplyFirerateUpgrade(1.5f) },
+            { 12, () => ApplyFirerateUpgrade(2f) },
+            { 13, () => ApplyFirerateUpgrade(2.5f) },
+            { 14, () => ApplyFirerateUpgrade(4f) },
+
+            // Steel Plates
+            { 15, () => ApplyHealthUpgrade(3) },
+            { 16, () => ApplyHealthUpgrade(6) },
+            { 17, () => ApplyHealthUpgrade(9) },
+            { 18, () => ApplyHealthUpgrade(12) },
+            { 19, () => ApplyHealthUpgrade(25) },
+
+            // Turbines
+            { 20, () => ApplyMovementSpeedUpgrade(1f) },
+            { 21, () => ApplyMovementSpeedUpgrade(1.2f) },
+            { 22, () => ApplyMovementSpeedUpgrade(1.4f) },
+            { 23, () => ApplyMovementSpeedUpgrade(1.6f) },
+            { 24, () => ApplyMovementSpeedUpgrade(2.5f) }
+        };
+    }
+
+    private void ApplyUpgrade(int upgradeID)
+    {
+        if (upgradeEffects.ContainsKey(upgradeID))
         {
-            Rocket.SetActive(true);
-            rocketDamage = rocketDamage + (rocketDamage / 10) * 3f;
-            rocketAreaDamage = rocketAreaDamage + (rocketAreaDamage / 10) * 1f;
+            upgradeEffects[upgradeID]?.Invoke();
         }
-        else if (selectedUpgradeID == 1011)
+        else
         {
-            Rocket.SetActive(true);
-            rocketDamage = rocketDamage + (rocketDamage / 10) * 4f;
-            rocketAreaDamage = rocketAreaDamage + (rocketAreaDamage / 10) * 1.5f;
-        }
-        else if (selectedUpgradeID == 1012)
-        {
-            Rocket.SetActive(true);
-            rocketDamage = rocketDamage + (rocketDamage / 10) * 5f;
-            rocketAreaDamage = rocketAreaDamage + (rocketAreaDamage / 10) * 2f;
-        }
-        else if (selectedUpgradeID == 1013)
-        {
-            Rocket.SetActive(true);
-            rocketDamage = rocketDamage + (rocketDamage / 10) * 6f;
-            rocketAreaDamage = rocketAreaDamage + (rocketAreaDamage / 10) * 2.5f;
-        }
-        else if (selectedUpgradeID == 1014)
-        {
-            Rocket.SetActive(true);
-            rocketDamage = rocketDamage + (rocketDamage / 10) * 12f;
-            rocketAreaDamage = rocketAreaDamage + (rocketAreaDamage / 10) * 5f;
+            Debug.LogWarning($"Upgrade ID {upgradeID} not found.");
         }
     }
 
-    // Polymer Tip
-    private void PolymerTip1(int selectedUpgradeID)
+    private void ActivateWeapon(GameObject weapon, WeaponStats stats, float damageMultiplier, float areaDamageMultiplier = 0)
     {
-        float damageUpgradePercentage = 1.5f;
-
-        if (selectedUpgradeID == 0)
+        weapon.SetActive(true);
+        stats.damage += stats.damage / 10 * damageMultiplier;
+        if (areaDamageMultiplier > 0)
         {
-            pistolDamage = pistolDamage + (pistolDamage / 10) * damageUpgradePercentage;
-
-            shotgunDamage = shotgunDamage + (shotgunDamage / 10) * damageUpgradePercentage;
-
-            rocketDamage = rocketDamage + (rocketDamage / 10) * damageUpgradePercentage;
-            rocketAreaDamage = rocketAreaDamage + (rocketAreaDamage / 10) * damageUpgradePercentage;
-        }
-    }    
-    
-    private void PolymerTip2(int selectedUpgradeID)
-    {
-        float damageUpgradePercentage = 2.5f;
-
-        if (selectedUpgradeID == 1)
-        {
-            pistolDamage = pistolDamage + (pistolDamage / 10) * damageUpgradePercentage;
-
-            shotgunDamage = shotgunDamage + (shotgunDamage / 10) * damageUpgradePercentage;
-
-            rocketDamage = rocketDamage + (rocketDamage / 10) * damageUpgradePercentage;
-            rocketAreaDamage = rocketAreaDamage + (rocketAreaDamage / 10) * damageUpgradePercentage;
+            stats.areaDamage += stats.areaDamage / 10 * areaDamageMultiplier;
         }
     }
 
-    private void PolymerTip3(int selectedUpgradeID)
+    private void ApplyDamageUpgrade(float multiplier)
     {
-        float damageUpgradePercentage = 3.5f;
-
-        if (selectedUpgradeID == 2)
-        {
-            pistolDamage = pistolDamage + (pistolDamage / 10) * damageUpgradePercentage;
-
-            shotgunDamage = shotgunDamage + (shotgunDamage / 10) * damageUpgradePercentage;
-
-            rocketDamage = rocketDamage + (rocketDamage / 10) * damageUpgradePercentage;
-            rocketAreaDamage = rocketAreaDamage + (rocketAreaDamage / 10) * damageUpgradePercentage;
-        }
+        pistolStats.damage += pistolStats.damage / 10 * multiplier;
+        shotgunStats.damage += shotgunStats.damage / 10 * multiplier;
+        rocketStats.damage += rocketStats.damage / 10 * multiplier;
+        rocketStats.areaDamage += rocketStats.areaDamage / 10 * multiplier;
     }
 
-    private void PolymerTip4(int selectedUpgradeID)
+    private void ApplyGunpowderUpgrade(float damageMultiplier, float firerateMultiplier)
     {
-        float damageUpgradePercentage = 4.5f;
+        pistolStats.damage += pistolStats.damage / 10 * damageMultiplier;
+        pistolStats.firerate -= pistolStats.firerate / 10 * firerateMultiplier;
 
-        if (selectedUpgradeID == 3)
-        {
-            pistolDamage = pistolDamage + (pistolDamage / 10) * damageUpgradePercentage;
+        shotgunStats.damage += shotgunStats.damage / 10 * damageMultiplier;
+        shotgunStats.firerate -= shotgunStats.firerate / 10 * firerateMultiplier;
 
-            shotgunDamage = shotgunDamage + (shotgunDamage / 10) * damageUpgradePercentage;
-
-            rocketDamage = rocketDamage + (rocketDamage / 10) * damageUpgradePercentage;
-            rocketAreaDamage = rocketAreaDamage + (rocketAreaDamage / 10) * damageUpgradePercentage;
-        }
+        rocketStats.damage += rocketStats.damage / 10 * damageMultiplier;
+        rocketStats.areaDamage += rocketStats.areaDamage / 10 * damageMultiplier;
+        rocketStats.firerate -= rocketStats.firerate / 10 * firerateMultiplier;
     }
 
-    private void PolymerTip5(int selectedUpgradeID)
+    private void ApplyFirerateUpgrade(float multiplier)
     {
-        float damageUpgradePercentage = 7.5f;
-
-        if (selectedUpgradeID == 4)
-        {
-            pistolDamage = pistolDamage + (pistolDamage / 10) * damageUpgradePercentage;
-
-            shotgunDamage = shotgunDamage + (shotgunDamage / 10) * damageUpgradePercentage;
-
-            rocketDamage = rocketDamage + (rocketDamage / 10) * damageUpgradePercentage;
-            rocketAreaDamage = rocketAreaDamage + (rocketAreaDamage / 10) * damageUpgradePercentage;
-        }
+        pistolStats.firerate += pistolStats.firerate / 10 * multiplier;
+        shotgunStats.firerate += shotgunStats.firerate / 10 * multiplier;
+        rocketStats.firerate += rocketStats.firerate / 10 * multiplier;
     }
 
-    // Gunpowder
-    private void Gunpowder1(int selectedUpgradeID)
+    private void ApplyHealthUpgrade(int extraHealth)
     {
-        float damageUpgradePercentage = 2;
-        float fireRateDecreasePercentage = 1;
-
-        if (selectedUpgradeID == 5)
-        {
-            pistolDamage = pistolDamage + (pistolDamage / 10) * damageUpgradePercentage;
-            pistolFirerate = pistolFirerate - (pistolFirerate / 10) * fireRateDecreasePercentage;
-
-            shotgunDamage = shotgunDamage + (shotgunDamage / 10) * damageUpgradePercentage;
-            shotgunFirerate = shotgunFirerate - (shotgunFirerate / 10) * fireRateDecreasePercentage;
-
-            rocketDamage = rocketDamage + (rocketDamage / 10) * damageUpgradePercentage;
-            rocketAreaDamage = rocketAreaDamage + (rocketAreaDamage / 10) * damageUpgradePercentage;
-            rocketFirerate = rocketFirerate - (rocketFirerate / 10) * fireRateDecreasePercentage;
-        }
+        playerMaxHealth += extraHealth;
+        playerCurrentHealth += extraHealth;
     }
 
-    private void Gunpowder2(int selectedUpgradeID)
+    private void ApplyMovementSpeedUpgrade(float multiplier)
     {
-        float damageUpgradePercentage = 3.5f;
-        float fireRateDecreasePercentage = 1;
-
-        if (selectedUpgradeID == 6)
-        {
-            pistolDamage = pistolDamage + (pistolDamage / 10) * damageUpgradePercentage;
-            pistolFirerate = pistolFirerate - (pistolFirerate / 10) * fireRateDecreasePercentage;
-
-            shotgunDamage = shotgunDamage + (shotgunDamage / 10) * damageUpgradePercentage;
-            shotgunFirerate = shotgunFirerate - (shotgunFirerate / 10) * fireRateDecreasePercentage;
-
-            rocketDamage = rocketDamage + (rocketDamage / 10) * damageUpgradePercentage;
-            rocketAreaDamage = rocketAreaDamage + (rocketAreaDamage / 10) * damageUpgradePercentage;
-            rocketFirerate = rocketFirerate - (rocketFirerate / 10) * fireRateDecreasePercentage;
-        }
+        playerMovementSpeedMultiplier += playerMovementSpeedMultiplier / 10 * multiplier;
     }
+}
 
-    private void Gunpowder3(int selectedUpgradeID)
-    {
-        float damageUpgradePercentage = 5;
-        float fireRateDecreasePercentage = 1;
-
-        if (selectedUpgradeID == 7)
-        {
-            pistolDamage = pistolDamage + (pistolDamage / 10) * damageUpgradePercentage;
-            pistolFirerate = pistolFirerate - (pistolFirerate / 10) * fireRateDecreasePercentage;
-
-            shotgunDamage = shotgunDamage + (shotgunDamage / 10) * damageUpgradePercentage;
-            shotgunFirerate = shotgunFirerate - (shotgunFirerate / 10) * fireRateDecreasePercentage;
-
-            rocketDamage = rocketDamage + (rocketDamage / 10) * damageUpgradePercentage;
-            rocketAreaDamage = rocketAreaDamage + (rocketAreaDamage / 10) * damageUpgradePercentage;
-            rocketFirerate = rocketFirerate - (rocketFirerate / 10) * fireRateDecreasePercentage;
-        }
-    }
-
-    private void Gunpowder4(int selectedUpgradeID)
-    {
-        float damageUpgradePercentage = 6.5f;
-        float fireRateDecreasePercentage = 1;
-
-        if (selectedUpgradeID == 8)
-        {
-            pistolDamage = pistolDamage + (pistolDamage / 10) * damageUpgradePercentage;
-            pistolFirerate = pistolFirerate - (pistolFirerate / 10) * fireRateDecreasePercentage;
-
-            shotgunDamage = shotgunDamage + (shotgunDamage / 10) * damageUpgradePercentage;
-            shotgunFirerate = shotgunFirerate - (shotgunFirerate / 10) * fireRateDecreasePercentage;
-
-            rocketDamage = rocketDamage + (rocketDamage / 10) * damageUpgradePercentage;
-            rocketAreaDamage = rocketAreaDamage + (rocketAreaDamage / 10) * damageUpgradePercentage;
-            rocketFirerate = rocketFirerate - (rocketFirerate / 10) * fireRateDecreasePercentage;
-        }
-    }
-
-    private void Gunpowder5(int selectedUpgradeID)
-    {
-        float damageUpgradePercentage = 10;
-        float fireRateDecreasePercentage = 1;
-
-        if (selectedUpgradeID == 9)
-        {
-            pistolDamage = pistolDamage + (pistolDamage / 10) * damageUpgradePercentage;
-            pistolFirerate = pistolFirerate - (pistolFirerate / 10) * fireRateDecreasePercentage;
-
-            shotgunDamage = shotgunDamage + (shotgunDamage / 10) * damageUpgradePercentage;
-            shotgunFirerate = shotgunFirerate - (shotgunFirerate / 10) * fireRateDecreasePercentage;
-
-            rocketDamage = rocketDamage + (rocketDamage / 10) * damageUpgradePercentage;
-            rocketAreaDamage = rocketAreaDamage + (rocketAreaDamage / 10) * damageUpgradePercentage;
-            rocketFirerate = rocketFirerate - (rocketFirerate / 10) * fireRateDecreasePercentage;
-        }
-    }
-
-    // Extra Magazine
-    private void ExtraMagazine1(int selectedUpgradeID)
-    {
-        float fireRatePercentage = 1;
-
-        if (selectedUpgradeID == 10)
-        {
-            pistolFirerate = pistolFirerate + (pistolFirerate / 10) * fireRatePercentage;
-
-            shotgunFirerate = shotgunFirerate + (shotgunFirerate / 10) * fireRatePercentage;
-
-            rocketFirerate = rocketFirerate + (rocketFirerate / 10) * fireRatePercentage;
-        }
-    }
-
-    private void ExtraMagazine2(int selectedUpgradeID)
-    {
-        float fireRatePercentage = 1.5f;
-
-        if (selectedUpgradeID == 11)
-        {
-            pistolFirerate = pistolFirerate + (pistolFirerate / 10) * fireRatePercentage;
-
-            shotgunFirerate = shotgunFirerate + (shotgunFirerate / 10) * fireRatePercentage;
-
-            rocketFirerate = rocketFirerate + (rocketFirerate / 10) * fireRatePercentage;
-        }
-    }
-
-    private void ExtraMagazine3(int selectedUpgradeID)
-    {
-        float fireRatePercentage = 2f;
-
-        if (selectedUpgradeID == 12)
-        {
-            pistolFirerate = pistolFirerate + (pistolFirerate / 10) * fireRatePercentage;
-
-            shotgunFirerate = shotgunFirerate + (shotgunFirerate / 10) * fireRatePercentage;
-
-            rocketFirerate = rocketFirerate + (rocketFirerate / 10) * fireRatePercentage;
-        }
-    }
-
-    private void ExtraMagazine4(int selectedUpgradeID)
-    {
-        float fireRatePercentage = 2.5f;
-
-        if (selectedUpgradeID == 13)
-        {
-            pistolFirerate = pistolFirerate + (pistolFirerate / 10) * fireRatePercentage;
-
-            shotgunFirerate = shotgunFirerate + (shotgunFirerate / 10) * fireRatePercentage;
-
-            rocketFirerate = rocketFirerate + (rocketFirerate / 10) * fireRatePercentage;
-        }
-    }
-
-    private void ExtraMagazine5(int selectedUpgradeID)
-    {
-        float fireRatePercentage = 4f;
-
-        if (selectedUpgradeID == 14)
-        {
-            pistolFirerate = pistolFirerate + (pistolFirerate / 10) * fireRatePercentage;
-
-            shotgunFirerate = shotgunFirerate + (shotgunFirerate / 10) * fireRatePercentage;
-
-            rocketFirerate = rocketFirerate + (rocketFirerate / 10) * fireRatePercentage;
-        }
-    }
-
-    // Steel Plates
-    private void SteelPlates1(int selectedUpgradeID)
-    {
-        int extraHealth = 3;
-
-        if (selectedUpgradeID == 15)
-        {
-            playerMaxHealth += extraHealth;
-            playercurrentHealth += extraHealth;
-        }
-    }
-
-    private void SteelPlates2(int selectedUpgradeID)
-    {
-        int extraHealth = 6;
-
-        if (selectedUpgradeID == 16)
-        {
-            playerMaxHealth += extraHealth;
-            playercurrentHealth += extraHealth;
-        }
-    }
-
-    private void SteelPlates3(int selectedUpgradeID)
-    {
-        int extraHealth = 9;
-
-        if (selectedUpgradeID == 17)
-        {
-            playerMaxHealth += extraHealth;
-            playercurrentHealth += extraHealth;
-        }
-    }
-
-    private void SteelPlates4(int selectedUpgradeID)
-    {
-        int extraHealth = 12;
-
-        if (selectedUpgradeID == 18)
-        {
-            playerMaxHealth += extraHealth;
-            playercurrentHealth += extraHealth;
-        }
-    }
-
-    private void SteelPlates5(int selectedUpgradeID)
-    {
-        int extraHealth = 25;
-
-        if (selectedUpgradeID == 19)
-        {
-            playerMaxHealth += extraHealth;
-            playercurrentHealth += extraHealth;
-        }
-    }
-
-    // Turbines
-    private void Turbines1(int selectedUpgradeID)
-    {
-        float extraMovementSpeedPercentage = 1;
-
-        if (selectedUpgradeID == 20)
-        {
-            playerMovementSpeedMultiplier = playerMovementSpeedMultiplier + (playerMovementSpeedMultiplier / 10) * extraMovementSpeedPercentage;
-        }
-    }
-
-    private void Turbines2(int selectedUpgradeID)
-    {
-        float extraMovementSpeedPercentage = 1.2f;
-
-        if (selectedUpgradeID == 21)
-        {
-            playerMovementSpeedMultiplier = playerMovementSpeedMultiplier + (playerMovementSpeedMultiplier / 10) * extraMovementSpeedPercentage;
-        }
-    }
-
-    private void Turbines3(int selectedUpgradeID)
-    {
-        float extraMovementSpeedPercentage = 1.4f;
-
-        if (selectedUpgradeID == 22)
-        {
-            playerMovementSpeedMultiplier = playerMovementSpeedMultiplier + (playerMovementSpeedMultiplier / 10) * extraMovementSpeedPercentage;
-        }
-    }
-
-    private void Turbines4(int selectedUpgradeID)
-    {
-        float extraMovementSpeedPercentage = 1.6f;
-
-        if (selectedUpgradeID == 23)
-        {
-            playerMovementSpeedMultiplier = playerMovementSpeedMultiplier + (playerMovementSpeedMultiplier / 10) * extraMovementSpeedPercentage;
-        }
-    }
-
-    private void Turbines5(int selectedUpgradeID)
-    {
-        float extraMovementSpeedPercentage = 2.5f;
-
-        if (selectedUpgradeID == 24)
-        {
-            playerMovementSpeedMultiplier = playerMovementSpeedMultiplier + (playerMovementSpeedMultiplier / 10) * extraMovementSpeedPercentage;
-        }
-    }
+[System.Serializable]
+public class WeaponStats
+{
+    public float damage;
+    public float areaDamage;
+    public float firerate;
 }

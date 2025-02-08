@@ -8,11 +8,11 @@ public class Wrench : MonoBehaviour
         {
             AudioManager.instance.PlaySoundSFX(AudioManager.instance.wrenchPickUpSFX);
 
-            UpgradeManager.Instance.playercurrentHealth += (UpgradeManager.Instance.playerMaxHealth / 10) * 1.5f;
+            UpgradeManager.Instance.playerCurrentHealth += (UpgradeManager.Instance.playerMaxHealth / 10) * 1.5f;
 
-            if (UpgradeManager.Instance.playercurrentHealth > UpgradeManager.Instance.playerMaxHealth)
+            if (UpgradeManager.Instance.playerCurrentHealth > UpgradeManager.Instance.playerMaxHealth)
             {
-                UpgradeManager.Instance.playercurrentHealth = UpgradeManager.Instance.playerMaxHealth;
+                UpgradeManager.Instance.playerCurrentHealth = UpgradeManager.Instance.playerMaxHealth;
             }
 
             Destroy(gameObject);
