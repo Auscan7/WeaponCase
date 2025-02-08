@@ -9,7 +9,7 @@ public class GridInteract : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     private void Awake()
     {
-        inventoryController = FindFirstObjectByType(typeof(InventoryController)) as InventoryController;
+        inventoryController = FindAnyObjectByType(typeof(InventoryController)) as InventoryController;
         itemGrid = GetComponent<ItemGrid>();
     }
 

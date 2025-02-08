@@ -4804,6 +4804,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c9612391254614d8e7702552508985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &257070736 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8946381825008429100, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+  m_PrefabInstance: {fileID: 5009774052823361831}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &257810544
 GameObject:
   m_ObjectHideFlags: 0
@@ -10454,6 +10459,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedItemGrid: {fileID: 0}
+  items:
+  - {fileID: 11400000, guid: 046bca35dbf29a545b1e0467d045a0ca, type: 2}
+  - {fileID: 11400000, guid: d145e08f06f064c4783563143c7d277d, type: 2}
+  itemPrefab: {fileID: 9085327279654761492, guid: 8548ad3a51ffc2442af8cbff99f2d472, type: 3}
+  canvasTransform: {fileID: 257070736}
 --- !u!1 &521403177
 GameObject:
   m_ObjectHideFlags: 0
