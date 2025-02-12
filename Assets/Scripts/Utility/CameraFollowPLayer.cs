@@ -10,12 +10,6 @@ public class CameraFollowPlayer : MonoBehaviour
     {
         // Find the player by tag
         player = GameObject.FindWithTag("Player")?.transform;
-
-        // Check if the player was found
-        if (player == null)
-        {
-            Debug.LogWarning("Player not found in the hierarchy.");
-        }
     }
 
     private void Start()
@@ -25,6 +19,12 @@ public class CameraFollowPlayer : MonoBehaviour
 
     void Update()
     {
+        if (player == null)
+        {
+            // Find the player by tag
+            player = GameObject.FindWithTag("Player")?.transform;
+        }
+
         if (player != null)
         {
             // Smoothly interpolate the camera's position towards the player's position + offset
