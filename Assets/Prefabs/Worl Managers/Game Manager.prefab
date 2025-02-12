@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1706525254934586072}
   - component: {fileID: 2089720890799046194}
   - component: {fileID: 1556093721444185990}
+  - component: {fileID: 8664309105481697693}
   - component: {fileID: 8852489370544041741}
   m_Layer: 0
   m_Name: Game Manager
@@ -65,7 +66,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 0}
   triggerTime: 900
+  timerRunning: 1
   WinScreen: {fileID: 0}
+--- !u!114 &8664309105481697693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3438171215213273933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2bd2154e7690b246acee4457825f5e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSelectionPanel: {fileID: 0}
+  gameTimeText: {fileID: 0}
+  Tutorial: {fileID: 0}
+  XPLevel: {fileID: 0}
+  PlayerHP: {fileID: 0}
+  pistolButton: {fileID: 0}
+  shotgunButton: {fileID: 0}
+  rocketButton: {fileID: 0}
 --- !u!114 &8852489370544041741
 MonoBehaviour:
   m_ObjectHideFlags: 0
