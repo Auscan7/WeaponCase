@@ -102,7 +102,7 @@ public class InventoryController : MonoBehaviour
     {
         Vector2Int positionOnGrid = GetTileGridPosition();
 
-        if (oldPosition == positionOnGrid)
+        if (oldPosition == positionOnGrid && !Input.GetKeyDown(KeyCode.R))
         {
             return;
         }

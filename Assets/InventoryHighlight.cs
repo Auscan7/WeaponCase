@@ -2,8 +2,13 @@ using UnityEngine;
 
 public class InventoryHighlight : MonoBehaviour
 {
-    [SerializeField] RectTransform highlighter;
+    [SerializeField] RectTransform highlighterPrefab;
+    private RectTransform highlighter;
 
+    private void Awake()
+    {
+        highlighter = Instantiate(highlighterPrefab);
+    }
     public void Show(bool showHighlighter)
     {
         highlighter.gameObject.SetActive(showHighlighter);
