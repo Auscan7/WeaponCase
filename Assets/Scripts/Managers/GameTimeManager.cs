@@ -8,7 +8,7 @@ public class GameTimeManager : MonoBehaviour
     public float triggerTime = 10f;
 
     private float remainingTime;
-    private bool timerRunning = true;
+    public bool timerRunning = true;
     public GameObject WinScreen;
 
     void Start()
