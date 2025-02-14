@@ -1,17 +1,28 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Buffers.Text;
 
 public class UpgradeManager : MonoBehaviour
 {
     [Header("Player Stats")]
     public float playerCurrentHealth;
     public int playerMaxHealth;
+    public float playerArmor;
     public float playerMovementSpeedMultiplier = 1;
+    public float playerDamageMultiplier = 1;
 
     [Header("Weapons")]
     public GameObject Pistol;
     public GameObject Shotgun;
     public GameObject Rocket;
+
+    [Header("Cases")]
+    public GameObject Default;
+    public GameObject Second;
+    public GameObject Third;
+
+    [Header("Case Stats")]
+    private Dictionary<string, CaseStats> caseModifiers;
 
     [Header("Weapon Stats")]
     public WeaponStats pistolStats;
@@ -21,6 +32,8 @@ public class UpgradeManager : MonoBehaviour
     public static UpgradeManager Instance;
 
     private Dictionary<int, System.Action> upgradeEffects;
+
+
 
     private void Awake()
     {
@@ -34,6 +47,24 @@ public class UpgradeManager : MonoBehaviour
         }
 
         InitializeUpgradeEffects();
+        InitializeCaseModifiers();
+    }
+
+    [System.Serializable]
+    public class CaseStats
+    {
+        public float healthMultiplier;
+        public float armorMultiplier;
+        public float damageMultiplier;
+        public float speedMultiplier;
+
+        public CaseStats(float healthMult, float armorMult, float damageMult, float speedMult)
+        {
+            healthMultiplier = healthMult;
+            armorMultiplier = armorMult;
+            damageMultiplier = damageMult;
+            speedMultiplier = speedMult;
+        }
     }
 
     private void OnEnable()
@@ -104,6 +135,56 @@ public class UpgradeManager : MonoBehaviour
         };
     }
 
+    private void InitializeCaseModifiers()
+    {
+        caseModifiers = new Dictionary<string, CaseStats>
+        {
+            { "Default Case", new CaseStats(1.0f, 1.0f, 1.0f, 1.0f) },   // Hp, armor, damage, movement speed
+            { "Second Case", new CaseStats(0.8f, 0.8f, 1.2f, 1.0f) },   // 
+            { "Third Case", new CaseStats(0.5f, 0.5f, 1.5f, 1.2f) }    // 
+        };
+    }
+
+    public void ApplyCaseStats(string caseName)
+    {
+        if (caseModifiers.TryGetValue(caseName, out CaseStats caseStats))
+        {
+            // Apply case stats to player
+            playerMaxHealth = Mathf.RoundToInt(playerMaxHealth * caseStats.healthMultiplier);
+            playerCurrentHealth = playerMaxHealth; // Reset health to new max
+            playerArmor = playerArmor * caseStats.armorMultiplier;
+            playerDamageMultiplier = caseStats.damageMultiplier;
+            playerMovementSpeedMultiplier *= caseStats.speedMultiplier;
+
+            // Apply damage multiplier to all weapons
+            pistolStats.damage *= caseStats.damageMultiplier;
+            shotgunStats.damage *= caseStats.damageMultiplier;
+            rocketStats.damage *= caseStats.damageMultiplier;
+            rocketStats.areaDamage *= caseStats.damageMultiplier;
+        }
+        else
+        {
+            Debug.LogWarning($"Case {caseName} not found!");
+        }
+    }
+
+    public void ResetCaseStats()
+    {
+        // Reset player stats to default values
+        playerMaxHealth = 100; // Set this to your actual default HP
+        playerCurrentHealth = playerMaxHealth;
+        playerArmor = 10;
+        playerDamageMultiplier = 1.0f;
+        playerMovementSpeedMultiplier = 1.0f;
+
+        // Reset weapon stats to base values (assuming 10 is base)
+        pistolStats.damage = 10;
+        shotgunStats.damage = 6;
+        rocketStats.damage = 20;
+        rocketStats.areaDamage = 8;
+    }
+
+
     private void ApplyUpgrade(int upgradeID)
     {
         if (upgradeEffects.ContainsKey(upgradeID))
@@ -119,10 +200,14 @@ public class UpgradeManager : MonoBehaviour
     private void ActivateWeapon(GameObject weapon, WeaponStats stats, float damageMultiplier, float areaDamageMultiplier = 0)
     {
         weapon.SetActive(true);
-        stats.damage += stats.damage / 10 * damageMultiplier;
+
+        // Apply the weapon's base damage along with the case's damage multiplier
+        float finalDamageMultiplier = damageMultiplier * playerDamageMultiplier;
+        stats.damage += stats.damage / 10 * finalDamageMultiplier;
+
         if (areaDamageMultiplier > 0)
         {
-            stats.areaDamage += stats.areaDamage / 10 * areaDamageMultiplier;
+            stats.areaDamage += stats.areaDamage / 10 * areaDamageMultiplier * playerDamageMultiplier;
         }
     }
 

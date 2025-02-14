@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd89c699963f20945affd9d3a42eae65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 5
+  damageAmount: 125
 --- !u!114 &2910664139029674070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6809502568064638600}
   moveSpeed: 1.4
-  coneAttackDamageAmount: 5
+  coneAttackDamageAmount: 125
   player: {fileID: 0}
   spriteTransform: {fileID: 7608606556829224412}
   hasConeAttack: 1

@@ -17,6 +17,11 @@ public class MainMenuManager : MonoBehaviour
 
     public Vector3 spawnPos;
 
+    private void Awake()
+    {
+        Camera.main.transform.position = new Vector3(0, 0, -10);
+    }
+
     public void PLay()
     {
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);

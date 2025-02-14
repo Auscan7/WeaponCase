@@ -20,7 +20,16 @@ public class WeaponSelectionManager : MonoBehaviour
     public Button shotgunButton;
     public Button rocketButton;
 
-    private GameObject selectedWeapon; // Store selected weapon
+    [Header("Cases")]
+    public Button selectedCaseButton;
+    public TextMeshProUGUI selectedCaseText;
+    public Button defaultCaseButton;
+    public Button secondCaseButton;
+    public Button thirdCaseButton;
+
+    private GameObject selectedWeapon;
+    private GameObject selectedCase;
+    private string lastAppliedCase = null; // Store the last applied case
 
     private void Awake()
     {
@@ -28,22 +37,47 @@ public class WeaponSelectionManager : MonoBehaviour
         gameTimeManager.timerRunning = false;
         PauseManager.instance.PauseGame();
 
-        // Set default weapon (e.g., Pistol)
-        selectedWeapon = UpgradeManager.Instance.Pistol;
-        selectedWeaponButton.image.sprite = pistolButton.image.sprite;
-        selectedWeaponText.text = "Pistol"; // Set default text
+        // Set default selections
+        SelectWeapon(UpgradeManager.Instance.Pistol, pistolButton, "Pistol");
+        SelectCase(UpgradeManager.Instance.Default, defaultCaseButton, "Default Case");
 
-        // Add event listeners to change selected weapon
+        // Add event listeners
         pistolButton.onClick.AddListener(() => SelectWeapon(UpgradeManager.Instance.Pistol, pistolButton, "Pistol"));
         shotgunButton.onClick.AddListener(() => SelectWeapon(UpgradeManager.Instance.Shotgun, shotgunButton, "Shotgun"));
         rocketButton.onClick.AddListener(() => SelectWeapon(UpgradeManager.Instance.Rocket, rocketButton, "Rocket"));
+
+        defaultCaseButton.onClick.AddListener(() => SelectCase(UpgradeManager.Instance.Default, defaultCaseButton, "Default Case"));
+        secondCaseButton.onClick.AddListener(() => SelectCase(UpgradeManager.Instance.Second, secondCaseButton, "Second Case"));
+        thirdCaseButton.onClick.AddListener(() => SelectCase(UpgradeManager.Instance.Third, thirdCaseButton, "Third Case"));
     }
 
     private void SelectWeapon(GameObject weapon, Button weaponButton, string weaponName)
     {
         selectedWeapon = weapon;
-        selectedWeaponButton.image.sprite = weaponButton.image.sprite; // Update button image
-        selectedWeaponText.text = weaponName; // Update button text
+        selectedWeaponButton.image.sprite = weaponButton.image.sprite;
+        selectedWeaponText.text = weaponName;
+
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
+    }
+
+    private void SelectCase(GameObject weaponCase, Button caseButton, string caseName)
+    {
+        // Prevent reapplying the same case
+        if (lastAppliedCase == caseName) return;
+
+        // Reset stats to default before applying a new case
+        UpgradeManager.Instance.ResetCaseStats();
+
+        selectedCase = weaponCase;
+        selectedCaseButton.image.sprite = caseButton.image.sprite;
+        selectedCaseButton.image.color = caseButton.image.color;
+        selectedCaseText.text = caseName;
+
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
+
+        // Apply only the new case's effects
+        UpgradeManager.Instance.ApplyCaseStats(caseName);
+        lastAppliedCase = caseName; // Store the applied case name
     }
 
     public void Battle()
@@ -53,10 +87,15 @@ public class WeaponSelectionManager : MonoBehaviour
         Tutorial.SetActive(true);
         StartCoroutine(ActivateDelayed());
 
-        // Activate the selected weapon (default or chosen)
         if (selectedWeapon != null)
         {
             selectedWeapon.SetActive(true);
+        }
+
+        // Activate the selected case
+        if (selectedCase != null)
+        {
+            selectedCase.SetActive(true);
         }
     }
 

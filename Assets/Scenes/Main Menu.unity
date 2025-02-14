@@ -418,6 +418,7 @@ GameObject:
   - component: {fileID: 1513754966}
   - component: {fileID: 1513754965}
   - component: {fileID: 1513754964}
+  - component: {fileID: 1513754967}
   m_Layer: 0
   m_Name: MainMenuBG
   m_TagString: Untagged
@@ -517,6 +518,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1513754967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513754963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeaa2fa6df4633042ad7bc3ca023a8e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  MenuBG: {fileID: 0}
 --- !u!1001 &1591242791623780603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -770,8 +785,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 783385797}
   - {fileID: 477928476}
-  - {fileID: 1513754966}
   - {fileID: 9162137883917247953}
   - {fileID: 1443895962}
   - {fileID: 7987256834078465508}
   - {fileID: 1591242791623780603}
+  - {fileID: 1513754966}
