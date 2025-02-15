@@ -158,11 +158,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCurrentHealth: 0
-  playerMaxHealth: 20
+  playerMaxHealth: 100
+  playerHealthRegenAmount: 1
+  playerArmor: 10
+  playerDodgeChancePercent: 20
   playerMovementSpeedMultiplier: 1
+  playerDamageMultiplier: 1
   Pistol: {fileID: 0}
   Shotgun: {fileID: 0}
   Rocket: {fileID: 0}
+  Default: {fileID: 0}
+  Second: {fileID: 0}
+  Third: {fileID: 0}
   pistolStats:
     damage: 10
     areaDamage: 0

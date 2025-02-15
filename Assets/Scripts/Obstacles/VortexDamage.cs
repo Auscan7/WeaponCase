@@ -3,7 +3,7 @@ using UnityEngine;
 public class VortexDamage : MonoBehaviour
 {
     public float damage = 5f;
-    private float damageInterval = 1f;
+    private float damageInterval = 0.5f;
 
     private float damageCooldown;
 

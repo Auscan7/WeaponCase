@@ -3097,8 +3097,8 @@ Transform:
   m_GameObject: {fileID: 173847139}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.70710576, w: 0.7071079}
-  m_LocalPosition: {x: -2.6953, y: -122.6, z: 0}
-  m_LocalScale: {x: 0.0875, y: 246.66592, z: 1}
+  m_LocalPosition: {x: 0, y: 50, z: 0}
+  m_LocalScale: {x: 0.0875, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1578954214}
@@ -8189,8 +8189,8 @@ Transform:
   m_GameObject: {fileID: 429284055}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 120.6, y: 0.7797857, z: 0}
-  m_LocalScale: {x: 0.0875, y: 246.84549, z: 1}
+  m_LocalPosition: {x: 50, y: 0, z: 0}
+  m_LocalScale: {x: 0.0875, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1578954214}
@@ -16915,8 +16915,8 @@ Transform:
   m_GameObject: {fileID: 877126560}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.70710576, w: 0.7071079}
-  m_LocalPosition: {x: -2.6953, y: 124.15, z: 0}
-  m_LocalScale: {x: 0.0875, y: 246.66592, z: 1}
+  m_LocalPosition: {x: 0, y: -50, z: 0}
+  m_LocalScale: {x: 0.0875, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1578954214}
@@ -18465,8 +18465,8 @@ Transform:
   m_GameObject: {fileID: 944934860}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -126, y: 0.7797857, z: 0}
-  m_LocalScale: {x: 0.0875, y: 246.84549, z: 1}
+  m_LocalPosition: {x: -50, y: 0, z: 0}
+  m_LocalScale: {x: 0.0875, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1578954214}
@@ -37902,7 +37902,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 300, y: 300, z: 5}
+  m_LocalScale: {x: 120, y: 120, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -41105,14 +41105,6 @@ PrefabInstance:
       propertyPath: Shotgun
       value: 
       objectReference: {fileID: 664042481}
-    - target: {fileID: 1673084244522484919, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: playerArmor
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1673084244522484919, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: playerMaxHealth
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 2805381360816893158, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
       propertyPath: levelBar
       value: 

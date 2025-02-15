@@ -8,6 +8,7 @@ TagManager:
   - Collector
   - Highlighter
   - MenuBG
+  - Wrench
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - EnemyProjectile
   - Collector
   - XPDrops
-  - 
+  - PlayerBoundsCheck
   - 
   - 
   - 

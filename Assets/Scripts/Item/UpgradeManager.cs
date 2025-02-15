@@ -7,7 +7,9 @@ public class UpgradeManager : MonoBehaviour
     [Header("Player Stats")]
     public float playerCurrentHealth;
     public int playerMaxHealth;
+    public float playerHealthRegenAmount = 1;
     public float playerArmor;
+    public int playerDodgeChancePercent = 20;
     public float playerMovementSpeedMultiplier = 1;
     public float playerDamageMultiplier = 1;
 
