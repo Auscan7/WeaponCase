@@ -1,40 +1,50 @@
 using UnityEngine;
+using System.Collections;
 
 public class EnemySpawner : MonoBehaviour
 {
     [Header("Spawner Settings")]
-    public GameObject[] enemyPrefabs; // Reference for enemy prefabs
-    public float spawnInterval = 5f; // Interval between spawns
-    public int maxSpawnAmount = 10; // Max enemies to spawn
-    public float initialSpawnDelay = 300f; // Delay before first spawn
+    public GameObject[] enemyPrefabs;      // Array of enemy prefabs
+    public float spawnInterval = 5f;       // Time between spawns
+    public int maxSpawnAmount = 10;        // Maximum enemies to spawn
+    public float initialSpawnDelay = 3f;   // Delay before the first spawn
 
     private int spawnedCount = 0;
-    private float spawnTimer;
 
     void Start()
     {
-        spawnTimer = initialSpawnDelay;
+        StartCoroutine(SpawnRoutine());
     }
 
-    void Update()
+    IEnumerator SpawnRoutine()
     {
-        if (spawnedCount >= maxSpawnAmount) return;
+        yield return new WaitForSeconds(initialSpawnDelay);
 
-        spawnTimer -= Time.deltaTime;
-
-        if (spawnTimer <= 0f)
+        while (spawnedCount < maxSpawnAmount)
         {
             SpawnEnemy();
-            spawnTimer = spawnInterval; // Reset timer after initial delay
+            spawnedCount++;
+            yield return new WaitForSeconds(spawnInterval);
         }
     }
 
     void SpawnEnemy()
     {
-        if (enemyPrefabs.Length == 0) return;
+        if (enemyPrefabs.Length == 0)
+        {
+            Debug.LogWarning("No enemy prefabs assigned!");
+            return;
+        }
 
-        GameObject enemyToSpawn = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
-        Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
-        spawnedCount++;
+        // Choose a random enemy prefab
+        GameObject enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
+
+        // Get the enemy from the pool
+        GameObject enemy = EnemyPoolManager.Instance.GetEnemy(enemyPrefab);
+        if (enemy != null)
+        {
+            enemy.transform.position = transform.position;
+            enemy.transform.rotation = Quaternion.identity;
+        }
     }
 }

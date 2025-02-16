@@ -1679,7 +1679,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3904909093893846369}
         m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: Ready
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1987,10 +1987,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playButton: {fileID: 5939740828725725999}
   comingSoonText: {fileID: 7962031289539908288, guid: 8c210f59666cd4044b14105870f9995f, type: 3}
-  InventoryPanel: {fileID: 0}
   BGImage: {fileID: 0}
   MainMenuButtons: {fileID: 7427415018970631926}
-  ReadyButton: {fileID: 0}
   spawnPos: {x: -4.5, y: 0.45, z: 0}
 --- !u!114 &8165002050700530586
 MonoBehaviour:

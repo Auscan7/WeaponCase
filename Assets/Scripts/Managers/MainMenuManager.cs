@@ -10,10 +10,8 @@ public class MainMenuManager : MonoBehaviour
     public Button playButton;
 
     public GameObject comingSoonText;
-    public GameObject InventoryPanel;
     public GameObject BGImage;
     public GameObject MainMenuButtons;
-    public GameObject ReadyButton;
 
     public Vector3 spawnPos;
 
@@ -22,16 +20,7 @@ public class MainMenuManager : MonoBehaviour
         Camera.main.transform.position = new Vector3(0, 0, -10);
     }
 
-    public void PLay()
-    {
-        AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
-        InventoryPanel.SetActive(true);
-        BGImage.SetActive(false);
-        MainMenuButtons.SetActive(false);
-        ReadyButton.SetActive(true);
-    }
-
-    public void Ready()
+    public void Play()
     {
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
         SceneManager.LoadScene("Level1");

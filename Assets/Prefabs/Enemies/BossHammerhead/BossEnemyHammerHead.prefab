@@ -259,6 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c29e0a99e236c47a9a3dae4925dab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPrefabReference: {fileID: 4871557909895165438}
   currentHealth: 0
   maxHealth: 1000
   healthBar: {fileID: 1297005040029400982}

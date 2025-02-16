@@ -259,13 +259,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c29e0a99e236c47a9a3dae4925dab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPrefabReference: {fileID: 4871557909895165438}
   currentHealth: 0
   maxHealth: 50
   healthBar: {fileID: 1297005040029400982}
   healthBarParent: {fileID: 7141845522669670118}
-  floatingDamagePrefab: {fileID: 7962031289539908288, guid: 751a1d81fff36504382fd81f0e083f86, type: 3}
-  xOffsetRange: {x: -0.6, y: 0.6}
-  yOffsetRange: {x: 0.2, y: 0.8}
 --- !u!114 &-4820772247653231708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1df7696eb308124baf897059a30813b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gemPrefab: {fileID: 7934407725544011141, guid: ab68bb7cfc3fb284da5aabefad1460d8, type: 3}
+  gemType: 0
   dropPoint: {fileID: 2714442251322780456}
 --- !u!114 &-5635052169131365987
 MonoBehaviour:

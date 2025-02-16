@@ -6,7 +6,7 @@ using DG.Tweening;
 
 public class CharacterStatManager : MonoBehaviour
 {
-
+    public GameObject enemyPrefabReference; // Set this to the prefab used in the pool
 
     [Header("Health Bar")]
     [SerializeField] public float currentHealth;
@@ -55,6 +55,8 @@ public class CharacterStatManager : MonoBehaviour
 
     public virtual void HandleDeath()
     {
-        Destroy(gameObject);
-    }  
+        // Return enemy to the pool
+        EnemyPoolManager.Instance.ReturnEnemy(gameObject, enemyPrefabReference);
+        Debug.Log("Enemy prefab ref: " + enemyPrefabReference);
+    }
 }
