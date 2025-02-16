@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1556093721444185990}
   - component: {fileID: 8664309105481697693}
   - component: {fileID: 8852489370544041741}
+  - component: {fileID: 2426654472215907098}
+  - component: {fileID: 1496707355878162809}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -85,9 +87,16 @@ MonoBehaviour:
   Tutorial: {fileID: 0}
   XPLevel: {fileID: 0}
   PlayerHP: {fileID: 0}
+  selectedWeaponButton: {fileID: 0}
+  selectedWeaponText: {fileID: 0}
   pistolButton: {fileID: 0}
   shotgunButton: {fileID: 0}
   rocketButton: {fileID: 0}
+  selectedCaseButton: {fileID: 0}
+  selectedCaseText: {fileID: 0}
+  defaultCaseButton: {fileID: 0}
+  secondCaseButton: {fileID: 0}
+  thirdCaseButton: {fileID: 0}
 --- !u!114 &8852489370544041741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,3 +115,44 @@ MonoBehaviour:
   vortexSpeed: 1.4
   minSpawnTime: 20
   maxSpawnTime: 55
+--- !u!114 &2426654472215907098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3438171215213273933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2002f564bd7f759498af5c1682ded5f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatingTextPrefab: {fileID: 7962031289539908288, guid: 751a1d81fff36504382fd81f0e083f86, type: 3}
+--- !u!114 &1496707355878162809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3438171215213273933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8438ce9bdab202f45b2cbf07002bad0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemPoolItems:
+  - gemType: 0
+    gemPrefab: {fileID: 7934407725544011141, guid: ab68bb7cfc3fb284da5aabefad1460d8, type: 3}
+    poolSize: 500
+  - gemType: 1
+    gemPrefab: {fileID: 7934407725544011141, guid: c55d4aaa5bcdbe445ad391317fb1d598, type: 3}
+    poolSize: 250
+  - gemType: 2
+    gemPrefab: {fileID: 7934407725544011141, guid: aa0d3777448a27a4c8aff19a8d10540e, type: 3}
+    poolSize: 250
+  - gemType: 3
+    gemPrefab: {fileID: 7934407725544011141, guid: 031e22321a5ab9a4ea799884f62a7941, type: 3}
+    poolSize: 100
+  - gemType: 4
+    gemPrefab: {fileID: 7934407725544011141, guid: 30810a64bb5dbfc4ab86e32fa21c32b2, type: 3}
+    poolSize: 25

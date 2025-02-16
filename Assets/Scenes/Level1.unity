@@ -41315,10 +41315,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1019316604}
     - target: {fileID: 8664309105481697693, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
-      propertyPath: secondaCaseButton
-      value: 
-      objectReference: {fileID: 1643942806}
-    - target: {fileID: 8664309105481697693, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
       propertyPath: selectedCaseButton
       value: 
       objectReference: {fileID: 1297194084}

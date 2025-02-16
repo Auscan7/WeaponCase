@@ -1,12 +1,14 @@
 using UnityEngine;
+using static GemPoolManager;
 
 public class Gem : MonoBehaviour
 {
+    public GemType gemType; // Set this in the inspector per prefab
     public int xpValue = 1; // Amount of XP this gem gives
     public float moveSpeed = 5f; // Speed at which the gem moves toward the player
 
-    private Transform playerTransform; // Reference to the player's position
-    private bool isMovingToPlayer = false; // Flag to determine if the gem should move toward the player
+    private Transform playerTransform;
+    private bool isMovingToPlayer = false;
 
     private void Start()
     {
@@ -22,7 +24,6 @@ public class Gem : MonoBehaviour
     {
         if (collision.CompareTag("Collector"))
         {
-            // Start moving toward the player
             isMovingToPlayer = true;
         }
     }
@@ -31,15 +32,15 @@ public class Gem : MonoBehaviour
     {
         if (isMovingToPlayer && playerTransform != null)
         {
-            // Move the gem toward the player's position
             transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, moveSpeed * Time.deltaTime);
 
-            // Check if the gem has reached the player's position
             if (Vector2.Distance(transform.position, playerTransform.position) < 0.1f)
             {
                 AudioManager.instance.PlaySoundSFX(AudioManager.instance.gemPickUp);
-                PlayerLevelSystem.instance.AddXP(xpValue); // Add XP
-                Destroy(gameObject); // Destroy the gem
+                PlayerLevelSystem.instance.AddXP(xpValue);
+
+                // Return gem to the pool instead of destroying it
+                GemPoolManager.Instance.ReturnGem(gemType, gameObject);
             }
         }
     }

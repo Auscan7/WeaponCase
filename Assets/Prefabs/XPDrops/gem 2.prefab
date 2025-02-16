@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e73e0c364e5c0c24d88204ba9f312fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gemType: 2
   xpValue: 30
   moveSpeed: 6
 --- !u!58 &6053777753935474727

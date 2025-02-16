@@ -6,7 +6,7 @@ using DG.Tweening;
 
 public class CharacterStatManager : MonoBehaviour
 {
-    CharacterManager character;
+
 
     [Header("Health Bar")]
     [SerializeField] public float currentHealth;
@@ -14,17 +14,9 @@ public class CharacterStatManager : MonoBehaviour
     [SerializeField] public Image healthBar;
     [SerializeField] public GameObject healthBarParent;
 
-    [Header("Floating Damage")]
-    [SerializeField] public GameObject floatingDamagePrefab;
-
-    [Header("Floating Text Offset")]
-    [SerializeField] public Vector2 xOffsetRange = new Vector2(-0.5f, 0.5f);
-    [SerializeField] public Vector2 yOffsetRange = new Vector2(0.5f, 1f);
-
-
     protected virtual void Awake()
     {
-        character = GetComponent<CharacterManager>();
+
     }
 
     protected virtual void Start()
@@ -50,7 +42,7 @@ public class CharacterStatManager : MonoBehaviour
         {    
             float critDamage = (damage += damage / 10 * UpgradeManager.Instance.playerCritDamageMultiplier);
             currentHealth -= critDamage;
-            ShowFloatingCritDamageText(critDamage);
+            FloatingTextManager.Instance.ShowFloatingText(transform.position, critDamage.ToString("F0"), Color.yellow, 1.75f, 0.2f, 0.7f);
             return; // No crit damage applied
         }
 
@@ -58,62 +50,11 @@ public class CharacterStatManager : MonoBehaviour
 
         healthBar.fillAmount = currentHealth / maxHealth;
 
-        ShowFloatingDamage(damage);
+        FloatingTextManager.Instance.ShowFloatingText(transform.position, damage.ToString("F0"), Color.white, 1.1f, 0.35f, 0.6f);
     }
 
     public virtual void HandleDeath()
     {
         Destroy(gameObject);
-    }
-
-    protected virtual void ShowFloatingDamage(float damage)
-    {
-        if (floatingDamagePrefab != null)
-        {
-            Vector3 randomOffset = new Vector3(Random.Range(xOffsetRange.x, xOffsetRange.y),Random.Range(yOffsetRange.x, yOffsetRange.y),0);
-
-            GameObject floatingText = Instantiate(floatingDamagePrefab, transform.position + Vector3.up + randomOffset, Quaternion.identity);
-            TMP_Text textComponent = floatingText.GetComponentInChildren<TMP_Text>();
-
-            if (textComponent != null)
-            {
-                textComponent.text = damage.ToString("F0");
-                // Optional: Fade out after some time
-                textComponent.DOFade(0, 0.7f).SetDelay(1f).OnComplete(() => Destroy(floatingText));
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Floating Damage Prefab is not assigned in the inspector.");
-        }
-    }
-
-    protected virtual void ShowFloatingCritDamageText(float damage)
-    {
-        if (floatingDamagePrefab != null)
-        {
-            Vector3 randomOffset = new Vector3(Random.Range(xOffsetRange.x, xOffsetRange.y), Random.Range(yOffsetRange.x, yOffsetRange.y), 0);
-
-            GameObject floatingText = Instantiate(floatingDamagePrefab, transform.position + Vector3.up + randomOffset, Quaternion.identity);
-            TMP_Text textComponent = floatingText.GetComponentInChildren<TMP_Text>();
-
-            if (textComponent != null)
-            {
-                textComponent.text = damage.ToString("F0");
-                textComponent.color = Color.yellow;
-
-                // Scale-up effect
-                textComponent.transform.localScale = Vector3.zero; // Start from 0
-                textComponent.transform.DOScale(1.5f, 0.5f).SetEase(Ease.OutBack); // Smooth bounce scale-up
-
-                // Optional: Fade out after some time
-                textComponent.DOFade(0, 0.7f).SetDelay(1f).OnComplete(() => Destroy(floatingText));
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Floating Crit Damage Prefab is not assigned in the inspector.");
-        }
-    }
-
+    }  
 }
