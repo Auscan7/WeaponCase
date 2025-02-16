@@ -45,7 +45,7 @@ public class PlayerLevelSystem : MonoBehaviour
 
     public void AddXP(int xpAmount)
     {
-        currentXP += xpAmount;
+        currentXP += Mathf.RoundToInt(xpAmount * UpgradeManager.Instance.playerXpMultiplier);
         UpdateLevelBar();
 
         if (currentXP >= xpRequiredForNextLevel)
@@ -113,6 +113,7 @@ public class PlayerLevelSystem : MonoBehaviour
             AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
             upgradeScreen.SetActive(false);
             isUpgradeScreenActive = false;
+            // to do - add press any key text
             waitForKeyPress = true;
         }
     }
@@ -121,13 +122,9 @@ public class PlayerLevelSystem : MonoBehaviour
     {
         if (waitForKeyPress && Input.anyKeyDown)
         {
-            ResumeGame();
+            PauseManager.instance.UnPauseGame();
+            // to do - remmove press any key text
+            waitForKeyPress = false;
         }
-    }
-
-    private void ResumeGame()
-    {
-        PauseManager.instance.UnPauseGame();
-        waitForKeyPress = false;
     }
 }

@@ -10,6 +10,9 @@ public class PlayerStatManager : CharacterStatManager
     public TMP_Text HPText;
     public GameObject DeadScreen;
 
+    [Header("Magnet")]
+    [SerializeField] private CircleCollider2D magnetCollider;
+
     protected override void Start()
     {
         UpgradeManager.Instance.playerCurrentHealth = UpgradeManager.Instance.playerMaxHealth;
@@ -32,6 +35,7 @@ public class PlayerStatManager : CharacterStatManager
     private void FixedUpdate()
     {
         UpdateHealthBar();
+        UpdateMagnetRadius();
     }
 
     public override void TakeDamage(float damage)
@@ -57,6 +61,13 @@ public class PlayerStatManager : CharacterStatManager
         StartCoroutine(DamageCooldownCoroutine());
     }
 
+    private void UpdateMagnetRadius()
+    {   
+        if (magnetCollider != null)
+        {
+            magnetCollider.radius = UpgradeManager.Instance.playerMagnetRadius;
+        }
+    }
 
     private void UpdateHealthBar()
     {
@@ -130,7 +141,6 @@ public class PlayerStatManager : CharacterStatManager
             Debug.LogWarning("Floating Dodge Prefab is not assigned in the inspector.");
         }
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

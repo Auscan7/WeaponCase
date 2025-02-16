@@ -617,7 +617,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 2.4
+  m_Radius: 1.75
 --- !u!1 &7830788421335500891
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,6 +732,7 @@ MonoBehaviour:
   regenCooldown: 3
   HPText: {fileID: 0}
   DeadScreen: {fileID: 0}
+  magnetCollider: {fileID: 8391779984496116811}
 --- !u!114 &4148250003860843838
 MonoBehaviour:
   m_ObjectHideFlags: 0

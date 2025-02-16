@@ -7,11 +7,13 @@ public class UpgradeManager : MonoBehaviour
     [Header("Player Stats")]
     public float playerCurrentHealth;
     public int playerMaxHealth;
-    public float playerHealthRegenAmount = 1;
-    public float playerArmor;
-    public int playerDodgeChancePercent = 20;
+    public float playerHealthRegenAmount = 1; // to do - new upgrade
+    public float playerArmor; // to do - new upgrade
+    public int playerDodgeChancePercent = 20; // to do - new upgrade
     public float playerMovementSpeedMultiplier = 1;
     public float playerDamageMultiplier = 1;
+    public float playerXpMultiplier = 1; // to do - new upgrade
+    public float playerMagnetRadius = 1.75f; // to do - new upgrade
 
     [Header("Weapons")]
     public GameObject Pistol;
@@ -31,11 +33,9 @@ public class UpgradeManager : MonoBehaviour
     public WeaponStats shotgunStats;
     public WeaponStats rocketStats;
 
-    public static UpgradeManager Instance;
-
     private Dictionary<int, System.Action> upgradeEffects;
 
-
+    public static UpgradeManager Instance;
 
     private void Awake()
     {
@@ -133,7 +133,15 @@ public class UpgradeManager : MonoBehaviour
             { 21, () => ApplyMovementSpeedUpgrade(1.2f) },
             { 22, () => ApplyMovementSpeedUpgrade(1.4f) },
             { 23, () => ApplyMovementSpeedUpgrade(1.6f) },
-            { 24, () => ApplyMovementSpeedUpgrade(2.5f) }
+            { 24, () => ApplyMovementSpeedUpgrade(2.5f) },
+
+            // Experience
+            { 25, () => ApplyXPUpgrade(1.5f) },
+            { 26, () => ApplyXPUpgrade(2f) },
+            { 27, () => ApplyXPUpgrade(2.5f) },
+            { 28, () => ApplyXPUpgrade(3f) },
+            { 29, () => ApplyXPUpgrade(4f) }
+
         };
     }
 
@@ -185,7 +193,6 @@ public class UpgradeManager : MonoBehaviour
         rocketStats.damage = 20;
         rocketStats.areaDamage = 8;
     }
-
 
     private void ApplyUpgrade(int upgradeID)
     {
@@ -250,6 +257,11 @@ public class UpgradeManager : MonoBehaviour
     private void ApplyMovementSpeedUpgrade(float multiplier)
     {
         playerMovementSpeedMultiplier += playerMovementSpeedMultiplier / 10 * multiplier;
+    }
+
+    private void ApplyXPUpgrade(float multiplier)
+    {
+        playerXpMultiplier += playerXpMultiplier / 10 * multiplier;
     }
 }
 
