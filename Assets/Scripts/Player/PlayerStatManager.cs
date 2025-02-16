@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -93,6 +94,13 @@ public class PlayerStatManager : CharacterStatManager
             {
                 textComponent.text = damage.ToString("F0");
                 textComponent.color = Color.red;
+
+                // Scale-up effect
+                textComponent.transform.localScale = Vector3.zero; // Start from 0
+                textComponent.transform.DOScale(1.6f, 0.28f).SetEase(Ease.OutBack); // Smooth bounce scale-up
+
+                // Optional: Fade out after some time
+                textComponent.DOFade(0, 0.8f).SetDelay(1f).OnComplete(() => Destroy(floatingText));
             }
         }
         else
@@ -114,6 +122,13 @@ public class PlayerStatManager : CharacterStatManager
             {
                 textComponent.text = regen.ToString("0.#");
                 textComponent.color = Color.green;
+
+                // Scale-up effect
+                textComponent.transform.localScale = Vector3.zero; // Start from 0
+                textComponent.transform.DOScale(1.4f, 0.7f).SetEase(Ease.OutBack); // Smooth bounce scale-up
+
+                // Optional: Fade out after some time
+                textComponent.DOFade(0, 0.8f).SetDelay(1f).OnComplete(() => Destroy(floatingText));
             }
         }
         else
@@ -132,8 +147,15 @@ public class PlayerStatManager : CharacterStatManager
 
             if (textComponent != null)
             {
-                textComponent.text = "DODGED!";
-                textComponent.color = Color.yellow;
+                textComponent.text = "MISS!";
+                textComponent.color = Color.cyan;
+
+                // Scale-up effect
+                textComponent.transform.localScale = Vector3.zero; // Start from 0
+                textComponent.transform.DOScale(1.4f, 0.3f).SetEase(Ease.OutBack); // Smooth bounce scale-up
+
+                // Optional: Fade out after some time
+                textComponent.DOFade(0, 0.7f).SetDelay(1f).OnComplete(() => Destroy(floatingText));
             }
         }
         else

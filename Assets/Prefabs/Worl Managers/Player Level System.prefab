@@ -169,6 +169,8 @@ MonoBehaviour:
   playerDodgeChancePercent: 20
   playerMovementSpeedMultiplier: 1
   playerDamageMultiplier: 1
+  playerCritDamageMultiplier: 10
+  playerCritChancePercent: 5
   playerXpMultiplier: 1
   playerMagnetRadius: 1.75
   Pistol: {fileID: 0}

@@ -12,6 +12,8 @@ public class UpgradeManager : MonoBehaviour
     public int playerDodgeChancePercent = 20; // to do - new upgrade
     public float playerMovementSpeedMultiplier = 1;
     public float playerDamageMultiplier = 1;
+    public float playerCritDamageMultiplier = 5;
+    public float playerCritChancePercent = 10;
     public float playerXpMultiplier = 1; // to do - new upgrade
     public float playerMagnetRadius = 1.75f; // to do - new upgrade
 
