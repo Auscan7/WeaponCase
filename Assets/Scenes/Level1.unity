@@ -41206,6 +41206,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1496707355878162809, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: gemPoolItems.Array.data[0].poolSize
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496707355878162809, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: gemPoolItems.Array.data[1].poolSize
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496707355878162809, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: gemPoolItems.Array.data[2].poolSize
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496707355878162809, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: gemPoolItems.Array.data[3].poolSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496707355878162809, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: gemPoolItems.Array.data[4].poolSize
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1556093721444185990, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
       propertyPath: WinScreen
       value: 
@@ -41269,6 +41289,78 @@ PrefabInstance:
     - target: {fileID: 3438171215213273933, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
       propertyPath: m_Name
       value: Game Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[0].poolSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[1].poolSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[2].poolSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[3].poolSize
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[4].poolSize
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[5].poolSize
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[6].poolSize
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[7].poolSize
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[8].poolSize
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[9].poolSize
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[10].poolSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[11].poolSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[12].poolSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[13].poolSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[14].poolSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[15].poolSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[16].poolSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[17].poolSize
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8664309105481697693, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
       propertyPath: XPLevel

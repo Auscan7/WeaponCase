@@ -12,11 +12,9 @@ public class GemDrop : MonoBehaviour
         Vector3 spawnPosition = dropPoint != null ? dropPoint.position : transform.position;
 
         // Get the gem from the pool manager based on gem type.
-        GameObject droppedGem = GemPoolManager.Instance.GetGem(gemType);
+        GameObject droppedGem = GemPoolManager.Instance.GetGem(gemType, spawnPosition);
         if (droppedGem != null)
         {
-            droppedGem.transform.position = spawnPosition;
-            // Reset any rotation if necessary
             droppedGem.transform.rotation = Quaternion.identity;
         }
         else

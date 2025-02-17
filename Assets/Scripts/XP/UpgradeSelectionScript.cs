@@ -38,7 +38,6 @@ public class UpgradeSelectionScript : MonoBehaviour
 
     public void SetUpgradeCards()
     {
-        Debug.Log("Setting Upgrade Cards...");
         selectedUpgrades = new Upgrade[upgradeCards.Length];
 
         // Create a HashSet to track already selected upgrades
@@ -123,7 +122,6 @@ public class UpgradeSelectionScript : MonoBehaviour
         if (selectedIndex != -1)
         {
             Upgrade selectedUpgrade = selectedUpgrades[selectedIndex];
-            Debug.Log($"Selected Upgrade: {selectedUpgrade.upgradeName}");
 
             OnUpgradeSelectedEvent?.Invoke(selectedUpgrade.UpgradeID);
             PlayerLevelSystem.instance.CloseUpgradeScreen();

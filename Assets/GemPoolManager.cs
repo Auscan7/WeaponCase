@@ -38,7 +38,7 @@ public class GemPoolManager : MonoBehaviour
         }
     }
 
-    public GameObject GetGem(GemType type)
+    public GameObject GetGem(GemType type, Vector3 spawnPosition)
     {
         if (gemPools.TryGetValue(type, out Queue<GameObject> pool))
         {
@@ -46,6 +46,7 @@ public class GemPoolManager : MonoBehaviour
             {
                 GameObject gem = pool.Dequeue();
                 gem.SetActive(true);
+                gem.transform.position = spawnPosition; // Set the position here
                 return gem;
             }
             else
@@ -55,7 +56,9 @@ public class GemPoolManager : MonoBehaviour
                 GemPoolItem poolItem = gemPoolItems.Find(item => item.gemType == type);
                 if (poolItem != null)
                 {
-                    return Instantiate(poolItem.gemPrefab);
+                    GameObject newGem = Instantiate(poolItem.gemPrefab);
+                    newGem.transform.position = spawnPosition; // Set the position here
+                    return newGem;
                 }
             }
         }

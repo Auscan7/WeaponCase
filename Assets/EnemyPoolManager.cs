@@ -92,6 +92,7 @@ public class EnemyPoolManager : MonoBehaviour
         if (enemyPools.ContainsKey(enemyPrefab))
         {
             enemyPools[enemyPrefab].Enqueue(enemy);
+            enemy.GetComponent<CharacterStatManager>().ResetEnemy();
         }
         else
         {

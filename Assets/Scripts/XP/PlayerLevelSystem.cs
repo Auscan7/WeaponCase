@@ -60,8 +60,6 @@ public class PlayerLevelSystem : MonoBehaviour
         currentLevel++;
         currentLevelText.text = "Level: " + currentLevel.ToString();
 
-        Debug.Log("Level Up! Current Level: " + currentLevel);
-
         CalculateXPRequiredForNextLevel();
         UpdateLevelBar();
 
@@ -96,7 +94,6 @@ public class PlayerLevelSystem : MonoBehaviour
 
             if (upgradeSelection != null)
             {
-                Debug.Log("assigning...");
                 upgradeSelection.SetUpgradeCards();
             }
 
