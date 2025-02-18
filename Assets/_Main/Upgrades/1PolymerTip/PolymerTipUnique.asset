@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ccb4bb72398464487b29b18925d277, type: 3}
+  m_Name: PolymerTipUnique
+  m_EditorClassIdentifier: 
+  upgradeName: Polymer Tip
+  positiveDescription: +20% Dmg
+  negativeDescription: 
+  icon: {fileID: 21300000, guid: 2c3f8a9b2c17f854987e87029f1dc72c, type: 3}
+  border: {fileID: 21300000, guid: ceef4259aae69e34388b50215b07ba24, type: 3}
+  damageMultiplierIncrease: 2

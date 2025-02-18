@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c398b64494c193a4d9427f35565d420e, type: 3}
+  m_Name: RocketActivateUpgrade
+  m_EditorClassIdentifier: 
+  upgradeName: Rocket
+  positiveDescription: Good area damage.
+  negativeDescription: Low fire rate.
+  icon: {fileID: 21300000, guid: 42cc65695e3f2774b8a6b534178fbf95, type: 3}
+  border: {fileID: 21300000, guid: 7ac1b54aa7d23d149ac44d489e93fb97, type: 3}

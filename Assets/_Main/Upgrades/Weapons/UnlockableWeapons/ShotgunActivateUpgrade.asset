@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba46d763c622414c88b377f64e6da59, type: 3}
+  m_Name: ShotgunActivateUpgrade
+  m_EditorClassIdentifier: 
+  upgradeName: Shotgun
+  positiveDescription: Has knockback, fires multiple pellets.
+  negativeDescription: Low damage.
+  icon: {fileID: 21300000, guid: 1baf19739cdf21141986469837aa9337, type: 3}
+  border: {fileID: 21300000, guid: d221f1e3ddc2ea241a9940d1cdad95c2, type: 3}
