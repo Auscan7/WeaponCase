@@ -35,6 +35,9 @@ public class UpgradeManager : MonoBehaviour
     public float baseRocketDamage = 20f;
     public float baseRocketAreaDamage = 8f;
 
+    [Header("Base Weapon Projectile Count")]
+    public int baseShotgunProjectileCount = 3;
+
     [Header("Cases")]
     public GameObject Default;
     public GameObject Second;

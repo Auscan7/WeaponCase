@@ -13,7 +13,6 @@ public class PlayerProjectileFiring : MonoBehaviour
     public Transform projectileSpawnPoint;
 
     [Header("Shotgun Settings")]
-    public int pelletCount = 5;
     public float spreadAngle = 45f;
 
     private float nextPistolFireTime = 0f;
@@ -132,9 +131,9 @@ public class PlayerProjectileFiring : MonoBehaviour
 
             float baseAngle = Mathf.Atan2(baseDirection.y, baseDirection.x) * Mathf.Rad2Deg;
             float halfSpread = spreadAngle / 2f;
-            float angleIncrement = spreadAngle / (pelletCount - 1);
+            float angleIncrement = spreadAngle / (UpgradeManager.Instance.baseShotgunProjectileCount - 1);
 
-            for (int i = 0; i < pelletCount; i++)
+            for (int i = 0; i < UpgradeManager.Instance.baseShotgunProjectileCount; i++)
             {
                 float currentAngle = baseAngle - halfSpread + (angleIncrement * i);
                 Vector2 direction = new Vector2(
