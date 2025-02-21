@@ -9,6 +9,8 @@ TagManager:
   - Highlighter
   - MenuBG
   - Wrench
+  - Magnet
+  - Damage
   layers:
   - Default
   - TransparentFX

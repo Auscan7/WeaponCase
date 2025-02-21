@@ -84,26 +84,73 @@ public class PlayerStatManager : CharacterStatManager
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Wrench")
+        string tag = collision.gameObject.tag;
+
+        switch (tag)
         {
-            AudioManager.instance.PlaySoundSFX(AudioManager.instance.wrenchPickUpSFX);
+            case "Wrench":
+                HandleWrenchPickup();
+                AudioManager.instance.PlaySoundSFX(AudioManager.instance.wrenchPickUpSFX);
+                break;
 
-            float regenAmount = Mathf.RoundToInt((UpgradeManager.Instance.playerMaxHealth / 10) * 1.5f);
-            UpgradeManager.Instance.playerCurrentHealth += regenAmount;
+            case "Magnet":
+                StartCoroutine(IncreaseMagnetRadiusTemporarily());
+                AudioManager.instance.PlaySoundSFX(AudioManager.instance.wrenchPickUpSFX);
+                break;
 
-            if (UpgradeManager.Instance.playerCurrentHealth > UpgradeManager.Instance.playerMaxHealth)
-            {
-                UpgradeManager.Instance.playerCurrentHealth = UpgradeManager.Instance.playerMaxHealth;
-            }
-            FloatingTextManager.Instance.ShowFloatingText(transform.position, regenAmount.ToString("0.#"), Color.green, 1.45f, 0.3f, 0.75f);
-            Destroy(collision.gameObject); // Destroy the wrench
+            case "Damage":
+                StartCoroutine(IncreaseDamageTemporarily());
+                AudioManager.instance.PlaySoundSFX(AudioManager.instance.wrenchPickUpSFX);
+                break;
+
+            default:
+                return; // Exit if it's not a relevant tag
         }
+
+        // Destroy the pickup object
+        Destroy(collision.gameObject);
+    }
+
+    //Wrench
+    private void HandleWrenchPickup()
+    {
+        float regenAmount = Mathf.RoundToInt((UpgradeManager.Instance.playerMaxHealth / 10) * 1.5f);
+        UpgradeManager.Instance.playerCurrentHealth = Mathf.Min(
+            UpgradeManager.Instance.playerCurrentHealth + regenAmount,
+            UpgradeManager.Instance.playerMaxHealth
+        );
+
+        FloatingTextManager.Instance.ShowFloatingText(transform.position, regenAmount.ToString("0.#"), Color.green, 1.45f, 0.3f, 0.75f);
+    }
+
+    //Magnet
+    private IEnumerator IncreaseMagnetRadiusTemporarily()
+    {
+        UpgradeManager.Instance.playerMagnetRadius *= 100f;
+
+        yield return new WaitForSeconds(5f);
+
+        UpgradeManager.Instance.playerMagnetRadius /= 100f;
+    }
+
+    //Damage
+    private IEnumerator IncreaseDamageTemporarily()
+    {
+        UpgradeManager.Instance.playerDamageMultiplier *= 2f;
+        UpgradeManager.Instance.UpdateWeaponDamage();
+
+        yield return new WaitForSeconds(20f);
+
+        UpgradeManager.Instance.playerDamageMultiplier /= 2f;
+        UpgradeManager.Instance.UpdateWeaponDamage();
     }
 
     private IEnumerator DamageCooldownCoroutine()
     {
         isOnCooldown = true;
+
         yield return new WaitForSeconds(damageCooldown);
+
         isOnCooldown = false;
     }
 

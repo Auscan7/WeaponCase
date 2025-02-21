@@ -18,6 +18,11 @@ public class UpgradeManager : MonoBehaviour
     public float playerXpMultiplier = 1f;
     public float playerMagnetRadius = 1.75f;
 
+    [Header("Weapon Damage Multipliers")]
+    public float pistolDamageMultiplier = 1f;
+    public float shotgunDamageMultiplier = 1f;
+    public float rocketDamageMultiplier = 1f;
+
     [Header("Weapons")]
     public GameObject pistol;
     public GameObject shotgun;
@@ -174,12 +179,13 @@ public class UpgradeManager : MonoBehaviour
     /// </summary>
     public void UpdateWeaponDamage()
     {
-        // Recalculate damage based on the current multiplier
-        pistolStats.damage = basePistolDamage * playerDamageMultiplier;
-        shotgunStats.damage = baseShotgunDamage * playerDamageMultiplier;
-        rocketStats.damage = baseRocketDamage * playerDamageMultiplier;
-        rocketStats.areaDamage = baseRocketAreaDamage * playerDamageMultiplier;
+        // Apply both player-wide and weapon-specific multipliers
+        pistolStats.damage = basePistolDamage * playerDamageMultiplier * pistolDamageMultiplier;
+        shotgunStats.damage = baseShotgunDamage * playerDamageMultiplier * shotgunDamageMultiplier;
+        rocketStats.damage = baseRocketDamage * playerDamageMultiplier * rocketDamageMultiplier;
+        rocketStats.areaDamage = baseRocketAreaDamage * playerDamageMultiplier * rocketDamageMultiplier;
     }
+
 }
 
 [System.Serializable]

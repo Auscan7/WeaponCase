@@ -321,9 +321,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 918b9dda63012b3448e0cc4f54b349b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropItemPrefab: {fileID: 8977979752866054712, guid: 20e563ab5f0bc704f94df6a64d0c02cc, type: 3}
-  dropChance: 4.5
-  positionOffset: {x: 0.5, y: 0.5}
+  dropItems:
+  - prefab: {fileID: 8977979752866054712, guid: 1534ea73940bce74385c715f3c1d2e01, type: 3}
+    dropChance: 0.8
+  - prefab: {fileID: 8977979752866054712, guid: 20e563ab5f0bc704f94df6a64d0c02cc, type: 3}
+    dropChance: 1
+  - prefab: {fileID: 8977979752866054712, guid: c082e8c41ee4364449061b259f8ef4ca, type: 3}
+    dropChance: 0.5
   dropPoint: {fileID: 2714442251322780456}
 --- !u!114 &4519943156570936133
 MonoBehaviour:

@@ -8,8 +8,8 @@ public class PistolDamageUpgrade : Upgrade, IConditionalUpgrade
 
     public override void ApplyUpgrade(UpgradeManager upgradeManager)
     {
-        // Increase pistol's fire rate.
-        upgradeManager.pistolStats.damage += upgradeManager.pistolStats.damage / 10 * damageIncrease;
+        upgradeManager.pistolDamageMultiplier += damageIncrease / 10f;
+        upgradeManager.UpdateWeaponDamage();
     }
 
     public bool CanOffer()

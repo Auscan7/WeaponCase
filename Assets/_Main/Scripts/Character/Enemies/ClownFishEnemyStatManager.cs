@@ -5,7 +5,7 @@ using UnityEngine;
 public class ClownFishEnemyStatManager : CharacterStatManager
 {
     GemDrop gemDrop;
-    EnemyDropHealth healthDrop;
+    EnemyItemDrop itemDrop;
     private float damageTimer = 0f;
     private float hideHealthBarDelay = 3f;
 
@@ -13,14 +13,14 @@ public class ClownFishEnemyStatManager : CharacterStatManager
     {
         base.Awake();
         gemDrop = GetComponent<GemDrop>();
-        healthDrop = GetComponent<EnemyDropHealth>();
+        itemDrop = GetComponent<EnemyItemDrop>();
     }
 
     public override void HandleDeath()
     {
         base.HandleDeath();
         gemDrop.DropGem();
-        healthDrop.DropHealthItem();
+        itemDrop.DropItem();
     }
 
     protected override void Update()
