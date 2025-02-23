@@ -38,20 +38,20 @@ public class PlayerProjectileFiring : MonoBehaviour
             Collider2D closestEnemy = GetClosestEnemy(enemiesInRange);
 
             // Only fire if the corresponding weapon is active
-            if (UpgradeManager.Instance.pistol.activeInHierarchy && Time.time >= nextPistolFireTime)
+            if (PlayerUpgradeManager.Instance.pistol.activeInHierarchy && Time.time >= nextPistolFireTime)
             {
                 FireBullet(closestEnemy.transform.position);
-                nextPistolFireTime = Time.time + 1f / UpgradeManager.Instance.pistolStats.firerate;
+                nextPistolFireTime = Time.time + 1f / PlayerUpgradeManager.Instance.pistolStats.firerate;
             }
-            if (UpgradeManager.Instance.shotgun.activeInHierarchy && Time.time >= nextShotgunFireTime)
+            if (PlayerUpgradeManager.Instance.shotgun.activeInHierarchy && Time.time >= nextShotgunFireTime)
             {
                 FireShotgun(closestEnemy.transform.position);
-                nextShotgunFireTime = Time.time + 1f / UpgradeManager.Instance.shotgunStats.firerate;
+                nextShotgunFireTime = Time.time + 1f / PlayerUpgradeManager.Instance.shotgunStats.firerate;
             }
-            if (UpgradeManager.Instance.rocket.activeInHierarchy && Time.time >= nextRocketFireTime)
+            if (PlayerUpgradeManager.Instance.rocket.activeInHierarchy && Time.time >= nextRocketFireTime)
             {
                 FireRocket(closestEnemy.transform.position);
-                nextRocketFireTime = Time.time + 1f / UpgradeManager.Instance.rocketStats.firerate;
+                nextRocketFireTime = Time.time + 1f / PlayerUpgradeManager.Instance.rocketStats.firerate;
             }
         }
     }
@@ -131,9 +131,9 @@ public class PlayerProjectileFiring : MonoBehaviour
 
             float baseAngle = Mathf.Atan2(baseDirection.y, baseDirection.x) * Mathf.Rad2Deg;
             float halfSpread = spreadAngle / 2f;
-            float angleIncrement = spreadAngle / (UpgradeManager.Instance.baseShotgunProjectileCount - 1);
+            float angleIncrement = spreadAngle / (PlayerUpgradeManager.Instance.baseShotgunProjectileCount - 1);
 
-            for (int i = 0; i < UpgradeManager.Instance.baseShotgunProjectileCount; i++)
+            for (int i = 0; i < PlayerUpgradeManager.Instance.baseShotgunProjectileCount; i++)
             {
                 float currentAngle = baseAngle - halfSpread + (angleIncrement * i);
                 Vector2 direction = new Vector2(

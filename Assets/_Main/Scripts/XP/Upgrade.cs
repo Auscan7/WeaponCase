@@ -9,7 +9,7 @@ public abstract class Upgrade : ScriptableObject
     public Sprite border;
 
     // Each upgrade will define its own logic
-    public abstract void ApplyUpgrade(UpgradeManager upgradeManager);
+    public abstract void ApplyUpgrade(PlayerUpgradeManager upgradeManager);
 
     public interface IConditionalUpgrade
     {

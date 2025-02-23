@@ -6,7 +6,7 @@ public class PistolDamageUpgrade : Upgrade, IConditionalUpgrade
 {
     public float damageIncrease;
 
-    public override void ApplyUpgrade(UpgradeManager upgradeManager)
+    public override void ApplyUpgrade(PlayerUpgradeManager upgradeManager)
     {
         upgradeManager.pistolDamageMultiplier += damageIncrease / 10f;
         upgradeManager.UpdateWeaponDamage();
@@ -15,6 +15,6 @@ public class PistolDamageUpgrade : Upgrade, IConditionalUpgrade
     public bool CanOffer()
     {
         // Only offer if the pistol is active.
-        return UpgradeManager.Instance.IsWeaponActive("Pistol");
+        return PlayerUpgradeManager.Instance.IsWeaponActive("Pistol");
     }
 }

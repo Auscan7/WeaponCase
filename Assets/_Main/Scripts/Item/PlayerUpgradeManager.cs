@@ -1,9 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class UpgradeManager : MonoBehaviour
+public class PlayerUpgradeManager : MonoBehaviour
 {
-    public static UpgradeManager Instance;
+    public static PlayerUpgradeManager Instance;
 
     [Header("Player Stats")]
     public float playerCurrentHealth;
@@ -104,7 +104,6 @@ public class UpgradeManager : MonoBehaviour
         if (weaponDict.ContainsKey(weaponKey))
         {
             weaponDict[weaponKey].SetActive(true);
-            Debug.Log("Activated weapon: " + weaponKey);
         }
         else
         {

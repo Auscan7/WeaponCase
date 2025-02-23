@@ -1106,7 +1106,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3133617523489737475}
         m_TargetAssemblyTypeName: GameTimeManager, Assembly-CSharp
         m_MethodName: LoadMainMenu
         m_Mode: 1
@@ -1254,6 +1254,11 @@ GameObject:
   - component: {fileID: 2221511260241200991}
   - component: {fileID: 6388175725545831113}
   - component: {fileID: 5630328192269949132}
+  - component: {fileID: 8104762635251794409}
+  - component: {fileID: 4444228535925690204}
+  - component: {fileID: 2489446866029720285}
+  - component: {fileID: 3133617523489737475}
+  - component: {fileID: 7780146686222702658}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1351,6 +1356,148 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8104762635251794409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479251895875919017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f4731b46b5121b4b9fd08983666fe50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelBar: {fileID: 8247542022363990682}
+  currentLevelText: {fileID: 4738889345316219991}
+  baseXPPerLevel: 3
+  xpMultiplier: 1.35
+  xpPerGem: 1
+  customXPRequirements: 1e00000032000000460000005a0000007800000096000000b4000000d2000000f0000000f0000000f0000000f00000002c0100002c0100002c01000090010000900100009001000090010000f4010000f401000058020000580200005802000058020000bc020000bc0200002003000020030000e8030000e8030000e8030000e8030000e8030000e8030000e8030000e2040000e2040000e2040000e2040000e2040000e2040000e2040000e2040000e2040000e2040000dc050000dc050000dc050000dc050000dc050000dc050000dc050000dc050000dc050000dc050000dc050000dc050000dc050000dc050000d6060000d6060000d6060000d6060000d6060000d6060000d6060000d6060000d6060000d6060000d6060000d6060000d6060000d6060000d6060000d6060000d6060000d6060000d6060000d6060000d0070000d0070000d0070000d0070000d0070000d0070000d0070000d0070000d0070000d0070000d0070000d0070000d0070000d0070000d0070000d0070000d0070000d0070000d0070000d0070000d0070000
+  upgradeScreen: {fileID: 7056149784034595499}
+--- !u!114 &4444228535925690204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479251895875919017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe71b64e61e39b9409fe3e74b16d3a47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeCards:
+  - {fileID: 5613743352739366421}
+  - {fileID: 8215297320313357709}
+  - {fileID: 5749460841888091885}
+  upgradeDescriptions:
+  - {fileID: 6982981197660151441}
+  - {fileID: 3846612939663308464}
+  - {fileID: 7038410913749284113}
+  negativeUpgradeDescriptions:
+  - {fileID: 6180930046727305014}
+  - {fileID: 1545688745161749460}
+  - {fileID: 4166127304063634023}
+  upgradeNames:
+  - {fileID: 969588972616063611}
+  - {fileID: 7686205740440873823}
+  - {fileID: 5081228531890225400}
+  upgradeIcons:
+  - {fileID: 4197025774521734917}
+  - {fileID: 487672596939533279}
+  - {fileID: 4394224116075534130}
+  upgradeBorders:
+  - {fileID: 3978726138180409753}
+  - {fileID: 4998937390176103198}
+  - {fileID: 6643291537517106597}
+  upgradePools:
+  - poolName: Rarity 1
+    upgrades:
+    - {fileID: 11400000, guid: a30104e60b686e146b70d55afa873168, type: 2}
+    - {fileID: 11400000, guid: abcd53cd5d1359c439f52fe97349bd03, type: 2}
+    - {fileID: 11400000, guid: f40c236f6a76de04a9e6550ff5a3520e, type: 2}
+    selectionWeight: 65
+  - poolName: Rarity 2
+    upgrades:
+    - {fileID: 11400000, guid: a4a1ba6f9022e02429c43ecef3361d59, type: 2}
+    - {fileID: 11400000, guid: fdc7f088af118d94389bbf852aec0158, type: 2}
+    selectionWeight: 20
+  - poolName: Rarity 3
+    upgrades:
+    - {fileID: 11400000, guid: df330e094dda6b847b344a88c1872d62, type: 2}
+    - {fileID: 11400000, guid: b6dac09d81cb8144b9c2c766cd69524f, type: 2}
+    selectionWeight: 9
+  - poolName: Rarity 4
+    upgrades:
+    - {fileID: 11400000, guid: c1ca9772cff10c64690db6f7992d5d4a, type: 2}
+    - {fileID: 11400000, guid: ff009384451c3064ea93561dfaccb84f, type: 2}
+    selectionWeight: 5
+  - poolName: Rarity 5
+    upgrades:
+    - {fileID: 11400000, guid: ca91af472a1e82d4bbbbfc0ea34977f0, type: 2}
+    - {fileID: 11400000, guid: 6edba33caafadc94eb19bd02c21f06c3, type: 2}
+    selectionWeight: 1
+--- !u!114 &2489446866029720285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479251895875919017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c9612391254614d8e7702552508985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  continueButton: {fileID: 4521038327674209878}
+  menuButton: {fileID: 4701399020546545328}
+  pauseMenu: {fileID: 2256049834612962971}
+  isPauseMenuOpen: 0
+  isPaused: 0
+--- !u!114 &3133617523489737475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479251895875919017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f714aa36ea3b844b66edfb4489e393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 613846865720323607}
+  triggerTime: 900
+  timerRunning: 1
+  WinScreen: {fileID: 1710492785079556577}
+--- !u!114 &7780146686222702658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479251895875919017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2bd2154e7690b246acee4457825f5e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSelectionPanel: {fileID: 8403271025543173837}
+  gameTimeText: {fileID: 861745856921922849}
+  Tutorial: {fileID: 4716969835047194058}
+  XPLevel: {fileID: 2235170821733234142}
+  PlayerHP: {fileID: 8646420890378131144}
+  selectedWeaponButton: {fileID: 2695117932315223801}
+  selectedWeaponText: {fileID: 7204789734478001021}
+  pistolButton: {fileID: 3344772047881195853}
+  shotgunButton: {fileID: 9035151914382949323}
+  rocketButton: {fileID: 6351292330878490029}
+  selectedCaseButton: {fileID: 8364337265222384189}
+  selectedCaseText: {fileID: 914251589316269281}
+  defaultCaseButton: {fileID: 6308953955121412680}
+  secondCaseButton: {fileID: 5099004943590210385}
+  thirdCaseButton: {fileID: 3107268438822117915}
 --- !u!1 &1596564482527254192
 GameObject:
   m_ObjectHideFlags: 0
@@ -2201,7 +2348,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2489446866029720285}
         m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: Continue
         m_Mode: 1
@@ -2953,7 +3100,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3133617523489737475}
         m_TargetAssemblyTypeName: GameTimeManager, Assembly-CSharp
         m_MethodName: RestartLevel
         m_Mode: 1
@@ -3494,7 +3641,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2489446866029720285}
         m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
         m_MethodName: LoadMainMenu
         m_Mode: 1
@@ -3899,7 +4046,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7780146686222702658}
         m_TargetAssemblyTypeName: WeaponSelectionManager, Assembly-CSharp
         m_MethodName: Battle
         m_Mode: 1
@@ -4032,7 +4179,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3133617523489737475}
         m_TargetAssemblyTypeName: GameTimeManager, Assembly-CSharp
         m_MethodName: RestartLevel
         m_Mode: 1
@@ -6207,7 +6354,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3133617523489737475}
         m_TargetAssemblyTypeName: GameTimeManager, Assembly-CSharp
         m_MethodName: LoadMainMenu
         m_Mode: 1

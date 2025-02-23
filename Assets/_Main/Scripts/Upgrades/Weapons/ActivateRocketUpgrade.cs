@@ -4,7 +4,7 @@ using static Upgrade;
 [CreateAssetMenu(fileName = "RocketActivateUpgrade", menuName = "Upgrades/WeaponUnlocks/Rocket")]
 public class ActivateRocketUpgrade : Upgrade, IConditionalUpgrade
 {
-    public override void ApplyUpgrade(UpgradeManager upgradeManager)
+    public override void ApplyUpgrade(PlayerUpgradeManager upgradeManager)
     {
         upgradeManager.ActivateWeapon("Rocket");
     }
@@ -13,6 +13,6 @@ public class ActivateRocketUpgrade : Upgrade, IConditionalUpgrade
     {
         // Only offer if the shotgun is not active yet.
         // Assuming your UpgradeManager stores a weaponDict.
-        return !UpgradeManager.Instance.IsWeaponActive("Rocket");
+        return !PlayerUpgradeManager.Instance.IsWeaponActive("Rocket");
     }
 }

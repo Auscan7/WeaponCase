@@ -5,7 +5,7 @@ public class PolymerTipEpic : Upgrade
 {
     public float damageMultiplierIncrease;
 
-    public override void ApplyUpgrade(UpgradeManager upgradeManager)
+    public override void ApplyUpgrade(PlayerUpgradeManager upgradeManager)
     {
         upgradeManager.playerDamageMultiplier += upgradeManager.playerDamageMultiplier / 10f * damageMultiplierIncrease;
 

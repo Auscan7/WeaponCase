@@ -55,7 +55,7 @@ public class PlayerMovement : CharacterMovement
 
         // Calculate speed multiplier based on moveAmount
         float speedMultiplier = Mathf.Abs(PlayerInputManager.instance.moveAmount);
-        float effectiveSpeed = (walkingSpeed * UpgradeManager.Instance.playerMovementSpeedMultiplier) * (speedMultiplier / 1.5f);
+        float effectiveSpeed = (walkingSpeed * PlayerUpgradeManager.Instance.playerMovementSpeedMultiplier) * (speedMultiplier / 1.5f);
 
         // Apply movement
         player.rb.linearVelocity = new Vector2(inputVector.x * effectiveSpeed, inputVector.y * effectiveSpeed);

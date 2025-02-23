@@ -10,7 +10,6 @@ public class MainMenuManager : MonoBehaviour
     public Button playButton;
 
     public GameObject comingSoonText;
-    public GameObject BGImage;
     public GameObject MainMenuButtons;
 
     public Vector3 spawnPos;

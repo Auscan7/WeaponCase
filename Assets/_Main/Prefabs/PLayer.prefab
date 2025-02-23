@@ -84,7 +84,6 @@ MonoBehaviour:
   detectionRange: 4
   projectileSpeed: 4
   projectileSpawnPoint: {fileID: 2642464509737796994}
-  pelletCount: 4
   spreadAngle: 45
 --- !u!1 &1917308194399529102
 GameObject:
@@ -223,7 +222,6 @@ MonoBehaviour:
   detectionRange: 5
   projectileSpeed: 6
   projectileSpawnPoint: {fileID: 2642464509737796994}
-  pelletCount: 5
   spreadAngle: 45
 --- !u!1 &2606335633390057655
 GameObject:
@@ -517,7 +515,6 @@ MonoBehaviour:
   detectionRange: 6
   projectileSpeed: 2.5
   projectileSpawnPoint: {fileID: 2642464509737796994}
-  pelletCount: 5
   spreadAngle: 45
 --- !u!1 &6794791346123413314
 GameObject:
@@ -664,6 +661,8 @@ GameObject:
   - component: {fileID: 3008820983568785283}
   - component: {fileID: 455522876061259310}
   - component: {fileID: 4148250003860843838}
+  - component: {fileID: 8192816153180972205}
+  - component: {fileID: 3866748010055612104}
   - component: {fileID: 1778345087761360857}
   - component: {fileID: 1050260841435261478}
   m_Layer: 3
@@ -721,15 +720,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad8e8a27806c2cd40b5ab661c2f1ea41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  basicEnemyMovement: {fileID: 0}
   currentHealth: 0
   maxHealth: 200
   healthBar: {fileID: 0}
   healthBarParent: {fileID: 0}
-  floatingDamagePrefab: {fileID: 7962031289539908288, guid: 751a1d81fff36504382fd81f0e083f86, type: 3}
-  xOffsetRange: {x: -0.2, y: 0.2}
-  yOffsetRange: {x: -0.2, y: 0.2}
-  damageCooldown: 0.3
-  regenCooldown: 3
   HPText: {fileID: 0}
   DeadScreen: {fileID: 0}
   magnetCollider: {fileID: 8391779984496116811}
@@ -749,6 +744,75 @@ MonoBehaviour:
   horizontalMovement: 0
   verticalMovement: 0
   walkingSpeed: 3.5
+--- !u!114 &8192816153180972205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8732246841202081208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d2c99b1773cc14f9bfbad6190b4663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCurrentHealth: 0
+  playerMaxHealth: 100
+  playerHealthRegenAmount: 1
+  playerLeechAmountPercent: 0.5
+  playerLeechChancePercent: 5
+  playerArmor: 10
+  playerDodgeChancePercent: 20
+  playerMovementSpeedMultiplier: 1
+  playerDamageMultiplier: 1
+  playerCritDamageMultiplier: 10
+  playerCritChancePercent: 5
+  playerXpMultiplier: 1
+  playerMagnetRadius: 1.75
+  pistolDamageMultiplier: 1
+  shotgunDamageMultiplier: 1
+  rocketDamageMultiplier: 1
+  pistol: {fileID: 2248396393127584045}
+  shotgun: {fileID: 1229226007688104451}
+  rocket: {fileID: 4897916746355781264}
+  pistolStats:
+    damage: 10
+    areaDamage: 0
+    firerate: 1
+  shotgunStats:
+    damage: 6
+    areaDamage: 0
+    firerate: 0.5
+  rocketStats:
+    damage: 20
+    areaDamage: 8
+    firerate: 0.3
+  basePistolDamage: 10
+  baseShotgunDamage: 6
+  baseRocketDamage: 20
+  baseRocketAreaDamage: 8
+  baseShotgunProjectileCount: 3
+  Default: {fileID: 4612179880373492636}
+  Second: {fileID: 2606335633390057655}
+  Third: {fileID: 1917308194399529102}
+--- !u!114 &3866748010055612104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8732246841202081208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa1c6c51c7738b46b1ffd5fc77eefb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vortexPrefab: {fileID: 2255980612579941563, guid: 0861bfb9e3abddf429b6b27f8877f173, type: 3}
+  player: {fileID: 7186793037216869759}
+  spawnDistance: 13
+  vortexSpeed: 1.4
+  minSpawnTime: 20
+  maxSpawnTime: 55
 --- !u!50 &1778345087761360857
 Rigidbody2D:
   serializedVersion: 5

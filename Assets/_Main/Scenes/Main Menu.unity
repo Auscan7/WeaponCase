@@ -655,10 +655,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3904909093893846369, guid: 4ec5ddb0c7552fb4c8c7a62561f5acff, type: 3}
-      propertyPath: BGImage
-      value: 
-      objectReference: {fileID: 1513754963}
     - target: {fileID: 5268723609579329322, guid: 4ec5ddb0c7552fb4c8c7a62561f5acff, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -770,8 +766,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 783385797}
   - {fileID: 477928476}
+  - {fileID: 1513754966}
   - {fileID: 9162137883917247953}
   - {fileID: 1443895962}
   - {fileID: 7987256834078465508}
   - {fileID: 1591242791623780603}
-  - {fileID: 1513754966}

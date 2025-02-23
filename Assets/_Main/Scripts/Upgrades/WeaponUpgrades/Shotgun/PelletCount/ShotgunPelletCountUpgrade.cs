@@ -6,13 +6,13 @@ public class ShotgunPelletCountUpgrade : Upgrade, IConditionalUpgrade
 {
     public int pelletCountIncrease;
 
-    public override void ApplyUpgrade(UpgradeManager upgradeManager)
+    public override void ApplyUpgrade(PlayerUpgradeManager upgradeManager)
     {
         upgradeManager.baseShotgunProjectileCount = upgradeManager.baseShotgunProjectileCount + pelletCountIncrease;
     }
 
     public bool CanOffer()
     {
-        return UpgradeManager.Instance.IsWeaponActive("Shotgun");
+        return PlayerUpgradeManager.Instance.IsWeaponActive("Shotgun");
     }
 }

@@ -6,13 +6,11 @@ public class CharacterStatManager : MonoBehaviour
 {
     [HideInInspector]public BasicEnemyMovement basicEnemyMovement;
 
-    public GameObject enemyPrefabReference; // Set this to the prefab used in the pool
-
     private bool isDead = false;
 
     [Header("Health Bar")]
-    [SerializeField] public float currentHealth;
-    [SerializeField] public int maxHealth;
+    [HideInInspector] public float currentHealth;
+    [HideInInspector] public int maxHealth;
     [SerializeField] public Image healthBar;
     [SerializeField] public GameObject healthBarParent;
 
@@ -50,7 +48,6 @@ public class CharacterStatManager : MonoBehaviour
 
     public virtual void HandleDeath()
     {
-        // Return enemy to the pool
-        EnemyPoolManager.Instance.ReturnEnemy(gameObject, enemyPrefabReference);
+        
     }
 }

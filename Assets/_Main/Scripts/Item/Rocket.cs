@@ -16,7 +16,7 @@ public class Rocket : MonoBehaviour
             CharacterStatManager target = collision.gameObject.GetComponentInParent<CharacterStatManager>();
             if (target != null)
             {
-                target.TakeDamage(UpgradeManager.Instance.rocketStats.damage);
+                target.TakeDamage(PlayerUpgradeManager.Instance.rocketStats.damage);
             }
 
             // Trigger the explosion
@@ -46,7 +46,7 @@ public class Rocket : MonoBehaviour
             CharacterStatManager enemyStats = enemy.GetComponentInParent<CharacterStatManager>();
             if (enemyStats != null)
             {
-                enemyStats.TakeDamage(UpgradeManager.Instance.rocketStats.areaDamage);
+                enemyStats.TakeDamage(PlayerUpgradeManager.Instance.rocketStats.areaDamage);
             }
         }
     }

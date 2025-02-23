@@ -6,7 +6,7 @@ public class PistolFireRateUpgrade : Upgrade, IConditionalUpgrade
 {
     public float fireRateIncrease;
 
-    public override void ApplyUpgrade(UpgradeManager upgradeManager)
+    public override void ApplyUpgrade(PlayerUpgradeManager upgradeManager)
     {
         // Increase pistol's fire rate.
         upgradeManager.pistolStats.firerate +=  upgradeManager.pistolStats.firerate / 10 * fireRateIncrease;
@@ -15,6 +15,6 @@ public class PistolFireRateUpgrade : Upgrade, IConditionalUpgrade
     public bool CanOffer()
     {
         // Only offer if the pistol is active.
-        return UpgradeManager.Instance.IsWeaponActive("Pistol");
+        return PlayerUpgradeManager.Instance.IsWeaponActive("Pistol");
     }
 }

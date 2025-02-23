@@ -28,12 +28,6 @@ public class EnemyPoolManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        foreach (var key in enemyPools.Keys)
-        {
-            Debug.Log("Pool key: " + key.name);
-        }
-
     }
 
     private void InitializePools()
@@ -70,7 +64,7 @@ public class EnemyPoolManager : MonoBehaviour
             }
 
             // Force the enemy to remember its original prefab asset.
-            CharacterStatManager enemyScript = enemy.GetComponent<CharacterStatManager>(); // If you have a base enemy script, or use CharacterStatManager if that's on the enemy.
+            EnemyStatManager enemyScript = enemy.GetComponent<EnemyStatManager>(); // If you have a base enemy script, or use CharacterStatManager if that's on the enemy.
             if (enemyScript != null)
             {
                 enemyScript.enemyPrefabReference = enemyPrefab;

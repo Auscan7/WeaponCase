@@ -6,7 +6,7 @@ public class ShotgunDamageUpgrade : Upgrade, IConditionalUpgrade
 {
     public float damageIncrease;
 
-    public override void ApplyUpgrade(UpgradeManager upgradeManager)
+    public override void ApplyUpgrade(PlayerUpgradeManager upgradeManager)
     {
         upgradeManager.shotgunDamageMultiplier += damageIncrease / 10f;
         upgradeManager.UpdateWeaponDamage();
@@ -14,6 +14,6 @@ public class ShotgunDamageUpgrade : Upgrade, IConditionalUpgrade
 
     public bool CanOffer()
     {
-        return UpgradeManager.Instance.IsWeaponActive("Shotgun");
+        return PlayerUpgradeManager.Instance.IsWeaponActive("Shotgun");
     }
 }

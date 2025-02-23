@@ -170,7 +170,7 @@ public class UpgradeSelectionScript : MonoBehaviour
             Upgrade selectedUpgrade = selectedUpgrades[selectedIndex];
 
             // Apply the upgrade effect directly using the new logic.
-            selectedUpgrade.ApplyUpgrade(UpgradeManager.Instance);
+            selectedUpgrade.ApplyUpgrade(PlayerUpgradeManager.Instance);
 
             PlayerLevelSystem.instance.CloseUpgradeScreen();
         }

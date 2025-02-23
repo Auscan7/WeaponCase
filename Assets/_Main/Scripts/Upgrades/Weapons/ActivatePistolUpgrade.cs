@@ -4,7 +4,7 @@ using static Upgrade;
 [CreateAssetMenu(fileName = "PistolActivateUpgrade", menuName = "Upgrades/WeaponUnlocks/Pistol")]
 public class ActivatePistolUpgrade : Upgrade, IConditionalUpgrade
 {
-    public override void ApplyUpgrade(UpgradeManager upgradeManager)
+    public override void ApplyUpgrade(PlayerUpgradeManager upgradeManager)
     {
         upgradeManager.ActivateWeapon("Pistol");
     }
@@ -12,6 +12,6 @@ public class ActivatePistolUpgrade : Upgrade, IConditionalUpgrade
     {
         // Only offer if the shotgun is not active yet.
         // Assuming your UpgradeManager stores a weaponDict.
-        return !UpgradeManager.Instance.IsWeaponActive("Pistol");
+        return !PlayerUpgradeManager.Instance.IsWeaponActive("Pistol");
     }
 }

@@ -15,20 +15,20 @@ public class PlayerStatManager : CharacterStatManager
 
     protected override void Start()
     {
-        UpgradeManager.Instance.playerCurrentHealth = UpgradeManager.Instance.playerMaxHealth;
+        PlayerUpgradeManager.Instance.playerCurrentHealth = PlayerUpgradeManager.Instance.playerMaxHealth;
         StartCoroutine(HealthRegenCoroutine()); // Start regen system
     }
 
     protected override void Update()
     {
-        if (Mathf.RoundToInt(UpgradeManager.Instance.playerCurrentHealth) <= 0)
+        if (Mathf.RoundToInt(PlayerUpgradeManager.Instance.playerCurrentHealth) <= 0)
         {
             HandleDeath();
         }
 
         if (HPText != null)
         {
-            HPText.text = "HP: " + Mathf.RoundToInt(UpgradeManager.Instance.playerCurrentHealth);
+            HPText.text = "HP: " + Mathf.RoundToInt(PlayerUpgradeManager.Instance.playerCurrentHealth);
         }
     }
 
@@ -46,15 +46,15 @@ public class PlayerStatManager : CharacterStatManager
         int dodgeRoll = Random.Range(0, 101); // 0 to 100 inclusive
 
         // If the roll is less than the dodge chance, dodge the attack
-        if (dodgeRoll < UpgradeManager.Instance.playerDodgeChancePercent)
+        if (dodgeRoll < PlayerUpgradeManager.Instance.playerDodgeChancePercent)
         {
             FloatingTextManager.Instance.ShowFloatingText(transform.position, "MISS!", Color.cyan, 1.25f, 0.2f, 0.5f);
             StartCoroutine(DamageCooldownCoroutine());
             return; // No damage applied
         }
 
-        float reducedDamage = damage / (1 + ((UpgradeManager.Instance.playerArmor * 10) / 100));
-        UpgradeManager.Instance.playerCurrentHealth = Mathf.Max(0, Mathf.Round(UpgradeManager.Instance.playerCurrentHealth - reducedDamage));
+        float reducedDamage = damage / (1 + ((PlayerUpgradeManager.Instance.playerArmor * 10) / 100));
+        PlayerUpgradeManager.Instance.playerCurrentHealth = Mathf.Max(0, Mathf.Round(PlayerUpgradeManager.Instance.playerCurrentHealth - reducedDamage));
 
         UpdateHealthBar();
         FloatingTextManager.Instance.ShowFloatingText(transform.position, damage.ToString("F0"), Color.red, 1.35f, 0.25f, 0.65f);
@@ -66,14 +66,14 @@ public class PlayerStatManager : CharacterStatManager
     {   
         if (magnetCollider != null)
         {
-            magnetCollider.radius = UpgradeManager.Instance.playerMagnetRadius;
+            magnetCollider.radius = PlayerUpgradeManager.Instance.playerMagnetRadius;
         }
     }
 
     // UI helth bar
     private void UpdateHealthBar()
     {
-        healthBar.fillAmount = Mathf.Clamp01(UpgradeManager.Instance.playerCurrentHealth / UpgradeManager.Instance.playerMaxHealth);
+        healthBar.fillAmount = Mathf.Clamp01(PlayerUpgradeManager.Instance.playerCurrentHealth / PlayerUpgradeManager.Instance.playerMaxHealth);
     }
 
     public override void HandleDeath()
@@ -115,10 +115,10 @@ public class PlayerStatManager : CharacterStatManager
     //Wrench
     private void HandleWrenchPickup()
     {
-        float regenAmount = Mathf.RoundToInt((UpgradeManager.Instance.playerMaxHealth / 10) * 2f);
-        UpgradeManager.Instance.playerCurrentHealth = Mathf.Min(
-            UpgradeManager.Instance.playerCurrentHealth + regenAmount,
-            UpgradeManager.Instance.playerMaxHealth
+        float regenAmount = Mathf.RoundToInt((PlayerUpgradeManager.Instance.playerMaxHealth / 10) * 2f);
+        PlayerUpgradeManager.Instance.playerCurrentHealth = Mathf.Min(
+            PlayerUpgradeManager.Instance.playerCurrentHealth + regenAmount,
+            PlayerUpgradeManager.Instance.playerMaxHealth
         );
 
         FloatingTextManager.Instance.ShowFloatingText(transform.position, regenAmount.ToString("0.#"), Color.green, 1.55f, 0.3f, 0.75f);
@@ -127,23 +127,23 @@ public class PlayerStatManager : CharacterStatManager
     //Magnet
     private IEnumerator IncreaseMagnetRadiusTemporarily()
     {
-        UpgradeManager.Instance.playerMagnetRadius *= 100f;
+        PlayerUpgradeManager.Instance.playerMagnetRadius *= 100f;
 
         yield return new WaitForSeconds(5f);
 
-        UpgradeManager.Instance.playerMagnetRadius /= 100f;
+        PlayerUpgradeManager.Instance.playerMagnetRadius /= 100f;
     }
 
     //Damage
     private IEnumerator IncreaseDamageTemporarily()
     {
-        UpgradeManager.Instance.playerDamageMultiplier *= 2f;
-        UpgradeManager.Instance.UpdateWeaponDamage();
+        PlayerUpgradeManager.Instance.playerDamageMultiplier *= 2f;
+        PlayerUpgradeManager.Instance.UpdateWeaponDamage();
 
         yield return new WaitForSeconds(20f);
 
-        UpgradeManager.Instance.playerDamageMultiplier /= 2f;
-        UpgradeManager.Instance.UpdateWeaponDamage();
+        PlayerUpgradeManager.Instance.playerDamageMultiplier /= 2f;
+        PlayerUpgradeManager.Instance.UpdateWeaponDamage();
     }
 
     // if on cooldown prevent taking damage
@@ -163,11 +163,11 @@ public class PlayerStatManager : CharacterStatManager
         {
             yield return new WaitForSeconds(regenCooldown);
 
-            if (UpgradeManager.Instance.playerCurrentHealth < UpgradeManager.Instance.playerMaxHealth)
+            if (PlayerUpgradeManager.Instance.playerCurrentHealth < PlayerUpgradeManager.Instance.playerMaxHealth)
             {
-                UpgradeManager.Instance.playerCurrentHealth = Mathf.Min(
-                    UpgradeManager.Instance.playerMaxHealth,
-                    UpgradeManager.Instance.playerCurrentHealth + UpgradeManager.Instance.playerHealthRegenAmount
+                PlayerUpgradeManager.Instance.playerCurrentHealth = Mathf.Min(
+                    PlayerUpgradeManager.Instance.playerMaxHealth,
+                    PlayerUpgradeManager.Instance.playerCurrentHealth + PlayerUpgradeManager.Instance.playerHealthRegenAmount
                 );
                 //FloatingTextManager.Instance.ShowFloatingText(transform.position, UpgradeManager.Instance.playerHealthRegenAmount.ToString("0.#"), Color.green, 1.2f, 0.6f, 0.75f);
                 UpdateHealthBar();

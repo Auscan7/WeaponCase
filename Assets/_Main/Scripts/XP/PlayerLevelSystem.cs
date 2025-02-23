@@ -45,7 +45,7 @@ public class PlayerLevelSystem : MonoBehaviour
 
     public void AddXP(int xpAmount)
     {
-        currentXP += Mathf.RoundToInt(xpAmount * UpgradeManager.Instance.playerXpMultiplier);
+        currentXP += Mathf.RoundToInt(xpAmount * PlayerUpgradeManager.Instance.playerXpMultiplier);
         UpdateLevelBar();
 
         if (currentXP >= xpRequiredForNextLevel)

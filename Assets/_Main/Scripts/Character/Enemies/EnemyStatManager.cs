@@ -5,6 +5,8 @@ public class EnemyStatManager : CharacterStatManager
     GemDrop gemDrop;
     EnemyItemDrop itemDrop;
 
+    public GameObject enemyPrefabReference; // Set this to the prefab used in the pool
+
     // hide health bar
     private float damageTimer = 0f;
     private float hideHealthBarDelay = 3f;
@@ -19,10 +21,11 @@ public class EnemyStatManager : CharacterStatManager
 
     public override void HandleDeath()
     {
-        base.HandleDeath();
-
         gemDrop.DropGem();
         itemDrop.DropItem();
+
+        // Return enemy to the pool
+        EnemyPoolManager.Instance.ReturnEnemy(gameObject, enemyPrefabReference);
     }
 
     protected override void Update()
@@ -62,7 +65,7 @@ public class EnemyStatManager : CharacterStatManager
         currentHealth = Mathf.Max(currentHealth, 0); // Ensure health doesn't go below zero
 
         //leech
-        Leech(damage, UpgradeManager.Instance.playerLeechAmountPercent);
+        Leech(damage, PlayerUpgradeManager.Instance.playerLeechAmountPercent);
 
         healthBar.fillAmount = currentHealth / maxHealth;
         FloatingTextManager.Instance.ShowFloatingText(transform.position, damage.ToString("F0"), Color.white, 1.1f, 0.35f, 0.6f);
@@ -76,14 +79,14 @@ public class EnemyStatManager : CharacterStatManager
     {
         int critChance = Random.Range(0, 101);
 
-        if (critChance < UpgradeManager.Instance.playerCritChancePercent)
+        if (critChance < PlayerUpgradeManager.Instance.playerCritChancePercent)
         {
-            float critDamage = (damage += damage / 10 * UpgradeManager.Instance.playerCritDamageMultiplier);
+            float critDamage = (damage += damage / 10 * PlayerUpgradeManager.Instance.playerCritDamageMultiplier);
             currentHealth -= critDamage;
             currentHealth = Mathf.Max(currentHealth, 0); // Ensure health doesn't go below zero
 
             //leech
-            Leech(critDamage, UpgradeManager.Instance.playerLeechAmountPercent);
+            Leech(critDamage, PlayerUpgradeManager.Instance.playerLeechAmountPercent);
             FloatingTextManager.Instance.ShowFloatingText(transform.position, critDamage.ToString("F0"), Color.yellow, 1.75f, 0.2f, 0.7f);
 
             return; // No crit damage applied
@@ -101,11 +104,11 @@ public class EnemyStatManager : CharacterStatManager
 
         int leechChance = Random.Range(0, 101);
 
-        if (leechChance < UpgradeManager.Instance.playerLeechChancePercent && UpgradeManager.Instance.playerCurrentHealth != UpgradeManager.Instance.playerMaxHealth)
+        if (leechChance < PlayerUpgradeManager.Instance.playerLeechChancePercent && PlayerUpgradeManager.Instance.playerCurrentHealth != PlayerUpgradeManager.Instance.playerMaxHealth)
         {
-            UpgradeManager.Instance.playerCurrentHealth = Mathf.Min(
-                   UpgradeManager.Instance.playerMaxHealth,
-                   UpgradeManager.Instance.playerCurrentHealth + leechAmount);
+            PlayerUpgradeManager.Instance.playerCurrentHealth = Mathf.Min(
+                   PlayerUpgradeManager.Instance.playerMaxHealth,
+                   PlayerUpgradeManager.Instance.playerCurrentHealth + leechAmount);
 
             
             FloatingTextManager.Instance.ShowFloatingText(player.position, leechAmount.ToString("F0"), Color.green, 0.9f, 0.5f, 0.6f);

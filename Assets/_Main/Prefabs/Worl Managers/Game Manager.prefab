@@ -9,10 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1706525254934586072}
-  - component: {fileID: 2089720890799046194}
-  - component: {fileID: 1556093721444185990}
-  - component: {fileID: 8664309105481697693}
-  - component: {fileID: 8852489370544041741}
   - component: {fileID: 2426654472215907098}
   - component: {fileID: 1496707355878162809}
   - component: {fileID: 3558812063020903176}
@@ -38,84 +34,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2089720890799046194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3438171215213273933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51c9612391254614d8e7702552508985, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  continueButton: {fileID: 0}
-  menuButton: {fileID: 0}
-  pauseMenu: {fileID: 0}
-  isPauseMenuOpen: 0
-  isPaused: 0
---- !u!114 &1556093721444185990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3438171215213273933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f714aa36ea3b844b66edfb4489e393, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerText: {fileID: 0}
-  triggerTime: 900
-  timerRunning: 1
-  WinScreen: {fileID: 0}
---- !u!114 &8664309105481697693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3438171215213273933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2bd2154e7690b246acee4457825f5e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponSelectionPanel: {fileID: 0}
-  gameTimeText: {fileID: 0}
-  Tutorial: {fileID: 0}
-  XPLevel: {fileID: 0}
-  PlayerHP: {fileID: 0}
-  selectedWeaponButton: {fileID: 0}
-  selectedWeaponText: {fileID: 0}
-  pistolButton: {fileID: 0}
-  shotgunButton: {fileID: 0}
-  rocketButton: {fileID: 0}
-  selectedCaseButton: {fileID: 0}
-  selectedCaseText: {fileID: 0}
-  defaultCaseButton: {fileID: 0}
-  secondCaseButton: {fileID: 0}
-  thirdCaseButton: {fileID: 0}
---- !u!114 &8852489370544041741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3438171215213273933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aa1c6c51c7738b46b1ffd5fc77eefb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vortexPrefab: {fileID: 2255980612579941563, guid: 0861bfb9e3abddf429b6b27f8877f173, type: 3}
-  player: {fileID: 0}
-  spawnDistance: 13
-  vortexSpeed: 1.4
-  minSpawnTime: 20
-  maxSpawnTime: 55
 --- !u!114 &2426654472215907098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,19 +62,19 @@ MonoBehaviour:
   gemPoolItems:
   - gemType: 0
     gemPrefab: {fileID: 7934407725544011141, guid: ab68bb7cfc3fb284da5aabefad1460d8, type: 3}
-    poolSize: 500
+    poolSize: 250
   - gemType: 1
     gemPrefab: {fileID: 7934407725544011141, guid: c55d4aaa5bcdbe445ad391317fb1d598, type: 3}
-    poolSize: 250
+    poolSize: 150
   - gemType: 2
     gemPrefab: {fileID: 7934407725544011141, guid: aa0d3777448a27a4c8aff19a8d10540e, type: 3}
-    poolSize: 250
+    poolSize: 150
   - gemType: 3
     gemPrefab: {fileID: 7934407725544011141, guid: 031e22321a5ab9a4ea799884f62a7941, type: 3}
     poolSize: 100
   - gemType: 4
     gemPrefab: {fileID: 7934407725544011141, guid: 30810a64bb5dbfc4ab86e32fa21c32b2, type: 3}
-    poolSize: 25
+    poolSize: 20
 --- !u!114 &3558812063020903176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,38 +89,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPoolItems:
   - enemyPrefab: {fileID: 4871557909895165438, guid: ac5b319f2a5dd394a9dfed603b11cc08, type: 3}
-    poolSize: 5
+    poolSize: 10
   - enemyPrefab: {fileID: 4871557909895165438, guid: 51b996bd38fae184dbe02280715d39dd, type: 3}
-    poolSize: 5
+    poolSize: 10
   - enemyPrefab: {fileID: 4871557909895165438, guid: eb90e9ac658563d4d98e14a70ae60014, type: 3}
-    poolSize: 5
+    poolSize: 10
   - enemyPrefab: {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
-    poolSize: 75
+    poolSize: 250
   - enemyPrefab: {fileID: 4871557909895165438, guid: 58bae6a8dd472314cab56a4b4784d8d4, type: 3}
-    poolSize: 75
+    poolSize: 250
   - enemyPrefab: {fileID: 4871557909895165438, guid: e400f720a3cbd254591c88cad3ad7526, type: 3}
-    poolSize: 75
+    poolSize: 250
   - enemyPrefab: {fileID: 4871557909895165438, guid: e9a08ddb07101e94d8b5c97ea312df9a, type: 3}
-    poolSize: 75
+    poolSize: 250
   - enemyPrefab: {fileID: 4871557909895165438, guid: 12b1499d52c50cf4b8a12f06484d94fb, type: 3}
-    poolSize: 30
+    poolSize: 75
   - enemyPrefab: {fileID: 4871557909895165438, guid: 3928c713adf8acc46addd3ecfdabbfed, type: 3}
-    poolSize: 30
+    poolSize: 75
   - enemyPrefab: {fileID: 4871557909895165438, guid: 0d84fef17a274924fb57535227f3b958, type: 3}
-    poolSize: 30
+    poolSize: 75
   - enemyPrefab: {fileID: 4871557909895165438, guid: c3634c317befa0747a956c13714bbc5d, type: 3}
-    poolSize: 50
+    poolSize: 100
   - enemyPrefab: {fileID: 4871557909895165438, guid: 48185c3d8ea61da4493203e079f4667f, type: 3}
-    poolSize: 50
+    poolSize: 100
   - enemyPrefab: {fileID: 4871557909895165438, guid: 16c5ca890802f7b4286fd90eba5e3fd1, type: 3}
-    poolSize: 50
+    poolSize: 100
   - enemyPrefab: {fileID: 4871557909895165438, guid: af4dafe488e120b418dbf9a0500c5c25, type: 3}
-    poolSize: 50
+    poolSize: 100
   - enemyPrefab: {fileID: 4871557909895165438, guid: 69670a6c8d489314fba429fe6a97fde3, type: 3}
-    poolSize: 40
+    poolSize: 50
   - enemyPrefab: {fileID: 4871557909895165438, guid: 6137f6e52b8c42346a9c9e9e292cebe1, type: 3}
-    poolSize: 40
+    poolSize: 50
   - enemyPrefab: {fileID: 4871557909895165438, guid: 637cb6778e975f44bb1dc98989a78ae7, type: 3}
-    poolSize: 40
+    poolSize: 50
   - enemyPrefab: {fileID: 4871557909895165438, guid: 318812d69f4d23e4bbc4a8a788d6ae2f, type: 3}
-    poolSize: 40
+    poolSize: 50
