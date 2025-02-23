@@ -1,13 +1,11 @@
-using DG.Tweening;
 using System.Collections;
-using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 
 public class PlayerStatManager : CharacterStatManager
 {
-    [SerializeField] private float damageCooldown = 0.3f;
-    [SerializeField] private float regenCooldown = 3f; // Time between ticks
+    private float damageCooldown = 0.35f;
+    private float regenCooldown = 3f; // Time between ticks
     private bool isOnCooldown = false;
     public TMP_Text HPText;
     public GameObject DeadScreen;
@@ -63,6 +61,7 @@ public class PlayerStatManager : CharacterStatManager
         StartCoroutine(DamageCooldownCoroutine());
     }
 
+    // Magnet radius calculation at runtime
     private void UpdateMagnetRadius()
     {   
         if (magnetCollider != null)
@@ -71,6 +70,7 @@ public class PlayerStatManager : CharacterStatManager
         }
     }
 
+    // UI helth bar
     private void UpdateHealthBar()
     {
         healthBar.fillAmount = Mathf.Clamp01(UpgradeManager.Instance.playerCurrentHealth / UpgradeManager.Instance.playerMaxHealth);
@@ -79,9 +79,10 @@ public class PlayerStatManager : CharacterStatManager
     public override void HandleDeath()
     {
         DeadScreen.SetActive(true);
-        Destroy(gameObject);
+        Destroy(gameObject); // make this fancier later
     }
 
+    // pickup system
     private void OnTriggerEnter2D(Collider2D collision)
     {
         string tag = collision.gameObject.tag;
@@ -114,13 +115,13 @@ public class PlayerStatManager : CharacterStatManager
     //Wrench
     private void HandleWrenchPickup()
     {
-        float regenAmount = Mathf.RoundToInt((UpgradeManager.Instance.playerMaxHealth / 10) * 1.5f);
+        float regenAmount = Mathf.RoundToInt((UpgradeManager.Instance.playerMaxHealth / 10) * 2f);
         UpgradeManager.Instance.playerCurrentHealth = Mathf.Min(
             UpgradeManager.Instance.playerCurrentHealth + regenAmount,
             UpgradeManager.Instance.playerMaxHealth
         );
 
-        FloatingTextManager.Instance.ShowFloatingText(transform.position, regenAmount.ToString("0.#"), Color.green, 1.45f, 0.3f, 0.75f);
+        FloatingTextManager.Instance.ShowFloatingText(transform.position, regenAmount.ToString("0.#"), Color.green, 1.55f, 0.3f, 0.75f);
     }
 
     //Magnet
@@ -145,6 +146,7 @@ public class PlayerStatManager : CharacterStatManager
         UpgradeManager.Instance.UpdateWeaponDamage();
     }
 
+    // if on cooldown prevent taking damage
     private IEnumerator DamageCooldownCoroutine()
     {
         isOnCooldown = true;
@@ -154,6 +156,7 @@ public class PlayerStatManager : CharacterStatManager
         isOnCooldown = false;
     }
 
+    // passively regen health
     private IEnumerator HealthRegenCoroutine()
     {
         while (true)
@@ -166,7 +169,7 @@ public class PlayerStatManager : CharacterStatManager
                     UpgradeManager.Instance.playerMaxHealth,
                     UpgradeManager.Instance.playerCurrentHealth + UpgradeManager.Instance.playerHealthRegenAmount
                 );
-                FloatingTextManager.Instance.ShowFloatingText(transform.position, UpgradeManager.Instance.playerHealthRegenAmount.ToString("0.#"), Color.green, 1.2f, 0.6f, 0.75f);
+                //FloatingTextManager.Instance.ShowFloatingText(transform.position, UpgradeManager.Instance.playerHealthRegenAmount.ToString("0.#"), Color.green, 1.2f, 0.6f, 0.75f);
                 UpdateHealthBar();
             }
         }

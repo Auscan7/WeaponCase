@@ -8,15 +8,17 @@ public class UpgradeManager : MonoBehaviour
     [Header("Player Stats")]
     public float playerCurrentHealth;
     public int playerMaxHealth;
-    public float playerHealthRegenAmount = 1f;
+    public float playerHealthRegenAmount;
+    public float playerLeechAmountPercent;
+    public float playerLeechChancePercent;
     public float playerArmor;
-    public int playerDodgeChancePercent = 20;
-    public float playerMovementSpeedMultiplier = 1f;
-    public float playerDamageMultiplier = 1f;
-    public float playerCritDamageMultiplier = 5f;
-    public float playerCritChancePercent = 10f;
-    public float playerXpMultiplier = 1f;
-    public float playerMagnetRadius = 1.75f;
+    public int playerDodgeChancePercent;
+    public float playerMovementSpeedMultiplier;
+    public float playerDamageMultiplier;
+    public float playerCritDamageMultiplier;
+    public float playerCritChancePercent;
+    public float playerXpMultiplier;
+    public float playerMagnetRadius;
 
     [Header("Weapon Damage Multipliers")]
     public float pistolDamageMultiplier = 1f;

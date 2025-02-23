@@ -41090,14 +41090,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4537704616888661695}
     - target: {fileID: 1673084244522484919, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: Pistol
-      value: 
-      objectReference: {fileID: 1466918378}
-    - target: {fileID: 1673084244522484919, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: Rocket
-      value: 
-      objectReference: {fileID: 1035611923}
-    - target: {fileID: 1673084244522484919, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
       propertyPath: Second
       value: 
       objectReference: {fileID: 4537704616888661696}
@@ -41114,10 +41106,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4537704616888661697}
     - target: {fileID: 1673084244522484919, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: Shotgun
-      value: 
-      objectReference: {fileID: 664042481}
-    - target: {fileID: 1673084244522484919, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
       propertyPath: shotgun
       value: 
       objectReference: {fileID: 664042481}
@@ -41133,10 +41121,6 @@ PrefabInstance:
       propertyPath: currentLevelText
       value: 
       objectReference: {fileID: 5009774052823361832}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePools.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
       propertyPath: 'upgradeCards.Array.data[0]'
       value: 
@@ -41198,30 +41182,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1309488140}
     - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePools.Array.data[0].poolName
-      value: Rarity 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePools.Array.data[1].poolName
-      value: Rarity 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePools.Array.data[2].poolName
-      value: Rarity 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePools.Array.data[3].poolName
-      value: Rarity 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePools.Array.data[4].poolName
-      value: Rarity 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePools.Array.data[5].poolName
-      value: sdsd
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
       propertyPath: 'negativeUpgradeDescriptions.Array.data[0]'
       value: 
       objectReference: {fileID: 1166996145}
@@ -41233,106 +41193,6 @@ PrefabInstance:
       propertyPath: 'negativeUpgradeDescriptions.Array.data[2]'
       value: 
       objectReference: {fileID: 1166996143}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePools.Array.data[0].selectionWeight
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePools.Array.data[1].selectionWeight
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePools.Array.data[2].selectionWeight
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePools.Array.data[3].selectionWeight
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePools.Array.data[4].selectionWeight
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePools.Array.data[5].selectionWeight
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePools.Array.data[0].upgrades.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePools.Array.data[1].upgrades.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePools.Array.data[2].upgrades.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePools.Array.data[3].upgrades.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePools.Array.data[4].upgrades.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: upgradePools.Array.data[5].upgrades.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: 'upgradePools.Array.data[0].upgrades.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: a30104e60b686e146b70d55afa873168, type: 2}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: 'upgradePools.Array.data[0].upgrades.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: abcd53cd5d1359c439f52fe97349bd03, type: 2}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: 'upgradePools.Array.data[0].upgrades.Array.data[2]'
-      value: 
-      objectReference: {fileID: 11400000, guid: f40c236f6a76de04a9e6550ff5a3520e, type: 2}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: 'upgradePools.Array.data[0].upgrades.Array.data[3]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 6edba33caafadc94eb19bd02c21f06c3, type: 2}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: 'upgradePools.Array.data[1].upgrades.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: a4a1ba6f9022e02429c43ecef3361d59, type: 2}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: 'upgradePools.Array.data[1].upgrades.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: fdc7f088af118d94389bbf852aec0158, type: 2}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: 'upgradePools.Array.data[2].upgrades.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: df330e094dda6b847b344a88c1872d62, type: 2}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: 'upgradePools.Array.data[2].upgrades.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: b6dac09d81cb8144b9c2c766cd69524f, type: 2}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: 'upgradePools.Array.data[3].upgrades.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: c1ca9772cff10c64690db6f7992d5d4a, type: 2}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: 'upgradePools.Array.data[3].upgrades.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: ff009384451c3064ea93561dfaccb84f, type: 2}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: 'upgradePools.Array.data[4].upgrades.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: ca91af472a1e82d4bbbbfc0ea34977f0, type: 2}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: 'upgradePools.Array.data[4].upgrades.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 6edba33caafadc94eb19bd02c21f06c3, type: 2}
-    - target: {fileID: 6557275868810389589, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
-      propertyPath: 'upgradePools.Array.data[5].upgrades.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: ca91af472a1e82d4bbbbfc0ea34977f0, type: 2}
     - target: {fileID: 6695807975822491399, guid: 9cbc8a562ff459843a5a3fb9aac42ad7, type: 3}
       propertyPath: m_Name
       value: Player Level System

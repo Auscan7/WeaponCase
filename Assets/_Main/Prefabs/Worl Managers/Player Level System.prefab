@@ -90,21 +90,32 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   upgradePools:
-  - poolName: Common
-    upgrades: []
-    selectionWeight: 74
-  - poolName: Rare
-    upgrades: []
-    selectionWeight: 11
-  - poolName: Unique
-    upgrades: []
-    selectionWeight: 7
-  - poolName: Epic
-    upgrades: []
+  - poolName: Rarity 1
+    upgrades:
+    - {fileID: 11400000, guid: a30104e60b686e146b70d55afa873168, type: 2}
+    - {fileID: 11400000, guid: abcd53cd5d1359c439f52fe97349bd03, type: 2}
+    - {fileID: 11400000, guid: f40c236f6a76de04a9e6550ff5a3520e, type: 2}
+    selectionWeight: 65
+  - poolName: Rarity 2
+    upgrades:
+    - {fileID: 11400000, guid: a4a1ba6f9022e02429c43ecef3361d59, type: 2}
+    - {fileID: 11400000, guid: fdc7f088af118d94389bbf852aec0158, type: 2}
+    selectionWeight: 20
+  - poolName: Rarity 3
+    upgrades:
+    - {fileID: 11400000, guid: df330e094dda6b847b344a88c1872d62, type: 2}
+    - {fileID: 11400000, guid: b6dac09d81cb8144b9c2c766cd69524f, type: 2}
+    selectionWeight: 9
+  - poolName: Rarity 4
+    upgrades:
+    - {fileID: 11400000, guid: c1ca9772cff10c64690db6f7992d5d4a, type: 2}
+    - {fileID: 11400000, guid: ff009384451c3064ea93561dfaccb84f, type: 2}
     selectionWeight: 5
-  - poolName: Legendary
-    upgrades: []
-    selectionWeight: 3
+  - poolName: Rarity 5
+    upgrades:
+    - {fileID: 11400000, guid: ca91af472a1e82d4bbbbfc0ea34977f0, type: 2}
+    - {fileID: 11400000, guid: 6edba33caafadc94eb19bd02c21f06c3, type: 2}
+    selectionWeight: 1
 --- !u!114 &1673084244522484919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +131,8 @@ MonoBehaviour:
   playerCurrentHealth: 0
   playerMaxHealth: 100
   playerHealthRegenAmount: 1
+  playerLeechAmountPercent: 0.5
+  playerLeechChancePercent: 5
   playerArmor: 10
   playerDodgeChancePercent: 20
   playerMovementSpeedMultiplier: 1
@@ -128,12 +141,12 @@ MonoBehaviour:
   playerCritChancePercent: 5
   playerXpMultiplier: 1
   playerMagnetRadius: 1.75
-  Pistol: {fileID: 0}
-  Shotgun: {fileID: 0}
-  Rocket: {fileID: 0}
-  Default: {fileID: 0}
-  Second: {fileID: 0}
-  Third: {fileID: 0}
+  pistolDamageMultiplier: 1
+  shotgunDamageMultiplier: 1
+  rocketDamageMultiplier: 1
+  pistol: {fileID: 0}
+  shotgun: {fileID: 0}
+  rocket: {fileID: 0}
   pistolStats:
     damage: 10
     areaDamage: 0
@@ -146,3 +159,11 @@ MonoBehaviour:
     damage: 20
     areaDamage: 8
     firerate: 0.3
+  basePistolDamage: 10
+  baseShotgunDamage: 6
+  baseRocketDamage: 20
+  baseRocketAreaDamage: 8
+  baseShotgunProjectileCount: 3
+  Default: {fileID: 0}
+  Second: {fileID: 0}
+  Third: {fileID: 0}
