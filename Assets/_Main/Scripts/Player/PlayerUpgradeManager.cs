@@ -22,22 +22,26 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     [Header("Weapon Damage Multipliers")]
     public float pistolDamageMultiplier = 1f;
+    public float smgDamageMultiplier = 1f;
     public float shotgunDamageMultiplier = 1f;
     public float rocketDamageMultiplier = 1f;
 
     [Header("Weapons")]
     public GameObject pistol;
+    public GameObject smg;
     public GameObject shotgun;
     public GameObject rocket;
 
     [Header("Weapon Stats")]
     public WeaponStats pistolStats;
+    public WeaponStats smgStats;
     public WeaponStats shotgunStats;
     public WeaponStats rocketStats;
 
     // Store the base damage values for recalculation
     [Header("Base Weapon Damage")]
     public float basePistolDamage = 10f;
+    public float baseSMGDamage = 2f;
     public float baseShotgunDamage = 6f;
     public float baseRocketDamage = 20f;
     public float baseRocketAreaDamage = 8f;
@@ -91,6 +95,7 @@ public class PlayerUpgradeManager : MonoBehaviour
         weaponDict = new Dictionary<string, GameObject>
         {
             { "Pistol", pistol },
+            { "SMG", smg },
             { "Shotgun", shotgun },
             { "Rocket", rocket }
         };
@@ -104,12 +109,20 @@ public class PlayerUpgradeManager : MonoBehaviour
         if (weaponDict.ContainsKey(weaponKey))
         {
             weaponDict[weaponKey].SetActive(true);
+
+            // Refresh the weapon list in the firing script
+            EnemyDetection firingScript = FindAnyObjectByType<EnemyDetection>();
+            if (firingScript != null)
+            {
+                firingScript.Start(); // Reinitialize weapon list
+            }
         }
         else
         {
             Debug.LogWarning("Weapon key not found: " + weaponKey);
         }
     }
+
 
     public bool IsWeaponActive(string weaponKey)
     {
@@ -170,6 +183,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     public void ResetWeaponDamage()
     {
         pistolStats.damage = basePistolDamage * playerDamageMultiplier;
+        smgStats.damage = baseSMGDamage * playerDamageMultiplier;
         shotgunStats.damage = baseShotgunDamage * playerDamageMultiplier;
         rocketStats.damage = baseRocketDamage * playerDamageMultiplier;
         rocketStats.areaDamage = baseRocketAreaDamage * playerDamageMultiplier;
@@ -182,6 +196,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     {
         // Apply both player-wide and weapon-specific multipliers
         pistolStats.damage = basePistolDamage * playerDamageMultiplier * pistolDamageMultiplier;
+        smgStats.damage = baseSMGDamage * playerDamageMultiplier * smgDamageMultiplier;
         shotgunStats.damage = baseShotgunDamage * playerDamageMultiplier * shotgunDamageMultiplier;
         rocketStats.damage = baseRocketDamage * playerDamageMultiplier * rocketDamageMultiplier;
         rocketStats.areaDamage = baseRocketAreaDamage * playerDamageMultiplier * rocketDamageMultiplier;
@@ -212,4 +227,5 @@ public class WeaponStats
     public float damage;
     public float areaDamage;
     public float firerate;
+    public float range;
 }

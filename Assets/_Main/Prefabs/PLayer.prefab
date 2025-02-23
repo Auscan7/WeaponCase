@@ -30,6 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8254187446837523302}
+  - {fileID: 5525269302361703142}
   - {fileID: 8227087643702409796}
   - {fileID: 8066911426757180195}
   m_Father: {fileID: 7186793037216869759}
@@ -44,6 +45,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8227087643702409796}
   - component: {fileID: 1383107377150337891}
+  - component: {fileID: 4215885651981078049}
   m_Layer: 3
   m_Name: Shotgun
   m_TagString: Untagged
@@ -78,12 +80,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9978a616e2c4442ac63bfce63aed9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  rocketPrefab: {fileID: 0}
-  pelletPrefab: {fileID: 4722767060693112874, guid: 7f8b24733f23fa6489b96210706a555e, type: 3}
-  detectionRange: 4
-  projectileSpeed: 4
+--- !u!114 &4215885651981078049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229226007688104451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 545d8bb1903acf041b4cd0dd821bb948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 4722767060693112874, guid: 7f8b24733f23fa6489b96210706a555e, type: 3}
   projectileSpawnPoint: {fileID: 2642464509737796994}
+  projectileSpeed: 3.5
+  weaponRange: 0
+  pelletCount: 3
   spreadAngle: 45
 --- !u!1 &1917308194399529102
 GameObject:
@@ -182,6 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8254187446837523302}
   - component: {fileID: 1606226004271634215}
+  - component: {fileID: 9009489239581774821}
   m_Layer: 3
   m_Name: Pistol
   m_TagString: Untagged
@@ -216,13 +230,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9978a616e2c4442ac63bfce63aed9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4722767060693112874, guid: 0a9df0e3d7515554cb9fc04784b5428e, type: 3}
-  rocketPrefab: {fileID: 0}
-  pelletPrefab: {fileID: 0}
-  detectionRange: 5
-  projectileSpeed: 6
+--- !u!114 &9009489239581774821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2248396393127584045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d3d859f9f85f74ab4e3c64b030b239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 4722767060693112874, guid: 0a9df0e3d7515554cb9fc04784b5428e, type: 3}
   projectileSpawnPoint: {fileID: 2642464509737796994}
-  spreadAngle: 45
+  projectileSpeed: 5
+  weaponRange: 0
 --- !u!1 &2606335633390057655
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8066911426757180195}
   - component: {fileID: 5670090748732182422}
+  - component: {fileID: 781575700400996650}
   m_Layer: 3
   m_Name: Rocket
   m_TagString: Untagged
@@ -509,13 +533,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9978a616e2c4442ac63bfce63aed9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  rocketPrefab: {fileID: 4722767060693112874, guid: 5e8b3c35b967c2d48b7296bbd79ef5cb, type: 3}
-  pelletPrefab: {fileID: 0}
-  detectionRange: 6
-  projectileSpeed: 2.5
+--- !u!114 &781575700400996650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4897916746355781264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cfe9a8758c4e394a829f3a2e6ada2ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 4722767060693112874, guid: 5e8b3c35b967c2d48b7296bbd79ef5cb, type: 3}
   projectileSpawnPoint: {fileID: 2642464509737796994}
-  spreadAngle: 45
+  projectileSpeed: 2.5
+  weaponRange: 0
 --- !u!1 &6794791346123413314
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,6 +648,70 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1.75
+--- !u!1 &6871604467730435092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5525269302361703142}
+  - component: {fileID: 4501400356823346161}
+  - component: {fileID: 5571060088895778332}
+  m_Layer: 3
+  m_Name: SMG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5525269302361703142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6871604467730435092}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3536651635202710348}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4501400356823346161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6871604467730435092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9978a616e2c4442ac63bfce63aed9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5571060088895778332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6871604467730435092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97458517a1cdca48af3696b271edd85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 4722767060693112874, guid: 988a97725ae9edd41844520be2589b8b, type: 3}
+  projectileSpawnPoint: {fileID: 2642464509737796994}
+  projectileSpeed: 6
+  weaponRange: 0
+  bulletsPerBurst: 5
+  burstFireRate: 0.15
+  spreadAngle: 30
 --- !u!1 &7830788421335500891
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,24 +867,35 @@ MonoBehaviour:
   playerXpMultiplier: 1
   playerMagnetRadius: 1.75
   pistolDamageMultiplier: 1
+  smgDamageMultiplier: 1
   shotgunDamageMultiplier: 1
   rocketDamageMultiplier: 1
   pistol: {fileID: 2248396393127584045}
+  smg: {fileID: 6871604467730435092}
   shotgun: {fileID: 1229226007688104451}
   rocket: {fileID: 4897916746355781264}
   pistolStats:
     damage: 10
     areaDamage: 0
     firerate: 1
+    range: 4
+  smgStats:
+    damage: 2
+    areaDamage: 0
+    firerate: 0.33
+    range: 5
   shotgunStats:
     damage: 6
     areaDamage: 0
     firerate: 0.5
+    range: 2.5
   rocketStats:
     damage: 20
     areaDamage: 8
     firerate: 0.3
+    range: 6
   basePistolDamage: 10
+  baseSMGDamage: 2
   baseShotgunDamage: 6
   baseRocketDamage: 20
   baseRocketAreaDamage: 8

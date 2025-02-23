@@ -17,6 +17,7 @@ public class WeaponSelectionManager : MonoBehaviour
     public Button selectedWeaponButton;
     public TextMeshProUGUI selectedWeaponText;
     public Button pistolButton;
+    public Button smgButton;
     public Button shotgunButton;
     public Button rocketButton;
 
@@ -47,6 +48,7 @@ public class WeaponSelectionManager : MonoBehaviour
 
         // Add event listeners
         pistolButton.onClick.AddListener(() => SelectWeapon(PlayerUpgradeManager.Instance.pistol, pistolButton, "Pistol"));
+        smgButton.onClick.AddListener(() => SelectWeapon(PlayerUpgradeManager.Instance.smg, smgButton, "SMG"));
         shotgunButton.onClick.AddListener(() => SelectWeapon(PlayerUpgradeManager.Instance.shotgun, shotgunButton, "Shotgun"));
         rocketButton.onClick.AddListener(() => SelectWeapon(PlayerUpgradeManager.Instance.rocket, rocketButton, "Rocket"));
 
