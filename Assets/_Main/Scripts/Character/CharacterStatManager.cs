@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class CharacterStatManager : MonoBehaviour
 {
-    [HideInInspector]public BasicEnemyMovement basicEnemyMovement;
+    [HideInInspector]public EnemyMovementManager enemyMovementManager;
 
     private bool isDead = false;
 
@@ -16,7 +16,7 @@ public class CharacterStatManager : MonoBehaviour
 
     protected virtual void Awake()
     {
-        basicEnemyMovement = GetComponent<BasicEnemyMovement>();
+        enemyMovementManager = GetComponent<EnemyMovementManager>();
     }
 
     protected virtual void Start()

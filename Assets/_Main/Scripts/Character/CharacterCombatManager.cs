@@ -1,16 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterCombatManager : MonoBehaviour
 {
-    [SerializeField] float damageAmount;
+    [SerializeField] protected float damageAmount = 5f;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    public virtual void Attack(GameObject target)
     {
-        if (collision.gameObject.tag == "Player")
+        CharacterStatManager targetStats = target.GetComponentInParent<CharacterStatManager>();
+        if (targetStats != null)
         {
-            collision.gameObject.GetComponentInParent<CharacterStatManager>().TakeDamage(damageAmount);
+            targetStats.TakeDamage(damageAmount);
         }
     }
 }

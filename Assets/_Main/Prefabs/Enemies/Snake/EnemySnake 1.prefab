@@ -186,10 +186,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2714442251322780456}
-  - component: {fileID: 8618715826072280849}
-  - component: {fileID: 5535873446418844807}
+  - component: {fileID: -5336391380488541109}
+  - component: {fileID: -7624147919664073440}
+  - component: {fileID: 7027357171816485595}
   - component: {fileID: 2910664139029674070}
-  - component: {fileID: 8174975359401972439}
   - component: {fileID: -4820772247653231708}
   - component: {fileID: 2112740593251524207}
   - component: {fileID: 2629275203821640451}
@@ -219,7 +219,7 @@ Transform:
   - {fileID: 4836734431542327276}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8618715826072280849
+--- !u!114 &-5336391380488541109
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,13 +228,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4871557909895165438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a952cb5dcd1e6b844952c1d6c381cc1d, type: 3}
+  m_Script: {fileID: 11500000, guid: 60a7a176cdb9a1e4a85b28c275171260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  characterMovement: {fileID: 0}
+  characterMovementManager: {fileID: 0}
   characterStatManager: {fileID: 0}
---- !u!114 &5535873446418844807
+  characterCombatManager: {fileID: 0}
+--- !u!114 &-7624147919664073440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -243,10 +244,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 4871557909895165438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd89c699963f20945affd9d3a42eae65, type: 3}
+  m_Script: {fileID: 11500000, guid: 3edbcc1895d6e24458976271270887d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 100
+  damageAmount: 5
+  hasConeAttack: 0
+  hasProjectileAttack: 0
+  attackDistance: 3
+  coneAngle: 45
+  coneRange: 5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  attackIndicator: {fileID: 0}
+  firePoint: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  fireCooldown: 2
+--- !u!114 &7027357171816485595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871557909895165438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b2ec984a1353c47bf1757900b87809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canMove: 1
+  player: {fileID: 0}
+  moveSpeed: 5
+  spriteTransform: {fileID: 0}
+  rotationSpeed: 5
 --- !u!114 &2910664139029674070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,47 +289,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c29e0a99e236c47a9a3dae4925dab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabReference: {fileID: 4871557909895165438}
+  basicEnemyMovement: {fileID: 0}
   currentHealth: 0
   maxHealth: 40
   healthBar: {fileID: 1297005040029400982}
   healthBarParent: {fileID: 7141845522669670118}
---- !u!114 &8174975359401972439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4871557909895165438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1549159e5c15a1c45a534ce0c2660e76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  moveSpeed: 2
-  coneAttackDamageAmount: 5
-  player: {fileID: 0}
-  spriteTransform: {fileID: 7608606556829224412}
-  hasConeAttack: 0
-  attackDistance: 3
-  indicatorDuration: 1
-  coneAngle: 45
-  coneRange: 5
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  attackIndicator: {fileID: 0}
-  hasProjectileAttack: 0
-  projectilePrefab: {fileID: 0}
-  firePoint: {fileID: 0}
-  projectileRange: 7
-  fireCooldown: 2
-  rotationSpeed: 5
-  cooldownTime: 2
-  isAttacking: 0
-  isOnCooldown: 0
-  savedDirection: {x: 0, y: 0, z: 0}
+  enemyPrefabReference: {fileID: 4871557909895165438}
 --- !u!114 &-4820772247653231708
 MonoBehaviour:
   m_ObjectHideFlags: 0

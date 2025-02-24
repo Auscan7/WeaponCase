@@ -28273,7 +28273,7 @@ MonoBehaviour:
   - {fileID: 4871557909895165438, guid: ac5b319f2a5dd394a9dfed603b11cc08, type: 3}
   spawnInterval: 60
   maxSpawnAmount: 1
-  initialSpawnDelay: 180
+  initialSpawnDelay: 1
 --- !u!4 &1528625786
 Transform:
   m_ObjectHideFlags: 0
@@ -38259,7 +38259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
+  - {fileID: 4871557909895165438, guid: 12b1499d52c50cf4b8a12f06484d94fb, type: 3}
   spawnInterval: 10
   maxSpawnAmount: 12
   initialSpawnDelay: 1

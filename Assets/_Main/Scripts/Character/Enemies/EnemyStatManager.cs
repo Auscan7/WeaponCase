@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyStatManager : CharacterStatManager
 {
+    private EnemyManager enemyManager;
     GemDrop gemDrop;
     EnemyItemDrop itemDrop;
 
@@ -15,6 +16,7 @@ public class EnemyStatManager : CharacterStatManager
     {
         base.Awake();
 
+        enemyManager = GetComponent<EnemyManager>();
         gemDrop = GetComponent<GemDrop>();
         itemDrop = GetComponent<EnemyItemDrop>();
     }
@@ -97,7 +99,7 @@ public class EnemyStatManager : CharacterStatManager
     private void Leech(float damage, float leechAmount)
     {        
         leechAmount = damage / 10 * leechAmount;
-        Transform player = basicEnemyMovement.player;
+        Transform player = enemyManager.player;
 
         if (player == null)
             return;

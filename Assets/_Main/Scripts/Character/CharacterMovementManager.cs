@@ -1,9 +1,9 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CharacterMovement : MonoBehaviour
+public class CharacterMovementManager : MonoBehaviour
 {
-    CharacterManager character;
+    protected CharacterManager character;
 
     [Header("Flags")]
     public bool canMove = true;
@@ -21,5 +21,13 @@ public class CharacterMovement : MonoBehaviour
     protected virtual void Update()
     {
         
+    }
+
+    public virtual void Move(Vector2 direction, float speed)
+    {
+        if (canMove)
+        {
+            transform.position += (Vector3)direction * speed * Time.deltaTime;
+        }
     }
 }
