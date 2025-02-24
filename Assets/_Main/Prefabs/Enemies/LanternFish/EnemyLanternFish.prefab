@@ -308,9 +308,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  moveSpeed: 0.85
+  moveSpeed: 1.25
   spriteTransform: {fileID: 7608606556829224412}
-  rotationSpeed: 5
+  rotationSpeed: 4
 --- !u!114 &2910664139029674070
 MonoBehaviour:
   m_ObjectHideFlags: 0

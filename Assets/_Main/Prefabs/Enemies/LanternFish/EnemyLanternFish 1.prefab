@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  moveSpeed: 0.85
+  moveSpeed: 1.25
   spriteTransform: {fileID: 7608606556829224412}
   rotationSpeed: 5
 --- !u!114 &4519943156570936133
