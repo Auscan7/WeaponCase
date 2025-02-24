@@ -294,7 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 143299159383346129}
   projectilePrefab: {fileID: 4722767060693112874, guid: 074541abf24295344989af5f8ea4b9bf, type: 3}
-  fireCooldown: 5
+  fireCooldown: 6
 --- !u!114 &7507730733407256952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  moveSpeed: 1
+  moveSpeed: 0.85
   spriteTransform: {fileID: 7608606556829224412}
   rotationSpeed: 5
 --- !u!114 &2910664139029674070

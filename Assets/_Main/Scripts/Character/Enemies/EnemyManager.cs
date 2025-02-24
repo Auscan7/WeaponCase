@@ -22,13 +22,11 @@ public class EnemyManager : CharacterManager
         base.Update();
         if (player == null) return;
 
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+
         if (hammerheadCombatManager != null)
         {
             hammerheadCombatManager.TryConeAttack(player);
-        }
-        else if (lanternFishCombatManager != null)
-        {
-            lanternFishCombatManager.TryProjectileAttack(player);
         }
     }
 }

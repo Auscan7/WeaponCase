@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Shotgun : Weapon
 {
-    public int pelletCount = 3;
     public float spreadAngle = 45f;
 
     private void Start()
@@ -20,9 +19,9 @@ public class Shotgun : Weapon
         Vector2 baseDirection = (targetPosition - (Vector2)spawnPos).normalized;
         float baseAngle = Mathf.Atan2(baseDirection.y, baseDirection.x) * Mathf.Rad2Deg;
         float halfSpread = spreadAngle / 2f;
-        float angleStep = spreadAngle / (pelletCount - 1);
+        float angleStep = spreadAngle / (PlayerUpgradeManager.Instance.baseShotgunProjectileCount - 1);
 
-        for (int i = 0; i < pelletCount; i++)
+        for (int i = 0; i < PlayerUpgradeManager.Instance.baseShotgunProjectileCount; i++)
         {
             float currentAngle = baseAngle - halfSpread + (angleStep * i);
             Vector2 direction = new Vector2(Mathf.Cos(currentAngle * Mathf.Deg2Rad), Mathf.Sin(currentAngle * Mathf.Deg2Rad)).normalized;

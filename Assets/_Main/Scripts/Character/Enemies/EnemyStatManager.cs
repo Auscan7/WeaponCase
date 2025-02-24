@@ -113,7 +113,7 @@ public class EnemyStatManager : CharacterStatManager
                    PlayerUpgradeManager.Instance.playerCurrentHealth + leechAmount);
 
             
-            FloatingTextManager.Instance.ShowFloatingText(player.position, leechAmount.ToString("F0"), Color.green, 0.9f, 0.5f, 0.6f);
+            FloatingTextManager.Instance.ShowFloatingText(player.position, leechAmount.ToString("0.#"), Color.green, 0.9f, 0.5f, 0.6f);
         }
     }
 }

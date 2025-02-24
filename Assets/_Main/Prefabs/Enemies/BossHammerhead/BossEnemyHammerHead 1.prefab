@@ -186,10 +186,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2714442251322780456}
-  - component: {fileID: -5581856950594409721}
+  - component: {fileID: -4395357321800890130}
   - component: {fileID: 2910664139029674070}
-  - component: {fileID: -1188389541576970242}
-  - component: {fileID: -6229141939299856899}
+  - component: {fileID: 2631936208237584358}
+  - component: {fileID: 6206941498358351729}
   - component: {fileID: 3943874198617641015}
   - component: {fileID: 887206026406901528}
   - component: {fileID: -4820772247653231708}
@@ -220,7 +220,7 @@ Transform:
   - {fileID: 2527567980553303385}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-5581856950594409721
+--- !u!114 &-4395357321800890130
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,11 +250,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMovementManager: {fileID: 0}
   currentHealth: 0
-  maxHealth: 3000
+  maxHealth: 2000
   healthBar: {fileID: 1297005040029400982}
   healthBarParent: {fileID: 7141845522669670118}
   enemyPrefabReference: {fileID: 4871557909895165438}
---- !u!114 &-1188389541576970242
+--- !u!114 &2631936208237584358
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -270,7 +270,7 @@ MonoBehaviour:
   moveSpeed: 1
   spriteTransform: {fileID: 7608606556829224412}
   rotationSpeed: 5
---- !u!114 &-6229141939299856899
+--- !u!114 &6206941498358351729
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coneAttackDamage: 80
-  coneAngle: 15
+  coneAngle: 30
   coneRange: 7
   attackCooldown: 3
   playerLayer:
@@ -426,8 +426,8 @@ Transform:
   m_GameObject: {fileID: 5910781188211157733}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.70710576, w: 0.7071079}
-  m_LocalPosition: {x: 1.7878, y: 0.078, z: 0}
-  m_LocalScale: {x: 0.7139262, y: 2.4364436, z: 1.327}
+  m_LocalPosition: {x: 1.3347, y: 0.0751, z: 0}
+  m_LocalScale: {x: 0.910873, y: 1.3271669, z: 1.327}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7608606556829224412}

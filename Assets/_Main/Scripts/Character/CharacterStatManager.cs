@@ -9,8 +9,8 @@ public class CharacterStatManager : MonoBehaviour
     private bool isDead = false;
 
     [Header("Health Bar")]
-    [HideInInspector] public float currentHealth;
-    [HideInInspector] public int maxHealth;
+    public float currentHealth;
+    public int maxHealth;
     [SerializeField] public Image healthBar;
     [SerializeField] public GameObject healthBarParent;
 

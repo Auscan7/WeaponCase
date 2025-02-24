@@ -90,9 +90,9 @@ MonoBehaviour:
   enemyPoolItems:
   - enemyPrefab: {fileID: 4871557909895165438, guid: ac5b319f2a5dd394a9dfed603b11cc08, type: 3}
     poolSize: 10
-  - enemyPrefab: {fileID: 4871557909895165438, guid: 51b996bd38fae184dbe02280715d39dd, type: 3}
+  - enemyPrefab: {fileID: 4871557909895165438, guid: a253bea89d01ea24c928d4843bc281b3, type: 3}
     poolSize: 10
-  - enemyPrefab: {fileID: 4871557909895165438, guid: eb90e9ac658563d4d98e14a70ae60014, type: 3}
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 768ad0401cb380341a8f7ecdd12c0269, type: 3}
     poolSize: 10
   - enemyPrefab: {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
     poolSize: 250

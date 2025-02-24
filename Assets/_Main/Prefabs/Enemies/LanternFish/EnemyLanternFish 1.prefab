@@ -222,8 +222,8 @@ GameObject:
   - component: {fileID: -3526091169507651210}
   - component: {fileID: 4519943156570936133}
   - component: {fileID: 2910664139029674070}
-  - component: {fileID: -4820772247653231708}
   - component: {fileID: -1950178417842819965}
+  - component: {fileID: -4820772247653231708}
   - component: {fileID: 2629275203821640451}
   - component: {fileID: 3456901814718195380}
   m_Layer: 6
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  moveSpeed: 1
+  moveSpeed: 0.85
   spriteTransform: {fileID: 7608606556829224412}
   rotationSpeed: 5
 --- !u!114 &4519943156570936133
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 143299159383346129}
   projectilePrefab: {fileID: 4722767060693112874, guid: 4de1721bbd996f4439001846bf181c81, type: 3}
-  fireCooldown: 5
+  fireCooldown: 6
 --- !u!114 &2910664139029674070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,20 +329,6 @@ MonoBehaviour:
   healthBar: {fileID: 1297005040029400982}
   healthBarParent: {fileID: 7141845522669670118}
   enemyPrefabReference: {fileID: 4871557909895165438}
---- !u!114 &-4820772247653231708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4871557909895165438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1df7696eb308124baf897059a30813b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gemType: 3
-  dropPoint: {fileID: 2714442251322780456}
 --- !u!114 &-1950178417842819965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +348,20 @@ MonoBehaviour:
     dropChance: 1
   - prefab: {fileID: 8977979752866054712, guid: c082e8c41ee4364449061b259f8ef4ca, type: 3}
     dropChance: 0.5
+  dropPoint: {fileID: 2714442251322780456}
+--- !u!114 &-4820772247653231708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871557909895165438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1df7696eb308124baf897059a30813b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemType: 3
   dropPoint: {fileID: 2714442251322780456}
 --- !u!50 &2629275203821640451
 Rigidbody2D:

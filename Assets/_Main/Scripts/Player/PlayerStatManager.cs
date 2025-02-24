@@ -57,7 +57,7 @@ public class PlayerStatManager : CharacterStatManager
         PlayerUpgradeManager.Instance.playerCurrentHealth = Mathf.Max(0, Mathf.Round(PlayerUpgradeManager.Instance.playerCurrentHealth - reducedDamage));
 
         UpdateHealthBar();
-        FloatingTextManager.Instance.ShowFloatingText(transform.position, damage.ToString("F0"), Color.red, 1.35f, 0.25f, 0.65f);
+        FloatingTextManager.Instance.ShowFloatingText(transform.position, reducedDamage.ToString("F0"), Color.red, 1.35f, 0.25f, 0.65f);
         StartCoroutine(DamageCooldownCoroutine());
     }
 
