@@ -28270,7 +28270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 4871557909895165438, guid: ac5b319f2a5dd394a9dfed603b11cc08, type: 3}
+  - {fileID: 4871557909895165438, guid: 5a3170471c686b045b2343a87e0d4ef6, type: 3}
   spawnInterval: 60
   maxSpawnAmount: 1
   initialSpawnDelay: 2
@@ -40276,6 +40276,22 @@ PrefabInstance:
       propertyPath: healthBarParent
       value: 
       objectReference: {fileID: 895033454}
+    - target: {fileID: 1383107377150337891, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: enemyLayers.m_Bits
+      value: 24640
+      objectReference: {fileID: 0}
+    - target: {fileID: 1606226004271634215, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: enemyLayers.m_Bits
+      value: 24640
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501400356823346161, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: enemyLayers.m_Bits
+      value: 24640
+      objectReference: {fileID: 0}
+    - target: {fileID: 5670090748732182422, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: enemyLayers.m_Bits
+      value: 24640
+      objectReference: {fileID: 0}
     - target: {fileID: 7186793037216869759, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -40618,6 +40634,110 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.size
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[0].poolSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[3].poolSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[7].poolSize
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[10].poolSize
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[14].poolSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[18].poolSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[0].enemyPrefab
+      value: 
+      objectReference: {fileID: 4871557909895165438, guid: 5a3170471c686b045b2343a87e0d4ef6, type: 3}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[1].enemyPrefab
+      value: 
+      objectReference: {fileID: 4871557909895165438, guid: ac5b319f2a5dd394a9dfed603b11cc08, type: 3}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[2].enemyPrefab
+      value: 
+      objectReference: {fileID: 4871557909895165438, guid: a253bea89d01ea24c928d4843bc281b3, type: 3}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[3].enemyPrefab
+      value: 
+      objectReference: {fileID: 4871557909895165438, guid: 768ad0401cb380341a8f7ecdd12c0269, type: 3}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[4].enemyPrefab
+      value: 
+      objectReference: {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[5].enemyPrefab
+      value: 
+      objectReference: {fileID: 4871557909895165438, guid: 58bae6a8dd472314cab56a4b4784d8d4, type: 3}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[6].enemyPrefab
+      value: 
+      objectReference: {fileID: 4871557909895165438, guid: e400f720a3cbd254591c88cad3ad7526, type: 3}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[7].enemyPrefab
+      value: 
+      objectReference: {fileID: 4871557909895165438, guid: e9a08ddb07101e94d8b5c97ea312df9a, type: 3}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[8].enemyPrefab
+      value: 
+      objectReference: {fileID: 4871557909895165438, guid: 12b1499d52c50cf4b8a12f06484d94fb, type: 3}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[9].enemyPrefab
+      value: 
+      objectReference: {fileID: 4871557909895165438, guid: 3928c713adf8acc46addd3ecfdabbfed, type: 3}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[10].enemyPrefab
+      value: 
+      objectReference: {fileID: 4871557909895165438, guid: 0d84fef17a274924fb57535227f3b958, type: 3}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[11].enemyPrefab
+      value: 
+      objectReference: {fileID: 4871557909895165438, guid: c3634c317befa0747a956c13714bbc5d, type: 3}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[12].enemyPrefab
+      value: 
+      objectReference: {fileID: 4871557909895165438, guid: 48185c3d8ea61da4493203e079f4667f, type: 3}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[13].enemyPrefab
+      value: 
+      objectReference: {fileID: 4871557909895165438, guid: 16c5ca890802f7b4286fd90eba5e3fd1, type: 3}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[14].enemyPrefab
+      value: 
+      objectReference: {fileID: 4871557909895165438, guid: af4dafe488e120b418dbf9a0500c5c25, type: 3}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[15].enemyPrefab
+      value: 
+      objectReference: {fileID: 4871557909895165438, guid: 69670a6c8d489314fba429fe6a97fde3, type: 3}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[16].enemyPrefab
+      value: 
+      objectReference: {fileID: 4871557909895165438, guid: 6137f6e52b8c42346a9c9e9e292cebe1, type: 3}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[17].enemyPrefab
+      value: 
+      objectReference: {fileID: 4871557909895165438, guid: 637cb6778e975f44bb1dc98989a78ae7, type: 3}
+    - target: {fileID: 3558812063020903176, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: enemyPoolItems.Array.data[18].enemyPrefab
+      value: 
+      objectReference: {fileID: 4871557909895165438, guid: 318812d69f4d23e4bbc4a8a788d6ae2f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

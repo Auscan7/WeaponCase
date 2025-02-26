@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1636436366441876291
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 143299159383346129}
-  m_Layer: 13
-  m_Name: FirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &143299159383346129
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636436366441876291}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.333, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7608606556829224412}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1838700070773257616
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,7 +11,7 @@ GameObject:
   - component: {fileID: 3969458439384755984}
   - component: {fileID: 6770185335401196010}
   - component: {fileID: 5331553892854716100}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: Health Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +87,7 @@ GameObject:
   - component: {fileID: 1563687451161885962}
   - component: {fileID: 6866018312965699636}
   - component: {fileID: 3040608417660437599}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: Health Bar Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +103,7 @@ RectTransform:
   m_GameObject: {fileID: 1901499293177424836}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.009, y: 0.009, z: 0.009}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5922920909272351562}
@@ -142,7 +111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.448}
+  m_AnchoredPosition: {x: 0.021, y: 0.382}
   m_SizeDelta: {x: 105.1102, y: 38.5488}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1563687451161885962
@@ -166,7 +135,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &6866018312965699636
 MonoBehaviour:
@@ -217,17 +186,17 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2714442251322780456}
-  - component: {fileID: -8410339324411843050}
-  - component: {fileID: -8999379992227605073}
-  - component: {fileID: 4519943156570936133}
-  - component: {fileID: 7507730733407256952}
+  - component: {fileID: -4395357321800890130}
   - component: {fileID: 2910664139029674070}
+  - component: {fileID: 2631936208237584358}
+  - component: {fileID: 6206941498358351729}
+  - component: {fileID: 4526318695741246110}
+  - component: {fileID: 887206026406901528}
   - component: {fileID: -4820772247653231708}
-  - component: {fileID: -1950178417842819965}
   - component: {fileID: 2629275203821640451}
   - component: {fileID: 3456901814718195380}
-  m_Layer: 13
-  m_Name: EnemyLanternFish
+  m_Layer: 14
+  m_Name: LevelEndBossEnemyOctopus
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -243,14 +212,14 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.7209228, y: 3.3250318, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7608606556829224412}
   - {fileID: 2772103074360972097}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-8410339324411843050
+--- !u!114 &-4395357321800890130
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -266,50 +235,6 @@ MonoBehaviour:
   characterMovementManager: {fileID: 0}
   characterStatManager: {fileID: 0}
   characterCombatManager: {fileID: 0}
---- !u!114 &-8999379992227605073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4871557909895165438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3edbcc1895d6e24458976271270887d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageAmount: 15
---- !u!114 &4519943156570936133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4871557909895165438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 188ecb222e67492439366899a436ef0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 143299159383346129}
-  projectilePrefab: {fileID: 4722767060693112874, guid: 074541abf24295344989af5f8ea4b9bf, type: 3}
-  fireCooldown: 6
---- !u!114 &7507730733407256952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4871557909895165438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7226ad2e1320423459b6047d9c989b08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canMove: 1
-  moveSpeed: 1.25
-  spriteTransform: {fileID: 7608606556829224412}
-  rotationSpeed: 4
 --- !u!114 &2910664139029674070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,11 +249,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMovementManager: {fileID: 0}
   currentHealth: 0
-  maxHealth: 140
+  maxHealth: 4000
   healthBar: {fileID: 1297005040029400982}
   healthBarParent: {fileID: 7141845522669670118}
   enemyPrefabReference: {fileID: 4871557909895165438}
---- !u!114 &-4820772247653231708
+--- !u!114 &2631936208237584358
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -337,12 +262,197 @@ MonoBehaviour:
   m_GameObject: {fileID: 4871557909895165438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1df7696eb308124baf897059a30813b, type: 3}
+  m_Script: {fileID: 11500000, guid: 30b2ec984a1353c47bf1757900b87809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gemType: 3
-  dropPoint: {fileID: 2714442251322780456}
---- !u!114 &-1950178417842819965
+  canMove: 1
+  moveSpeed: 0.75
+  spriteTransform: {fileID: 7608606556829224412}
+  rotationSpeed: 1
+--- !u!114 &6206941498358351729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871557909895165438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3edbcc1895d6e24458976271270887d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 80
+--- !u!114 &4526318695741246110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871557909895165438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d3ed17747538f41806b987a4d6720b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tentacleDamage: 20
+  attackCooldown: 2
+  windupTime: 0.9
+  tentacleLifetime: 0.4
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  tentaclePrefab: {fileID: 4268124984439757230, guid: 1054512919283e144b9adfb4d2e7f403, type: 3}
+  indicatorPrefab: {fileID: 1571205522319391704, guid: af396b99d83646d4db1a5b82ae880e68, type: 3}
+  poolSize: 30
+  attackPatterns:
+  - patternName: Full Grid Attack
+    tentaclePositions:
+    - {x: -2, y: 2}
+    - {x: -1, y: 2}
+    - {x: 0, y: 2}
+    - {x: 1, y: 2}
+    - {x: 2, y: 2}
+    - {x: -2, y: 1}
+    - {x: 2, y: 1}
+    - {x: -2, y: 0}
+    - {x: 2, y: 0}
+    - {x: -2, y: -1}
+    - {x: 2, y: -1}
+    - {x: -2, y: -2}
+    - {x: -1, y: -2}
+    - {x: 0, y: -2}
+    - {x: 1, y: -2}
+    - {x: 2, y: -2}
+  - patternName: Big Circular Attack
+    tentaclePositions:
+    - {x: 6, y: 0}
+    - {x: -6, y: 0}
+    - {x: 0, y: 6}
+    - {x: 0, y: -6}
+    - {x: 5, y: 5}
+    - {x: 5, y: -5}
+    - {x: -5, y: -5}
+    - {x: -5, y: 5}
+  - patternName: medium Circular Attack
+    tentaclePositions:
+    - {x: 5, y: 0}
+    - {x: -5, y: 0}
+    - {x: 0, y: 5}
+    - {x: 0, y: -5}
+    - {x: 4, y: 4}
+    - {x: 4, y: -4}
+    - {x: -4, y: -4}
+    - {x: -4, y: 4}
+  - patternName: Small Circular Attack
+    tentaclePositions:
+    - {x: 3, y: 0}
+    - {x: -3, y: 0}
+    - {x: 0, y: 3}
+    - {x: 0, y: -3}
+    - {x: 2, y: 2}
+    - {x: 2, y: -2}
+    - {x: -2, y: -2}
+    - {x: -2, y: 2}
+  - patternName: Cross Slash
+    tentaclePositions:
+    - {x: -5, y: -5}
+    - {x: -4, y: -4}
+    - {x: -3, y: -3}
+    - {x: -2, y: -2}
+    - {x: 2, y: 2}
+    - {x: 3, y: 3}
+    - {x: 4, y: 4}
+    - {x: 5, y: 5}
+    - {x: -5, y: 5}
+    - {x: -4, y: 4}
+    - {x: -3, y: 3}
+    - {x: -2, y: 2}
+    - {x: 2, y: -2}
+    - {x: 3, y: -3}
+    - {x: 4, y: -4}
+    - {x: 5, y: -5}
+  - patternName: Wave Attack
+    tentaclePositions:
+    - {x: 0.01, y: -1.46}
+    - {x: 1, y: -2}
+    - {x: -1, y: -2}
+    - {x: 2, y: -3}
+    - {x: 0, y: -3}
+    - {x: -2, y: -3}
+    - {x: 3, y: -4}
+    - {x: 1, y: -4}
+    - {x: -1, y: -4}
+    - {x: -3, y: -4}
+  - patternName: Wave Attack
+    tentaclePositions:
+    - {x: -0.05, y: 1.51}
+    - {x: -1, y: 2}
+    - {x: 1, y: 2}
+    - {x: -2, y: 3}
+    - {x: 0, y: 3}
+    - {x: 2, y: 3}
+    - {x: -3, y: 4}
+    - {x: -1, y: 4}
+    - {x: 1, y: 4}
+    - {x: 3, y: 4}
+  - patternName: Wave Attack
+    tentaclePositions:
+    - {x: 0, y: -2}
+    - {x: 2, y: -3}
+    - {x: -2, y: -3}
+    - {x: 3, y: -3}
+    - {x: 0, y: -4}
+    - {x: -3, y: -4}
+    - {x: 4, y: -5}
+    - {x: 2, y: -5}
+    - {x: -2, y: -5}
+    - {x: -4, y: -5}
+  - patternName: Wave Attack
+    tentaclePositions:
+    - {x: -2, y: 0}
+    - {x: -3, y: -2}
+    - {x: -3, y: -2}
+    - {x: -3, y: 3}
+    - {x: -4, y: 0}
+    - {x: -4, y: -3}
+    - {x: -5, y: 4}
+    - {x: -5, y: 2}
+    - {x: -5, y: -2}
+    - {x: -5.94, y: -0.04}
+  - patternName: Wave Attack
+    tentaclePositions:
+    - {x: 2.72, y: 2}
+    - {x: 2.05, y: 0.2}
+    - {x: 3.52, y: -0.51}
+    - {x: 2.14, y: -1.43}
+    - {x: 3.72, y: -2.79}
+    - {x: 4.79, y: 2.69}
+    - {x: 1.56, y: -3.43}
+    - {x: 5.38, y: -3.09}
+    - {x: 5.08, y: 0.57}
+    - {x: 2.97, y: 3.36}
+  - patternName: Wave Attack
+    tentaclePositions:
+    - {x: -2.17, y: 3.5}
+    - {x: 2.05, y: 0.2}
+    - {x: 3.52, y: -0.51}
+    - {x: 2.14, y: -1.43}
+    - {x: 3.72, y: -2.79}
+    - {x: 4.79, y: 2.69}
+    - {x: 1.56, y: -3.43}
+    - {x: 5.38, y: -3.09}
+    - {x: 5.08, y: 0.57}
+    - {x: 2.97, y: 3.36}
+    - {x: -2.51, y: -1.68}
+    - {x: -2.51, y: -3.18}
+    - {x: -1.67, y: 0.62}
+    - {x: -4.51, y: 0.62}
+    - {x: -4.51, y: 2.24}
+    - {x: -3.22, y: 2.24}
+    - {x: 0.29, y: 5.49}
+    - {x: 0.29, y: -2.22}
+  selectedPatternIndex: 10
+--- !u!114 &887206026406901528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -356,11 +466,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropItems:
   - prefab: {fileID: 8977979752866054712, guid: 1534ea73940bce74385c715f3c1d2e01, type: 3}
-    dropChance: 0.8
+    dropChance: 40
   - prefab: {fileID: 8977979752866054712, guid: 20e563ab5f0bc704f94df6a64d0c02cc, type: 3}
-    dropChance: 1
+    dropChance: 50
   - prefab: {fileID: 8977979752866054712, guid: c082e8c41ee4364449061b259f8ef4ca, type: 3}
-    dropChance: 0.5
+    dropChance: 25
+  dropPoint: {fileID: 2714442251322780456}
+--- !u!114 &-4820772247653231708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871557909895165438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1df7696eb308124baf897059a30813b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemType: 4
   dropPoint: {fileID: 2714442251322780456}
 --- !u!50 &2629275203821640451
 Rigidbody2D:
@@ -375,8 +499,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0.5
-  m_AngularDamping: 0.5
+  m_LinearDamping: 2
+  m_AngularDamping: 2
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -424,7 +548,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.3
+  m_Radius: 0.24
 --- !u!1 &6604457279454923096
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,8 +559,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7608606556829224412}
   - component: {fileID: 699542617674658730}
-  - component: {fileID: 5523631659689973751}
-  m_Layer: 13
+  - component: {fileID: 6809502568064638600}
+  m_Layer: 14
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,10 +577,9 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 143299159383346129}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
   m_Father: {fileID: 2714442251322780456}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &699542617674658730
@@ -502,19 +625,19 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 325662254, guid: a8538fa4002e3774aacd661237f54ff5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 0.5744529, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 1.92, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5523631659689973751
+--- !u!95 &6809502568064638600
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -524,7 +647,7 @@ Animator:
   m_GameObject: {fileID: 6604457279454923096}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 57dcfc8df26985348b628e29388991ad, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -545,7 +668,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5922920909272351562}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +707,7 @@ GameObject:
   - component: {fileID: 3922881145617313122}
   - component: {fileID: 5298067852123915455}
   - component: {fileID: 1297005040029400982}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

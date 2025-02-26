@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 143299159383346129}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 3969458439384755984}
   - component: {fileID: 6770185335401196010}
   - component: {fileID: 5331553892854716100}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: Health Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 1563687451161885962}
   - component: {fileID: 6866018312965699636}
   - component: {fileID: 3040608417660437599}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: Health Bar Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: -4820772247653231708}
   - component: {fileID: 2629275203821640451}
   - component: {fileID: 3456901814718195380}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: EnemyLanternFish 2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -248,7 +248,6 @@ Transform:
   m_Children:
   - {fileID: 7608606556829224412}
   - {fileID: 2772103074360972097}
-  - {fileID: 4836734431542327276}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-6218281384660376910
@@ -297,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edbcc1895d6e24458976271270887d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 5
+  damageAmount: 60
 --- !u!114 &400257197417917213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,7 +312,7 @@ MonoBehaviour:
   canMove: 1
   moveSpeed: 1.25
   spriteTransform: {fileID: 7608606556829224412}
-  rotationSpeed: 5
+  rotationSpeed: 4
 --- !u!114 &4519943156570936133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,7 +436,7 @@ GameObject:
   - component: {fileID: 7608606556829224412}
   - component: {fileID: 699542617674658730}
   - component: {fileID: 5523631659689973751}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -546,7 +545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5922920909272351562}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +584,7 @@ GameObject:
   - component: {fileID: 3922881145617313122}
   - component: {fileID: 5298067852123915455}
   - component: {fileID: 1297005040029400982}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,73 +648,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1001 &3537106520120853141
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 2714442251322780456}
-    m_Modifications:
-    - target: {fileID: 3881046791643184545, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
-      propertyPath: ShapeModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4952325379883675290, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
-      propertyPath: m_Name
-      value: Particle System
-      objectReference: {fileID: 0}
-    - target: {fileID: 4952325379883675290, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8217340840972825977, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8217340840972825977, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8217340840972825977, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8217340840972825977, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8217340840972825977, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8217340840972825977, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8217340840972825977, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8217340840972825977, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 8217340840972825977, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8217340840972825977, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
---- !u!4 &4836734431542327276 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8217340840972825977, guid: 723ceb077e3567143b42fd4eb5b768a9, type: 3}
-  m_PrefabInstance: {fileID: 3537106520120853141}
-  m_PrefabAsset: {fileID: 0}

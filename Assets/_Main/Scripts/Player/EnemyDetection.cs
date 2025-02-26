@@ -5,6 +5,8 @@ public class EnemyDetection : MonoBehaviour
 {
     private List<Weapon> equippedWeapons = new List<Weapon>();
 
+    [SerializeField] private LayerMask enemyLayers; // Allow multiple layers to be set in the Inspector
+
     public void Start()
     {
         // Find all equipped weapons automatically
@@ -25,7 +27,7 @@ public class EnemyDetection : MonoBehaviour
             Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(
                 transform.position,
                 weapon.weaponRange,
-                LayerMask.GetMask("Enemy")
+                enemyLayers // Use multiple layers instead of just "Enemy"
             );
 
             if (enemiesInRange.Length > 0)
