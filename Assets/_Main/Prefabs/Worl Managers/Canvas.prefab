@@ -1418,6 +1418,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: a30104e60b686e146b70d55afa873168, type: 2}
     - {fileID: 11400000, guid: abcd53cd5d1359c439f52fe97349bd03, type: 2}
     - {fileID: 11400000, guid: f40c236f6a76de04a9e6550ff5a3520e, type: 2}
+    - {fileID: 11400000, guid: f04cfa61bee209e418e8217a1fcd80ca, type: 2}
     selectionWeight: 65
   - poolName: Rarity 2
     upgrades:

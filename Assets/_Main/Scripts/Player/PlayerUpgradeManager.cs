@@ -25,18 +25,21 @@ public class PlayerUpgradeManager : MonoBehaviour
     public float smgDamageMultiplier = 1f;
     public float shotgunDamageMultiplier = 1f;
     public float rocketDamageMultiplier = 1f;
+    public float orbitalStrikeDamageMultiplier = 1f;
 
     [Header("Weapons")]
     public GameObject pistol;
     public GameObject smg;
     public GameObject shotgun;
     public GameObject rocket;
+    public GameObject orbitalStrike;
 
     [Header("Weapon Stats")]
     public WeaponStats pistolStats;
     public WeaponStats smgStats;
     public WeaponStats shotgunStats;
     public WeaponStats rocketStats;
+    public WeaponStats orbitalStrikeStats;
 
     // Store the base damage values for recalculation
     [Header("Base Weapon Damage")]
@@ -45,6 +48,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     public float baseShotgunDamage = 6f;
     public float baseRocketDamage = 20f;
     public float baseRocketAreaDamage = 8f;
+    public float baseOrbitalStrikeDamage = 30f;
 
     [Header("Base Weapon Projectile Count")]
     public int baseShotgunProjectileCount = 3;
@@ -97,7 +101,8 @@ public class PlayerUpgradeManager : MonoBehaviour
             { "Pistol", pistol },
             { "SMG", smg },
             { "Shotgun", shotgun },
-            { "Rocket", rocket }
+            { "Rocket", rocket },
+            { "OrbitalStrike", orbitalStrike }
         };
     }
 
@@ -187,6 +192,7 @@ public class PlayerUpgradeManager : MonoBehaviour
         shotgunStats.damage = baseShotgunDamage * playerDamageMultiplier;
         rocketStats.damage = baseRocketDamage * playerDamageMultiplier;
         rocketStats.areaDamage = baseRocketAreaDamage * playerDamageMultiplier;
+        orbitalStrikeStats.damage = baseOrbitalStrikeDamage * playerDamageMultiplier;
     }
 
     /// <summary>
@@ -200,6 +206,7 @@ public class PlayerUpgradeManager : MonoBehaviour
         shotgunStats.damage = baseShotgunDamage * playerDamageMultiplier * shotgunDamageMultiplier;
         rocketStats.damage = baseRocketDamage * playerDamageMultiplier * rocketDamageMultiplier;
         rocketStats.areaDamage = baseRocketAreaDamage * playerDamageMultiplier * rocketDamageMultiplier;
+        orbitalStrikeStats.damage = baseOrbitalStrikeDamage * playerDamageMultiplier * orbitalStrikeDamageMultiplier;
     }
 
 }

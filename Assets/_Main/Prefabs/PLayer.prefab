@@ -33,6 +33,7 @@ Transform:
   - {fileID: 5525269302361703142}
   - {fileID: 8227087643702409796}
   - {fileID: 8066911426757180195}
+  - {fileID: 7871839324048199156}
   m_Father: {fileID: 7186793037216869759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1229226007688104451
@@ -80,6 +81,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9978a616e2c4442ac63bfce63aed9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 24640
 --- !u!114 &4215885651981078049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,8 +100,76 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 2642464509737796994}
   projectileSpeed: 3.5
   weaponRange: 0
-  pelletCount: 3
   spreadAngle: 45
+--- !u!1 &1310088296284735180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7871839324048199156}
+  - component: {fileID: 7990642226209397106}
+  - component: {fileID: 5716302486014864544}
+  m_Layer: 3
+  m_Name: OrbitalStrike
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &7871839324048199156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310088296284735180}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3536651635202710348}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7990642226209397106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310088296284735180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9978a616e2c4442ac63bfce63aed9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 24640
+--- !u!114 &5716302486014864544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310088296284735180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a795e73375af6ee47882a17c5f03e151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 4722767060693112874, guid: 001e78c227e523c4f87870e84e553ba4, type: 3}
+  projectileSpawnPoint: {fileID: 2642464509737796994}
+  projectileSpeed: 16
+  weaponRange: 0
+  crosshairPrefab: {fileID: 5938404052151523123, guid: 9c7c17e9f093f584c9b4039b83c9eafe, type: 3}
+  spawnHeight: 25
+  rocketsPerCluster: 3
+  rocketSpawnDelay: 0.25
+  targetOffsetRange: 1.5
 --- !u!1 &1917308194399529102
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,6 +302,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9978a616e2c4442ac63bfce63aed9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 24640
 --- !u!114 &9009489239581774821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,6 +608,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9978a616e2c4442ac63bfce63aed9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 24640
 --- !u!114 &781575700400996650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,6 +771,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9978a616e2c4442ac63bfce63aed9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 24640
 --- !u!114 &5571060088895778332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -802,8 +883,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  characterMovement: {fileID: 0}
+  characterMovementManager: {fileID: 0}
   characterStatManager: {fileID: 0}
+  characterCombatManager: {fileID: 0}
   playerMovement: {fileID: 0}
 --- !u!114 &455522876061259310
 MonoBehaviour:
@@ -817,7 +899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad8e8a27806c2cd40b5ab661c2f1ea41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basicEnemyMovement: {fileID: 0}
+  enemyMovementManager: {fileID: 0}
   currentHealth: 0
   maxHealth: 200
   healthBar: {fileID: 0}
@@ -870,10 +952,12 @@ MonoBehaviour:
   smgDamageMultiplier: 1
   shotgunDamageMultiplier: 1
   rocketDamageMultiplier: 1
+  orbitalStrikeDamageMultiplier: 1
   pistol: {fileID: 2248396393127584045}
   smg: {fileID: 6871604467730435092}
   shotgun: {fileID: 1229226007688104451}
   rocket: {fileID: 4897916746355781264}
+  orbitalStrike: {fileID: 1310088296284735180}
   pistolStats:
     damage: 10
     areaDamage: 0
@@ -894,11 +978,17 @@ MonoBehaviour:
     areaDamage: 8
     firerate: 0.3
     range: 6
+  orbitalStrikeStats:
+    damage: 30
+    areaDamage: 12
+    firerate: 3
+    range: 12
   basePistolDamage: 10
   baseSMGDamage: 2
   baseShotgunDamage: 6
   baseRocketDamage: 20
   baseRocketAreaDamage: 8
+  baseOrbitalStrikeDamage: 30
   baseShotgunProjectileCount: 3
   Default: {fileID: 4612179880373492636}
   Second: {fileID: 2606335633390057655}

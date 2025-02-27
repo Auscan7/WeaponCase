@@ -88,6 +88,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPoolItems:
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 5a3170471c686b045b2343a87e0d4ef6, type: 3}
+    poolSize: 1
   - enemyPrefab: {fileID: 4871557909895165438, guid: ac5b319f2a5dd394a9dfed603b11cc08, type: 3}
     poolSize: 10
   - enemyPrefab: {fileID: 4871557909895165438, guid: a253bea89d01ea24c928d4843bc281b3, type: 3}
