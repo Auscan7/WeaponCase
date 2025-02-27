@@ -1,0 +1,54 @@
+using UnityEngine;
+
+public class GrenadeProjectile : MonoBehaviour
+{
+    private Vector2 targetPosition;
+    private float explosionRadius;
+    private float grenadeDamage;
+    private float speed;
+    private bool hasExploded = false;
+
+    [SerializeField] private GameObject explosionEffectPrefab;
+
+    public void SetTarget(Vector2 target, float radius, float damage, float grenadeSpeed)
+    {
+        targetPosition = target;
+        explosionRadius = radius;
+        grenadeDamage = damage;
+        speed = grenadeSpeed;
+    }
+
+    private void Update()
+    {
+        if (hasExploded) return;
+
+        transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+
+        if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
+        {
+            Explode();
+        }
+    }
+
+    private void Explode()
+    {
+        if (hasExploded) return;
+        hasExploded = true;
+
+        if (explosionEffectPrefab != null)
+        {
+            Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
+        }
+
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, explosionRadius, LayerMask.GetMask("Enemy"));
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            if (enemy.TryGetComponent(out CharacterStatManager enemyStats))
+            {
+                enemyStats.TakeDamage(grenadeDamage);
+            }
+        }
+
+        Destroy(gameObject);
+    }
+}

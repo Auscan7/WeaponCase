@@ -26,6 +26,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     public float shotgunDamageMultiplier = 1f;
     public float rocketDamageMultiplier = 1f;
     public float orbitalStrikeDamageMultiplier = 1f;
+    public float grenadeDamageMultiplier = 1f;
 
     [Header("Weapons")]
     public GameObject pistol;
@@ -33,6 +34,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     public GameObject shotgun;
     public GameObject rocket;
     public GameObject orbitalStrike;
+    public GameObject grenade;
 
     [Header("Weapon Stats")]
     public WeaponStats pistolStats;
@@ -40,6 +42,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     public WeaponStats shotgunStats;
     public WeaponStats rocketStats;
     public WeaponStats orbitalStrikeStats;
+    public WeaponStats grenadeStats;
 
     // Store the base damage values for recalculation
     [Header("Base Weapon Damage")]
@@ -49,9 +52,11 @@ public class PlayerUpgradeManager : MonoBehaviour
     public float baseRocketDamage = 20f;
     public float baseRocketAreaDamage = 8f;
     public float baseOrbitalStrikeDamage = 30f;
+    public float baseGrenadeDamage = 30f;
 
     [Header("Base Weapon Projectile Count")]
     public int baseShotgunProjectileCount = 3;
+    public int baseGrenadeProjectileCount = 3;
 
     [Header("Cases")]
     public GameObject Default;
@@ -102,7 +107,8 @@ public class PlayerUpgradeManager : MonoBehaviour
             { "SMG", smg },
             { "Shotgun", shotgun },
             { "Rocket", rocket },
-            { "OrbitalStrike", orbitalStrike }
+            { "OrbitalStrike", orbitalStrike },
+            { "Grenade", grenade }
         };
     }
 
@@ -193,6 +199,7 @@ public class PlayerUpgradeManager : MonoBehaviour
         rocketStats.damage = baseRocketDamage * playerDamageMultiplier;
         rocketStats.areaDamage = baseRocketAreaDamage * playerDamageMultiplier;
         orbitalStrikeStats.damage = baseOrbitalStrikeDamage * playerDamageMultiplier;
+        grenadeStats.damage = baseGrenadeDamage * playerDamageMultiplier;
     }
 
     /// <summary>
@@ -207,6 +214,7 @@ public class PlayerUpgradeManager : MonoBehaviour
         rocketStats.damage = baseRocketDamage * playerDamageMultiplier * rocketDamageMultiplier;
         rocketStats.areaDamage = baseRocketAreaDamage * playerDamageMultiplier * rocketDamageMultiplier;
         orbitalStrikeStats.damage = baseOrbitalStrikeDamage * playerDamageMultiplier * orbitalStrikeDamageMultiplier;
+        grenadeStats.damage = baseGrenadeDamage * playerDamageMultiplier * grenadeDamageMultiplier;
     }
 
 }

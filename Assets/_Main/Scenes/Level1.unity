@@ -20593,7 +20593,7 @@ MonoBehaviour:
   - {fileID: 4871557909895165438, guid: 5a3170471c686b045b2343a87e0d4ef6, type: 3}
   spawnInterval: 180
   maxSpawnAmount: 1
-  initialSpawnDelay: 800
+  initialSpawnDelay: 777
 --- !u!1 &1111877559
 GameObject:
   m_ObjectHideFlags: 0
@@ -40326,6 +40326,10 @@ PrefabInstance:
       propertyPath: healthBarParent
       value: 
       objectReference: {fileID: 895033454}
+    - target: {fileID: 2342191088485485470, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: explosionEffectPrefab
+      value: 
+      objectReference: {fileID: 4952325379883675290, guid: 1deeb24cd5dc6214bafaf18803b4c45c, type: 3}
     - target: {fileID: 7186793037216869759, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -40704,8 +40708,8 @@ SceneRoots:
   - {fileID: 152808195}
   - {fileID: 1999987634}
   - {fileID: 1578954214}
+  - {fileID: 1523622017}
   - {fileID: 4537704616888661694}
   - {fileID: 2531143202744812020}
   - {fileID: 6294049362532824477}
   - {fileID: 5009774052823361831}
-  - {fileID: 1523622017}
