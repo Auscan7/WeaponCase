@@ -104,6 +104,11 @@ public class PlayerStatManager : CharacterStatManager
                 AudioManager.instance.PlaySoundSFX(AudioManager.instance.wrenchPickUpSFX);
                 break;
 
+            case "Pearl":
+                HandlePearlPickup();
+                AudioManager.instance.PlaySoundSFX(AudioManager.instance.wrenchPickUpSFX);
+                break;
+
             default:
                 return; // Exit if it's not a relevant tag
         }
@@ -122,6 +127,12 @@ public class PlayerStatManager : CharacterStatManager
         );
 
         FloatingTextManager.Instance.ShowFloatingText(transform.position, regenAmount.ToString("0.#"), Color.green, 1.55f, 0.3f, 0.75f);
+    }
+
+    //Pearl
+    private void HandlePearlPickup()
+    {
+        CurrencyManager.Instance.AddCurrency(1);
     }
 
     //Magnet

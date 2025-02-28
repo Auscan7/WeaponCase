@@ -40487,6 +40487,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4444228535925690204, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+      propertyPath: upgradePools.Array.data[1].upgrades.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444228535925690204, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+      propertyPath: 'upgradePools.Array.data[1].upgrades.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 73808da35bd50714dbf61d0ca8d234fc, type: 2}
     - target: {fileID: 6327695393456204611, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

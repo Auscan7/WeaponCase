@@ -11,6 +11,7 @@ TagManager:
   - Wrench
   - Magnet
   - Damage
+  - Pearl
   layers:
   - Default
   - TransparentFX

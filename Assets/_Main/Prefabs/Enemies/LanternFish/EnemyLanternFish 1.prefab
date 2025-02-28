@@ -347,6 +347,8 @@ MonoBehaviour:
     dropChance: 1
   - prefab: {fileID: 8977979752866054712, guid: c082e8c41ee4364449061b259f8ef4ca, type: 3}
     dropChance: 0.5
+  - prefab: {fileID: 8977979752866054712, guid: f939cdffc2a0fc5478a29e5c6df45244, type: 3}
+    dropChance: 0.5
   dropPoint: {fileID: 2714442251322780456}
 --- !u!114 &-4820772247653231708
 MonoBehaviour:
