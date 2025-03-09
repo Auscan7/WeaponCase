@@ -171,6 +171,9 @@ MonoBehaviour:
   rocketsPerCluster: 3
   rocketSpawnDelay: 0.25
   targetOffsetRange: 1.5
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 24640
 --- !u!1 &1917308194399529102
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,11 +895,7 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 2642464509737796994}
   projectileSpeed: 1.5
   weaponRange: 0
-  grenadeCount: 5
-  throwDistance: 4
-  explosionRadius: 1.5
-  grenadeDamage: 50
-  explosionEffectPrefab: {fileID: 0}
+  explosionEffectPrefab: {fileID: 4952325379883675290, guid: 1deeb24cd5dc6214bafaf18803b4c45c, type: 3}
 --- !u!1 &8732246841202081208
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class OrbitalStrike : Weapon
     public int rocketsPerCluster = 5; // Rockets per cluster
     public float rocketSpawnDelay = 0.2f; // Delay between each rocket in a cluster
     public float targetOffsetRange = 1.5f; // Random offset range
+    [SerializeField] private LayerMask enemyLayers; // Allow multiple layers to be set in the Inspector
 
     private bool isFiring = false;
 
@@ -101,7 +102,7 @@ public class OrbitalStrike : Weapon
     {
         List<Transform> enemyTransforms = new List<Transform>();
 
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, weaponRange, LayerMask.GetMask("Enemy"));
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, weaponRange, enemyLayers);
         foreach (Collider2D enemy in enemies)
         {
             enemyTransforms.Add(enemy.transform);

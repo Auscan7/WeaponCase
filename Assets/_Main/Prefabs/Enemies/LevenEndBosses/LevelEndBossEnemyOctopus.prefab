@@ -353,84 +353,6 @@ MonoBehaviour:
     - {x: 2, y: -2}
     - {x: -2, y: -2}
     - {x: -2, y: 2}
-  - patternName: Cross Slash
-    tentaclePositions:
-    - {x: -5, y: -5}
-    - {x: -4, y: -4}
-    - {x: -3, y: -3}
-    - {x: -2, y: -2}
-    - {x: 2, y: 2}
-    - {x: 3, y: 3}
-    - {x: 4, y: 4}
-    - {x: 5, y: 5}
-    - {x: -5, y: 5}
-    - {x: -4, y: 4}
-    - {x: -3, y: 3}
-    - {x: -2, y: 2}
-    - {x: 2, y: -2}
-    - {x: 3, y: -3}
-    - {x: 4, y: -4}
-    - {x: 5, y: -5}
-  - patternName: Wave Attack
-    tentaclePositions:
-    - {x: 0.01, y: -1.46}
-    - {x: 1, y: -2}
-    - {x: -1, y: -2}
-    - {x: 2, y: -3}
-    - {x: 0, y: -3}
-    - {x: -2, y: -3}
-    - {x: 3, y: -4}
-    - {x: 1, y: -4}
-    - {x: -1, y: -4}
-    - {x: -3, y: -4}
-  - patternName: Wave Attack
-    tentaclePositions:
-    - {x: -0.05, y: 1.51}
-    - {x: -1, y: 2}
-    - {x: 1, y: 2}
-    - {x: -2, y: 3}
-    - {x: 0, y: 3}
-    - {x: 2, y: 3}
-    - {x: -3, y: 4}
-    - {x: -1, y: 4}
-    - {x: 1, y: 4}
-    - {x: 3, y: 4}
-  - patternName: Wave Attack
-    tentaclePositions:
-    - {x: 0, y: -2}
-    - {x: 2, y: -3}
-    - {x: -2, y: -3}
-    - {x: 3, y: -3}
-    - {x: 0, y: -4}
-    - {x: -3, y: -4}
-    - {x: 4, y: -5}
-    - {x: 2, y: -5}
-    - {x: -2, y: -5}
-    - {x: -4, y: -5}
-  - patternName: Wave Attack
-    tentaclePositions:
-    - {x: -2, y: 0}
-    - {x: -3, y: -2}
-    - {x: -3, y: -2}
-    - {x: -3, y: 3}
-    - {x: -4, y: 0}
-    - {x: -4, y: -3}
-    - {x: -5, y: 4}
-    - {x: -5, y: 2}
-    - {x: -5, y: -2}
-    - {x: -5.94, y: -0.04}
-  - patternName: Wave Attack
-    tentaclePositions:
-    - {x: 2.72, y: 2}
-    - {x: 2.05, y: 0.2}
-    - {x: 3.52, y: -0.51}
-    - {x: 2.14, y: -1.43}
-    - {x: 3.72, y: -2.79}
-    - {x: 4.79, y: 2.69}
-    - {x: 1.56, y: -3.43}
-    - {x: 5.38, y: -3.09}
-    - {x: 5.08, y: 0.57}
-    - {x: 2.97, y: 3.36}
   - patternName: Wave Attack
     tentaclePositions:
     - {x: -2.17, y: 3.5}
@@ -451,7 +373,27 @@ MonoBehaviour:
     - {x: -3.22, y: 2.24}
     - {x: 0.29, y: 5.49}
     - {x: 0.29, y: -2.22}
-  selectedPatternIndex: 10
+  - patternName: Wave Attack
+    tentaclePositions:
+    - {x: 0.24, y: 3.5}
+    - {x: 3.52, y: 1.41}
+    - {x: 3.52, y: -0.51}
+    - {x: 2.73, y: -1.43}
+    - {x: 3.72, y: -2.79}
+    - {x: 4.79, y: 0.45}
+    - {x: 2.39, y: -3.43}
+    - {x: 5.89, y: -3.09}
+    - {x: 6.65, y: 0.57}
+    - {x: 2.97, y: 3.36}
+    - {x: -3.04, y: -1.68}
+    - {x: -2.51, y: -3.18}
+    - {x: -1.67, y: 0.62}
+    - {x: -4.51, y: 0.62}
+    - {x: -4.51, y: -0.8}
+    - {x: -3.3, y: 2.24}
+    - {x: 0.19, y: 4.84}
+    - {x: -1.41, y: -2.22}
+  selectedPatternIndex: 5
 --- !u!114 &887206026406901528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -631,7 +573,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6, y: 0.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -647,7 +589,7 @@ Animator:
   m_GameObject: {fileID: 6604457279454923096}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1afa07735cddcd348913ec4954114ef0, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7123298731e1d7a40810c40b3d6996d1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

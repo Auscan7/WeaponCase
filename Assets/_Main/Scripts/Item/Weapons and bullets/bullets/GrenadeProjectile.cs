@@ -7,6 +7,7 @@ public class GrenadeProjectile : MonoBehaviour
     private float grenadeDamage;
     private float speed;
     private bool hasExploded = false;
+    [SerializeField] private LayerMask enemyLayers; // Allow multiple layers to be set in the Inspector
 
     [SerializeField] private GameObject explosionEffectPrefab;
 
@@ -40,7 +41,7 @@ public class GrenadeProjectile : MonoBehaviour
             Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
         }
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, explosionRadius, LayerMask.GetMask("Enemy"));
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, explosionRadius, enemyLayers);
         foreach (Collider2D enemy in hitEnemies)
         {
             if (enemy.TryGetComponent(out CharacterStatManager enemyStats))

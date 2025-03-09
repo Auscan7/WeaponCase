@@ -4,6 +4,7 @@ public class OrbitalStrikeRocket : MonoBehaviour
 {
     [Header("Rocket Damage Settings")]
     [SerializeField] float explosionRadius = 1f; // Radius of the explosion
+    [SerializeField] private LayerMask enemyLayers; // Allow multiple layers to be set in the Inspector
 
     [Header("Explosion Effects")]
     [SerializeField] GameObject explosionEffectPrefab; // Optional visual effect for explosion
@@ -21,7 +22,7 @@ public class OrbitalStrikeRocket : MonoBehaviour
         }
 
         // Detect enemies within the explosion radius and apply the same damage to all
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, explosionRadius, LayerMask.GetMask("Enemy"));
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, explosionRadius, enemyLayers);
         foreach (Collider2D enemy in hitEnemies)
         {
             CharacterStatManager enemyStats = enemy.GetComponentInParent<CharacterStatManager>();

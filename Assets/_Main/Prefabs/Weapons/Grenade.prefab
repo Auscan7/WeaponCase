@@ -129,6 +129,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 307697af02577d741a27caa32fa77462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 24640
   explosionEffectPrefab: {fileID: 4952325379883675290, guid: 1deeb24cd5dc6214bafaf18803b4c45c, type: 3}
 --- !u!114 &8095382672591979694
 MonoBehaviour:
