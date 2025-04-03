@@ -1055,7 +1055,7 @@ MonoBehaviour:
     firerate: 3
     range: 12
   grenadeStats:
-    damage: 9
+    damage: 30
     areaDamage: 0
     firerate: 3
     range: 5

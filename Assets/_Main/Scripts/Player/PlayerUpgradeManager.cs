@@ -6,8 +6,8 @@ public class PlayerUpgradeManager : MonoBehaviour
     public static PlayerUpgradeManager Instance;
 
     [Header("Player Stats")]
-    public float playerCurrentHealth;
-    public int playerMaxHealth;
+    [HideInInspector] public float playerCurrentHealth;
+    [HideInInspector] public int playerMaxHealth;
     public float playerHealthRegenAmount;
     public float playerLeechAmountPercent;
     public float playerLeechChancePercent;
@@ -80,6 +80,12 @@ public class PlayerUpgradeManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        //pull player stats from the permenant upgrade manager
+        playerMaxHealth = PermenantUpgradeManager.Instance.maxHealth;
+        playerArmor = PermenantUpgradeManager.Instance.armor;
+        playerDamageMultiplier = PermenantUpgradeManager.Instance.damage;
+        playerMovementSpeedMultiplier = PermenantUpgradeManager.Instance.moveSpeed;
+
         InitializeCaseModifiers();
         ResetWeaponDamage();
         InitializeWeaponDictionary();
@@ -90,6 +96,7 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     private void InitializeCaseModifiers()
     {
+        // healthMultiplier, armorMultiplier, damageMultiplier, speedMultiplier
         caseModifiers = new Dictionary<string, CaseStats>
         {
             { "Default Case", new CaseStats(1.0f, 1.0f, 1.0f, 1.0f) },
@@ -179,11 +186,11 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     public void ResetCaseStats()
     {
-        playerMaxHealth = 100;
+        playerMaxHealth = PermenantUpgradeManager.Instance.maxHealth;
         playerCurrentHealth = playerMaxHealth;
-        playerArmor = 10;
-        playerDamageMultiplier = 1f;
-        playerMovementSpeedMultiplier = 1f;
+        playerArmor = PermenantUpgradeManager.Instance.armor;
+        playerDamageMultiplier = PermenantUpgradeManager.Instance.damage;
+        playerMovementSpeedMultiplier = PermenantUpgradeManager.Instance.moveSpeed;
 
         ResetWeaponDamage();
     }
