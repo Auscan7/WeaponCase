@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,16 +22,14 @@ public class WeaponSelectionManager : MonoBehaviour
     public Button shotgunButton;
     public Button rocketButton;
 
-    [Header("Cases")]
-    public Button selectedCaseButton;
-    public TextMeshProUGUI selectedCaseText;
-    public Button defaultCaseButton;
-    public Button secondCaseButton;
-    public Button thirdCaseButton;
+    [Header("Boats")]
+    public Button selectedBoatButton;
+    public TextMeshProUGUI selectedBoatText;
+    public List<BoatData> boats = new List<BoatData>();
 
     private GameObject selectedWeapon;
-    private GameObject selectedCase;
-    private string lastAppliedCase = null; // Store the last applied case
+    private GameObject selectedBoat;
+    private string lastAppliedBoat = null;
 
     private void Start()
     {
@@ -38,23 +37,24 @@ public class WeaponSelectionManager : MonoBehaviour
         gameTimeManager.timerRunning = false;
 
         if (PauseManager.instance != null)
-        {
             PauseManager.instance.PauseGame();
-        }
 
-        // Set default selections
+        // Default selections
         SelectWeapon(PlayerUpgradeManager.Instance.pistol, pistolButton, "Pistol");
-        SelectCase(PlayerUpgradeManager.Instance.Default, defaultCaseButton, "Default Case");
+        SelectBoat(boats[0]);
 
-        // Add event listeners
+        // Weapon button listeners
         pistolButton.onClick.AddListener(() => SelectWeapon(PlayerUpgradeManager.Instance.pistol, pistolButton, "Pistol"));
         smgButton.onClick.AddListener(() => SelectWeapon(PlayerUpgradeManager.Instance.smg, smgButton, "SMG"));
         shotgunButton.onClick.AddListener(() => SelectWeapon(PlayerUpgradeManager.Instance.shotgun, shotgunButton, "Shotgun"));
         rocketButton.onClick.AddListener(() => SelectWeapon(PlayerUpgradeManager.Instance.rocket, rocketButton, "Rocket"));
 
-        defaultCaseButton.onClick.AddListener(() => SelectCase(PlayerUpgradeManager.Instance.Default, defaultCaseButton, "Default Case"));
-        secondCaseButton.onClick.AddListener(() => SelectCase(PlayerUpgradeManager.Instance.Second, secondCaseButton, "Second Case"));
-        thirdCaseButton.onClick.AddListener(() => SelectCase(PlayerUpgradeManager.Instance.Third, thirdCaseButton, "Third Case"));
+        // Boat button listeners
+        foreach (var boat in boats)
+        {
+            var cachedBoat = boat; // avoid modified closure issue
+            boat.boatButton.onClick.AddListener(() => SelectBoat(cachedBoat));
+        }
     }
 
     private void SelectWeapon(GameObject weapon, Button weaponButton, string weaponName)
@@ -62,54 +62,45 @@ public class WeaponSelectionManager : MonoBehaviour
         selectedWeapon = weapon;
         selectedWeaponButton.image.sprite = weaponButton.image.sprite;
         selectedWeaponText.text = weaponName;
-
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
     }
 
-    private void SelectCase(GameObject weaponCase, Button caseButton, string caseName)
+    private void SelectBoat(BoatData boat)
     {
-        // Prevent reapplying the same case
-        if (lastAppliedCase == caseName) return;
+        if (lastAppliedBoat == boat.boatName) return;
 
-        // Reset stats to default before applying a new case
-        PlayerUpgradeManager.Instance.ResetCaseStats();
+        PlayerUpgradeManager.Instance.ResetBoatStats();
 
-        selectedCase = weaponCase;
-        selectedCaseButton.image.sprite = caseButton.image.sprite;
-        selectedCaseButton.image.color = caseButton.image.color;
-        selectedCaseText.text = caseName;
+        selectedBoat = boat.boatObject;
+        selectedBoatButton.image.sprite = boat.boatButton.image.sprite;
+        selectedBoatButton.image.color = boat.boatButton.image.color;
+        selectedBoatText.text = boat.boatName;
+
+        foreach (var b in boats)
+        {
+            b.weaponPanel.SetActive(b == boat);
+        }
 
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
-
-        // Apply only the new case's effects
-        PlayerUpgradeManager.Instance.ApplyCaseStats(caseName);
-        lastAppliedCase = caseName; // Store the applied case name
+        PlayerUpgradeManager.Instance.ApplyBoatStats(boat.boatName);
+        lastAppliedBoat = boat.boatName;
     }
 
     public void Battle()
     {
         if (PauseManager.instance != null)
-        {
             PauseManager.instance.UnPauseGame();
-        }
 
         weaponSelectionPanel.SetActive(false);
         Tutorial.SetActive(true);
         StartCoroutine(ActivateDelayed());
 
-        // Set only the selected weapon active for the start.
         if (selectedWeapon != null)
-        {
             PlayerUpgradeManager.Instance.SetStartingWeapon(selectedWeapon);
-        }
 
-        // Activate the selected case
-        if (selectedCase != null)
-        {
-            selectedCase.SetActive(true);
-        }
+        if (selectedBoat != null)
+            selectedBoat.SetActive(true);
     }
-
 
     private IEnumerator ActivateDelayed()
     {
@@ -119,4 +110,14 @@ public class WeaponSelectionManager : MonoBehaviour
         XPLevel.SetActive(true);
         PlayerHP.SetActive(true);
     }
+}
+
+
+[System.Serializable]
+public class BoatData
+{
+    public string boatName;
+    public GameObject boatObject;
+    public Button boatButton;
+    public GameObject weaponPanel;
 }

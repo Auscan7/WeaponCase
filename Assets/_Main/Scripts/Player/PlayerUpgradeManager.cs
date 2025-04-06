@@ -58,13 +58,13 @@ public class PlayerUpgradeManager : MonoBehaviour
     public int baseShotgunProjectileCount = 3;
     public int baseGrenadeProjectileCount = 3;
 
-    [Header("Cases")]
+    [Header("Boats")]
     public GameObject Default;
     public GameObject Second;
-    public GameObject Third;
+    //public GameObject Third;
 
-    [Header("Case Stats")]
-    private Dictionary<string, CaseStats> caseModifiers;
+    [Header("Boat Stats")]
+    private Dictionary<string, BoatStats> boatModifiers;
 
     // Dictionary to manage weapon references easily.
     private Dictionary<string, GameObject> weaponDict;
@@ -86,7 +86,7 @@ public class PlayerUpgradeManager : MonoBehaviour
         playerDamageMultiplier = PermenantUpgradeManager.Instance.damage;
         playerMovementSpeedMultiplier = PermenantUpgradeManager.Instance.moveSpeed;
 
-        InitializeCaseModifiers();
+        InitializeBoatModifiers();
         ResetWeaponDamage();
         InitializeWeaponDictionary();
 
@@ -94,14 +94,14 @@ public class PlayerUpgradeManager : MonoBehaviour
         ActivateWeapon("Pistol");
     }
 
-    private void InitializeCaseModifiers()
+    private void InitializeBoatModifiers()
     {
         // healthMultiplier, armorMultiplier, damageMultiplier, speedMultiplier
-        caseModifiers = new Dictionary<string, CaseStats>
+        boatModifiers = new Dictionary<string, BoatStats>
         {
-            { "Default Case", new CaseStats(1.0f, 1.0f, 1.0f, 1.0f) },
-            { "Second Case", new CaseStats(0.8f, 0.8f, 1.2f, 1.0f) },
-            { "Third Case", new CaseStats(0.5f, 0.5f, 1.5f, 1.2f) }
+            { "Wooden Boat", new BoatStats(1.0f, 1.0f, 1.0f, 1.0f) },
+            { "Battle Ship", new BoatStats(0.8f, 0.8f, 1.2f, 1.0f) },
+            //{ "Third Boat", new BoatStats(0.5f, 0.5f, 1.5f, 1.2f) }
         };
     }
 
@@ -165,26 +165,26 @@ public class PlayerUpgradeManager : MonoBehaviour
     }
 
 
-    public void ApplyCaseStats(string caseName)
+    public void ApplyBoatStats(string boatName)
     {
-        if (caseModifiers.TryGetValue(caseName, out CaseStats caseStats))
+        if (boatModifiers.TryGetValue(boatName, out BoatStats boatStats))
         {
-            playerMaxHealth = Mathf.RoundToInt(playerMaxHealth * caseStats.healthMultiplier);
+            playerMaxHealth = Mathf.RoundToInt(playerMaxHealth * boatStats.healthMultiplier);
             playerCurrentHealth = playerMaxHealth;
-            playerArmor *= caseStats.armorMultiplier;
-            playerDamageMultiplier = caseStats.damageMultiplier;
-            playerMovementSpeedMultiplier *= caseStats.speedMultiplier;
+            playerArmor *= boatStats.armorMultiplier;
+            playerDamageMultiplier = boatStats.damageMultiplier;
+            playerMovementSpeedMultiplier *= boatStats.speedMultiplier;
 
             // Recalculate weapon damage based on the new playerDamageMultiplier
             UpdateWeaponDamage();
         }
         else
         {
-            Debug.LogWarning($"Case {caseName} not found!");
+            Debug.LogWarning($"Boat {boatName} not found!");
         }
     }
 
-    public void ResetCaseStats()
+    public void ResetBoatStats()
     {
         playerMaxHealth = PermenantUpgradeManager.Instance.maxHealth;
         playerCurrentHealth = playerMaxHealth;
@@ -227,14 +227,14 @@ public class PlayerUpgradeManager : MonoBehaviour
 }
 
 [System.Serializable]
-public class CaseStats
+public class BoatStats
 {
     public float healthMultiplier;
     public float armorMultiplier;
     public float damageMultiplier;
     public float speedMultiplier;
 
-    public CaseStats(float healthMult, float armorMult, float damageMult, float speedMult)
+    public BoatStats(float healthMult, float armorMult, float damageMult, float speedMult)
     {
         healthMultiplier = healthMult;
         armorMultiplier = armorMult;

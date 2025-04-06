@@ -137,6 +137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wrench
       objectReference: {fileID: 0}
+    - target: {fileID: 4952325379883675290, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8217340840972825977, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
