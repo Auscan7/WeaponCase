@@ -22,6 +22,7 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     [Header("Weapon Damage Multipliers")]
     public float pistolDamageMultiplier = 1f;
+    public float bowAndArrowDamageMultiplier = 1f;
     public float smgDamageMultiplier = 1f;
     public float shotgunDamageMultiplier = 1f;
     public float rocketDamageMultiplier = 1f;
@@ -30,6 +31,7 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     [Header("Weapons")]
     public GameObject pistol;
+    public GameObject bowAndArrow;
     public GameObject smg;
     public GameObject shotgun;
     public GameObject rocket;
@@ -38,6 +40,7 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     [Header("Weapon Stats")]
     public WeaponStats pistolStats;
+    public WeaponStats bowAndArrowStats;
     public WeaponStats smgStats;
     public WeaponStats shotgunStats;
     public WeaponStats rocketStats;
@@ -47,6 +50,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     // Store the base damage values for recalculation
     [Header("Base Weapon Damage")]
     public float basePistolDamage = 10f;
+    public float baseBowAndArrowDamage = 15f;
     public float baseSMGDamage = 2f;
     public float baseShotgunDamage = 6f;
     public float baseRocketDamage = 20f;
@@ -65,6 +69,8 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     [Header("Boat Stats")]
     private Dictionary<string, BoatStats> boatModifiers;
+
+    public string SelectedBoatName { get; private set; }
 
     // Dictionary to manage weapon references easily.
     private Dictionary<string, GameObject> weaponDict;
@@ -91,7 +97,7 @@ public class PlayerUpgradeManager : MonoBehaviour
         InitializeWeaponDictionary();
 
         // Optionally set a default active weapon (if needed)
-        ActivateWeapon("Pistol");
+        ActivateWeapon("BowAndArrow");
     }
 
     private void InitializeBoatModifiers()
@@ -111,6 +117,7 @@ public class PlayerUpgradeManager : MonoBehaviour
         weaponDict = new Dictionary<string, GameObject>
         {
             { "Pistol", pistol },
+            { "BowAndArrow", bowAndArrow },
             { "SMG", smg },
             { "Shotgun", shotgun },
             { "Rocket", rocket },
@@ -141,7 +148,6 @@ public class PlayerUpgradeManager : MonoBehaviour
         }
     }
 
-
     public bool IsWeaponActive(string weaponKey)
     {
         if (weaponDict.TryGetValue(weaponKey, out GameObject weapon))
@@ -151,7 +157,6 @@ public class PlayerUpgradeManager : MonoBehaviour
         Debug.LogWarning("Weapon key not found: " + weaponKey);
         return false;
     }
-
 
     public void SetStartingWeapon(GameObject selectedWeapon)
     {
@@ -167,13 +172,15 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     public void ApplyBoatStats(string boatName)
     {
-        if (boatModifiers.TryGetValue(boatName, out BoatStats boatStats))
+        SelectedBoatName = boatName;
+
+        if (boatModifiers.ContainsKey(boatName))
         {
-            playerMaxHealth = Mathf.RoundToInt(playerMaxHealth * boatStats.healthMultiplier);
-            playerCurrentHealth = playerMaxHealth;
-            playerArmor *= boatStats.armorMultiplier;
-            playerDamageMultiplier = boatStats.damageMultiplier;
-            playerMovementSpeedMultiplier *= boatStats.speedMultiplier;
+            BoatStats stats = boatModifiers[boatName];
+            playerMaxHealth = Mathf.RoundToInt(playerMaxHealth * stats.healthMultiplier);
+            playerArmor *= stats.armorMultiplier;
+            playerDamageMultiplier *= stats.damageMultiplier;
+            playerMovementSpeedMultiplier *= stats.speedMultiplier;
 
             // Recalculate weapon damage based on the new playerDamageMultiplier
             UpdateWeaponDamage();
@@ -201,6 +208,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     public void ResetWeaponDamage()
     {
         pistolStats.damage = basePistolDamage * playerDamageMultiplier;
+        bowAndArrowStats.damage = baseBowAndArrowDamage * playerDamageMultiplier;
         smgStats.damage = baseSMGDamage * playerDamageMultiplier;
         shotgunStats.damage = baseShotgunDamage * playerDamageMultiplier;
         rocketStats.damage = baseRocketDamage * playerDamageMultiplier;
@@ -216,6 +224,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     {
         // Apply both player-wide and weapon-specific multipliers
         pistolStats.damage = basePistolDamage * playerDamageMultiplier * pistolDamageMultiplier;
+        bowAndArrowStats.damage = baseBowAndArrowDamage * playerDamageMultiplier * bowAndArrowDamageMultiplier;
         smgStats.damage = baseSMGDamage * playerDamageMultiplier * smgDamageMultiplier;
         shotgunStats.damage = baseShotgunDamage * playerDamageMultiplier * shotgunDamageMultiplier;
         rocketStats.damage = baseRocketDamage * playerDamageMultiplier * rocketDamageMultiplier;

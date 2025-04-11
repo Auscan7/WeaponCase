@@ -11,7 +11,7 @@ public class PlayerMovement : CharacterMovementManager
     [HideInInspector] public float verticalMovement;
 
     [Header("Movement Settings")]
-    [SerializeField] float walkingSpeed = 5f;
+    [SerializeField] float sailingSpeed = 5f;
 
     protected override void Awake()
     {
@@ -76,7 +76,7 @@ public class PlayerMovement : CharacterMovementManager
 
         // Calculate speed multiplier based on moveAmount
         float speedMultiplier = Mathf.Abs(PlayerInputManager.instance.moveAmount);
-        float effectiveSpeed = (walkingSpeed * PlayerUpgradeManager.Instance.playerMovementSpeedMultiplier) * (speedMultiplier / 1.5f);
+        float effectiveSpeed = (sailingSpeed * PlayerUpgradeManager.Instance.playerMovementSpeedMultiplier) * (speedMultiplier / 1.5f);
 
         // Apply movement
         player.rb.linearVelocity = new Vector2(inputVector.x * effectiveSpeed, inputVector.y * effectiveSpeed);

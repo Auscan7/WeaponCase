@@ -10,8 +10,10 @@ public class ActivatePistolUpgrade : Upgrade, IConditionalUpgrade
     }
     public bool CanOffer()
     {
-        // Only offer if the shotgun is not active yet.
+        // Only offer if the pistol is not active yet.
+        // Only offer if the player selected the battle ship boat.
         // Assuming your UpgradeManager stores a weaponDict.
-        return !PlayerUpgradeManager.Instance.IsWeaponActive("Pistol");
+        return !PlayerUpgradeManager.Instance.IsWeaponActive("Pistol") &&
+               PlayerUpgradeManager.Instance.SelectedBoatName == "Battle Ship";
     }
 }

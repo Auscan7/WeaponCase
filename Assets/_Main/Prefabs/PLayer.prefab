@@ -30,6 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8254187446837523302}
+  - {fileID: 8233452423156282181}
   - {fileID: 5525269302361703142}
   - {fileID: 8227087643702409796}
   - {fileID: 8066911426757180195}
@@ -99,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4722767060693112874, guid: 7f8b24733f23fa6489b96210706a555e, type: 3}
   projectileSpawnPoint: {fileID: 2642464509737796994}
-  projectileSpeed: 3.5
+  projectileSpeed: 4
   weaponRange: 0
   spreadAngle: 45
 --- !u!1 &1310088296284735180
@@ -323,7 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4722767060693112874, guid: 0a9df0e3d7515554cb9fc04784b5428e, type: 3}
   projectileSpawnPoint: {fileID: 2642464509737796994}
-  projectileSpeed: 5
+  projectileSpeed: 5.5
   weaponRange: 0
 --- !u!1 &2606335633390057655
 GameObject:
@@ -628,6 +629,70 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4722767060693112874, guid: 5e8b3c35b967c2d48b7296bbd79ef5cb, type: 3}
+  projectileSpawnPoint: {fileID: 2642464509737796994}
+  projectileSpeed: 2.5
+  weaponRange: 0
+--- !u!1 &5648312573303198936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8233452423156282181}
+  - component: {fileID: 8486981299257323570}
+  - component: {fileID: 6348639206683553467}
+  m_Layer: 3
+  m_Name: BowAndArrow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &8233452423156282181
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5648312573303198936}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3536651635202710348}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8486981299257323570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5648312573303198936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9978a616e2c4442ac63bfce63aed9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 24640
+--- !u!114 &6348639206683553467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5648312573303198936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a54f9ce388707c41963a16a9eeb95e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 4722767060693112874, guid: 83ebaae2461977c4a809e96b89817a6e, type: 3}
   projectileSpawnPoint: {fileID: 2642464509737796994}
   projectileSpeed: 2.5
   weaponRange: 0
@@ -1018,12 +1083,14 @@ MonoBehaviour:
   playerXpMultiplier: 1
   playerMagnetRadius: 1.75
   pistolDamageMultiplier: 1
+  bowAndArrowDamageMultiplier: 1
   smgDamageMultiplier: 1
   shotgunDamageMultiplier: 1
   rocketDamageMultiplier: 1
   orbitalStrikeDamageMultiplier: 1
   grenadeDamageMultiplier: 1
   pistol: {fileID: 2248396393127584045}
+  bowAndArrow: {fileID: 5648312573303198936}
   smg: {fileID: 6871604467730435092}
   shotgun: {fileID: 1229226007688104451}
   rocket: {fileID: 4897916746355781264}
@@ -1034,6 +1101,11 @@ MonoBehaviour:
     areaDamage: 0
     firerate: 1
     range: 4
+  bowAndArrowStats:
+    damage: 15
+    areaDamage: 0
+    firerate: 0.5
+    range: 5.25
   smgStats:
     damage: 2
     areaDamage: 0
@@ -1055,22 +1127,22 @@ MonoBehaviour:
     firerate: 3
     range: 12
   grenadeStats:
-    damage: 30
+    damage: 10
     areaDamage: 0
     firerate: 3
     range: 5
   basePistolDamage: 10
+  baseBowAndArrowDamage: 15
   baseSMGDamage: 2
   baseShotgunDamage: 6
   baseRocketDamage: 20
   baseRocketAreaDamage: 8
   baseOrbitalStrikeDamage: 30
-  baseGrenadeDamage: 30
+  baseGrenadeDamage: 10
   baseShotgunProjectileCount: 3
   baseGrenadeProjectileCount: 3
   Default: {fileID: 4612179880373492636}
   Second: {fileID: 2606335633390057655}
-  Third: {fileID: 1917308194399529102}
 --- !u!114 &3866748010055612104
 MonoBehaviour:
   m_ObjectHideFlags: 0

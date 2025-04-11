@@ -13,6 +13,7 @@ public class ActivateRocketUpgrade : Upgrade, IConditionalUpgrade
     {
         // Only offer if the shotgun is not active yet.
         // Assuming your UpgradeManager stores a weaponDict.
-        return !PlayerUpgradeManager.Instance.IsWeaponActive("Rocket");
+        return !PlayerUpgradeManager.Instance.IsWeaponActive("Rocket") &&
+               PlayerUpgradeManager.Instance.SelectedBoatName == "Battle Ship";
     }
 }

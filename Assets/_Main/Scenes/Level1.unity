@@ -23397,9 +23397,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 4871557909895165438, guid: 5a3170471c686b045b2343a87e0d4ef6, type: 3}
-  spawnInterval: 180
+  spawnInterval: 800
   maxSpawnAmount: 1
-  initialSpawnDelay: 1
+  initialSpawnDelay: 800
 --- !u!1 &1111877559
 GameObject:
   m_ObjectHideFlags: 0
@@ -46333,6 +46333,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4612179880373492636, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
   m_PrefabInstance: {fileID: 4537704616888661694}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4537704616888661697 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5648312573303198936, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+  m_PrefabInstance: {fileID: 4537704616888661694}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4537704616888661698 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2248396393127584045, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+  m_PrefabInstance: {fileID: 4537704616888661694}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4537704616888661699 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3866748010055612104, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+  m_PrefabInstance: {fileID: 4537704616888661694}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa1c6c51c7738b46b1ffd5fc77eefb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5009774052823361831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46369,6 +46390,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4444228535925690204, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+      propertyPath: upgradePools.Array.data[1].upgrades.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444228535925690204, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+      propertyPath: 'upgradePools.Array.data[1].upgrades.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: fdc7f088af118d94389bbf852aec0158, type: 2}
+    - target: {fileID: 4444228535925690204, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+      propertyPath: 'upgradePools.Array.data[1].upgrades.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 73808da35bd50714dbf61d0ca8d234fc, type: 2}
     - target: {fileID: 6327695393456204611, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -46425,6 +46458,14 @@ PrefabInstance:
       propertyPath: boats.Array.data[1].boatObject
       value: 
       objectReference: {fileID: 4537704616888661695}
+    - target: {fileID: 7780146686222702658, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+      propertyPath: boats.Array.data[0].defaultWeaponPrefab
+      value: 
+      objectReference: {fileID: 4537704616888661697}
+    - target: {fileID: 7780146686222702658, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+      propertyPath: boats.Array.data[1].defaultWeaponPrefab
+      value: 
+      objectReference: {fileID: 4537704616888661698}
     - target: {fileID: 8946381825008429100, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -46562,6 +46603,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 4874332663972484453, guid: 2c1aff396bbe923459707679f42bb2a3, type: 3}
+      propertyPath: vortexSpawner
+      value: 
+      objectReference: {fileID: 4537704616888661699}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -46571,13 +46616,13 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1965062253}
   - {fileID: 152808195}
   - {fileID: 1999987634}
+  - {fileID: 1647027018}
   - {fileID: 1578954214}
   - {fileID: 1523622017}
   - {fileID: 4537704616888661694}
   - {fileID: 2531143202744812020}
   - {fileID: 6294049362532824477}
   - {fileID: 5009774052823361831}
-  - {fileID: 1647027018}
-  - {fileID: 1965062253}

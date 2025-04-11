@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class CurrencyManager : MonoBehaviour
@@ -38,7 +37,12 @@ public class CurrencyManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.V))
         {
-            AddCurrency(-100);
+            AddCurrency(-10);
+        }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            PlayerPrefs.DeleteAll();
         }
     }
 

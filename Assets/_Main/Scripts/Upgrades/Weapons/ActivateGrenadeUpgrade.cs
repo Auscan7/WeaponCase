@@ -10,6 +10,7 @@ public class ActivateGrenadeUpgrade : Upgrade, IConditionalUpgrade
     }
     public bool CanOffer()
     {
-        return !PlayerUpgradeManager.Instance.IsWeaponActive("Grenade");
+        return !PlayerUpgradeManager.Instance.IsWeaponActive("Grenade") &&
+               PlayerUpgradeManager.Instance.SelectedBoatName == "Battle Ship";
     }
 }

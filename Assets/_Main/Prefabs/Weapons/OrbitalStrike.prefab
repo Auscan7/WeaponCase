@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1723522420313041352}
   - component: {fileID: 7866912376874971303}
   - component: {fileID: 2223137882470706351}
+  - component: {fileID: 2930500307930006921}
   - component: {fileID: 9144244881348185987}
   - component: {fileID: 3026551211028007920}
-  - component: {fileID: 2930500307930006921}
   m_Layer: 7
   m_Name: OrbitalStrike
   m_TagString: Untagged
@@ -105,6 +105,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 6
+--- !u!114 &2930500307930006921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4722767060693112874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9635aeeef0b610f419a42ef37dc30024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionRadius: 1.86
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 24640
+  explosionEffectPrefab: {fileID: 4952325379883675290, guid: 3b7441a5f0fe940409db04ee2f7acb7d, type: 3}
 --- !u!50 &9144244881348185987
 Rigidbody2D:
   serializedVersion: 5
@@ -141,26 +158,9 @@ CanvasGroup:
   m_GameObject: {fileID: 4722767060693112874}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
---- !u!114 &2930500307930006921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4722767060693112874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9635aeeef0b610f419a42ef37dc30024, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionRadius: 1.86
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 24640
-  explosionEffectPrefab: {fileID: 4952325379883675290, guid: 3b7441a5f0fe940409db04ee2f7acb7d, type: 3}
 --- !u!1001 &7535064732641016258
 PrefabInstance:
   m_ObjectHideFlags: 0

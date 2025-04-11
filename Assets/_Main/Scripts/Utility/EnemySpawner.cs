@@ -4,31 +4,53 @@ using System.Collections;
 public class EnemySpawner : MonoBehaviour
 {
     [Header("Spawner Settings")]
-    public GameObject[] enemyPrefabs;      // Array of enemy prefabs
-    public float spawnInterval = 5f;       // Time between spawns
-    public int maxSpawnAmount = 10;        // Maximum enemies to spawn
-    public float initialSpawnDelay = 3f;   // Delay before the first spawn
+    public GameObject[] enemyPrefabs;
+    public float spawnInterval = 5f;
+    public int maxSpawnAmount = 10;
+    public float initialSpawnDelay = 3f;
 
     private int spawnedCount = 0;
+    private bool isPaused = false;
 
-    void Start()
+    private void Start()
     {
+        SpawnerManager.Instance.RegisterSpawner(this);
         StartCoroutine(SpawnRoutine());
     }
 
     IEnumerator SpawnRoutine()
     {
-        yield return new WaitForSeconds(initialSpawnDelay);
+        float delayTimer = 0f;
+
+        // Manual initial delay that respects pause
+        while (delayTimer < initialSpawnDelay)
+        {
+            if (!isPaused)
+                delayTimer += Time.deltaTime;
+
+            yield return null;
+        }
 
         while (spawnedCount < maxSpawnAmount)
         {
+            while (isPaused)
+                yield return null;
+
             SpawnEnemy();
             spawnedCount++;
-            yield return new WaitForSeconds(spawnInterval);
+
+            float timer = 0f;
+            while (timer < spawnInterval)
+            {
+                if (!isPaused)
+                    timer += Time.deltaTime;
+
+                yield return null;
+            }
         }
     }
 
-    void SpawnEnemy()
+    private void SpawnEnemy()
     {
         if (enemyPrefabs.Length == 0)
         {
@@ -36,15 +58,23 @@ public class EnemySpawner : MonoBehaviour
             return;
         }
 
-        // Choose a random enemy prefab
         GameObject enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
-
-        // Get the enemy from the pool
         GameObject enemy = EnemyPoolManager.Instance.GetEnemy(enemyPrefab);
         if (enemy != null)
         {
             enemy.transform.position = transform.position;
             enemy.transform.rotation = Quaternion.identity;
         }
+    }
+
+    // Call these methods to control the pause state
+    public void PauseSpawning()
+    {
+        isPaused = true;
+    }
+
+    public void ResumeSpawning()
+    {
+        isPaused = false;
     }
 }
