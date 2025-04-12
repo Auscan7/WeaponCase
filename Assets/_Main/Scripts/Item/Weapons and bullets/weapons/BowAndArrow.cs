@@ -11,7 +11,7 @@ public class BowAndArrow : Weapon
     {
         if (!CanFire()) return;
 
-        AudioManager.instance.PlaySoundSFX(AudioManager.instance.pistolFireSFX);
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.bowAndArrowFireSFX);
 
         Vector3 spawnPos = projectileSpawnPoint.position;
         GameObject projectile = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);

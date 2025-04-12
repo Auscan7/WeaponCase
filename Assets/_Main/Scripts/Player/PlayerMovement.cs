@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class PlayerMovement : CharacterMovementManager
 {
@@ -39,27 +36,6 @@ public class PlayerMovement : CharacterMovementManager
         horizontalMovement = PlayerInputManager.instance.horizontal_Input;
         verticalMovement = PlayerInputManager.instance.vertical_Input;
     }
-
-    //private void HandleMovement()
-    //{
-    //    GetMovementValues();
-
-    //    // Combine horizontal and vertical inputs
-    //    Vector2 inputVector = new Vector2(horizontalMovement, verticalMovement);
-
-    //    // Normalize to prevent diagonal speed boost
-    //    if (inputVector.magnitude > 1)
-    //    {
-    //        inputVector.Normalize();
-    //    }
-
-    //    // Calculate speed multiplier based on moveAmount
-    //    float speedMultiplier = Mathf.Abs(PlayerInputManager.instance.moveAmount);
-    //    float effectiveSpeed = (walkingSpeed * PlayerUpgradeManager.Instance.playerMovementSpeedMultiplier) * (speedMultiplier / 1.5f);
-
-    //    // Apply movement
-    //    player.rb.linearVelocity = new Vector2(inputVector.x * effectiveSpeed, inputVector.y * effectiveSpeed);
-    //}
 
     private void HandleMovement()
     {

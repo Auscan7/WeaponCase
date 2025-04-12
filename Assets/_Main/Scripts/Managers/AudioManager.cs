@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip levelMusic;
 
     [Header("Weapon SFX")]
+    public AudioClip[] bowAndArrowFireSFX;
     public AudioClip[] pistolFireSFX;
     public AudioClip[] shotgunFireSFX;
     public AudioClip[] rocketFireSFX;

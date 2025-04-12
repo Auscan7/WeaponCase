@@ -105,8 +105,8 @@ public class PlayerUpgradeManager : MonoBehaviour
         // healthMultiplier, armorMultiplier, damageMultiplier, speedMultiplier
         boatModifiers = new Dictionary<string, BoatStats>
         {
-            { "Wooden Boat", new BoatStats(1.0f, 1.0f, 1.0f, 1.0f) },
-            { "Battle Ship", new BoatStats(0.8f, 0.8f, 1.2f, 1.0f) },
+            { "Wooden Boat", new BoatStats(1f, 1f, 1f, 1f) },
+            { "Battle Ship", new BoatStats(1.25f, 1.25f, 0.75f, 0.75f) },
             //{ "Third Boat", new BoatStats(0.5f, 0.5f, 1.5f, 1.2f) }
         };
     }
@@ -170,6 +170,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     }
 
 
+    // Call this method to apply the boat stats to the player.
     public void ApplyBoatStats(string boatName)
     {
         SelectedBoatName = boatName;
@@ -191,6 +192,7 @@ public class PlayerUpgradeManager : MonoBehaviour
         }
     }
 
+    // Call this method to reset the player stats to their base values.
     public void ResetBoatStats()
     {
         playerMaxHealth = PermenantUpgradeManager.Instance.maxHealth;

@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c0b1fd1867bb7749959e135bc5a9ee1, type: 3}
-  m_Name: OrbitalStrikeActivateUpgrade
+  m_Script: {fileID: 11500000, guid: 39b73473150842a4f95714a7d4deb306, type: 3}
+  m_Name: MagnetLegendary
   m_EditorClassIdentifier: 
-  upgradeName: Orbital Strike
-  positiveDescription: Rain Hell Fire
+  upgradeName: Magnet
+  positiveDescription: Magnet Radius +75%
   negativeDescription: 
-  icon: {fileID: -3561148701943319872, guid: 8dbb2588305470b4183e9034cb2523f8, type: 3}
+  icon: {fileID: 4877825377717948546, guid: 3a332fbe5de7afa408c1ea7052d788ab, type: 3}
   border: {fileID: 21300000, guid: 386b4f70f0e00d748b3c57b31cb31ec6, type: 3}
+  magnetRadiusIncrease: 7.5

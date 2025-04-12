@@ -694,7 +694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4722767060693112874, guid: 83ebaae2461977c4a809e96b89817a6e, type: 3}
   projectileSpawnPoint: {fileID: 2642464509737796994}
-  projectileSpeed: 2.5
+  projectileSpeed: 3
   weaponRange: 0
 --- !u!1 &6794791346123413314
 GameObject:
@@ -1056,7 +1056,7 @@ MonoBehaviour:
   canMove: 1
   horizontalMovement: 0
   verticalMovement: 0
-  walkingSpeed: 3.5
+  sailingSpeed: 3.5
 --- !u!114 &8192816153180972205
 MonoBehaviour:
   m_ObjectHideFlags: 0

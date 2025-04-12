@@ -1371,28 +1371,37 @@ MonoBehaviour:
     - {fileID: 11400000, guid: a30104e60b686e146b70d55afa873168, type: 2}
     - {fileID: 11400000, guid: abcd53cd5d1359c439f52fe97349bd03, type: 2}
     - {fileID: 11400000, guid: f40c236f6a76de04a9e6550ff5a3520e, type: 2}
-    - {fileID: 11400000, guid: f04cfa61bee209e418e8217a1fcd80ca, type: 2}
+    - {fileID: 11400000, guid: be8ee33c9012dd34383e104af06a322e, type: 2}
+    - {fileID: 11400000, guid: e8ecb77e63d12e849910c2f6983aa806, type: 2}
+    - {fileID: 11400000, guid: 77fb9d92aa0b16b4697eeabf7a701f0d, type: 2}
+    - {fileID: 11400000, guid: 4c109412914160b40a698c6724d2e492, type: 2}
     selectionWeight: 65
   - poolName: Rarity 2
     upgrades:
-    - {fileID: 11400000, guid: a4a1ba6f9022e02429c43ecef3361d59, type: 2}
-    - {fileID: 11400000, guid: fdc7f088af118d94389bbf852aec0158, type: 2}
-    - {fileID: 11400000, guid: 73808da35bd50714dbf61d0ca8d234fc, type: 2}
+    - {fileID: 11400000, guid: 6f9c3f7908443f64092a37021a2f4d77, type: 2}
+    - {fileID: 11400000, guid: e72f716ae5a3eb24b905b543b43db295, type: 2}
     selectionWeight: 20
   - poolName: Rarity 3
     upgrades:
     - {fileID: 11400000, guid: df330e094dda6b847b344a88c1872d62, type: 2}
-    - {fileID: 11400000, guid: b6dac09d81cb8144b9c2c766cd69524f, type: 2}
+    - {fileID: 11400000, guid: b62199c35fb20f94d81e80d812417d93, type: 2}
+    - {fileID: 11400000, guid: 66bd726d7236774478e7117aa60b6098, type: 2}
+    - {fileID: 11400000, guid: ea7b2cbb61847d94ab6f02adf90eccbf, type: 2}
     selectionWeight: 9
   - poolName: Rarity 4
     upgrades:
     - {fileID: 11400000, guid: c1ca9772cff10c64690db6f7992d5d4a, type: 2}
     - {fileID: 11400000, guid: ff009384451c3064ea93561dfaccb84f, type: 2}
+    - {fileID: 11400000, guid: a7354e66157791a4a99aff5c31e28463, type: 2}
+    - {fileID: 11400000, guid: a8540383e0b101048b34bb1c5255c4e1, type: 2}
     selectionWeight: 5
   - poolName: Rarity 5
     upgrades:
     - {fileID: 11400000, guid: ca91af472a1e82d4bbbbfc0ea34977f0, type: 2}
     - {fileID: 11400000, guid: 6edba33caafadc94eb19bd02c21f06c3, type: 2}
+    - {fileID: 11400000, guid: f04cfa61bee209e418e8217a1fcd80ca, type: 2}
+    - {fileID: 11400000, guid: f23e01690d1ade04f86b5e2ef968844a, type: 2}
+    - {fileID: 11400000, guid: 04755dd83634e1e4fbb414f8773a3dad, type: 2}
     selectionWeight: 1
 --- !u!114 &2489446866029720285
 MonoBehaviour:

@@ -61,41 +61,43 @@ public class LoadoutSelectionManager : MonoBehaviour
         }
 
         // Default weapon selection
-        SelectWeapon(PlayerUpgradeManager.Instance.bowAndArrow, bowAndArrowButton, "Bow and Arrow");
+        SelectWeapon(PlayerUpgradeManager.Instance.bowAndArrow, bowAndArrowButton, "Bow and Arrow", playAudio: false);
 
         // Default boat selection if unlocked
         //if (!boats[0].lockManager.isLocked)
-        SelectBoat(boats[0]);
+        SelectBoat(boats[0], playAudio: false);
 
         // Weapon button setup
         bowAndArrowButton.onClick.AddListener(() =>
-            SelectWeapon(PlayerUpgradeManager.Instance.bowAndArrow, bowAndArrowButton, "Bow and Arrow"));
+            SelectWeapon(PlayerUpgradeManager.Instance.bowAndArrow, bowAndArrowButton, "Bow and Arrow", playAudio: true));
 
         pistolButton.onClick.AddListener(() =>
-            SelectWeapon(PlayerUpgradeManager.Instance.pistol, pistolButton, "Pistol"));
+            SelectWeapon(PlayerUpgradeManager.Instance.pistol, pistolButton, "Pistol", playAudio: true));
 
         shotgunButton.onClick.AddListener(() =>
-            SelectWeapon(PlayerUpgradeManager.Instance.shotgun, shotgunButton, "Shotgun"));
+            SelectWeapon(PlayerUpgradeManager.Instance.shotgun, shotgunButton, "Shotgun", playAudio: true));
 
         // Boat button setup
         foreach (var boat in boats)
         {
             var cachedBoat = boat; // Closure safety
-            boat.boatButton.onClick.AddListener(() => SelectBoat(cachedBoat));
+            boat.boatButton.onClick.AddListener(() => SelectBoat(cachedBoat, playAudio: true));
         }
     }
 
     // This method is called when a weapon button is clicked
-    private void SelectWeapon(GameObject weapon, Button weaponButton, string weaponName)
+    private void SelectWeapon(GameObject weapon, Button weaponButton, string weaponName, bool playAudio)
     {
         selectedWeapon = weapon;
         selectedWeaponButton.image.sprite = weaponButton.image.sprite;
         selectedWeaponText.text = weaponName;
-        AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
+
+        if(playAudio)
+            AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
     }
 
     // This method is called when a boat button is clicked
-    private void SelectBoat(BoatData boat)
+    private void SelectBoat(BoatData boat, bool playAudio)
     {
         if (boat.lockManager != null)
         {
@@ -122,10 +124,12 @@ public class LoadoutSelectionManager : MonoBehaviour
 
         if (boat.defaultWeaponPrefab != null && boat.defaultWeaponButton != null)
         {
-            SelectWeapon(boat.defaultWeaponPrefab, boat.defaultWeaponButton, boat.defaultWeaponName);
+            SelectWeapon(boat.defaultWeaponPrefab, boat.defaultWeaponButton, boat.defaultWeaponName, playAudio: false);
         }
 
-        AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
+        if(playAudio)
+            AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
+
         PlayerUpgradeManager.Instance.ApplyBoatStats(boat.boatName);
         lastAppliedBoat = boat.boatName;
     }
@@ -137,7 +141,7 @@ public class LoadoutSelectionManager : MonoBehaviour
 
         if (boat.lockManager.UnlockBoat())
         {
-            SelectBoat(boat); // Auto-select once unlocked
+            SelectBoat(boat, playAudio: false); // Auto-select once unlocked
         }
     }
 
@@ -181,7 +185,7 @@ public class LoadoutSelectionManager : MonoBehaviour
 
         if (currentLockedBoat.lockManager.UnlockBoat())
         {
-            SelectBoat(currentLockedBoat);
+            SelectBoat(currentLockedBoat, playAudio: false);
         }
         else
         {

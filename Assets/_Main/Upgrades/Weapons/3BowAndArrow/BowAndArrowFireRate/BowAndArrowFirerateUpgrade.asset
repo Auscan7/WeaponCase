@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7de22bfe919c31488c91631f13a4dbe, type: 3}
-  m_Name: PistolFireRateUpgrade
+  m_Script: {fileID: 11500000, guid: 93104ab89271b064f8d66cb9a257bdf9, type: 3}
+  m_Name: BowAndArrowFirerateUpgrade
   m_EditorClassIdentifier: 
   upgradeName: Fire Rate
-  positiveDescription: Pistol Fire Rate + 10%
+  positiveDescription: Bow and Arrow Fire Rate +7.5%
   negativeDescription: 
-  icon: {fileID: 21300000, guid: 2e78c1af7ff838743a5616277b9a3472, type: 3}
+  icon: {fileID: -1178161362222646502, guid: 8a5d64a69f4974d489c5bcd95b70a095, type: 3}
   border: {fileID: 21300000, guid: 61427d22e0ac7d7468c1bb696059b8d7, type: 3}
-  fireRateIncrease: 1
+  fireRateIncrease: 0.75
