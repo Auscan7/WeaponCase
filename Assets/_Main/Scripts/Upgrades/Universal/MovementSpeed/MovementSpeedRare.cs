@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MovementSpeedRare", menuName = "Upgrades/MovementSpeed/MovementSpeedRare")]
+[CreateAssetMenu(fileName = "MovementSpeedRare", menuName = "Upgrades/Universal/MovementSpeed/MovementSpeedRare")]
 public class MovementSpeedRare : Upgrade
 {
     public float movementSpeedIncrease;

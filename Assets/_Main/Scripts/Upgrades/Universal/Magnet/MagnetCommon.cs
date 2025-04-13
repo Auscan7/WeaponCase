@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MagnetCommon", menuName = "Upgrades/Magnet/MagnetCommon")]
+[CreateAssetMenu(fileName = "MagnetCommon", menuName = "Upgrades/Universal/Magnet/MagnetCommon")]
 public class MagnetCommon : Upgrade
 {
     public float magnetRadiusIncrease;

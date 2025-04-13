@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PolymerTipLegendary", menuName = "Upgrades/PolymerTip/PolymerTipLegendary")]
+[CreateAssetMenu(fileName = "PolymerTipLegendary", menuName = "Upgrades/Universal/PolymerTip/PolymerTipLegendary")]
 public class PolymerTipLegendary : Upgrade
 {
     public float damageMultiplierIncrease;

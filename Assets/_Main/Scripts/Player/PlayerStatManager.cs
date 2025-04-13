@@ -53,7 +53,7 @@ public class PlayerStatManager : CharacterStatManager
             return; // No damage applied
         }
 
-        float reducedDamage = damage / (1 + ((PlayerUpgradeManager.Instance.playerArmor * 10) / 100));
+        float reducedDamage = damage / (1 + ((PlayerUpgradeManager.Instance.playerArmor * 7.5f) / 100));
         PlayerUpgradeManager.Instance.playerCurrentHealth = Mathf.Max(0, Mathf.Round(PlayerUpgradeManager.Instance.playerCurrentHealth - reducedDamage));
 
         UpdateHealthBar();
