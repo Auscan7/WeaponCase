@@ -94,10 +94,15 @@ public class PlayerUpgradeManager : MonoBehaviour
 
         InitializeBoatModifiers();
         ResetWeaponDamage();
-        InitializeWeaponDictionary();
 
+
+    }
+
+    private void Start()
+    {
+        InitializeWeaponDictionary();
         // Optionally set a default active weapon (if needed)
-        ActivateWeapon("BowAndArrow");
+        //ActivateWeapon("BowAndArrow");
     }
 
     private void InitializeBoatModifiers()
@@ -133,7 +138,11 @@ public class PlayerUpgradeManager : MonoBehaviour
     {
         if (weaponDict.ContainsKey(weaponKey))
         {
+            var weapon = weaponDict[weaponKey];
             weaponDict[weaponKey].SetActive(true);
+
+            // Fire the event
+            GameEvents.WeaponActivated(weapon);
 
             // Refresh the weapon list in the firing script
             EnemyDetection firingScript = FindAnyObjectByType<EnemyDetection>();

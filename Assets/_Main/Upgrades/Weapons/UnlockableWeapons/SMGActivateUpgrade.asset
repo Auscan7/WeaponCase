@@ -16,4 +16,4 @@ MonoBehaviour:
   positiveDescription: Fast fire rate
   negativeDescription: Low damage and accuracy
   icon: {fileID: 7591463974754732465, guid: 50728eeb8c84d6043b9e197e82ff4202, type: 3}
-  border: {fileID: 21300000, guid: ceef4259aae69e34388b50215b07ba24, type: 3}
+  border: {fileID: 21300000, guid: 61427d22e0ac7d7468c1bb696059b8d7, type: 3}

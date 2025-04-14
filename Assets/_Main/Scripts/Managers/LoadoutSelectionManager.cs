@@ -153,6 +153,7 @@ public class LoadoutSelectionManager : MonoBehaviour
         loadoutSelectionPanel.SetActive(false);
         Tutorial.SetActive(true);
         StartCoroutine(ActivateDelayed());
+        PlayerUpgradeManager.Instance.ActivateWeapon(selectedWeapon.name);
 
         if (selectedWeapon != null)
             PlayerUpgradeManager.Instance.SetStartingWeapon(selectedWeapon);

@@ -23,6 +23,7 @@ public class EnemyDetection : MonoBehaviour
         foreach (Weapon weapon in equippedWeapons)
         {
             if (!weapon.gameObject.activeInHierarchy) continue; // Only process active weapons
+            if (weapon.isManualWeapon) continue; // Skip manual weapons
 
             Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(
                 transform.position,
@@ -35,6 +36,7 @@ public class EnemyDetection : MonoBehaviour
                 Collider2D closestEnemy = GetClosestEnemy(enemiesInRange);
                 if (closestEnemy != null)
                 {
+                    weapon.RotateTowardsTarget(closestEnemy.transform.position);
                     weapon.Fire(closestEnemy.transform.position);
                 }
             }
