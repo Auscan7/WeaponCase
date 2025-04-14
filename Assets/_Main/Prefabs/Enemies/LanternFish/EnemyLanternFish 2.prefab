@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: -4820772247653231708}
   - component: {fileID: 2629275203821640451}
   - component: {fileID: 3456901814718195380}
+  - component: {fileID: 8738959364406453433}
   m_Layer: 13
   m_Name: EnemyLanternFish 2
   m_TagString: Enemy
@@ -427,6 +428,18 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.3
+--- !u!114 &8738959364406453433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871557909895165438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f59b33b27ae8ac4b9e2bdf08c3b49d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6604457279454923096
 GameObject:
   m_ObjectHideFlags: 0
