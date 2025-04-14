@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(LineRenderer))]
 public abstract class Weapon : MonoBehaviour
@@ -6,6 +7,7 @@ public abstract class Weapon : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform projectileSpawnPoint;
     public float projectileSpeed;
+    public Sprite weaponIcon;
     [HideInInspector]public float weaponRange; // Each weapon defines its own range
 
     protected float nextFireTime = 0f;

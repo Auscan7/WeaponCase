@@ -13,6 +13,7 @@ public class LoadoutSelectionManager : MonoBehaviour
     public GameObject gameTimeText;
     public GameObject Tutorial;
     public GameObject XPLevel;
+    public GameObject WeaponCooldownSlots;
     public GameObject PlayerHP;
 
     [Header("Boat Unlock Popup")]
@@ -226,6 +227,7 @@ public class LoadoutSelectionManager : MonoBehaviour
         gameTimeText.SetActive(true);
         gameTimeManager.timerRunning = true;
         XPLevel.SetActive(true);
+        //WeaponCooldownSlots.SetActive(true);
         PlayerHP.SetActive(true);
     }
 }

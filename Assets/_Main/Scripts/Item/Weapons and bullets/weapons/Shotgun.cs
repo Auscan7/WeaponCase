@@ -13,6 +13,8 @@ public class Shotgun : Weapon
     {
         if (!CanFire()) return;
 
+        WeaponCooldownUIManager.Instance.TriggerCooldown("Shotgun", PlayerUpgradeManager.Instance.shotgunStats.firerate);
+
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.shotgunFireSFX);
 
         Vector3 spawnPos = projectileSpawnPoint.position;

@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class PlayerLevelSystem : MonoBehaviour
 {
@@ -41,6 +42,21 @@ public class PlayerLevelSystem : MonoBehaviour
         CalculateXPRequiredForNextLevel();
         UpdateLevelBar();
         currentLevelText.text = "Level: " + currentLevel.ToString();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LevelUp();
+        }
+
+        if (waitForKeyPress && Input.anyKeyDown)
+        {
+            PauseManager.instance.UnPauseGame();
+            // to do - remmove press any key text
+            waitForKeyPress = false;
+        }
     }
 
     public void AddXP(int xpAmount)
@@ -112,16 +128,6 @@ public class PlayerLevelSystem : MonoBehaviour
             isUpgradeScreenActive = false;
             // to do - add press any key text
             waitForKeyPress = true;
-        }
-    }
-
-    private void Update()
-    {
-        if (waitForKeyPress && Input.anyKeyDown)
-        {
-            PauseManager.instance.UnPauseGame();
-            // to do - remmove press any key text
-            waitForKeyPress = false;
         }
     }
 }

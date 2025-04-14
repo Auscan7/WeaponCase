@@ -143,6 +143,8 @@ public class PlayerUpgradeManager : MonoBehaviour
 
             // Fire the event
             GameEvents.WeaponActivated(weapon);
+            // Attach the weapon to the cooldown UI manager
+            WeaponCooldownUIManager.Instance.AttachWeapon(weaponKey, weapon.GetComponent<Weapon>().weaponIcon);
 
             // Refresh the weapon list in the firing script
             EnemyDetection firingScript = FindAnyObjectByType<EnemyDetection>();
@@ -188,6 +190,7 @@ public class PlayerUpgradeManager : MonoBehaviour
         {
             BoatStats stats = boatModifiers[boatName];
             playerMaxHealth = Mathf.RoundToInt(playerMaxHealth * stats.healthMultiplier);
+            playerCurrentHealth = playerMaxHealth;
             playerArmor *= stats.armorMultiplier;
             playerDamageMultiplier *= stats.damageMultiplier;
             playerMovementSpeedMultiplier *= stats.speedMultiplier;

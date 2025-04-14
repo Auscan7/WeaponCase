@@ -11,6 +11,8 @@ public class RocketLauncher : Weapon
     {
         if (!CanFire()) return;
 
+        WeaponCooldownUIManager.Instance.TriggerCooldown("Rocket", PlayerUpgradeManager.Instance.rocketStats.firerate);
+
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.rocketFireSFX);
 
         Vector3 spawnPos = projectileSpawnPoint.position;

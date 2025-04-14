@@ -166,6 +166,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4722767060693112874, guid: 7f8b24733f23fa6489b96210706a555e, type: 3}
   projectileSpawnPoint: {fileID: 7384604786668778150}
   projectileSpeed: 4
+  weaponIcon: {fileID: 21300000, guid: 1baf19739cdf21141986469837aa9337, type: 3}
   weaponRange: 0
   isManualWeapon: 0
   spreadAngle: 45
@@ -395,6 +396,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4722767060693112874, guid: 001e78c227e523c4f87870e84e553ba4, type: 3}
   projectileSpawnPoint: {fileID: 2642464509737796994}
   projectileSpeed: 16
+  weaponIcon: {fileID: -3561148701943319872, guid: 8dbb2588305470b4183e9034cb2523f8, type: 3}
   weaponRange: 0
   isManualWeapon: 0
   crosshairPrefab: {fileID: 5938404052151523123, guid: 9c7c17e9f093f584c9b4039b83c9eafe, type: 3}
@@ -696,6 +698,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4722767060693112874, guid: 0a9df0e3d7515554cb9fc04784b5428e, type: 3}
   projectileSpawnPoint: {fileID: 3999304211068789902}
   projectileSpeed: 5.5
+  weaponIcon: {fileID: 21300000, guid: 2e78c1af7ff838743a5616277b9a3472, type: 3}
   weaponRange: 0
   isManualWeapon: 1
 --- !u!212 &3519309029823673407
@@ -1328,6 +1331,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4722767060693112874, guid: 5e8b3c35b967c2d48b7296bbd79ef5cb, type: 3}
   projectileSpawnPoint: {fileID: 4201008498242248629}
   projectileSpeed: 2.5
+  weaponIcon: {fileID: 21300000, guid: 42cc65695e3f2774b8a6b534178fbf95, type: 3}
   weaponRange: 0
   isManualWeapon: 0
 --- !u!212 &5247792992041889876
@@ -1589,6 +1593,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4722767060693112874, guid: 83ebaae2461977c4a809e96b89817a6e, type: 3}
   projectileSpawnPoint: {fileID: 7078230612172693297}
   projectileSpeed: 3
+  weaponIcon: {fileID: -1178161362222646502, guid: 8a5d64a69f4974d489c5bcd95b70a095, type: 3}
   weaponRange: 0
   isManualWeapon: 1
 --- !u!212 &8897078059036058408
@@ -1949,6 +1954,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4722767060693112874, guid: 988a97725ae9edd41844520be2589b8b, type: 3}
   projectileSpawnPoint: {fileID: 6484432213318426435}
   projectileSpeed: 6
+  weaponIcon: {fileID: 7591463974754732465, guid: 50728eeb8c84d6043b9e197e82ff4202, type: 3}
   weaponRange: 0
   isManualWeapon: 0
   bulletsPerBurst: 5
@@ -2245,6 +2251,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3038457703256157301, guid: 7e33e4168eb9c6444878af85e8605797, type: 3}
   projectileSpawnPoint: {fileID: 2642464509737796994}
   projectileSpeed: 1.5
+  weaponIcon: {fileID: -1791783992758969951, guid: bcbc4c0c3fb07004b8757a770969effe, type: 3}
   weaponRange: 0
   isManualWeapon: 0
   explosionEffectPrefab: {fileID: 4952325379883675290, guid: 1deeb24cd5dc6214bafaf18803b4c45c, type: 3}

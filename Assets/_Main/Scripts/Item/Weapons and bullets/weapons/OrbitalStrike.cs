@@ -23,6 +23,7 @@ public class OrbitalStrike : Weapon
         if (!CanFire() || isFiring) return;
 
         SetNextFireTime(PlayerUpgradeManager.Instance.orbitalStrikeStats.firerate);
+
         StartCoroutine(OrbitalStrikeRoutine());
     }
 
@@ -38,7 +39,9 @@ public class OrbitalStrike : Weapon
                 yield return StartCoroutine(FireCluster(enemiesInRange));
             }
 
-            yield return new WaitForSeconds(PlayerUpgradeManager.Instance.orbitalStrikeStats.firerate);
+            WeaponCooldownUIManager.Instance.TriggerCooldown("OrbitalStrike", PlayerUpgradeManager.Instance.orbitalStrikeStats.firerate);
+
+            yield return new WaitForSeconds(PlayerUpgradeManager.Instance.orbitalStrikeStats.firerate * 10);
         }
     }
 

@@ -11,6 +11,8 @@ public class BowAndArrow : Weapon
     {
         if (!CanFire()) return;
 
+        WeaponCooldownUIManager.Instance.TriggerCooldown("BowAndArrow", PlayerUpgradeManager.Instance.bowAndArrowStats.firerate);
+
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.bowAndArrowFireSFX);
 
         Vector3 spawnPos = projectileSpawnPoint.position;

@@ -45,9 +45,9 @@ public class AutoMountWeapons : MonoBehaviour
             upgradeManager.bowAndArrow,
             upgradeManager.smg,
             upgradeManager.shotgun,
-            upgradeManager.rocket,
-            upgradeManager.orbitalStrike,
-            upgradeManager.grenade
+            upgradeManager.rocket
+            //upgradeManager.orbitalStrike,
+            //upgradeManager.grenade
         };
 
         foreach (GameObject weaponGO in allWeapons)

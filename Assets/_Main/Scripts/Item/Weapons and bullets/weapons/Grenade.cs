@@ -35,6 +35,8 @@ public class Grenade : Weapon
     {
         if (!CanFire()) return;
 
+        WeaponCooldownUIManager.Instance.TriggerCooldown("Grenade", PlayerUpgradeManager.Instance.grenadeStats.firerate);
+
         float angleStep = 360f / PlayerUpgradeManager.Instance.baseGrenadeProjectileCount;
         float currentAngle = 0f;
 

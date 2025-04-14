@@ -11,6 +11,8 @@ public class Pistol : Weapon
     {
         if (!CanFire()) return;
 
+        WeaponCooldownUIManager.Instance.TriggerCooldown("Pistol", PlayerUpgradeManager.Instance.pistolStats.firerate);
+
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.pistolFireSFX);
 
         Vector3 spawnPos = projectileSpawnPoint.position;
