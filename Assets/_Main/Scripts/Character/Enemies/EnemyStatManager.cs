@@ -72,7 +72,13 @@ public class EnemyStatManager : CharacterStatManager
 
     public override void TakeDamage(float damage, Color color = default)
     {
-        base.TakeDamage(damage, default);
+        // If no color is specified, use white
+        if (color == default)
+        {
+            color = Color.white;
+        }
+        
+        base.TakeDamage(damage, color);
 
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.enemyTakeDamageSFX);
 
@@ -116,10 +122,16 @@ public class EnemyStatManager : CharacterStatManager
     {
         if (spriteRenderer != null && flashMaterial != null)
         {
+            // Store original material
+            Material originalMat = spriteRenderer.material;
+            
             // Switch to flash material
             spriteRenderer.material = flashMaterial;
 
-            flashMaterial.SetColor("_FlashColor", color);
+            // Set flash color with full opacity
+            Color flashColor = color;
+            flashColor.a = 1f; // Ensure full opacity
+            flashMaterial.SetColor("_FlashColor", flashColor);
 
             // Flash in
             float flashInDuration = 0.1f;
@@ -145,7 +157,7 @@ public class EnemyStatManager : CharacterStatManager
             flashMaterial.SetFloat("_FlashAmount", 0f);
             
             // Return to original material
-            spriteRenderer.material = originalMaterial;
+            spriteRenderer.material = originalMat;
         }
     }
 

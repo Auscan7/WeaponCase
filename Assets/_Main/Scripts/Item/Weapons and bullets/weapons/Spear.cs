@@ -135,14 +135,17 @@ public class Spear : Weapon
             else
             {
                 // Calculate return direction to the player's current position
-                Vector2 targetWorldPosition = parentTransform.TransformPoint(originalLocalPosition);
-                Vector2 returnDirection = (targetWorldPosition - (Vector2)transform.position).normalized;
-                rb.linearVelocity = returnDirection * projectileSpeed * 3f;
-
-                // Check if we've returned close enough to the player
-                if (Vector2.Distance(transform.position, targetWorldPosition) < 0.2f)
+                if (parentTransform != null)
                 {
-                    ResetSpear();
+                    Vector2 targetWorldPosition = parentTransform.TransformPoint(originalLocalPosition);
+                    Vector2 returnDirection = (targetWorldPosition - (Vector2)transform.position).normalized;
+                    rb.linearVelocity = returnDirection * projectileSpeed * 3f;
+
+                    // Check if we've returned close enough to the player
+                    if (Vector2.Distance(transform.position, targetWorldPosition) < 0.2f)
+                    {
+                        ResetSpear();
+                    }
                 }
             }
         }

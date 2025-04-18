@@ -23,18 +23,17 @@ public class Dart : MonoBehaviour
             CharacterStatManager enemy = collision.gameObject.GetComponentInParent<CharacterStatManager>();
             enemy.TakeDamage(PlayerUpgradeManager.Instance.blowDartStats.damage);
 
-            StartCoroutine(ApplyPoisonDamage(PlayerUpgradeManager.Instance.blowDartStats.poisonDamage, enemy, colorGreen));
+            StartCoroutine(ApplyPoisonDamage(PlayerUpgradeManager.Instance.blowDartStats.poisonDamage, 2f, enemy, colorGreen));
 
             spriteRenderer.enabled = false; // Hide the dart sprite
             boxCollider.enabled = false; // Disable the collider
         }
     }
 
-    private IEnumerator ApplyPoisonDamage(float damage, CharacterStatManager enemy, Color color)
+    private IEnumerator ApplyPoisonDamage(float damagePercentage, float minDamage, CharacterStatManager enemy, Color color)
     {
         if (poisonDuration <= 0 && enemy.gameObject.activeInHierarchy)
         {
-
             Destroy(gameObject);
         }
         else
@@ -44,10 +43,13 @@ public class Dart : MonoBehaviour
                 yield return new WaitForSeconds(poisonInterval);
                 poisonDuration -= poisonInterval;
 
+                // Calculate poison damage as a percentage of the enemy's max health
+                float calculatedDamage = Mathf.Max(enemy.maxHealth * (damagePercentage / 100f), minDamage);
+
                 // Apply poison damage to the enemy
-                if(enemy.gameObject.activeInHierarchy && enemy != null)
+                if (enemy.gameObject.activeInHierarchy && enemy != null)
                 {
-                    enemy.TakeDamage(damage, color);
+                    enemy.TakeDamage(calculatedDamage, color);
                 }
             }
         }

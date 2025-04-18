@@ -38,6 +38,12 @@ public class WeaponCooldownUIManager : MonoBehaviour
 
     public void TriggerCooldown(string weaponName, float cooldown)
     {
+        if(cooldownSlotPrefab == null)
+        {
+            Debug.LogError("Cooldown slot prefab is not assigned.");
+            return;
+        }
+
         if (cooldownSlots.TryGetValue(weaponName, out var cooldownUI))
         {
             cooldownUI.StartCooldown(cooldown);

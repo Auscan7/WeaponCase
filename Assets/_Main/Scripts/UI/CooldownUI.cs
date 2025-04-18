@@ -16,7 +16,6 @@ public class CooldownUI : MonoBehaviour
 
     public void StartCooldown(float duration)
     {
-        //if (cooldownRoutine != null) StopCoroutine(cooldownRoutine);
         cooldownRoutine = StartCoroutine(CooldownCoroutine(duration));
     }
 

@@ -13,8 +13,9 @@ public class LoadoutSelectionManager : MonoBehaviour
     public GameObject gameTimeText;
     public GameObject Tutorial;
     public GameObject XPLevel;
-    public GameObject WeaponCooldownSlots;
     public GameObject PlayerHP;
+    public GameObject WeaponCooldownSlots;
+    CanvasGroup canvasGroup;
 
     [Header("Boat Unlock Popup")]
     public GameObject boatUnlockPopup;
@@ -50,8 +51,10 @@ public class LoadoutSelectionManager : MonoBehaviour
 
         SpawnerManager.Instance.PauseAllSpawners();
 
+        canvasGroup = WeaponCooldownSlots.GetComponent<CanvasGroup>();
         gameTimeManager = GetComponent<GameTimeManager>();
         gameTimeManager.timerRunning = false;
+        canvasGroup.alpha = 0f; // Hide the cooldown slots at the start
 
         // Update all lock visuals once at startup
         foreach (var boat in boats)
@@ -231,8 +234,8 @@ public class LoadoutSelectionManager : MonoBehaviour
         gameTimeText.SetActive(true);
         gameTimeManager.timerRunning = true;
         XPLevel.SetActive(true);
-        //WeaponCooldownSlots.SetActive(true);
         PlayerHP.SetActive(true);
+        canvasGroup.alpha = 1f; // Show the cooldown slots
     }
 }
 
