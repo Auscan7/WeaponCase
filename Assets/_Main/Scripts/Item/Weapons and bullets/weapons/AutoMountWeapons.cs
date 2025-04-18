@@ -43,6 +43,7 @@ public class AutoMountWeapons : MonoBehaviour
         {
             upgradeManager.pistol,
             upgradeManager.bowAndArrow,
+            upgradeManager.spear,
             upgradeManager.smg,
             upgradeManager.shotgun,
             upgradeManager.rocket

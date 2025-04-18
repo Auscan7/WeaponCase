@@ -23,6 +23,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     [Header("Weapon Damage Multipliers")]
     public float pistolDamageMultiplier = 1f;
     public float bowAndArrowDamageMultiplier = 1f;
+    public float spearDamageMultiplier = 1f;
     public float smgDamageMultiplier = 1f;
     public float shotgunDamageMultiplier = 1f;
     public float rocketDamageMultiplier = 1f;
@@ -32,6 +33,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     [Header("Weapons")]
     public GameObject pistol;
     public GameObject bowAndArrow;
+    public GameObject spear;
     public GameObject smg;
     public GameObject shotgun;
     public GameObject rocket;
@@ -41,6 +43,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     [Header("Weapon Stats")]
     public WeaponStats pistolStats;
     public WeaponStats bowAndArrowStats;
+    public WeaponStats spearStats;
     public WeaponStats smgStats;
     public WeaponStats shotgunStats;
     public WeaponStats rocketStats;
@@ -51,6 +54,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     [Header("Base Weapon Damage")]
     public float basePistolDamage = 10f;
     public float baseBowAndArrowDamage = 15f;
+    public float baseSpearDamage = 15f;
     public float baseSMGDamage = 2f;
     public float baseShotgunDamage = 6f;
     public float baseRocketDamage = 20f;
@@ -123,6 +127,7 @@ public class PlayerUpgradeManager : MonoBehaviour
         {
             { "Pistol", pistol },
             { "BowAndArrow", bowAndArrow },
+            { "Spear", spear },
             { "SMG", smg },
             { "Shotgun", shotgun },
             { "Rocket", rocket },
@@ -223,6 +228,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     {
         pistolStats.damage = basePistolDamage * playerDamageMultiplier;
         bowAndArrowStats.damage = baseBowAndArrowDamage * playerDamageMultiplier;
+        spearStats.damage = baseSpearDamage * playerDamageMultiplier;
         smgStats.damage = baseSMGDamage * playerDamageMultiplier;
         shotgunStats.damage = baseShotgunDamage * playerDamageMultiplier;
         rocketStats.damage = baseRocketDamage * playerDamageMultiplier;
@@ -239,6 +245,7 @@ public class PlayerUpgradeManager : MonoBehaviour
         // Apply both player-wide and weapon-specific multipliers
         pistolStats.damage = basePistolDamage * playerDamageMultiplier * pistolDamageMultiplier;
         bowAndArrowStats.damage = baseBowAndArrowDamage * playerDamageMultiplier * bowAndArrowDamageMultiplier;
+        spearStats.damage = baseSpearDamage * playerDamageMultiplier * spearDamageMultiplier;
         smgStats.damage = baseSMGDamage * playerDamageMultiplier * smgDamageMultiplier;
         shotgunStats.damage = baseShotgunDamage * playerDamageMultiplier * shotgunDamageMultiplier;
         rocketStats.damage = baseRocketDamage * playerDamageMultiplier * rocketDamageMultiplier;

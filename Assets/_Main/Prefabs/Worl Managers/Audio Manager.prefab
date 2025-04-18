@@ -75,6 +75,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 101b70a5091c966478dee86476a88524, type: 3}
   - {fileID: 8300000, guid: 43c9ec74a7e27e645a1f5cdc3620d8d3, type: 3}
   - {fileID: 8300000, guid: 436fafe320a6c3949917917e194d2509, type: 3}
+  enemyTakeDamageSFX:
+  - {fileID: 8300000, guid: e605b55619f0ded42b5ec622e5f47611, type: 3}
+  - {fileID: 8300000, guid: 9c2697dafffbeea4aa0b9f642f659446, type: 3}
+  - {fileID: 8300000, guid: f6e16f1335dcf7a4890942ebef564e73, type: 3}
+  - {fileID: 8300000, guid: 0f059e190583a6d4fb184c088aed6fb3, type: 3}
   UIClickSFX:
   - {fileID: 8300000, guid: d97b1f41cbaace743804c8049710a517, type: 3}
   - {fileID: 8300000, guid: d97b1f41cbaace743804c8049710a517, type: 3}

@@ -1,10 +1,14 @@
 using UnityEngine;
+using System.Collections;
 
 public class EnemyStatManager : CharacterStatManager
 {
     private EnemyManager enemyManager;
     GemDrop gemDrop;
     EnemyItemDrop itemDrop;
+    private Material originalMaterial;
+    private Material flashMaterial;
+    private SpriteRenderer spriteRenderer;
 
     public GameObject enemyPrefabReference; // Set this to the prefab used in the pool
 
@@ -19,6 +23,16 @@ public class EnemyStatManager : CharacterStatManager
         enemyManager = GetComponent<EnemyManager>();
         gemDrop = GetComponent<GemDrop>();
         itemDrop = GetComponent<EnemyItemDrop>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        
+        if (spriteRenderer != null)
+        {
+            originalMaterial = spriteRenderer.material;
+            // Create a new instance of the flash material
+            flashMaterial = new Material(Shader.Find("Custom/FlashShader"));
+            flashMaterial.SetColor("_FlashColor", Color.white);
+            flashMaterial.SetFloat("_FlashAmount", 0f);
+        }
     }
 
     public override void HandleDeath()
@@ -60,6 +74,8 @@ public class EnemyStatManager : CharacterStatManager
     {
         base.TakeDamage(damage);
 
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.enemyTakeDamageSFX);
+
         int critChance = Random.Range(0, 101);
         bool isCrit = critChance < PlayerUpgradeManager.Instance.playerCritChancePercent;
 
@@ -88,6 +104,47 @@ public class EnemyStatManager : CharacterStatManager
 
         // Reset damage timer for hiding the health bar
         damageTimer = 0f;
+
+        // Flash effect
+        if (spriteRenderer != null && flashMaterial != null)
+        {
+            StartCoroutine(FlashDamageEffect());
+        }
+    }
+
+    private IEnumerator FlashDamageEffect()
+    {
+        if (spriteRenderer != null && flashMaterial != null)
+        {
+            // Switch to flash material
+            spriteRenderer.material = flashMaterial;
+            
+            // Flash in
+            float flashInDuration = 0.1f;
+            float flashOutDuration = 0.1f;
+            
+            // Flash in
+            for (float t = 0; t < flashInDuration; t += Time.deltaTime)
+            {
+                float normalizedTime = t / flashInDuration;
+                flashMaterial.SetFloat("_FlashAmount", normalizedTime);
+                yield return null;
+            }
+            
+            // Flash out
+            for (float t = 0; t < flashOutDuration; t += Time.deltaTime)
+            {
+                float normalizedTime = t / flashOutDuration;
+                flashMaterial.SetFloat("_FlashAmount", 1f - normalizedTime);
+                yield return null;
+            }
+            
+            // Reset flash amount
+            flashMaterial.SetFloat("_FlashAmount", 0f);
+            
+            // Return to original material
+            spriteRenderer.material = originalMaterial;
+        }
     }
 
     // check if player leeches health

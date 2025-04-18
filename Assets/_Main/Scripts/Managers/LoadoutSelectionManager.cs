@@ -30,6 +30,7 @@ public class LoadoutSelectionManager : MonoBehaviour
     public Button selectedWeaponButton;
     public TextMeshProUGUI selectedWeaponText;
     public Button bowAndArrowButton;
+    public Button spearButton;
     public Button pistolButton;
     public Button shotgunButton;
 
@@ -71,6 +72,9 @@ public class LoadoutSelectionManager : MonoBehaviour
         // Weapon button setup
         bowAndArrowButton.onClick.AddListener(() =>
             SelectWeapon(PlayerUpgradeManager.Instance.bowAndArrow, bowAndArrowButton, "Bow and Arrow", playAudio: true));
+
+        spearButton.onClick.AddListener(() =>
+            SelectWeapon(PlayerUpgradeManager.Instance.spear, spearButton, "Spear", playAudio: true));
 
         pistolButton.onClick.AddListener(() =>
             SelectWeapon(PlayerUpgradeManager.Instance.pistol, pistolButton, "Pistol", playAudio: true));

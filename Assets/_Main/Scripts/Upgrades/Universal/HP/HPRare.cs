@@ -7,6 +7,5 @@ public class HPRare : Upgrade
     public override void ApplyUpgrade(PlayerUpgradeManager upgradeManager)
     {
         upgradeManager.playerMaxHealth += hpIncreaseAmount;
-        upgradeManager.playerCurrentHealth += hpIncreaseAmount;
     }
 }

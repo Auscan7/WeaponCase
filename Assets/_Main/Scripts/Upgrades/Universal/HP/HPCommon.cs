@@ -7,6 +7,5 @@ public class HPCommon : Upgrade
     public override void ApplyUpgrade(PlayerUpgradeManager upgradeManager)
     {
         upgradeManager.playerMaxHealth += hpIncreaseAmount;
-        upgradeManager.playerCurrentHealth += hpIncreaseAmount;
     }
 }

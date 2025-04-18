@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Enemy SFX")]
     public AudioClip[] hammerheadSFX;
+    public AudioClip[] enemyTakeDamageSFX;
 
     [Header("UI")]
     public AudioClip[] UIClickSFX;

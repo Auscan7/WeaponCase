@@ -43,7 +43,7 @@ public abstract class Weapon : MonoBehaviour
         }
     }
 
-    public void UpdateAimingLine(Vector2 targetPosition)
+    public virtual void UpdateAimingLine(Vector2 targetPosition)
     {
         if (!isManualWeapon || aimLine == null) return;
 
@@ -57,7 +57,7 @@ public abstract class Weapon : MonoBehaviour
 
     }
 
-    public void HideAimingLine()
+    public virtual void HideAimingLine()
     {
         if (aimLine != null)
         {
@@ -78,7 +78,7 @@ public abstract class Weapon : MonoBehaviour
         nextFireTime = Time.time + (1f / fireRate);
     }
 
-    public void RotateTowardsTarget(Vector2 targetPosition)
+    public virtual void RotateTowardsTarget(Vector2 targetPosition)
     {
         Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
