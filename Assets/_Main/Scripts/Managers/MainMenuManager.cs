@@ -21,7 +21,8 @@ public class MainMenuManager : MonoBehaviour
 
     public void Play()
     {
-        AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
-        SceneManager.LoadScene("Level1");
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);       
+        //SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Test");
     }
 }

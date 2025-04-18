@@ -10,6 +10,16 @@ public class EnemyStatManager : CharacterStatManager
     private Material flashMaterial;
     private SpriteRenderer spriteRenderer;
 
+    // Poison status tracking
+    private bool isPoisoned = false;
+    private float poisonTimer = 0f;
+    private float poisonDuration = 5f; // Duration of poison effect in seconds
+    private Coroutine poisonCoroutine;
+    private float poisonDamagePercentage;
+    private float poisonMinDamage;
+    private float poisonTickInterval;
+    private Color poisonColor;
+
     public GameObject enemyPrefabReference; // Set this to the prefab used in the pool
 
     // hide health bar
@@ -27,9 +37,16 @@ public class EnemyStatManager : CharacterStatManager
         
         if (spriteRenderer != null)
         {
+            // Store the original material
             originalMaterial = spriteRenderer.material;
+            
             // Create a new instance of the flash material
             flashMaterial = new Material(Shader.Find("Custom/FlashShader"));
+            
+            // Copy the original material's texture to the flash material
+            flashMaterial.mainTexture = originalMaterial.mainTexture;
+            
+            // Set up flash properties
             flashMaterial.SetColor("_FlashColor", Color.white);
             flashMaterial.SetFloat("_FlashAmount", 0f);
         }
@@ -68,7 +85,67 @@ public class EnemyStatManager : CharacterStatManager
                 healthBarParent.SetActive(true);
             }
         }
+
+        // Update poison timer
+        if (isPoisoned)
+        {
+            poisonTimer += Time.deltaTime;
+            if (poisonTimer >= poisonDuration)
+            {
+                isPoisoned = false;
+                poisonTimer = 0f;
+            }
+        }
     }
+
+    public void StartPoison(float damagePercent, float minDamage, float duration, float interval, Color damageColor)
+    {
+        poisonDamagePercentage = damagePercent;
+        poisonMinDamage = minDamage;
+        poisonTickInterval = interval;
+        poisonColor = damageColor;
+
+        // Restart poison timer and coroutine
+        if (poisonCoroutine != null)
+            StopCoroutine(poisonCoroutine);
+
+        poisonCoroutine = StartCoroutine(PoisonTick(duration));
+    }
+
+    private IEnumerator PoisonTick(float duration)
+    {
+        isPoisoned = true;
+        float timer = 0f;
+
+        while (timer < duration && gameObject.activeInHierarchy)
+        {
+            yield return new WaitForSeconds(poisonTickInterval);
+            timer += poisonTickInterval;
+
+            float calculatedDamage = Mathf.Max(maxHealth * (poisonDamagePercentage / 100f), poisonMinDamage);
+            TakeDamage(calculatedDamage, poisonColor);
+        }
+
+        isPoisoned = false;
+        poisonCoroutine = null;
+    }
+
+
+    public void ResetEnemy()
+    {
+        base.ResetEnemy();
+
+        // Reset poison status
+        isPoisoned = false;
+        poisonTimer = 0f;
+
+        if (poisonCoroutine != null)
+        {
+            StopCoroutine(poisonCoroutine);
+            poisonCoroutine = null;
+        }
+    }
+
 
     public override void TakeDamage(float damage, Color color = default)
     {
@@ -122,8 +199,8 @@ public class EnemyStatManager : CharacterStatManager
     {
         if (spriteRenderer != null && flashMaterial != null)
         {
-            // Store original material
-            Material originalMat = spriteRenderer.material;
+            // Always use the stored original material
+            Material currentOriginalMaterial = originalMaterial;
             
             // Switch to flash material
             spriteRenderer.material = flashMaterial;
@@ -156,8 +233,8 @@ public class EnemyStatManager : CharacterStatManager
             // Reset flash amount
             flashMaterial.SetFloat("_FlashAmount", 0f);
             
-            // Return to original material
-            spriteRenderer.material = originalMat;
+            // Always return to the stored original material
+            spriteRenderer.material = currentOriginalMaterial;
         }
     }
 
