@@ -70,9 +70,9 @@ public class EnemyStatManager : CharacterStatManager
         }
     }
 
-    public override void TakeDamage(float damage)
+    public override void TakeDamage(float damage, Color color = default)
     {
-        base.TakeDamage(damage);
+        base.TakeDamage(damage, default);
 
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.enemyTakeDamageSFX);
 
@@ -108,17 +108,19 @@ public class EnemyStatManager : CharacterStatManager
         // Flash effect
         if (spriteRenderer != null && flashMaterial != null)
         {
-            StartCoroutine(FlashDamageEffect());
+            StartCoroutine(FlashDamageEffect(color));
         }
     }
 
-    private IEnumerator FlashDamageEffect()
+    private IEnumerator FlashDamageEffect(Color color)
     {
         if (spriteRenderer != null && flashMaterial != null)
         {
             // Switch to flash material
             spriteRenderer.material = flashMaterial;
-            
+
+            flashMaterial.SetColor("_FlashColor", color);
+
             // Flash in
             float flashInDuration = 0.1f;
             float flashOutDuration = 0.1f;

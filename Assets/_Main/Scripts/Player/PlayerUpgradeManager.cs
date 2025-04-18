@@ -24,6 +24,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     public float pistolDamageMultiplier = 1f;
     public float bowAndArrowDamageMultiplier = 1f;
     public float spearDamageMultiplier = 1f;
+    public float blowDartDamageMultiplier = 1f;
     public float smgDamageMultiplier = 1f;
     public float shotgunDamageMultiplier = 1f;
     public float rocketDamageMultiplier = 1f;
@@ -34,6 +35,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     public GameObject pistol;
     public GameObject bowAndArrow;
     public GameObject spear;
+    public GameObject blowDart;
     public GameObject smg;
     public GameObject shotgun;
     public GameObject rocket;
@@ -44,6 +46,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     public WeaponStats pistolStats;
     public WeaponStats bowAndArrowStats;
     public WeaponStats spearStats;
+    public WeaponStats blowDartStats;
     public WeaponStats smgStats;
     public WeaponStats shotgunStats;
     public WeaponStats rocketStats;
@@ -55,6 +58,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     public float basePistolDamage = 10f;
     public float baseBowAndArrowDamage = 15f;
     public float baseSpearDamage = 15f;
+    public float baseBlowDartDamage = 5f;
     public float baseSMGDamage = 2f;
     public float baseShotgunDamage = 6f;
     public float baseRocketDamage = 20f;
@@ -128,6 +132,7 @@ public class PlayerUpgradeManager : MonoBehaviour
             { "Pistol", pistol },
             { "BowAndArrow", bowAndArrow },
             { "Spear", spear },
+            { "BlowDart", blowDart },
             { "SMG", smg },
             { "Shotgun", shotgun },
             { "Rocket", rocket },
@@ -277,6 +282,7 @@ public class BoatStats
 public class WeaponStats
 {
     public float damage;
+    public float poisonDamage;
     public float areaDamage;
     public float firerate;
     public float range;

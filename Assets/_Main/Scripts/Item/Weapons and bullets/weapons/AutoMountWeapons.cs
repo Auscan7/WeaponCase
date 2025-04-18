@@ -44,6 +44,7 @@ public class AutoMountWeapons : MonoBehaviour
             upgradeManager.pistol,
             upgradeManager.bowAndArrow,
             upgradeManager.spear,
+            upgradeManager.blowDart,
             upgradeManager.smg,
             upgradeManager.shotgun,
             upgradeManager.rocket

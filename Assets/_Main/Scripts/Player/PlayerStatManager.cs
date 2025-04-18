@@ -38,7 +38,7 @@ public class PlayerStatManager : CharacterStatManager
         UpdateMagnetRadius();
     }
 
-    public override void TakeDamage(float damage)
+    public override void TakeDamage(float damage, Color color = default)
     {
         if (isOnCooldown) return;
 

@@ -46362,6 +46362,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 240818026488865929, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+      propertyPath: m_text
+      value: Spear
+      objectReference: {fileID: 0}
+    - target: {fileID: 240818026488865929, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+      propertyPath: m_fontSize
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: 1479251895875919017, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -46414,6 +46422,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4444228535925690204, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+      propertyPath: upgradePools.Array.data[1].upgrades.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444228535925690204, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+      propertyPath: 'upgradePools.Array.data[1].upgrades.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 071bc37a0f4c7bb4c80bce852af5d344, type: 2}
     - target: {fileID: 6327695393456204611, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

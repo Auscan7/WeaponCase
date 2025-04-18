@@ -33,9 +33,13 @@ public class CharacterStatManager : MonoBehaviour
         }
     }
 
-    public virtual void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage, Color color = default)
     {
-
+        if (color == default)
+        {
+            color = Color.white;
+        }
+        // Add your damage handling logic here  
     }
 
     public void ResetEnemy()
