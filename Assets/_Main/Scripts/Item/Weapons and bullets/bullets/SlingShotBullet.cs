@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Rocket : MonoBehaviour
+public class SlingShotBullet : MonoBehaviour
 {
     [Header("Rocket Damage Settings")]
     [SerializeField] float explosionRadius = 1f; // Radius of the explosion
@@ -12,17 +12,16 @@ public class Rocket : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // Apply direct hit damage
+            // Apply damage to the enemy
             CharacterStatManager target = collision.gameObject.GetComponentInParent<CharacterStatManager>();
             if (target != null)
             {
-                target.TakeDamage(PlayerUpgradeManager.Instance.rocketStats.damage);
+                target.TakeDamage(PlayerUpgradeManager.Instance.slingShotStats.damage);
             }
 
-            // Trigger the explosion
             Explode();
 
-            // Destroy the rocket
+            // Destroy the bullet
             Destroy(gameObject);
         }
     }
@@ -50,7 +49,7 @@ public class Rocket : MonoBehaviour
             CharacterStatManager enemyStats = enemy.GetComponentInParent<CharacterStatManager>();
             if (enemyStats != null)
             {
-                enemyStats.TakeDamage(PlayerUpgradeManager.Instance.rocketStats.areaDamage);
+                enemyStats.TakeDamage(PlayerUpgradeManager.Instance.slingShotStats.areaDamage);
             }
         }
     }

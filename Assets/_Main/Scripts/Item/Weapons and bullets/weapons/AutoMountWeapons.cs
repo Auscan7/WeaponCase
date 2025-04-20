@@ -23,8 +23,6 @@ public class AutoMountWeapons : MonoBehaviour
 
     void Awake()
     {
-        Debug.Log("AutoMountWeapons: Start called");
-
         slotManager = GetComponent<WeaponSlotManager>();
         upgradeManager = GetComponent<PlayerUpgradeManager>();
 
@@ -37,14 +35,13 @@ public class AutoMountWeapons : MonoBehaviour
 
     private void MountInitialWeapons()
     {
-        Debug.Log("MountInitialWeapons: Checking for active weapons...");
-
         List<GameObject> allWeapons = new List<GameObject>
         {
             upgradeManager.pistol,
             upgradeManager.bowAndArrow,
             upgradeManager.spear,
             upgradeManager.blowDart,
+            upgradeManager.slingShot,
             upgradeManager.smg,
             upgradeManager.shotgun,
             upgradeManager.rocket
@@ -74,7 +71,6 @@ public class AutoMountWeapons : MonoBehaviour
         if (weapon != null)
         {
             slotManager.AttachWeapon(weapon);
-            Debug.Log($"AutoMountWeapons: Weapon {weaponGO.name} attached via event.");
         }
         else
         {
