@@ -37,16 +37,10 @@ public class AutoMountWeapons : MonoBehaviour
     {
         List<GameObject> allWeapons = new List<GameObject>
         {
-            upgradeManager.pistol,
             upgradeManager.bowAndArrow,
             upgradeManager.spear,
-            upgradeManager.blowDart,
-            upgradeManager.slingShot,
-            upgradeManager.smg,
-            upgradeManager.shotgun,
-            upgradeManager.rocket
-            //upgradeManager.orbitalStrike,
-            //upgradeManager.grenade
+            upgradeManager.pistol,
+            upgradeManager.shotgun
         };
 
         foreach (GameObject weaponGO in allWeapons)
@@ -78,4 +72,25 @@ public class AutoMountWeapons : MonoBehaviour
         }
     }
 
+    public void MountWeapons()
+    {
+        // Get all weapons in the scene
+        Weapon[] weapons = FindObjectsOfType<Weapon>();
+
+        foreach (Weapon weapon in weapons)
+        {
+            if (!weapon.shouldMountToSlot) continue; // Skip weapons that shouldn't be mounted
+
+            // Check if the weapon is already mounted
+            if (weapon.transform.parent != null && 
+                (weapon.transform.parent == slotManager.manualSlot || 
+                 slotManager.usedAutoSlots.Contains(weapon.transform.parent)))
+            {
+                continue;
+            }
+
+            // Mount the weapon
+            slotManager.AttachWeapon(weapon);
+        }
+    }
 }

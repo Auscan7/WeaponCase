@@ -14,6 +14,7 @@ public abstract class Weapon : MonoBehaviour
 
     [Header("Weapon Settings")]
     public bool isManualWeapon = false;
+    public bool shouldMountToSlot = true; // Controls whether this weapon should be mounted to a slot
 
     private LineRenderer aimLine;
 

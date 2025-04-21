@@ -6,10 +6,12 @@ public class WeaponSlotManager : MonoBehaviour
     public Transform manualSlot;
     public List<Transform> autoWeaponSlots;
 
-    private List<Transform> usedAutoSlots = new List<Transform>();
+    public List<Transform> usedAutoSlots = new List<Transform>();
 
     public void AttachWeapon(Weapon weapon)
     {
+        if (!weapon.shouldMountToSlot) return; // Skip mounting if weapon shouldn't be mounted
+
         if (weapon.isManualWeapon)
         {
             weapon.transform.SetParent(manualSlot);
