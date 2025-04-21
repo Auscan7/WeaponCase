@@ -6,118 +6,102 @@ public class FlameCircle : Weapon
     [Header("Flame Circle Settings")]
     [SerializeField] private LayerMask enemyLayers;
     [SerializeField] private ParticleSystem flameParticles;
-    [SerializeField] private Material flameMaterial;
+    [SerializeField] private ParticleSystem outerRingParticles;
     
     private float damageInterval;
     private float nextDamageTime;
     private bool isActive = false;
+    private float originalRadius;
+    private float originalOuterRadius;
+    private Transform particleContainer;
+    private Vector3 lastPosition;
+    private ParticleSystem.Particle[] particles; // For inner circle
+    private ParticleSystem.Particle[] outerParticles; // For outer ring
 
     protected override void Awake()
     {
         base.Awake();
         weaponRange = PlayerUpgradeManager.Instance.flameCircleStats.range;
         damageInterval = 1f / PlayerUpgradeManager.Instance.flameCircleStats.firerate;
-        InitializeFlameEffect();
+        
+        // Create a container for particles that won't rotate
+        particleContainer = new GameObject("ParticleContainer").transform;
+        particleContainer.SetParent(null);
+        particleContainer.position = transform.position;
+        lastPosition = transform.position;
+        
+        if (flameParticles != null)
+        {
+            var shape = flameParticles.shape;
+            originalRadius = shape.radius;
+            
+            flameParticles.transform.SetParent(particleContainer);
+            
+            var main = flameParticles.main;
+            main.simulationSpace = ParticleSystemSimulationSpace.World;
+            main.playOnAwake = true;
+            main.maxParticles = 1000;
+            
+            // Initialize particle array
+            particles = new ParticleSystem.Particle[main.maxParticles];
+        }
+        
+        if (outerRingParticles != null)
+        {
+            var shape = outerRingParticles.shape;
+            originalOuterRadius = shape.radius;
+            
+            outerRingParticles.transform.SetParent(particleContainer);
+            
+            var main = outerRingParticles.main;
+            main.simulationSpace = ParticleSystemSimulationSpace.World;
+            main.playOnAwake = true;
+            main.maxParticles = 1000;
+            
+            // Initialize outer particle array
+            outerParticles = new ParticleSystem.Particle[main.maxParticles];
+        }
+        
+        UpdateParticleSystemScale();
     }
 
-    private void InitializeFlameEffect()
+    private void UpdateParticleSystemScale()
     {
-        // Create or get ParticleSystem
-        if (flameParticles == null)
+        if (flameParticles != null)
         {
-            GameObject particlesObj = new GameObject("FlameParticles");
-            particlesObj.transform.SetParent(transform);
-            particlesObj.transform.localPosition = Vector3.zero;
-            flameParticles = particlesObj.AddComponent<ParticleSystem>();
+            var shape = flameParticles.shape;
+            float scaleFactor = weaponRange / originalRadius;
+            shape.radius = weaponRange;
+            
+            var main = flameParticles.main;
+            main.startSize = new ParticleSystem.MinMaxCurve(
+                main.startSize.constant * scaleFactor,
+                main.startSize.constantMax * scaleFactor
+            );
+            
+            var emission = flameParticles.emission;
+            emission.rateOverTime = new ParticleSystem.MinMaxCurve(
+                emission.rateOverTime.constant * scaleFactor
+            );
         }
 
-        // Get or create renderer
-        var renderer = flameParticles.GetComponent<ParticleSystemRenderer>();
-        if (renderer == null)
+        if (outerRingParticles != null)
         {
-            renderer = flameParticles.gameObject.AddComponent<ParticleSystemRenderer>();
+            var shape = outerRingParticles.shape;
+            float outerScaleFactor = weaponRange / originalOuterRadius;
+            shape.radius = weaponRange;
+            
+            var main = outerRingParticles.main;
+            main.startSize = new ParticleSystem.MinMaxCurve(
+                main.startSize.constant * outerScaleFactor,
+                main.startSize.constantMax * outerScaleFactor
+            );
+            
+            var emission = outerRingParticles.emission;
+            emission.rateOverTime = new ParticleSystem.MinMaxCurve(
+                emission.rateOverTime.constant * outerScaleFactor
+            );
         }
-
-        // Set up the material
-        if (flameMaterial == null)
-        {
-            // Create a new material with the default particle shader
-            flameMaterial = new Material(Shader.Find("Particles/Additive"));
-            // Set the texture to a simple white texture
-            Texture2D whiteTexture = new Texture2D(1, 1);
-            whiteTexture.SetPixel(0, 0, Color.white);
-            whiteTexture.Apply();
-            flameMaterial.mainTexture = whiteTexture;
-        }
-        renderer.material = flameMaterial;
-        renderer.renderMode = ParticleSystemRenderMode.Billboard;
-        renderer.alignment = ParticleSystemRenderSpace.View;
-        renderer.sortMode = ParticleSystemSortMode.Distance;
-        renderer.sortingOrder = 1;
-
-        // Configure ParticleSystem
-        var main = flameParticles.main;
-        main.startLifetime = 1f;
-        main.startSpeed = 0.5f;
-        main.startSize = 0.5f;
-        main.simulationSpace = ParticleSystemSimulationSpace.World;
-        main.loop = true;
-        main.playOnAwake = true;
-        main.maxParticles = 2000;
-        main.scalingMode = ParticleSystemScalingMode.Local;
-
-        var emission = flameParticles.emission;
-        emission.rateOverTime = 500f;
-
-        var shape = flameParticles.shape;
-        shape.shapeType = ParticleSystemShapeType.Circle;
-        shape.radius = weaponRange;
-        shape.radiusThickness = 0.2f;
-        shape.arc = 360f;
-        shape.arcMode = ParticleSystemShapeMultiModeValue.Random;
-        shape.arcSpread = 0f;
-        shape.arcSpeed = 1f;
-
-        var velocity = flameParticles.velocityOverLifetime;
-        velocity.enabled = true;
-        velocity.space = ParticleSystemSimulationSpace.World;
-        velocity.radial = new ParticleSystem.MinMaxCurve(1f);
-
-        var color = flameParticles.colorOverLifetime;
-        color.enabled = true;
-        Gradient gradient = new Gradient();
-        gradient.SetKeys(
-            new GradientColorKey[] { 
-                new GradientColorKey(new Color(1f, 0.2f, 0f), 0.0f),
-                new GradientColorKey(new Color(1f, 0.5f, 0f), 0.3f),
-                new GradientColorKey(new Color(1f, 0.8f, 0f), 0.7f),
-                new GradientColorKey(new Color(1f, 0.9f, 0.3f), 1.0f)
-            },
-            new GradientAlphaKey[] { 
-                new GradientAlphaKey(1.0f, 0.0f),
-                new GradientAlphaKey(0.9f, 0.3f),
-                new GradientAlphaKey(0.7f, 0.7f),
-                new GradientAlphaKey(0.0f, 1.0f)
-            }
-        );
-        color.color = gradient;
-
-        var size = flameParticles.sizeOverLifetime;
-        size.enabled = true;
-        size.size = new ParticleSystem.MinMaxCurve(1f, new AnimationCurve(
-            new Keyframe(0f, 0.3f),
-            new Keyframe(0.3f, 0.5f),
-            new Keyframe(0.7f, 0.3f),
-            new Keyframe(1f, 0f)
-        ));
-
-        var noise = flameParticles.noise;
-        noise.enabled = true;
-        noise.strength = 0.2f;
-        noise.frequency = 0.5f;
-        noise.scrollSpeed = 0.5f;
-
-        flameParticles.Play();
     }
 
     private void Start()
@@ -125,12 +109,41 @@ public class FlameCircle : Weapon
         StartCoroutine(DamageRoutine());
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (flameParticles != null)
+        UpdateParticleSystemScale();
+        
+        if (particleContainer != null)
         {
-            var shape = flameParticles.shape;
-            shape.radius = weaponRange;
+            Vector3 currentPosition = transform.position;
+            Vector3 positionDelta = currentPosition - lastPosition;
+            
+            // Move the container
+            particleContainer.position += positionDelta;
+            
+            // Update inner circle particles
+            if (flameParticles != null)
+            {
+                int numParticles = flameParticles.GetParticles(particles);
+                for (int i = 0; i < numParticles; i++)
+                {
+                    particles[i].position += positionDelta;
+                }
+                flameParticles.SetParticles(particles, numParticles);
+            }
+            
+            // Update outer ring particles
+            if (outerRingParticles != null)
+            {
+                int numOuterParticles = outerRingParticles.GetParticles(outerParticles);
+                for (int i = 0; i < numOuterParticles; i++)
+                {
+                    outerParticles[i].position += positionDelta;
+                }
+                outerRingParticles.SetParticles(outerParticles, numOuterParticles);
+            }
+            
+            lastPosition = currentPosition;
         }
     }
 
@@ -168,12 +181,13 @@ public class FlameCircle : Weapon
     private void OnDestroy()
     {
         isActive = false;
-        if (flameParticles != null)
+        if (particleContainer != null)
         {
-            Destroy(flameParticles.gameObject);
+            Destroy(particleContainer.gameObject);
         }
     }
 
+    // Draw the damage radius in the editor for easier visualization
     private void OnDrawGizmos()
     {
         Gizmos.color = new Color(1f, 0f, 0f, 0.3f);
