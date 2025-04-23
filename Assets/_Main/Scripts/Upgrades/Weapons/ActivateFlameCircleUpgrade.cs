@@ -11,10 +11,8 @@ public class ActivateFlameCircleUpgrade : Upgrade, IConditionalUpgrade
     public bool CanOffer()
     {
         // Only offer if the Flame Circle is not active yet.
-        // Only offer if the player selected the battle ship boat.
         // Assuming your UpgradeManager stores a weaponDict.
-        return !PlayerUpgradeManager.Instance.IsWeaponActive("FlameCircle") && 
-            PlayerUpgradeManager.Instance.SelectedBoatName == "Battle Ship";
+        return !PlayerUpgradeManager.Instance.IsWeaponActive("FlameCircle");
     }
 }
 
