@@ -2029,7 +2029,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 1
+  prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -7094,7 +7094,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 1
+  prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -12958,7 +12958,6 @@ MonoBehaviour:
   canMove: 1
   horizontalMovement: 0
   verticalMovement: 0
-  sailingSpeed: 3.5
 --- !u!114 &8192816153180972205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12973,14 +12972,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCurrentHealth: 0
   playerMaxHealth: 100
-  playerHealthRegenAmount: 1
+  playerSailingSpeed: 5
+  playerHealthRegenAmount: 0.3
   playerLeechAmountPercent: 0.5
   playerLeechChancePercent: 5
   playerArmor: 10
   playerDodgeChancePercent: 20
   playerMovementSpeedMultiplier: 1
   playerDamageMultiplier: 1
-  playerCritDamageMultiplier: 10
+  playerCritDamageMultiplier: 2
   playerCritChancePercent: 5
   playerXpMultiplier: 1
   playerMagnetRadius: 1.75

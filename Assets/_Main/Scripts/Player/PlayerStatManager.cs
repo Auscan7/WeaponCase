@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerStatManager : CharacterStatManager
 {
     private float damageCooldown = 0.35f;
-    private float regenCooldown = 3f; // Time between ticks
+    private float regenCooldown = 1f; // Time between ticks
     private bool isOnCooldown = false;
     public TMP_Text HPText;
     public GameObject DeadScreen;

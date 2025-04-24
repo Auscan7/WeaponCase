@@ -166,7 +166,8 @@ public class EnemyStatManager : CharacterStatManager
 
         if (isCrit)
         {
-            finalDamage += damage / 10 * PlayerUpgradeManager.Instance.playerCritDamageMultiplier;
+            finalDamage *= PlayerUpgradeManager.Instance.playerCritDamageMultiplier;
+            //finalDamage += damage / 10 * PlayerUpgradeManager.Instance.playerCritDamageMultiplier;
         }
 
         currentHealth -= finalDamage;
