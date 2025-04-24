@@ -139,6 +139,7 @@ public class LoadoutSelectionManager : MonoBehaviour
             AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
 
         PlayerUpgradeManager.Instance.ApplyBoatStats(boat.boatName);
+        PlayerStatsUIManager.Instance.UpdateStats();
         lastAppliedBoat = boat.boatName;
     }
 

@@ -8,6 +8,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     [Header("Player Stats")]
     [HideInInspector] public float playerCurrentHealth;
     [HideInInspector] public int playerMaxHealth;
+    public float playerSailingSpeed;
     public float playerHealthRegenAmount;
     public float playerLeechAmountPercent;
     public float playerLeechChancePercent;
@@ -216,6 +217,9 @@ public class PlayerUpgradeManager : MonoBehaviour
 
             // Recalculate weapon damage based on the new playerDamageMultiplier
             UpdateWeaponDamage();
+
+            // Update the UI
+            PlayerStatsUIManager.Instance.UpdateStats();
         }
         else
         {
@@ -274,6 +278,8 @@ public class PlayerUpgradeManager : MonoBehaviour
         rocketStats.areaDamage = baseRocketAreaDamage * playerDamageMultiplier * rocketDamageMultiplier;
         orbitalStrikeStats.damage = baseOrbitalStrikeDamage * playerDamageMultiplier * orbitalStrikeDamageMultiplier;
         grenadeStats.damage = baseGrenadeDamage * playerDamageMultiplier * grenadeDamageMultiplier;
+
+        PlayerStatsUIManager.Instance.UpdateStats();
     }
 
 }

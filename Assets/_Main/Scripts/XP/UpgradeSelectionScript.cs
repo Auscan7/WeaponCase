@@ -171,7 +171,7 @@ public class UpgradeSelectionScript : MonoBehaviour
 
             // Apply the upgrade effect directly using the new logic.
             selectedUpgrade.ApplyUpgrade(PlayerUpgradeManager.Instance);
-
+            PlayerStatsUIManager.Instance.UpdateStats();
             PlayerLevelSystem.instance.CloseUpgradeScreen();
         }
     }

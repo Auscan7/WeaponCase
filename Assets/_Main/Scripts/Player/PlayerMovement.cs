@@ -8,7 +8,7 @@ public class PlayerMovement : CharacterMovementManager
     [HideInInspector] public float verticalMovement;
 
     [Header("Movement Settings")]
-    [SerializeField] float sailingSpeed = 5f;
+    private float sailingSpeed;
 
     protected override void Awake()
     {
@@ -19,6 +19,7 @@ public class PlayerMovement : CharacterMovementManager
     protected override void Start()
     {
         base.Start();
+        sailingSpeed = PlayerUpgradeManager.Instance.playerSailingSpeed;
     }
 
     protected override void Update()
