@@ -15,6 +15,6 @@ MonoBehaviour:
   upgradeName: Range
   positiveDescription: Flame Circle Range +1
   negativeDescription: 
-  icon: {fileID: 4987901684691990599, guid: 7ae0d2c7c1e7e0c4a8932877b77e7a60, type: 3}
+  icon: {fileID: -6631981949662149711, guid: 79373a7bbc195ea4dbb24f473f48fa6e, type: 3}
   border: {fileID: 21300000, guid: ceef4259aae69e34388b50215b07ba24, type: 3}
   rangeIncrease: 1

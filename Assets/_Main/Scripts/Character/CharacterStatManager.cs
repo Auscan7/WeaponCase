@@ -39,7 +39,14 @@ public class CharacterStatManager : MonoBehaviour
         {
             color = Color.white;
         }
-        // Add your damage handling logic here  
+        
+        currentHealth -= damage;
+        currentHealth = Mathf.Max(currentHealth, 0); // Ensure health doesn't go below zero
+        
+        if (healthBar != null)
+        {
+            healthBar.fillAmount = currentHealth / maxHealth;
+        }
     }
 
     public void ResetEnemy()

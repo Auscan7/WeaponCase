@@ -1,5 +1,5 @@
-using UnityEngine;
 using UnityEditor;
+using UnityEngine;
 
 [CustomEditor(typeof(OctopusEnemyCombat))]
 public class OctopusEditor : Editor

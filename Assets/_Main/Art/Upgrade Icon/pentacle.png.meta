@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ad4726d3a7130ab48bd602d26377496a
+guid: 79373a7bbc195ea4dbb24f473f48fa6e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7670485267309540912
-    second: lock_0
+      213: -6631981949662149711
+    second: pentacle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lock_0
+      name: pentacle_0
       rect:
         serializedVersion: 2
-        x: 63
+        x: 0
         y: 0
-        width: 386
+        width: 512
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0d9c5231a46fc8590800000000000000
-      internalID: -7670485267309540912
+      spriteID: 1b3c595fd8776f3a0800000000000000
+      internalID: -6631981949662149711
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      lock_0: -7670485267309540912
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -46274,66 +46274,10 @@ PrefabInstance:
       propertyPath: healthBarParent
       value: 
       objectReference: {fileID: 895033454}
-    - target: {fileID: 1778345087761360857, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2630560349992889460, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
-      propertyPath: m_Size.x
-      value: 9.900875
-      objectReference: {fileID: 0}
-    - target: {fileID: 2630560349992889460, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
-      propertyPath: m_Size.y
-      value: 8.669813
-      objectReference: {fileID: 0}
-    - target: {fileID: 2630560349992889460, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.03379345
-      objectReference: {fileID: 0}
-    - target: {fileID: 2630560349992889460, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.18635535
-      objectReference: {fileID: 0}
-    - target: {fileID: 2630560349992889460, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 10.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2630560349992889460, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 9.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2733444258366913235, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 2733444258366913235, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 2733444258366913235, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 2733444258366913235, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2733444258366913235, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2733444258366913235, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4612179880373492636, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6885125599670599767, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
-      propertyPath: m_Sprite
+    - target: {fileID: 6832454949873223509, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: weaponIcon
       value: 
-      objectReference: {fileID: -2958234982234014058, guid: 5819ee2eeace0bf4bacfdefdc99042df, type: 3}
+      objectReference: {fileID: -6631981949662149711, guid: 79373a7bbc195ea4dbb24f473f48fa6e, type: 3}
     - target: {fileID: 7186793037216869759, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

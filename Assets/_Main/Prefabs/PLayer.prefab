@@ -1635,13 +1635,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4612179880373492636}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 0.18, y: 0.18, z: 0.18}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8338453198446981470}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6885125599670599767
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1686,7 +1686,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -3237778939772705461, guid: f04dbf3580e84cb46bbe6b0597f04579, type: 3}
+  m_Sprite: {fileID: -2958234982234014058, guid: 5819ee2eeace0bf4bacfdefdc99042df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1731,17 +1731,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0064774156, y: 0.004858017}
+  m_Offset: {x: -0.03379345, y: -0.18635535}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.08, y: 1.08}
+    oldSize: {x: 10.05, y: 9.7}
     newSize: {x: 0.88, y: 0.88}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.9957942, y: 0.96664596}
+  m_Size: {x: 9.900875, y: 8.669813}
   m_EdgeRadius: 0
 --- !u!1 &4789465951217051356
 GameObject:
@@ -2243,7 +2243,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.01
+      scalar: 0.05
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2361,7 +2361,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.45
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2944,7 +2944,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 250
+      scalar: 200
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -3050,7 +3050,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -3061,13 +3061,13 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
+          value: 0.27702713
+          inSlope: 2.66683
+          outSlope: 2.66683
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
-          outWeight: 0
+          outWeight: 0.1368159
         - serializedVersion: 3
           time: 1
           value: 0
@@ -6854,7 +6854,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f1c8243e08c1f534ebb680118c532613, type: 2}
+  - {fileID: 2100000, guid: 3c12fe37da4f4054e98dba91f072b734, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7426,7 +7426,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.7
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -8009,7 +8009,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 250
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -11919,7 +11919,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 869225dd738235342860495273e2cd50, type: 2}
+  - {fileID: 2100000, guid: 43fb3184e004b4a628b7ac3c39a4fcf3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13051,6 +13051,7 @@ MonoBehaviour:
   canMove: 1
   horizontalMovement: 0
   verticalMovement: 0
+  rotationSpeed: 180
 --- !u!114 &8192816153180972205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13065,7 +13066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCurrentHealth: 0
   playerMaxHealth: 100
-  playerSailingSpeed: 5
+  playerSailingSpeed: 2
   playerHealthRegenAmount: 0.3
   playerLeechAmountPercent: 0.5
   playerLeechChancePercent: 5
@@ -13251,7 +13252,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8732246841202081208}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

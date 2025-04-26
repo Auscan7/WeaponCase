@@ -18,7 +18,6 @@ public class PlayerInputManager : MonoBehaviour
     [SerializeField] float verticalInput;
     public float horizontal_Input;
     public float vertical_Input;
-    public float moveAmount;
 
     [Header("Player Action Input")]
     //Dash -  to do
@@ -90,7 +89,10 @@ public class PlayerInputManager : MonoBehaviour
 
             // Movement
             playerControls.PlayerMovement.Horizontal.performed += i => horizontalInput = i.ReadValue<float>();
+            playerControls.PlayerMovement.Horizontal.canceled += i => horizontalInput = 0f;
+
             playerControls.PlayerMovement.Vertical.performed += i => verticalInput = i.ReadValue<float>();
+            playerControls.PlayerMovement.Vertical.canceled += i => verticalInput = 0f;
 
             // Actions
 
@@ -139,20 +141,6 @@ public class PlayerInputManager : MonoBehaviour
     {
         horizontal_Input = horizontalInput;
         vertical_Input = verticalInput;
-
-        if(horizontalInput != 0)
-            moveAmount = horizontal_Input;
-        else if(verticalInput != 0)
-            moveAmount = vertical_Input;
-
-        if (moveAmount > 0)
-        {
-            moveAmount = 1;
-        }
-        else if (moveAmount < 0)
-        {
-            moveAmount = -1;
-        }
     }
 
     // Action

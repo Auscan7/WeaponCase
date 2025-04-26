@@ -23,6 +23,11 @@ public class CharacterMovementManager : MonoBehaviour
         
     }
 
+    protected virtual void FixedUpdate()
+    {
+
+    }
+
     public virtual void Move(Vector2 direction, float speed)
     {
         if (canMove)

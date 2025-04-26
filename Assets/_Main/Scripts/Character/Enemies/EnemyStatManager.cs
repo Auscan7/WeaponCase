@@ -41,14 +41,15 @@ public class EnemyStatManager : CharacterStatManager
             originalMaterial = spriteRenderer.material;
             
             // Create a new instance of the flash material
-            flashMaterial = new Material(Shader.Find("Custom/FlashShader"));
-            
-            // Copy the original material's texture to the flash material
-            flashMaterial.mainTexture = originalMaterial.mainTexture;
-            
-            // Set up flash properties
-            flashMaterial.SetColor("_FlashColor", Color.white);
-            flashMaterial.SetFloat("_FlashAmount", 0f);
+            var shader = Shader.Find("Custom/FlashShader");
+            if (shader != null) {
+                flashMaterial = new Material(shader);
+                flashMaterial.mainTexture = originalMaterial.mainTexture;
+                flashMaterial.SetColor("_FlashColor", Color.white);
+                flashMaterial.SetFloat("_FlashAmount", 0f);
+            } else {
+                Debug.LogError("Custom/FlashShader not found! Make sure it is included in the build.");
+            }
         }
     }
 
@@ -155,8 +156,6 @@ public class EnemyStatManager : CharacterStatManager
             color = Color.white;
         }
         
-        base.TakeDamage(damage, color);
-
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.enemyTakeDamageSFX);
 
         int critChance = Random.Range(0, 101);
@@ -167,7 +166,6 @@ public class EnemyStatManager : CharacterStatManager
         if (isCrit)
         {
             finalDamage *= PlayerUpgradeManager.Instance.playerCritDamageMultiplier;
-            //finalDamage += damage / 10 * PlayerUpgradeManager.Instance.playerCritDamageMultiplier;
         }
 
         currentHealth -= finalDamage;

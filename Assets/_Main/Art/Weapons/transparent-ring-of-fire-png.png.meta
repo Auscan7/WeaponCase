@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      transparent-ring-of-fire-png_0: 4568390517766478954
+      transparent-ring-of-fire-png_1: -7761715110933231354
+      transparent-ring-of-fire-png_2: -8317019411297877007
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

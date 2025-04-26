@@ -51,6 +51,14 @@ public class PlayerLevelSystem : MonoBehaviour
             LevelUp();
         }
 
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            if (upgradeSelection != null)
+            {
+                upgradeSelection.SetUpgradeCards();
+            }
+        }
+
         if (waitForKeyPress && Input.anyKeyDown)
         {
             PauseManager.instance.UnPauseGame();
