@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class LockManager : MonoBehaviour
 {
-    public bool isLocked = true;
+    public bool isLocked;
     public int unlockPrice;
 
     public Image lockedImage;
@@ -20,7 +20,16 @@ public class LockManager : MonoBehaviour
 
     private void Start()
     {
-        isLocked = PlayerPrefs.GetInt(lockKey, 1) == 1;
+        if (PlayerPrefs.HasKey(lockKey))
+        {
+            isLocked = PlayerPrefs.GetInt(lockKey) == 1;
+        }
+        else
+        {
+            // First time running, use whatever isLocked was set to in inspector
+            PlayerPrefs.SetInt(lockKey, isLocked ? 1 : 0);
+        }
+
         UpdateLockVisuals();
     }
 
@@ -40,7 +49,6 @@ public class LockManager : MonoBehaviour
         else
         {
             Debug.Log($"Insufficient funds to unlock {gameObject.name}. Need {unlockPrice} Pearls.");
-            // TODO: Hook up UI feedback here
 
             return false;
         }

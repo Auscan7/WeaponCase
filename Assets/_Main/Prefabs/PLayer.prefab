@@ -1230,7 +1230,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   projectileSpawnPoint: {fileID: 0}
   projectileSpeed: 0
-  weaponIcon: {fileID: 4987901684691990599, guid: 7ae0d2c7c1e7e0c4a8932877b77e7a60, type: 3}
+  weaponIcon: {fileID: -6631981949662149711, guid: 79373a7bbc195ea4dbb24f473f48fa6e, type: 3}
   weaponRange: 0
   isManualWeapon: 0
   shouldMountToSlot: 0

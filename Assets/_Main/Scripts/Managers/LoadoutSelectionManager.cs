@@ -129,8 +129,7 @@ public class LoadoutSelectionManager : MonoBehaviour
         PlayerUpgradeManager.Instance.ResetBoatStats();
 
         selectedBoat = boat.boatObject;
-        selectedBoatButton.image.sprite = boat.boatButton.image.sprite;
-        selectedBoatButton.image.color = boat.boatButton.image.color;
+        selectedBoatButton.image.sprite = boat.boatIconImage.sprite;
         selectedBoatText.text = boat.boatName;
 
         foreach (var b in boats)
@@ -181,7 +180,7 @@ public class LoadoutSelectionManager : MonoBehaviour
     private void ShowUnlockPopup(BoatData boat)
     {
         currentLockedBoat = boat;
-        unlockBoatPreviewImage.sprite = boat.boatButton.image.sprite;
+        unlockBoatPreviewImage.sprite = boat.boatIconImage.sprite;
         unlockBoatPriceText.text = $"{boat.lockManager.unlockPrice} Pearls";
 
         unlockBoatButton.onClick.RemoveAllListeners();
@@ -255,6 +254,7 @@ public class BoatData
     public string boatName;
     public GameObject boatObject;
     public Button boatButton;
+    public Image boatIconImage;
     public GameObject weaponPanel;
 
     [Header("Default Weapon")]

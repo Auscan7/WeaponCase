@@ -126,7 +126,7 @@ public class PlayerUpgradeManager : MonoBehaviour
         // healthMultiplier, armorMultiplier, damageMultiplier, speedMultiplier
         boatModifiers = new Dictionary<string, BoatStats>
         {
-            { "Wooden Boat", new BoatStats(1f, 1f, 1f, 1f) },
+            { "Raft", new BoatStats(1f, 1f, 1f, 1f) },
             { "Battle Ship", new BoatStats(1.25f, 1.25f, 0.75f, 0.75f) },
             //{ "Third Boat", new BoatStats(0.5f, 0.5f, 1.5f, 1.2f) }
         };

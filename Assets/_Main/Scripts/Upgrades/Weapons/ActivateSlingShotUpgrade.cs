@@ -14,6 +14,6 @@ public class ActivateSlingShotUpgrade : Upgrade, IConditionalUpgrade
         // Only offer if the player selected the wooden boat.
         // Assuming your UpgradeManager stores a weaponDict.
         return !PlayerUpgradeManager.Instance.IsWeaponActive("SlingShot") &&
-               PlayerUpgradeManager.Instance.SelectedBoatName == "Wooden Boat";
+               PlayerUpgradeManager.Instance.SelectedBoatName == "Raft";
     }
 }
