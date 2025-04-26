@@ -11,7 +11,7 @@ public class BlowDart : Weapon
     {
         if (!CanFire()) return;
 
-        WeaponCooldownUIManager.Instance.TriggerCooldown("Pistol", PlayerUpgradeManager.Instance.blowDartStats.firerate);
+        WeaponCooldownUIManager.Instance.TriggerCooldown("BlowDart", PlayerUpgradeManager.Instance.blowDartStats.firerate);
 
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.bowAndArrowFireSFX);
 

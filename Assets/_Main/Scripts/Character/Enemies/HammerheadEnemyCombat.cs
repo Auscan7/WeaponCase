@@ -67,7 +67,7 @@ public class HammerheadCombat : MonoBehaviour
             float angle = Vector2.Angle(savedDirection, toTarget);
             if (angle <= coneAngle / 2)
             {
-                hit.GetComponent<CharacterStatManager>()?.TakeDamage(coneAttackDamage);
+                hit.GetComponentInParent<CharacterStatManager>()?.TakeDamage(coneAttackDamage);
             }
         }
 

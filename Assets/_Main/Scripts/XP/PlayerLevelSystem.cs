@@ -41,7 +41,7 @@ public class PlayerLevelSystem : MonoBehaviour
     {
         CalculateXPRequiredForNextLevel();
         UpdateLevelBar();
-        currentLevelText.text = "Level: " + currentLevel.ToString();
+        currentLevelText.text = "Lvl " + currentLevel.ToString();
     }
 
     private void Update()
@@ -74,7 +74,7 @@ public class PlayerLevelSystem : MonoBehaviour
     {
         currentXP -= xpRequiredForNextLevel;
         currentLevel++;
-        currentLevelText.text = "Level: " + currentLevel.ToString();
+        currentLevelText.text = "Lvl " + currentLevel.ToString();
 
         CalculateXPRequiredForNextLevel();
         UpdateLevelBar();

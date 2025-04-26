@@ -15,7 +15,8 @@ public class LoadoutSelectionManager : MonoBehaviour
     public GameObject XPLevel;
     public GameObject PlayerHP;
     public GameObject WeaponCooldownSlots;
-    CanvasGroup canvasGroup;
+    [SerializeField] private CanvasGroup coolDownSlotCanvasGroup;
+    [SerializeField] private CanvasGroup statScreenCanvasGroup;
 
     [Header("Boat Unlock Popup")]
     public GameObject boatUnlockPopup;
@@ -45,16 +46,21 @@ public class LoadoutSelectionManager : MonoBehaviour
     private string lastAppliedBoat = null;
     private Tween notEnoughMoneyTween;
 
+    private void Awake()
+    {
+        loadoutSelectionPanel.SetActive(true);
+    }
+
     private IEnumerator Start()
     {
         yield return new WaitForEndOfFrame(); // Ensures spawners had time to register
 
         SpawnerManager.Instance.PauseAllSpawners();
 
-        canvasGroup = WeaponCooldownSlots.GetComponent<CanvasGroup>();
         gameTimeManager = GetComponent<GameTimeManager>();
         gameTimeManager.timerRunning = false;
-        canvasGroup.alpha = 0f; // Hide the cooldown slots at the start
+        coolDownSlotCanvasGroup.alpha = 0f; // Hide the cooldown slots at the start
+        statScreenCanvasGroup.alpha = 0f; // Hide the stat screen at the start
 
         // Update all lock visuals once at startup
         foreach (var boat in boats)
@@ -236,7 +242,8 @@ public class LoadoutSelectionManager : MonoBehaviour
         gameTimeManager.timerRunning = true;
         XPLevel.SetActive(true);
         PlayerHP.SetActive(true);
-        canvasGroup.alpha = 1f; // Show the cooldown slots
+        coolDownSlotCanvasGroup.alpha = 1f; // Show the cooldown slots
+        statScreenCanvasGroup.alpha = 1f; // Show the stat screen
     }
 }
 

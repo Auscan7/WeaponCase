@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: f04dbf3580e84cb46bbe6b0597f04579
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3237778939772705461
+    second: floss-idle-no-sail-blue_0
+  - first:
+      213: 1530648420517317251
+    second: floss-idle-no-sail-blue_1
+  - first:
+      213: 9094545456627727029
+    second: floss-idle-no-sail-blue_2
+  - first:
+      213: 1706327707227243852
+    second: floss-idle-no-sail-blue_3
+  - first:
+      213: -6285207290197786472
+    second: floss-idle-no-sail-blue_4
+  - first:
+      213: -3885884793056955237
+    second: floss-idle-no-sail-blue_5
+  - first:
+      213: -2456901845953516255
+    second: floss-idle-no-sail-blue_6
+  - first:
+      213: -5614408980295199818
+    second: floss-idle-no-sail-blue_7
+  - first:
+      213: -3252913558692655358
+    second: floss-idle-no-sail-blue_8
+  - first:
+      213: 333411849567088267
+    second: floss-idle-no-sail-blue_9
+  - first:
+      213: 2220099367013287305
+    second: floss-idle-no-sail-blue_10
+  - first:
+      213: 2516500441737333982
+    second: floss-idle-no-sail-blue_11
+  - first:
+      213: -6506807574515357412
+    second: floss-idle-no-sail-blue_12
+  - first:
+      213: 1979311495954512811
+    second: floss-idle-no-sail-blue_13
+  - first:
+      213: -1537120247124693634
+    second: floss-idle-no-sail-blue_14
+  - first:
+      213: -7444469891881560183
+    second: floss-idle-no-sail-blue_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: floss-idle-no-sail-blue_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 701
+        width: 108
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b456b9175391113d0800000000000000
+      internalID: -3237778939772705461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floss-idle-no-sail-blue_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 702
+        width: 112
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38a82f4f0a4fd3510800000000000000
+      internalID: 1530648420517317251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floss-idle-no-sail-blue_2
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 701
+        width: 114
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ba30f768e0563e70800000000000000
+      internalID: 9094545456627727029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floss-idle-no-sail-blue_3
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 700
+        width: 121
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c45cfab52081ea710800000000000000
+      internalID: 1706327707227243852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floss-idle-no-sail-blue_4
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 468
+        width: 120
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 890c010254576c8a0800000000000000
+      internalID: -6285207290197786472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floss-idle-no-sail-blue_5
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 468
+        width: 124
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b947fb77e50921ac0800000000000000
+      internalID: -3885884793056955237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floss-idle-no-sail-blue_6
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 464
+        width: 126
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12d60ffc9c457edd0800000000000000
+      internalID: -2456901845953516255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floss-idle-no-sail-blue_7
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 463
+        width: 130
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b3ddb167cc9512b0800000000000000
+      internalID: -5614408980295199818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floss-idle-no-sail-blue_8
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 245
+        width: 120
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20f82116a545bd2d0800000000000000
+      internalID: -3252913558692655358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floss-idle-no-sail-blue_9
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 245
+        width: 124
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8e2a598f4480a400800000000000000
+      internalID: 333411849567088267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floss-idle-no-sail-blue_10
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 241
+        width: 126
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98585e89c906fce10800000000000000
+      internalID: 2220099367013287305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floss-idle-no-sail-blue_11
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 240
+        width: 130
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edc0eda91d76ce220800000000000000
+      internalID: 2516500441737333982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floss-idle-no-sail-blue_12
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 89
+        width: 108
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c19e03b4cfc23b5a0800000000000000
+      internalID: -6506807574515357412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floss-idle-no-sail-blue_13
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 90
+        width: 112
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bab3738915de77b10800000000000000
+      internalID: 1979311495954512811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floss-idle-no-sail-blue_14
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 89
+        width: 114
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7d621d774d0baae0800000000000000
+      internalID: -1537120247124693634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floss-idle-no-sail-blue_15
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 88
+        width: 121
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9871f49631eefa890800000000000000
+      internalID: -7444469891881560183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      floss-idle-no-sail-blue_0: -3237778939772705461
+      floss-idle-no-sail-blue_1: 1530648420517317251
+      floss-idle-no-sail-blue_10: 2220099367013287305
+      floss-idle-no-sail-blue_11: 2516500441737333982
+      floss-idle-no-sail-blue_12: -6506807574515357412
+      floss-idle-no-sail-blue_13: 1979311495954512811
+      floss-idle-no-sail-blue_14: -1537120247124693634
+      floss-idle-no-sail-blue_15: -7444469891881560183
+      floss-idle-no-sail-blue_2: 9094545456627727029
+      floss-idle-no-sail-blue_3: 1706327707227243852
+      floss-idle-no-sail-blue_4: -6285207290197786472
+      floss-idle-no-sail-blue_5: -3885884793056955237
+      floss-idle-no-sail-blue_6: -2456901845953516255
+      floss-idle-no-sail-blue_7: -5614408980295199818
+      floss-idle-no-sail-blue_8: -3252913558692655358
+      floss-idle-no-sail-blue_9: 333411849567088267
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

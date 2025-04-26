@@ -7,6 +7,7 @@ public class EnemyMovementManager : CharacterMovementManager
     public float moveSpeed = 5f;
     public Transform spriteTransform;
     public float rotationSpeed = 5f;
+    [SerializeField]private float stoppingDistance = 1f;
 
     public bool isAttacking { get; set; } // This flag will be controlled by HammerheadCombat
 
@@ -28,12 +29,16 @@ public class EnemyMovementManager : CharacterMovementManager
 
     protected override void Update()
     {
-        if (player == null || isAttacking) return; // Stop moving/rotating when attacking
+        if (player == null || isAttacking) return;
 
-        Vector2 direction = (player.position - transform.position).normalized;
-        Move(direction, moveSpeed);
-        RotateTowards(direction);
+        Vector2 direction = (player.position - transform.position);
+        if (direction.magnitude > stoppingDistance)
+        {
+            Move(direction.normalized, moveSpeed);
+            RotateTowards(direction.normalized);
+        }
     }
+
 
     public void RotateTowards(Vector2 direction)
     {
