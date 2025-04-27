@@ -92,6 +92,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ccd481ebc89ed804882d898ae5033836, type: 3}
   - {fileID: 8300000, guid: d4dfd2c513841d34eaeea314892ecfa9, type: 3}
   - {fileID: 8300000, guid: b8964a1b6e05f8544af610264c3d3271, type: 3}
+  playerSailingSFX:
+  - {fileID: 8300000, guid: af4534c85f9e7b24aafe120484bfbdf9, type: 3}
 --- !u!82 &6041800605129208568
 AudioSource:
   m_ObjectHideFlags: 0

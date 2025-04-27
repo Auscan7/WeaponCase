@@ -45,16 +45,11 @@ public class PlayerInputManager : MonoBehaviour
         SceneManager.activeSceneChanged += OnSceneChange;
 
         instance.enabled = false;
-        //instance.enabled = true; // delete this and uncomment above line later when main menu logic is added
 
         if (playerControls != null)
         {
             playerControls.Disable();
-            //playerControls.Enable(); // delete this and uncomment above line later when main menu logic is added
         }
-
-        //Application.targetFrameRate = targetFrameRate;
-        //QualitySettings.vSyncCount = 0;
     }
 
     private void OnSceneChange(Scene oldScene, Scene newScene)

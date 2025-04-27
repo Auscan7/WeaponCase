@@ -47,6 +47,7 @@ public class VolumeSettings : MonoBehaviour
 
     public void OpenSettings()
     {
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX); // Play click sound
         if (!isSettingsOpen)
         {
             isSettingsOpen = true;

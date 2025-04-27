@@ -13,6 +13,8 @@ public class PlayerMovement : CharacterMovementManager
     [Header("Rotation Settings")]
     [SerializeField] private float rotationSpeed = 720f; // degrees per second
 
+    [Header("Ripple Settings")]
+    [SerializeField] private ParticleSystem rippleParticleSystem; // The ripple particle system as a child of the player
 
     protected override void Awake()
     {
@@ -24,11 +26,28 @@ public class PlayerMovement : CharacterMovementManager
     {
         base.Start();
         sailingSpeed = PlayerUpgradeManager.Instance.playerSailingSpeed;
+
+        // Ensure the particle system is stopped at the start
+        if (rippleParticleSystem != null)
+        {
+            rippleParticleSystem.Stop();
+        }
     }
 
     protected override void Update()
     {
         base.Update();
+
+        // Check if the boat is moving and if the timer exceeds the spawn rate
+        if (horizontalMovement != 0 || verticalMovement != 0)
+        {
+            PlayRipple();
+        }
+        else if (horizontalMovement == 0 && verticalMovement == 0)
+        {
+            // Stop the particle effect if the boat is not moving
+            StopRipple();
+        }
     }
 
     protected override void FixedUpdate()
@@ -75,4 +94,21 @@ public class PlayerMovement : CharacterMovementManager
         }
     }
 
+    // Function to play the ripple particle effect
+    private void PlayRipple()
+    {
+        if (rippleParticleSystem != null && !rippleParticleSystem.isPlaying)
+        {
+            rippleParticleSystem.Play();
+        }
+    }
+
+    // Function to stop the ripple particle effect
+    private void StopRipple()
+    {
+        if (rippleParticleSystem != null && rippleParticleSystem.isPlaying)
+        {
+            rippleParticleSystem.Stop();
+        }
+    }
 }

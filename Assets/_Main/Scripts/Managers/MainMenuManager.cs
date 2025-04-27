@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,8 +7,9 @@ using UnityEngine.UI;
 public class MainMenuManager : MonoBehaviour
 {
     public Button playButton;
+    public LoadingScreen loadingScreen; // Reference to the LoadingScreen script
+    public string sceneToLoad = "Level1"; // Set this to whatever scene you want to load
 
-    public GameObject comingSoonText;
     public GameObject MainMenuButtons;
 
     public Vector3 spawnPos;
@@ -19,10 +19,17 @@ public class MainMenuManager : MonoBehaviour
         Camera.main.transform.position = new Vector3(0, 0, -10);
     }
 
-    public void Play()
+    private void Start()
     {
-        AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);       
-        SceneManager.LoadScene("Level1");
-        //SceneManager.LoadScene("Test");
+        // Adding onClick listener to playButton
+        playButton.onClick.AddListener(OnPlayButtonClicked);
+    }
+
+    public void OnPlayButtonClicked()
+    {
+        // Call the method in LoadingScreen to show the loading screen
+        // Pass the sceneToLoad to the loading screen
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX); // Play click sound
+        loadingScreen.LoadSceneWithLoadingScreen(sceneToLoad);
     }
 }

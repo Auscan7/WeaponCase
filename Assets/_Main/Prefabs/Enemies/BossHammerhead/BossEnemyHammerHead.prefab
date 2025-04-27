@@ -271,6 +271,7 @@ MonoBehaviour:
   moveSpeed: 1
   spriteTransform: {fileID: 7608606556829224412}
   rotationSpeed: 5
+  stoppingDistance: 1
 --- !u!114 &6206941498358351729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,6 +734,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2714442251322780456}
     m_Modifications:
+    - target: {fileID: 3881046791643184545, guid: 8b68595290079c649a6249fab168a3cb, type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4952325379883675290, guid: 8b68595290079c649a6249fab168a3cb, type: 3}
       propertyPath: m_Name
       value: Particle System 1

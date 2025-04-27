@@ -26,6 +26,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("UI")]
     public AudioClip[] UIClickSFX;
+    public AudioClip[] UIHoverSFX;
 
     [Header("DropSFX")]
     public AudioClip[] wrenchPickUpSFX;
