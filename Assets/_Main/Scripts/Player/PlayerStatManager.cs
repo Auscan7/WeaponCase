@@ -8,7 +8,6 @@ public class PlayerStatManager : CharacterStatManager
     private float regenCooldown = 1f; // Time between ticks
     private bool isOnCooldown = false;
     public TMP_Text HPText;
-    public GameObject DeadScreen;
 
     [Header("Magnet")]
     [SerializeField] private CircleCollider2D magnetCollider;
@@ -78,7 +77,7 @@ public class PlayerStatManager : CharacterStatManager
 
     public override void HandleDeath()
     {
-        DeadScreen.SetActive(true);
+        GameTimeManager.Instance.LevelFailedTrigger();
         Destroy(gameObject); // make this fancier later
     }
 

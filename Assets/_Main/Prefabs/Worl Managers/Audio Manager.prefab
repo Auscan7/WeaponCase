@@ -81,9 +81,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f6e16f1335dcf7a4890942ebef564e73, type: 3}
   - {fileID: 8300000, guid: 0f059e190583a6d4fb184c088aed6fb3, type: 3}
   UIClickSFX:
-  - {fileID: 8300000, guid: d97b1f41cbaace743804c8049710a517, type: 3}
-  - {fileID: 8300000, guid: d97b1f41cbaace743804c8049710a517, type: 3}
-  - {fileID: 8300000, guid: d97b1f41cbaace743804c8049710a517, type: 3}
+  - {fileID: 8300000, guid: 81652031b64c342cc8dbc59c138d77c5, type: 3}
+  UIHoverSFX:
+  - {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
+  - {fileID: 8300000, guid: 0994c12e202f342459a4212e7287f7e8, type: 3}
   wrenchPickUpSFX:
   - {fileID: 8300000, guid: 46578e31047a4c84089678cf52b4cfe4, type: 3}
   - {fileID: 8300000, guid: 634944ea6a7f4e141b1f3cfdec7933f0, type: 3}
@@ -92,8 +93,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ccd481ebc89ed804882d898ae5033836, type: 3}
   - {fileID: 8300000, guid: d4dfd2c513841d34eaeea314892ecfa9, type: 3}
   - {fileID: 8300000, guid: b8964a1b6e05f8544af610264c3d3271, type: 3}
-  playerSailingSFX:
-  - {fileID: 8300000, guid: af4534c85f9e7b24aafe120484bfbdf9, type: 3}
 --- !u!82 &6041800605129208568
 AudioSource:
   m_ObjectHideFlags: 0

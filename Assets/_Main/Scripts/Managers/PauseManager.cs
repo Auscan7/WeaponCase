@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class PauseManager : MonoBehaviour
 {
     public static PauseManager instance;
+    public LoadingScreen loadingScreen; // Reference to the LoadingScreen script
+    public string sceneToLoad = "Main Menu"; // Set this to whatever scene you want to load
 
     public Button continueButton;
     public Button menuButton;
@@ -66,8 +68,9 @@ public class PauseManager : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        Continue();
+        UnPauseGame();
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
-        SceneManager.LoadScene("Main Menu");
+        loadingScreen.loadingScreen.SetActive(true);
+        SceneManager.LoadScene(sceneToLoad);
     }
 }

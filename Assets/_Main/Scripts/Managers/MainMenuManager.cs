@@ -30,6 +30,6 @@ public class MainMenuManager : MonoBehaviour
         // Call the method in LoadingScreen to show the loading screen
         // Pass the sceneToLoad to the loading screen
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX); // Play click sound
-        loadingScreen.LoadSceneWithLoadingScreen(sceneToLoad);
+        loadingScreen.LoadSceneWithLoadingScreen(sceneToLoad, waitForAnimation: true);
     }
 }
