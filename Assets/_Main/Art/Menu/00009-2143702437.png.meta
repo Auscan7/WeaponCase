@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1baf19739cdf21141986469837aa9337
+guid: 6df9a94a46c5c5245ae608ac23641d61
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7856409591847296691
-    second: Shotgun Icon_0
+      213: 7828090984423020802
+    second: 00009-2143702437_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shotgun Icon_0
+      name: 00009-2143702437_0
       rect:
         serializedVersion: 2
-        x: 29
-        y: 193
-        width: 444
-        height: 114
+        x: 0
+        y: 0
+        width: 2688
+        height: 1536
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3be970416e2970d60800000000000000
-      internalID: 7856409591847296691
+      spriteID: 209d8fb7647f2ac60800000000000000
+      internalID: 7828090984423020802
       vertices: []
       indices: 
       edges: []

@@ -116,10 +116,10 @@ TextureImporter:
       name: smg_0
       rect:
         serializedVersion: 2
-        x: 131
-        y: 212
-        width: 513
-        height: 239
+        x: 52
+        y: 85
+        width: 398
+        height: 329
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      smg_0: 7591463974754732465
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

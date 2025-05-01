@@ -168,25 +168,6 @@ public class LoadoutSelectionManager : MonoBehaviour
         }
     }
 
-    // This method is called when the "Battle" button is clicked
-    public void Battle()
-    {
-        AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
-        SpawnerManager.Instance.ResumeAllSpawners();
-        PlayerInputManager.instance.enabled = true; // enable player input
-
-        loadoutSelectionPanel.SetActive(false);
-        Tutorial.SetActive(true);
-        StartCoroutine(ActivateDelayed());
-        PlayerUpgradeManager.Instance.ActivateWeapon(selectedWeapon.name);
-
-        if (selectedWeapon != null)
-            PlayerUpgradeManager.Instance.SetStartingWeapon(selectedWeapon);
-
-        if (selectedBoat != null)
-            selectedBoat.SetActive(true);
-    }
-
     // This method shows the unlock popup for the selected boat
     private void ShowUnlockPopup(BoatData boat)
     {
@@ -244,16 +225,29 @@ public class LoadoutSelectionManager : MonoBehaviour
             .OnComplete(() => notEnoughMoneyText.gameObject.SetActive(false));
     }
 
-    // This coroutine activates the game time text and other UI elements after a delay
-    private IEnumerator ActivateDelayed()
+    // This method is called when the "Battle" button is clicked
+    public void Battle()
     {
-        yield return new WaitForSeconds(6);
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
+
+        loadoutSelectionPanel.SetActive(false);
+        Tutorial.SetActive(true);
+        PlayerUpgradeManager.Instance.ActivateWeapon(selectedWeapon.name);
+
+        if (selectedWeapon != null)
+            PlayerUpgradeManager.Instance.SetStartingWeapon(selectedWeapon);
+
+        if (selectedBoat != null)
+            selectedBoat.SetActive(true);
+
+        PlayerInputManager.instance.enabled = true;
+        SpawnerManager.Instance.ResumeAllSpawners();
         gameTimeText.SetActive(true);
         gameTimeManager.timerRunning = true;
         XPLevel.SetActive(true);
         PlayerHP.SetActive(true);
-        coolDownSlotCanvasGroup.alpha = 1f; // Show the cooldown slots
-        statScreenCanvasGroup.alpha = 1f; // Show the stat screen
+        coolDownSlotCanvasGroup.alpha = 1f;
+        statScreenCanvasGroup.alpha = 1f;
     }
 }
 

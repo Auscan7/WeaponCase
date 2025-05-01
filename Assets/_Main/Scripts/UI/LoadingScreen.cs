@@ -58,7 +58,7 @@ public class LoadingScreen : MonoBehaviour
         }
     }
 
-    private IEnumerator UpdateLoadingText()
+    public IEnumerator UpdateLoadingText()
     {
         while (true)
         {
