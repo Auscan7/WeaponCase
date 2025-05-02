@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5819ee2eeace0bf4bacfdefdc99042df
+guid: 99defe2650a00fa4d84de13fa5e53111
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2958234982234014058
-    second: Raft ai_0
+      213: 174235338166497354
+    second: Raft_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Raft ai_0
+      name: Raft_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 24
-        width: 1005
-        height: 970
+        x: 5
+        y: 14
+        width: 487
+        height: 473
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 69ebec105fc32f6d0800000000000000
-      internalID: -2958234982234014058
+      spriteID: a40fbbeed120b6200800000000000000
+      internalID: 174235338166497354
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Raft ai_0: -2958234982234014058
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -116,10 +116,10 @@ TextureImporter:
       name: Pistol Icon_0
       rect:
         serializedVersion: 2
-        x: 68
-        y: 117
-        width: 350
-        height: 253
+        x: 65
+        y: 116
+        width: 371
+        height: 271
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -116,10 +116,10 @@ TextureImporter:
       name: smg_0
       rect:
         serializedVersion: 2
-        x: 52
-        y: 85
-        width: 398
-        height: 329
+        x: 50
+        y: 83
+        width: 417
+        height: 347
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
