@@ -12,42 +12,36 @@ public class SlingShotBullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // Apply damage to the enemy
             CharacterStatManager target = collision.gameObject.GetComponentInParent<CharacterStatManager>();
             if (target != null)
             {
                 target.TakeDamage(PlayerUpgradeManager.Instance.slingShotStats.damage);
+                Explode(target); // Pass the target to exclude it later
             }
 
-            Explode();
-
-            // Destroy the bullet
             Destroy(gameObject);
         }
     }
 
-    private void Explode()
+    private void Explode(CharacterStatManager excludeTarget)
     {
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.rocketExplosionSFX);
 
-        // Instantiate explosion visual effect (if assigned)
         if (explosionEffectPrefab != null)
         {
             Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
         }
 
-        // Modify the LayerMask to include multiple layers
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(
             transform.position,
             explosionRadius,
-            LayerMask.GetMask("Enemy", "LanternFish", "Boss") // Add more layers as needed
+            LayerMask.GetMask("Enemy", "LanternFish", "Boss")
         );
 
-        // Apply damage to each enemy in the explosion radius
         foreach (Collider2D enemy in hitEnemies)
         {
             CharacterStatManager enemyStats = enemy.GetComponentInParent<CharacterStatManager>();
-            if (enemyStats != null)
+            if (enemyStats != null && enemyStats != excludeTarget)
             {
                 enemyStats.TakeDamage(PlayerUpgradeManager.Instance.slingShotStats.areaDamage);
             }

@@ -3,52 +3,45 @@ using UnityEngine;
 public class Rocket : MonoBehaviour
 {
     [Header("Rocket Damage Settings")]
-    [SerializeField] float explosionRadius = 1f; // Radius of the explosion
+    [SerializeField] float explosionRadius = 1f;
 
     [Header("Explosion Effects")]
-    [SerializeField] GameObject explosionEffectPrefab; // Optional visual effect for explosion
+    [SerializeField] GameObject explosionEffectPrefab;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // Apply direct hit damage
             CharacterStatManager target = collision.gameObject.GetComponentInParent<CharacterStatManager>();
             if (target != null)
             {
                 target.TakeDamage(PlayerUpgradeManager.Instance.rocketStats.damage);
+                Explode(target); // Pass the target to exclude from area damage
             }
 
-            // Trigger the explosion
-            Explode();
-
-            // Destroy the rocket
             Destroy(gameObject);
         }
     }
 
-    private void Explode()
+    private void Explode(CharacterStatManager excludeTarget)
     {
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.rocketExplosionSFX);
 
-        // Instantiate explosion visual effect (if assigned)
         if (explosionEffectPrefab != null)
         {
             Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
         }
 
-        // Modify the LayerMask to include multiple layers
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(
             transform.position,
             explosionRadius,
-            LayerMask.GetMask("Enemy", "LanternFish", "Boss") // Add more layers as needed
+            LayerMask.GetMask("Enemy", "LanternFish", "Boss")
         );
 
-        // Apply damage to each enemy in the explosion radius
         foreach (Collider2D enemy in hitEnemies)
         {
             CharacterStatManager enemyStats = enemy.GetComponentInParent<CharacterStatManager>();
-            if (enemyStats != null)
+            if (enemyStats != null && enemyStats != excludeTarget)
             {
                 enemyStats.TakeDamage(PlayerUpgradeManager.Instance.rocketStats.areaDamage);
             }
@@ -57,7 +50,6 @@ public class Rocket : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        // Draw the explosion radius in the editor for visualization
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }

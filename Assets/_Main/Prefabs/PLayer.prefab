@@ -12900,7 +12900,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4722767060693112874, guid: 83ebaae2461977c4a809e96b89817a6e, type: 3}
   projectileSpawnPoint: {fileID: 7078230612172693297}
   projectileSpeed: 3
-  weaponIcon: {fileID: -1178161362222646502, guid: 8a5d64a69f4974d489c5bcd95b70a095, type: 3}
+  weaponIcon: {fileID: -7856493677412862020, guid: d8309cc2aa5916442b973db84ac356c0, type: 3}
   weaponRange: 0
   isManualWeapon: 1
   shouldMountToSlot: 1
@@ -19961,7 +19961,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4722767060693112874, guid: 33ee906d29c44d2449f434a1a1c182b2, type: 3}
   projectileSpawnPoint: {fileID: 6773594726531131622}
   projectileSpeed: 5
-  weaponIcon: {fileID: -668765711182173225, guid: f5cd7f96f215bff4ebf091e6ed0945a7, type: 3}
+  weaponIcon: {fileID: 8999077736052753832, guid: 8480ca38524df98498a05009900dbe95, type: 3}
   weaponRange: 0
   isManualWeapon: 0
   shouldMountToSlot: 1
