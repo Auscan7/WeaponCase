@@ -3,8 +3,8 @@ guid: b61c0b5fabffd1347ab8463d6b879d79
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8202494707821978823
-    second: battleShip_0
+      213: 8765196768419224700
+    second: Battle Ship_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: battleShip_0
+      name: Battle Ship_0
       rect:
         serializedVersion: 2
-        x: 36
-        y: 111
-        width: 411
-        height: 262
+        x: 37
+        y: 112
+        width: 417
+        height: 260
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 93bdf3c9582ea2e80800000000000000
-      internalID: -8202494707821978823
+      spriteID: c7c9708550c34a970800000000000000
+      internalID: 8765196768419224700
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      battleShip_0: -8202494707821978823
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

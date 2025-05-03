@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStatManager : CharacterStatManager
 {
@@ -8,6 +9,10 @@ public class PlayerStatManager : CharacterStatManager
     private float regenCooldown = 1f; // Time between ticks
     private bool isOnCooldown = false;
     public TMP_Text HPText;
+
+    [Header("UI Buff Indicators")]
+    [SerializeField] private GameObject damageBoostIcon;
+    [SerializeField] private Image damageBoostOverlay;
 
     [Header("Magnet")]
     [SerializeField] private CircleCollider2D magnetCollider;
@@ -77,8 +82,27 @@ public class PlayerStatManager : CharacterStatManager
 
     public override void HandleDeath()
     {
+        PlayerInputManager.instance.enabled = false;
+        StartCoroutine(PlayDeathAnimation());
+    }
+
+    private IEnumerator PlayDeathAnimation()
+    {
+        float duration = 0.8f;
+        float elapsed = 0f;
+
+        Vector3 startScale = transform.localScale;
+        Vector3 endScale = Vector3.zero;
+        while (elapsed < duration)
+        {
+            float t = elapsed / duration;
+            transform.localScale = Vector3.Lerp(startScale, endScale, t);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
         GameTimeManager.Instance.LevelFailedTrigger();
-        Destroy(gameObject); // make this fancier later
+        PlayerInputManager.instance.enabled = true;
+        Destroy(gameObject);
     }
 
     // pickup system
@@ -99,7 +123,7 @@ public class PlayerStatManager : CharacterStatManager
                 break;
 
             case "Damage":
-                StartCoroutine(IncreaseDamageTemporarily());
+                StartDamageBoost(20f);
                 AudioManager.instance.PlaySoundSFX(AudioManager.instance.wrenchPickUpSFX);
                 break;
 
@@ -112,8 +136,52 @@ public class PlayerStatManager : CharacterStatManager
                 return; // Exit if it's not a relevant tag
         }
 
-        // Destroy the pickup object
-        Destroy(collision.gameObject);
+        StartCoroutine(PlayPickupAnimationAndDestroy(collision.gameObject));
+    }
+
+    private IEnumerator PlayPickupAnimationAndDestroy(GameObject pickup)
+    {
+        if (pickup == null) yield break;
+
+        // Optional: disable collider immediately
+        Collider2D col = pickup.GetComponent<Collider2D>();
+        if (col != null) col.enabled = false;
+
+        float duration = 0.3f;
+        float elapsed = 0f;
+
+        Vector3 startScale = pickup.transform.localScale;
+        Vector3 endScale = Vector3.zero;
+
+        Vector3 startPosition = pickup.transform.position;
+        Vector3 endPosition = startPosition + new Vector3(0, 0.5f, 0); // float up slightly
+
+        SpriteRenderer sr = pickup.GetComponent<SpriteRenderer>();
+        Color startColor = sr != null ? sr.color : Color.white;
+        Color endColor = new Color(startColor.r, startColor.g, startColor.b, 0f); // fade out
+
+        while (elapsed < duration)
+        {
+            float t = elapsed / duration;
+            if (pickup != null)
+            {
+                pickup.transform.localScale = Vector3.Lerp(startScale, endScale, t);
+                pickup.transform.position = Vector3.Lerp(startPosition, endPosition, t);
+                if (sr != null)
+                    sr.color = Color.Lerp(startColor, endColor, t);
+            }
+
+            if (sr != null)
+                sr.color = Color.Lerp(startColor, endColor, t);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        if (pickup != null)
+        {
+            Destroy(pickup);
+        }
     }
 
     //Wrench
@@ -131,7 +199,7 @@ public class PlayerStatManager : CharacterStatManager
     //Pearl
     private void HandlePearlPickup()
     {
-        CurrencyManager.Instance.AddCurrency(1);
+        CurrencyManager.Instance.AddCurrency(10);
     }
 
     //Magnet
@@ -139,21 +207,47 @@ public class PlayerStatManager : CharacterStatManager
     {
         PlayerUpgradeManager.Instance.playerMagnetRadius *= 100f;
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(0.5f);
 
         PlayerUpgradeManager.Instance.playerMagnetRadius /= 100f;
     }
 
     //Damage
-    private IEnumerator IncreaseDamageTemporarily()
+    private Coroutine damageBoostCoroutine;
+    private IEnumerator IncreaseDamageTemporarilyRoutine(float duration)
     {
+        damageBoostIcon.SetActive(true);
+        damageBoostOverlay.fillAmount = 1f;
+
         PlayerUpgradeManager.Instance.playerDamageMultiplier *= 2f;
         PlayerUpgradeManager.Instance.UpdateWeaponDamage();
 
-        yield return new WaitForSeconds(20f);
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            damageBoostOverlay.fillAmount = Mathf.Clamp01(1f - (elapsed / duration));
+            yield return null;
+        }
 
         PlayerUpgradeManager.Instance.playerDamageMultiplier /= 2f;
         PlayerUpgradeManager.Instance.UpdateWeaponDamage();
+
+        damageBoostIcon.SetActive(false);
+        damageBoostCoroutine = null;
+    }
+
+    private void StartDamageBoost(float duration)
+    {
+        if (damageBoostCoroutine != null)
+        {
+            StopCoroutine(damageBoostCoroutine);
+            PlayerUpgradeManager.Instance.playerDamageMultiplier /= 2f;
+            PlayerUpgradeManager.Instance.UpdateWeaponDamage();
+            damageBoostCoroutine = null;
+        }
+
+        damageBoostCoroutine = StartCoroutine(IncreaseDamageTemporarilyRoutine(duration));
     }
 
     // if on cooldown prevent taking damage
