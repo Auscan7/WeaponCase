@@ -12,8 +12,8 @@ public class Shotgun : Weapon
     public override void Fire(Vector2 targetPosition)
     {
         if (!CanFire()) return;
-
-        WeaponCooldownUIManager.Instance.TriggerCooldown("Shotgun", PlayerUpgradeManager.Instance.shotgunStats.firerate);
+        float fireRate = PlayerUpgradeManager.Instance.shotgunStats.firerate;
+        WeaponCooldownUIManager.Instance.TriggerCooldown("Shotgun", fireRate);
 
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.shotgunFireSFX);
 
@@ -34,6 +34,6 @@ public class Shotgun : Weapon
             EffectsManager.instance.PlayVFX(EffectsManager.instance.pelletVFX, spawnPos, Quaternion.identity);
         }
 
-        SetNextFireTime(PlayerUpgradeManager.Instance.shotgunStats.firerate);
+        SetNextFireTime(fireRate);
     }
 }

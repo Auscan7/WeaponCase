@@ -62,7 +62,7 @@ public class PlayerStatsUIManager : MonoBehaviour
         UpdateStatText(ArmorText, armor, $"{armor:F0} ({reductionPercent:F1}%)");
 
         float dodge = PlayerUpgradeManager.Instance.playerDodgeChancePercent;
-        UpdateStatText(dodgeText, dodge, $"{dodge:F2}%");
+        UpdateStatText(dodgeText, dodge, $"{dodge:F0}%");
 
         float critDmg = PlayerUpgradeManager.Instance.playerCritDamageMultiplier;
         UpdateStatText(critDamageText, critDmg, "x" + critDmg.ToString("F2"));

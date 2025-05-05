@@ -11,7 +11,8 @@ public class RocketLauncher : Weapon
     {
         if (!CanFire()) return;
 
-        WeaponCooldownUIManager.Instance.TriggerCooldown("Rocket", PlayerUpgradeManager.Instance.rocketStats.firerate);
+        float firerate = PlayerUpgradeManager.Instance.rocketStats.firerate;
+        WeaponCooldownUIManager.Instance.TriggerCooldown("Rocket", firerate);
 
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.rocketFireSFX);
 
@@ -23,6 +24,6 @@ public class RocketLauncher : Weapon
 
         projectile.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
 
-        SetNextFireTime(PlayerUpgradeManager.Instance.rocketStats.firerate);
+        SetNextFireTime(firerate);
     }
 }

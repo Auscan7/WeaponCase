@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0a60a3c03bc4043bcf3d99ae21b7db, type: 3}
+  m_Name: DodgeLegendary
+  m_EditorClassIdentifier: 
+  upgradeName: Dodge
+  positiveDescription: Dodge Chance +15%
+  negativeDescription: 
+  icon: {fileID: 21300000, guid: 77b1f39decbb449f5b319d1300f97dfc, type: 3}
+  border: {fileID: 21300000, guid: 386b4f70f0e00d748b3c57b31cb31ec6, type: 3}
+  dodgeChanceIncrease: 15

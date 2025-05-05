@@ -16,6 +16,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     public int playerDodgeChancePercent;
     public float playerMovementSpeedMultiplier;
     public float playerDamageMultiplier;
+    public float playerFireRateMultiplier;
     public float playerCritDamageMultiplier;
     public float playerCritChancePercent;
     public float playerXpMultiplier;
@@ -33,6 +34,19 @@ public class PlayerUpgradeManager : MonoBehaviour
     public float rocketDamageMultiplier = 1f;
     public float orbitalStrikeDamageMultiplier = 1f;
     public float grenadeDamageMultiplier = 1f;
+
+    [Header("Weapon Firerate Multipliers")]
+    public float PistolFirerateMultiplier = 1f;
+    public float BowAndArrowFirerateMultiplier = 1f;
+    public float SpearFirerateMultiplier = 1f;
+    public float BlowDartFirerateMultiplier = 1f;
+    public float SlingShotFirerateMultiplier = 1f;
+    public float FlameCircleFirerateMultiplier = 1f;
+    public float SMGFirerateMultiplier = 1f;
+    public float ShotgunFirerateMultiplier = 1f;
+    public float RocketFirerateMultiplier = 1f;
+    public float OrbitalStrikeFirerateMultiplier = 1f;
+    public float GrenadeFirerateMultiplier = 1f;
 
     [Header("Weapons")]
     public GameObject pistol;
@@ -76,6 +90,20 @@ public class PlayerUpgradeManager : MonoBehaviour
     public float baseOrbitalStrikeDamage = 30f;
     public float baseGrenadeDamage = 30f;
 
+    // Store the base fire rate values for recalculation
+    [Header("Base Weapon FireRate")]
+    public float basePistolFirerate;
+    public float baseBowAndArrowFirerate;
+    public float baseSpearFirerate;
+    public float baseBlowDartFirerate;
+    public float baseSlingShotFirerate;
+    public float baseFlameCircleFirerate;
+    public float baseSMGFirerate;
+    public float baseShotgunFirerate;
+    public float baseRocketFirerate;
+    public float baseOrbitalStrikeFirerate;
+    public float baseGrenadeFirerate;
+
     [Header("Base Weapon Projectile Count")]
     public int baseShotgunProjectileCount = 3;
     public int baseGrenadeProjectileCount = 3;
@@ -112,6 +140,7 @@ public class PlayerUpgradeManager : MonoBehaviour
 
         InitializeBoatModifiers();
         ResetWeaponDamage();
+        ResetWeaponFireRate();
     }
 
     private void Start()
@@ -237,6 +266,7 @@ public class PlayerUpgradeManager : MonoBehaviour
         playerMovementSpeedMultiplier = PermenantUpgradeManager.Instance.moveSpeed;
 
         ResetWeaponDamage();
+        ResetWeaponFireRate();
     }
 
     /// <summary>
@@ -259,6 +289,21 @@ public class PlayerUpgradeManager : MonoBehaviour
         grenadeStats.damage = baseGrenadeDamage * playerDamageMultiplier;
     }
 
+    public void ResetWeaponFireRate()
+    {
+        pistolStats.firerate = basePistolFirerate * playerFireRateMultiplier;
+        bowAndArrowStats.firerate = baseBowAndArrowFirerate * playerFireRateMultiplier;
+        spearStats.firerate = baseSpearFirerate * playerFireRateMultiplier;
+        blowDartStats.firerate = baseBlowDartFirerate * playerFireRateMultiplier;
+        slingShotStats.firerate = baseSlingShotFirerate * playerFireRateMultiplier;
+        flameCircleStats.firerate = baseFlameCircleFirerate * playerFireRateMultiplier;
+        smgStats.firerate = baseSMGFirerate * playerFireRateMultiplier;
+        shotgunStats.firerate = baseShotgunFirerate * playerFireRateMultiplier;
+        rocketStats.firerate = baseRocketFirerate * playerFireRateMultiplier;
+        orbitalStrikeStats.firerate = baseOrbitalStrikeFirerate * playerFireRateMultiplier;
+        grenadeStats.firerate = baseGrenadeFirerate * playerFireRateMultiplier;
+    }
+
     /// <summary>
     /// Call this method after any upgrade is applied that affects damage.
     /// </summary>
@@ -278,6 +323,25 @@ public class PlayerUpgradeManager : MonoBehaviour
         rocketStats.areaDamage = baseRocketAreaDamage * playerDamageMultiplier * rocketDamageMultiplier;
         orbitalStrikeStats.damage = baseOrbitalStrikeDamage * playerDamageMultiplier * orbitalStrikeDamageMultiplier;
         grenadeStats.damage = baseGrenadeDamage * playerDamageMultiplier * grenadeDamageMultiplier;
+
+        PlayerStatsUIManager.Instance.UpdateStats();
+    }
+
+
+    public void UpdateWeaponFireRate()
+    {
+        // Apply both player-wide and weapon-specific multipliers
+        pistolStats.firerate = basePistolFirerate * playerFireRateMultiplier * PistolFirerateMultiplier;
+        bowAndArrowStats.firerate = baseBowAndArrowFirerate * playerFireRateMultiplier * BowAndArrowFirerateMultiplier;
+        spearStats.firerate = baseSpearFirerate * playerFireRateMultiplier * SpearFirerateMultiplier;
+        blowDartStats.firerate = baseBlowDartFirerate * playerFireRateMultiplier * BlowDartFirerateMultiplier;
+        slingShotStats.firerate = baseSlingShotFirerate * playerFireRateMultiplier * SlingShotFirerateMultiplier;
+        flameCircleStats.firerate = baseFlameCircleFirerate * playerFireRateMultiplier * FlameCircleFirerateMultiplier;
+        smgStats.firerate = baseSMGFirerate * playerFireRateMultiplier * SMGFirerateMultiplier;
+        shotgunStats.firerate = baseShotgunFirerate * playerFireRateMultiplier * ShotgunFirerateMultiplier;
+        rocketStats.firerate = baseRocketFirerate * playerFireRateMultiplier * RocketFirerateMultiplier;
+        orbitalStrikeStats.firerate = baseOrbitalStrikeFirerate * playerFireRateMultiplier * OrbitalStrikeFirerateMultiplier;
+        grenadeStats.firerate = baseGrenadeFirerate * playerFireRateMultiplier * GrenadeFirerateMultiplier;
 
         PlayerStatsUIManager.Instance.UpdateStats();
     }

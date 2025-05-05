@@ -72,9 +72,10 @@ public class FlameCircle : Weapon
 
     private void UpdateStats()
     {
+        float fireRate = PlayerUpgradeManager.Instance.flameCircleStats.firerate;
         // Update range and damage interval from PlayerUpgradeManager
         weaponRange = PlayerUpgradeManager.Instance.flameCircleStats.range;
-        damageInterval = 1f / PlayerUpgradeManager.Instance.flameCircleStats.firerate;
+        damageInterval = 1f / fireRate;
 
         // Update particle systems
         UpdateParticleSystemScale();
@@ -148,13 +149,14 @@ public class FlameCircle : Weapon
 
     private void DealDamageToEnemiesInRange()
     {
+        float fireRate = PlayerUpgradeManager.Instance.flameCircleStats.firerate;
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, weaponRange, enemyLayers);
         foreach (Collider2D enemy in hitEnemies)
         {
             if (enemy.TryGetComponent(out CharacterStatManager enemyStats))
             {
                 enemyStats.TakeDamage(PlayerUpgradeManager.Instance.flameCircleStats.damage, Color.red);
-                WeaponCooldownUIManager.Instance.TriggerCooldown("FlameCircle", PlayerUpgradeManager.Instance.flameCircleStats.firerate);
+                WeaponCooldownUIManager.Instance.TriggerCooldown("FlameCircle", fireRate);
             }
         }
     }

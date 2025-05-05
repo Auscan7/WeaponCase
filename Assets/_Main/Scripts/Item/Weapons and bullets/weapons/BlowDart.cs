@@ -10,8 +10,8 @@ public class BlowDart : Weapon
     public override void Fire(Vector2 targetPosition)
     {
         if (!CanFire()) return;
-
-        WeaponCooldownUIManager.Instance.TriggerCooldown("BlowDart", PlayerUpgradeManager.Instance.blowDartStats.firerate);
+        float fireRate = PlayerUpgradeManager.Instance.blowDartStats.firerate;
+        WeaponCooldownUIManager.Instance.TriggerCooldown("BlowDart", fireRate);
 
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.bowAndArrowFireSFX);
 
@@ -25,6 +25,6 @@ public class BlowDart : Weapon
 
         EffectsManager.instance.PlayVFX(EffectsManager.instance.bulletVFX, spawnPos, Quaternion.identity);
 
-        SetNextFireTime(PlayerUpgradeManager.Instance.blowDartStats.firerate);
+        SetNextFireTime(fireRate);
     }
 }

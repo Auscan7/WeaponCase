@@ -11,7 +11,9 @@ public class Pistol : Weapon
     {
         if (!CanFire()) return;
 
-        WeaponCooldownUIManager.Instance.TriggerCooldown("Pistol", PlayerUpgradeManager.Instance.pistolStats.firerate);
+        float fireRate = PlayerUpgradeManager.Instance.pistolStats.firerate;
+
+        WeaponCooldownUIManager.Instance.TriggerCooldown("Pistol", fireRate);
 
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.pistolFireSFX);
 
@@ -25,6 +27,6 @@ public class Pistol : Weapon
 
         EffectsManager.instance.PlayVFX(EffectsManager.instance.bulletVFX, spawnPos, Quaternion.identity);
 
-        SetNextFireTime(PlayerUpgradeManager.Instance.pistolStats.firerate);
+        SetNextFireTime(fireRate);
     }
 }

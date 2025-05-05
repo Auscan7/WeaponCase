@@ -3298,6 +3298,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: e8ecb77e63d12e849910c2f6983aa806, type: 2}
     - {fileID: 11400000, guid: 66bd726d7236774478e7117aa60b6098, type: 2}
     - {fileID: 11400000, guid: 50fda9b871447174da34cb5b7cca72ba, type: 2}
+    - {fileID: 11400000, guid: 395b4d8496bb7fb4085cb9531fe4d3ee, type: 2}
     selectionWeight: 65
   - poolName: Rarity 2
     upgrades:
@@ -18857,7 +18858,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -19238,7 +19239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.62140167, g: 1, b: 0.3160377, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

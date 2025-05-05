@@ -10,8 +10,8 @@ public class BowAndArrow : Weapon
     public override void Fire(Vector2 targetPosition)
     {
         if (!CanFire()) return;
-
-        WeaponCooldownUIManager.Instance.TriggerCooldown("BowAndArrow", PlayerUpgradeManager.Instance.bowAndArrowStats.firerate);
+        float fireRate = PlayerUpgradeManager.Instance.bowAndArrowStats.firerate;
+        WeaponCooldownUIManager.Instance.TriggerCooldown("BowAndArrow", fireRate);
 
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.bowAndArrowFireSFX);
 
@@ -25,6 +25,6 @@ public class BowAndArrow : Weapon
 
         EffectsManager.instance.PlayVFX(EffectsManager.instance.bulletVFX, spawnPos, Quaternion.identity);
 
-        SetNextFireTime(PlayerUpgradeManager.Instance.bowAndArrowStats.firerate);
+        SetNextFireTime(fireRate);
     }
 }

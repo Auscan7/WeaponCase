@@ -41,7 +41,7 @@ public class OrbitalStrike : Weapon
 
             WeaponCooldownUIManager.Instance.TriggerCooldown("OrbitalStrike", PlayerUpgradeManager.Instance.orbitalStrikeStats.firerate);
 
-            yield return new WaitForSeconds(PlayerUpgradeManager.Instance.orbitalStrikeStats.firerate * 10);
+            yield return new WaitForSeconds(1 / PlayerUpgradeManager.Instance.orbitalStrikeStats.firerate);
         }
     }
 

@@ -56,9 +56,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 538799061982521945}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.654, y: -1.0500001, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.4787698, y: -0.9387596, z: 0}
+  m_LocalScale: {x: 0.6258397, y: 0.6258397, z: 0.6258397}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2733444258366913235}
@@ -1593,9 +1593,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2580580305283063526}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.311, y: 1.0389999, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.27805164, y: 0.92892486, z: 0}
+  m_LocalScale: {x: 0.6258397, y: 0.6258397, z: 0.6258397}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2733444258366913235}
@@ -1893,9 +1893,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2874686810290641510}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.65, y: 0.03, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4751935, y: 0.0268217, z: 0}
+  m_LocalScale: {x: 0.6258397, y: 0.6258397, z: 0.6258397}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2733444258366913235}
@@ -2047,9 +2047,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3089121783880975337}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.65, y: -0.067, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4751935, y: -0.0599018, z: 0}
+  m_LocalScale: {x: 0.6258397, y: 0.6258397, z: 0.6258397}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2733444258366913235}
@@ -2544,9 +2544,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4574355789620577631}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.311, y: -0.94100004, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.27805164, y: -0.8413074, z: 0}
+  m_LocalScale: {x: 0.6258397, y: 0.6258397, z: 0.6258397}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2733444258366913235}
@@ -2634,7 +2634,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.00026753, y: 0, z: 0}
-  m_LocalScale: {x: 0.3665632, y: 0.3665632, z: 0.3665632}
+  m_LocalScale: {x: 0.40999997, y: 0.40999997, z: 0.40999997}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1398996812212598807}
@@ -13091,9 +13091,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6141684314087485293}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.654, y: 1.0389999, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.4787698, y: 0.92892486, z: 0}
+  m_LocalScale: {x: 0.6258397, y: 0.6258397, z: 0.6258397}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2733444258366913235}
@@ -18494,9 +18494,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7067475085181143912}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.311, y: 0.942, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.27805164, y: 0.84220135, z: 0}
+  m_LocalScale: {x: 0.6258397, y: 0.6258397, z: 0.6258397}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2733444258366913235}
@@ -18581,9 +18581,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7275858551283679180}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.654, y: 0.942, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.4787698, y: 0.84220135, z: 0}
+  m_LocalScale: {x: 0.6258397, y: 0.6258397, z: 0.6258397}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2733444258366913235}
@@ -18820,9 +18820,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7893314235415567378}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.654, y: -0.953, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.4787698, y: -0.85203606, z: 0}
+  m_LocalScale: {x: 0.6258397, y: 0.6258397, z: 0.6258397}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2733444258366913235}
@@ -18938,9 +18938,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8021990321289980331}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.311, y: -1.0380001, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.27805164, y: -0.9280309, z: 0}
+  m_LocalScale: {x: 0.6258397, y: 0.6258397, z: 0.6258397}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2733444258366913235}
@@ -19658,6 +19658,8 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   healthBarParent: {fileID: 0}
   HPText: {fileID: 0}
+  damageBoostIcon: {fileID: 0}
+  damageBoostOverlay: {fileID: 0}
   magnetCollider: {fileID: 8391779984496116811}
 --- !u!114 &4148250003860843838
 MonoBehaviour:
@@ -19698,6 +19700,7 @@ MonoBehaviour:
   playerDodgeChancePercent: 20
   playerMovementSpeedMultiplier: 1
   playerDamageMultiplier: 1
+  playerFireRateMultiplier: 1
   playerCritDamageMultiplier: 2
   playerCritChancePercent: 5
   playerXpMultiplier: 1
@@ -19713,6 +19716,17 @@ MonoBehaviour:
   rocketDamageMultiplier: 1
   orbitalStrikeDamageMultiplier: 1
   grenadeDamageMultiplier: 1
+  PistolFirerateMultiplier: 1
+  BowAndArrowFirerateMultiplier: 1
+  SpearFirerateMultiplier: 1
+  BlowDartFirerateMultiplier: 1
+  SlingShotFirerateMultiplier: 1
+  FlameCircleFirerateMultiplier: 1
+  SMGFirerateMultiplier: 1
+  ShotgunFirerateMultiplier: 1
+  RocketFirerateMultiplier: 1
+  OrbitalStrikeFirerateMultiplier: 1
+  GrenadeFirerateMultiplier: 1
   pistol: {fileID: 2248396393127584045}
   bowAndArrow: {fileID: 5648312573303198936}
   spear: {fileID: 8263032007591538494}
@@ -19788,7 +19802,7 @@ MonoBehaviour:
     damage: 10
     poisonDamage: 0
     areaDamage: 0
-    firerate: 3
+    firerate: 0.33
     range: 5
   basePistolDamage: 16
   baseBowAndArrowDamage: 20
@@ -19803,6 +19817,17 @@ MonoBehaviour:
   baseRocketAreaDamage: 8
   baseOrbitalStrikeDamage: 30
   baseGrenadeDamage: 10
+  basePistolFirerate: 1
+  baseBowAndArrowFirerate: 0.5
+  baseSpearFirerate: 0.33
+  baseBlowDartFirerate: 0.75
+  baseSlingShotFirerate: 0.6
+  baseFlameCircleFirerate: 1
+  baseSMGFirerate: 0.33
+  baseShotgunFirerate: 0.5
+  baseRocketFirerate: 0.3
+  baseOrbitalStrikeFirerate: 0.3
+  baseGrenadeFirerate: 0.33
   baseShotgunProjectileCount: 3
   baseGrenadeProjectileCount: 3
   Default: {fileID: 4612179880373492636}

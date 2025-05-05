@@ -23,19 +23,21 @@ public class Grenade : Weapon
     private IEnumerator GrenadeThrowRoutine()
     {
         isFiring = true;
+        float firerate = PlayerUpgradeManager.Instance.grenadeStats.firerate;
 
         while (true) // Keep throwing grenades at intervals
         {
             Fire(transform.position); // Use player's position as reference
-            yield return new WaitForSeconds(PlayerUpgradeManager.Instance.grenadeStats.firerate);
+            yield return new WaitForSeconds(1 / firerate);
         }
     }
 
     public override void Fire(Vector2 targetPosition)
     {
         if (!CanFire()) return;
+        float firerate = PlayerUpgradeManager.Instance.grenadeStats.firerate;
 
-        WeaponCooldownUIManager.Instance.TriggerCooldown("Grenade", PlayerUpgradeManager.Instance.grenadeStats.firerate);
+        WeaponCooldownUIManager.Instance.TriggerCooldown("Grenade", firerate);
 
         float angleStep = 360f / PlayerUpgradeManager.Instance.baseGrenadeProjectileCount;
         float currentAngle = 0f;
@@ -55,6 +57,6 @@ public class Grenade : Weapon
             currentAngle += angleStep;
         }
 
-        SetNextFireTime(PlayerUpgradeManager.Instance.grenadeStats.firerate);
+        SetNextFireTime(firerate);
     }
 }

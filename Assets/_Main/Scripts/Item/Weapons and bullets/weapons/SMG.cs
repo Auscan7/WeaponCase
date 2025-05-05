@@ -16,10 +16,12 @@ public class SMG : Weapon
     {
         if (!CanFire()) return;
 
-        // Set fire cooldown before burst starts to prevent multiple bursts firing at once
-        SetNextFireTime(PlayerUpgradeManager.Instance.smgStats.firerate);
+        float fireRate = PlayerUpgradeManager.Instance.smgStats.firerate;
 
-        WeaponCooldownUIManager.Instance.TriggerCooldown("SMG", PlayerUpgradeManager.Instance.smgStats.firerate);
+        // Set fire cooldown before burst starts to prevent multiple bursts firing at once
+        SetNextFireTime(fireRate);
+
+        WeaponCooldownUIManager.Instance.TriggerCooldown("SMG", fireRate);
 
         StartCoroutine(BurstFire(targetPosition));
     }
