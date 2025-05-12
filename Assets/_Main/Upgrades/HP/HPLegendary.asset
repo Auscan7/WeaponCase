@@ -15,6 +15,6 @@ MonoBehaviour:
   upgradeName: Health
   positiveDescription: +100 HP
   negativeDescription: 
-  icon: {fileID: -205270267638800340, guid: 80c4117fba101b94f911db2779f714f6, type: 3}
-  border: {fileID: 21300000, guid: 386b4f70f0e00d748b3c57b31cb31ec6, type: 3}
+  icon: {fileID: 21300000, guid: dffed8577f065394f9e24330d6a5c508, type: 3}
+  border: {fileID: -8326712265333833893, guid: ad1460a1f0c26c146ad42410a98906ac, type: 3}
   hpIncreaseAmount: 100

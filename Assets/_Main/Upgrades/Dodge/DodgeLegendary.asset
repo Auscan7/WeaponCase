@@ -15,6 +15,6 @@ MonoBehaviour:
   upgradeName: Dodge
   positiveDescription: Dodge Chance +15%
   negativeDescription: 
-  icon: {fileID: 21300000, guid: 77b1f39decbb449f5b319d1300f97dfc, type: 3}
-  border: {fileID: 21300000, guid: 386b4f70f0e00d748b3c57b31cb31ec6, type: 3}
+  icon: {fileID: 21300000, guid: a793e25e8dc106a419604c12e13926ac, type: 3}
+  border: {fileID: -8326712265333833893, guid: ad1460a1f0c26c146ad42410a98906ac, type: 3}
   dodgeChanceIncrease: 15

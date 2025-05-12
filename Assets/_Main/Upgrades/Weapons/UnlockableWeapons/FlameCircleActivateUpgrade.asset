@@ -15,5 +15,5 @@ MonoBehaviour:
   upgradeName: Flame Circle
   positiveDescription: Deals continious damage to enemies around the player
   negativeDescription: 
-  icon: {fileID: -6631981949662149711, guid: 79373a7bbc195ea4dbb24f473f48fa6e, type: 3}
-  border: {fileID: 21300000, guid: 61427d22e0ac7d7468c1bb696059b8d7, type: 3}
+  icon: {fileID: 21300000, guid: aa3451f3d2fe4e34ba436738e0e6f65b, type: 3}
+  border: {fileID: -5648912583701459738, guid: 71445dd38271814458caba9f1630ecca, type: 3}

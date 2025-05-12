@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467ae1004e7de7143842800095ea0487, type: 3}
   m_Name: PolymerTipEpic
   m_EditorClassIdentifier: 
-  upgradeName: Polymer Tip
-  positiveDescription: +30% Dmg
+  upgradeName: Damage
+  positiveDescription: All Damage +30%
   negativeDescription: 
-  icon: {fileID: 21300000, guid: 2c3f8a9b2c17f854987e87029f1dc72c, type: 3}
-  border: {fileID: 21300000, guid: 7ac1b54aa7d23d149ac44d489e93fb97, type: 3}
+  icon: {fileID: 21300000, guid: 4477622f08c7e714998490fd7dc4a889, type: 3}
+  border: {fileID: -5381781119884701127, guid: 118aaa07d73372d4a946fe6bb94703b5, type: 3}
   damageMultiplierIncrease: 3

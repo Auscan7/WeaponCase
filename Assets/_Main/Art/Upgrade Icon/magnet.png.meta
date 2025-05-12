@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 3a332fbe5de7afa408c1ea7052d788ab
+guid: 5d13a0f26748d7046a6d6d00efb725f1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4877825377717948546
-    second: magnet_0
+      213: -6638393167402246476
+    second: image__26_-removebg-preview_0
+  - first:
+      213: -6156298484373985100
+    second: image__26_-removebg-preview_1
+  - first:
+      213: -6714068638065564027
+    second: image__26_-removebg-preview_2
+  - first:
+      213: -4390063559057434704
+    second: image__26_-removebg-preview_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: magnet_0
+      name: image__26_-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 0
-        width: 475
-        height: 512
+        x: 16
+        y: 423
+        width: 76
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2809343565481b340800000000000000
-      internalID: 4877825377717948546
+      spriteID: 4bedb910690bfd3a0800000000000000
+      internalID: -6638393167402246476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: image__26_-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 384
+        width: 77
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b8ec9b552f609aa0800000000000000
+      internalID: -6156298484373985100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: image__26_-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 43
+        width: 389
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 586e2867526d2d2a0800000000000000
+      internalID: -6714068638065564027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: image__26_-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 345
+        width: 77
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b79efcd37c5313c0800000000000000
+      internalID: -4390063559057434704
       vertices: []
       indices: 
       edges: []
@@ -138,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      magnet_0: 4877825377717948546
+      image__26_-removebg-preview_0: -6638393167402246476
+      image__26_-removebg-preview_1: -6156298484373985100
+      image__26_-removebg-preview_2: -6714068638065564027
+      image__26_-removebg-preview_3: -4390063559057434704
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

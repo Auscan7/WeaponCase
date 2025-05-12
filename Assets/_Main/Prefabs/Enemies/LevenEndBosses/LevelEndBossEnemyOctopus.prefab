@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37d3ed17747538f41806b987a4d6720b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tentacleDamage: 20
+  tentacleDamage: 80
   attackCooldown: 3
   windupTime: 1
   tentacleLifetime: 0.55

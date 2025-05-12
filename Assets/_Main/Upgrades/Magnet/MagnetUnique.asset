@@ -15,6 +15,6 @@ MonoBehaviour:
   upgradeName: Magnet
   positiveDescription: Magnet Radius +35%
   negativeDescription: 
-  icon: {fileID: 4877825377717948546, guid: 3a332fbe5de7afa408c1ea7052d788ab, type: 3}
-  border: {fileID: 21300000, guid: ceef4259aae69e34388b50215b07ba24, type: 3}
+  icon: {fileID: 21300000, guid: 5d13a0f26748d7046a6d6d00efb725f1, type: 3}
+  border: {fileID: -5648912583701459738, guid: 71445dd38271814458caba9f1630ecca, type: 3}
   magnetRadiusIncrease: 3.5

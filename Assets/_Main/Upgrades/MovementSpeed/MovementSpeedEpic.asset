@@ -15,6 +15,6 @@ MonoBehaviour:
   upgradeName: Movement Speed
   positiveDescription: Movement Speed +12.5%
   negativeDescription: 
-  icon: {fileID: 21300000, guid: ee1c02fbe5ca4f54fa3ea009ed08ed8a, type: 3}
-  border: {fileID: 21300000, guid: 7ac1b54aa7d23d149ac44d489e93fb97, type: 3}
+  icon: {fileID: 21300000, guid: 176a083ffd0400f4eb5caa687cbc4228, type: 3}
+  border: {fileID: -5381781119884701127, guid: 118aaa07d73372d4a946fe6bb94703b5, type: 3}
   movementSpeedIncrease: 1.25

@@ -15,6 +15,6 @@ MonoBehaviour:
   upgradeName: Experience
   positiveDescription: +30% XP Gain
   negativeDescription: 
-  icon: {fileID: -1671566244967526865, guid: 4d67c717aa90bcf459f0715a1c18704d, type: 3}
-  border: {fileID: 21300000, guid: 7ac1b54aa7d23d149ac44d489e93fb97, type: 3}
+  icon: {fileID: 21300000, guid: c2ad6902e73274e47b7ac83320f784af, type: 3}
+  border: {fileID: -5381781119884701127, guid: 118aaa07d73372d4a946fe6bb94703b5, type: 3}
   experienceMultiplierIncrease: 3

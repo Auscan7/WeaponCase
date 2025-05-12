@@ -15,6 +15,6 @@ MonoBehaviour:
   upgradeName: Damage
   positiveDescription: Bow and Arrow Damage +15%
   negativeDescription: 
-  icon: {fileID: 3410507652647823251, guid: 8a5d64a69f4974d489c5bcd95b70a095, type: 3}
-  border: {fileID: 21300000, guid: 61427d22e0ac7d7468c1bb696059b8d7, type: 3}
+  icon: {fileID: -7856493677412862020, guid: d8309cc2aa5916442b973db84ac356c0, type: 3}
+  border: {fileID: -4739412847751887214, guid: 457f3f38e845c2543bbeac3632250325, type: 3}
   damageIncrease: 1.5

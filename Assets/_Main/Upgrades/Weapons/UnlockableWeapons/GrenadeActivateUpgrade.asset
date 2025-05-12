@@ -15,5 +15,5 @@ MonoBehaviour:
   upgradeName: Grenade
   positiveDescription: Throw grenades around you
   negativeDescription: 
-  icon: {fileID: -1791783992758969951, guid: bcbc4c0c3fb07004b8757a770969effe, type: 3}
-  border: {fileID: 21300000, guid: d221f1e3ddc2ea241a9940d1cdad95c2, type: 3}
+  icon: {fileID: 21300000, guid: ad359d3e7108df5418ce65af77540ac6, type: 3}
+  border: {fileID: -8220459746488438067, guid: 432a1acf00022b44190d156e3fe73681, type: 3}

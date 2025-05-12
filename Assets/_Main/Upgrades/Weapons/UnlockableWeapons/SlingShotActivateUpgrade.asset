@@ -16,4 +16,4 @@ MonoBehaviour:
   positiveDescription: Deals area damage
   negativeDescription: 
   icon: {fileID: -154139334052807852, guid: 6bd6a7b9b901fe34988196dfb694e231, type: 3}
-  border: {fileID: 21300000, guid: ceef4259aae69e34388b50215b07ba24, type: 3}
+  border: {fileID: -5381781119884701127, guid: 118aaa07d73372d4a946fe6bb94703b5, type: 3}

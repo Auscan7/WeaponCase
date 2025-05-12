@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FirerateEpic
   m_EditorClassIdentifier: 
   upgradeName: Fire Rate
-  positiveDescription: +10% Fira Rate Increase
+  positiveDescription: All fire rate +15%
   negativeDescription: 
-  icon: {fileID: 0}
-  border: {fileID: 0}
-  fireRateMultiplierIncrease: 0
+  icon: {fileID: 21300000, guid: 60759695e45b0de46931d82d35be6e00, type: 3}
+  border: {fileID: -5381781119884701127, guid: 118aaa07d73372d4a946fe6bb94703b5, type: 3}
+  fireRateMultiplierIncrease: 1.5

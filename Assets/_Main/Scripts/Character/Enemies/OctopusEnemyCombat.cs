@@ -112,7 +112,7 @@ public class OctopusEnemyCombat : MonoBehaviour
             Collider2D playerCollider = Physics2D.OverlapCircle(worldPosition, 0.5f, playerLayer);
             if (playerCollider)
             {
-                playerCollider.GetComponent<CharacterStatManager>()?.TakeDamage(tentacleDamage);
+                playerCollider.GetComponentInParent<CharacterStatManager>()?.TakeDamage(tentacleDamage);
             }
         }
 
