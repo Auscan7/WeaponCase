@@ -3,6 +3,7 @@ using System.Collections;
 
 public class HammerheadCombat : MonoBehaviour
 {
+    [Header("Combat Settings")]
     [SerializeField] private float coneAttackDamage;
     [SerializeField] private float coneAngle = 45f;
     [SerializeField] private float coneRange = 5f;
@@ -10,8 +11,12 @@ public class HammerheadCombat : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private GameObject attackIndicator;
 
+    [Header("Sprite Swap")]
+    [SerializeField] private SpriteRenderer spriteRenderer; // Reference to the sprite
+    [SerializeField] private Sprite closedMouthSprite;     // Normal idle sprite
+    [SerializeField] private Sprite openMouthSprite;       // Mouth open attack sprite
+
     private EnemyMovementManager movementManager;
-    private Animator animator;
     private bool isAttacking = false;
     private Vector3 savedDirection;
     private Transform player;
@@ -19,22 +24,19 @@ public class HammerheadCombat : MonoBehaviour
     private void Awake()
     {
         movementManager = GetComponent<EnemyMovementManager>();
-        animator = GetComponentInChildren<Animator>();
     }
 
     private void Start()
     {
         attackIndicator?.SetActive(false);
-        savedDirection = transform.right; // Default direction
+        savedDirection = transform.right;
     }
 
     public void TryConeAttack(Transform player)
     {
-        if (isAttacking) return; // Prevents multiple attack calls
+        if (isAttacking) return;
 
-        this.player = player; // Store player reference
-
-        // Check if the player is within attack range
+        this.player = player;
         if (Vector2.Distance(transform.position, player.position) > coneRange) return;
 
         savedDirection = (player.position - transform.position).normalized;
@@ -44,22 +46,24 @@ public class HammerheadCombat : MonoBehaviour
     private IEnumerator ConeAttackRoutine()
     {
         isAttacking = true;
-        if (movementManager != null) movementManager.isAttacking = true; // Stop movement/rotation
+        if (movementManager != null) movementManager.isAttacking = true;
 
-        animator.Play("SharkAttackOpenMouth");
+        // Swap to open mouth sprite
+        if (spriteRenderer && openMouthSprite) spriteRenderer.sprite = openMouthSprite;
 
         if (attackIndicator) attackIndicator.SetActive(true);
-        yield return new WaitForSeconds(1f); // Attack windup time
+        yield return new WaitForSeconds(1f); // Windup
 
         if (attackIndicator) attackIndicator.SetActive(false);
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.hammerheadSFX);
-        if (player == null) // In case player moved/died
+
+        if (player == null)
         {
             ResetAttack();
             yield break;
         }
 
-        // Attack logic
+        // Deal damage in cone
         Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(transform.position, coneRange, playerLayer);
         foreach (Collider2D hit in hitPlayers)
         {
@@ -71,24 +75,25 @@ public class HammerheadCombat : MonoBehaviour
             }
         }
 
-        // **Re-enable movement after attack happens!**
+        // Swap back to idle sprite
+        if (spriteRenderer && closedMouthSprite) spriteRenderer.sprite = closedMouthSprite;
+
         if (movementManager != null) movementManager.isAttacking = false;
 
-        yield return new WaitForSeconds(attackCooldown); // Just waiting for cooldown, movement should still happen
-
-        isAttacking = false; // Allow a new attack
+        yield return new WaitForSeconds(attackCooldown);
+        isAttacking = false;
     }
-
 
     private void ResetAttack()
     {
         isAttacking = false;
-        if (movementManager != null) movementManager.isAttacking = false; // Resume movement
+        if (spriteRenderer && closedMouthSprite) spriteRenderer.sprite = closedMouthSprite;
+        if (movementManager != null) movementManager.isAttacking = false;
     }
 
     private void OnDrawGizmos()
     {
-        if (savedDirection == Vector3.zero) savedDirection = transform.right; // Ensure it's valid
+        if (savedDirection == Vector3.zero) savedDirection = transform.right;
 
         Gizmos.color = Color.red;
         Vector3 leftBoundary = Quaternion.Euler(0, 0, -coneAngle / 2) * savedDirection * coneRange;

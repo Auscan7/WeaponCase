@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8730054992575599064}
   - component: {fileID: 3725903022737715074}
   - component: {fileID: 1674804037203704913}
+  - component: {fileID: 3389647282732790328}
   m_Layer: 0
   m_Name: healthDrop
   m_TagString: Wrench
@@ -26,14 +27,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8977979752866054712}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.2295834, w: 0.973289}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7136599, y: 1.7136599, z: 1.7136599}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2040520243131533155}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -26.545}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3725903022737715074
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: c6163e045f8365d458cad2f863c75da1, type: 3}
+  m_Sprite: {fileID: 8523626428413057763, guid: f16b2bcc807b2df46ad3f4dc12cca6ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -124,7 +125,23 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.32000005
+  m_Radius: 2.83
+--- !u!114 &3389647282732790328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8977979752866054712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da89429d18d3f44c9febf8aae0d94da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleSpeed: 3.5
+  scaleAmount: 0.08
+  scaleX: 1
+  scaleY: 1
 --- !u!1001 &7951309293606138394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -133,6 +150,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8730054992575599064}
     m_Modifications:
+    - target: {fileID: 3881046791643184545, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881046791643184545, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.745283
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881046791643184545, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.015935177
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881046791643184545, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.a
+      value: 0.84705883
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881046791643184545, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 0.7490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881046791643184545, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 0.019607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881046791643184545, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.a
+      value: 0.84705883
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881046791643184545, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881046791643184545, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 0.7490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881046791643184545, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 0.019607844
+      objectReference: {fileID: 0}
     - target: {fileID: 4952325379883675290, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
       propertyPath: m_Name
       value: Wrench

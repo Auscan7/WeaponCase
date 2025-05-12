@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8730054992575599064}
   - component: {fileID: 3725903022737715074}
   - component: {fileID: 1674804037203704913}
+  - component: {fileID: 1109847207591824245}
   m_Layer: 0
   m_Name: pearlCurrencyDrop
   m_TagString: Pearl
@@ -124,7 +125,23 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 20
+  m_Radius: 4.93
+--- !u!114 &1109847207591824245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8977979752866054712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da89429d18d3f44c9febf8aae0d94da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleSpeed: 3.5
+  scaleAmount: 0.08
+  scaleX: 1
+  scaleY: 1
 --- !u!1001 &7951309293606138394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -133,13 +150,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8730054992575599064}
     m_Modifications:
+    - target: {fileID: 3881046791643184545, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881046791643184545, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.83413935
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881046791643184545, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881046791643184545, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881046791643184545, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 0.8352941
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881046791643184545, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881046791643184545, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881046791643184545, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 0.8352941
+      objectReference: {fileID: 0}
     - target: {fileID: 4952325379883675290, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
       propertyPath: m_Name
       value: Wrench
-      objectReference: {fileID: 0}
-    - target: {fileID: 4952325379883675290, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8217340840972825977, guid: 48f04aed447408b4ab7a6d91da71bd52, type: 3}
       propertyPath: m_LocalPosition.x

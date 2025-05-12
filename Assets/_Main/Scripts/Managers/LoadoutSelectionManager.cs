@@ -7,6 +7,10 @@ using UnityEngine.UI;
 
 public class LoadoutSelectionManager : MonoBehaviour
 {
+    public static LoadoutSelectionManager Instance { get; private set; }
+    public bool IsLoadoutActive => loadoutUI.activeSelf;
+    [SerializeField] private GameObject loadoutUI;
+
     private GameTimeManager gameTimeManager;
 
     public GameObject loadoutSelectionPanel;
@@ -56,6 +60,7 @@ public class LoadoutSelectionManager : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
         loadoutSelectionPanel.SetActive(true);
     }
 

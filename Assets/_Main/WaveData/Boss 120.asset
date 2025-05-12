@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36ce8dc6823e47945ab892f66199ca8a, type: 3}
+  m_Name: Boss 120
+  m_EditorClassIdentifier: 
+  spawnEvents:
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 5a3170471c686b045b2343a87e0d4ef6, type: 3}
+    spawnTime: 10
+    amount: 1
+    spawnInterval: 1
+    spawnZoneName: SpawnerLeft

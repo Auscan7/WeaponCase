@@ -12,6 +12,7 @@ TagManager:
   - Magnet
   - Damage
   - Pearl
+  - SpawnZone
   layers:
   - Default
   - TransparentFX

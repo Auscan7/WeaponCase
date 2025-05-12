@@ -187,14 +187,14 @@ GameObject:
   m_Component:
   - component: {fileID: 2714442251322780456}
   - component: {fileID: 2910664139029674070}
-  - component: {fileID: 4866827658092539778}
-  - component: {fileID: -2349943982917990161}
+  - component: {fileID: -4411599205983338371}
+  - component: {fileID: -5584834917261939995}
   - component: {fileID: -4820772247653231708}
   - component: {fileID: -5635052169131365987}
-  - component: {fileID: -8549081504333852596}
+  - component: {fileID: 2054558257689030374}
   - component: {fileID: 2629275203821640451}
   - component: {fileID: 3456901814718195380}
-  - component: {fileID: -8122635795898797536}
+  - component: {fileID: -1847159660450618676}
   m_Layer: 6
   m_Name: EnemyClownFish 2
   m_TagString: Enemy
@@ -217,7 +217,7 @@ Transform:
   m_Children:
   - {fileID: 7608606556829224412}
   - {fileID: 2772103074360972097}
-  - {fileID: 22880831807434328}
+  - {fileID: 30373483557622025}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2910664139029674070
@@ -234,11 +234,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMovementManager: {fileID: 0}
   currentHealth: 0
-  maxHealth: 150
+  maxHealth: 60
   healthBar: {fileID: 1297005040029400982}
   healthBarParent: {fileID: 7141845522669670118}
   enemyPrefabReference: {fileID: 4871557909895165438}
---- !u!114 &4866827658092539778
+--- !u!114 &-4411599205983338371
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -255,7 +255,7 @@ MonoBehaviour:
   spriteTransform: {fileID: 7608606556829224412}
   rotationSpeed: 4
   stoppingDistance: 1.2
---- !u!114 &-2349943982917990161
+--- !u!114 &-5584834917261939995
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edbcc1895d6e24458976271270887d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 20
+  damageAmount: 14
 --- !u!114 &-4820772247653231708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,15 +296,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropItems:
   - prefab: {fileID: 8977979752866054712, guid: 1534ea73940bce74385c715f3c1d2e01, type: 3}
-    dropChance: 0.4
+    dropChance: 0.3
   - prefab: {fileID: 8977979752866054712, guid: 20e563ab5f0bc704f94df6a64d0c02cc, type: 3}
-    dropChance: 0.5
+    dropChance: 0.4
   - prefab: {fileID: 8977979752866054712, guid: c082e8c41ee4364449061b259f8ef4ca, type: 3}
-    dropChance: 0.25
+    dropChance: 0.4
   - prefab: {fileID: 8977979752866054712, guid: f939cdffc2a0fc5478a29e5c6df45244, type: 3}
-    dropChance: 0.5
+    dropChance: 0.4
   dropPoint: {fileID: 2714442251322780456}
---- !u!114 &-8549081504333852596
+--- !u!114 &2054558257689030374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -383,7 +383,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.4
---- !u!114 &-8122635795898797536
+--- !u!114 &-1847159660450618676
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7608606556829224412}
   - component: {fileID: 699542617674658730}
-  - component: {fileID: 5523631659689973751}
+  - component: {fileID: 8723309373230545206}
   m_Layer: 6
   m_Name: Visual
   m_TagString: Untagged
@@ -423,8 +423,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2714442251322780456}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -472,39 +472,33 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0fd2d4c6f92cba4418b8b738c112ff17, type: 3}
+  m_Sprite: {fileID: 8798082667579980142, guid: 981483ee3a21c1b4e9d87fb5411c0b4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 4.97, y: 3.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5523631659689973751
-Animator:
-  serializedVersion: 7
+--- !u!114 &8723309373230545206
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6604457279454923096}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0db7c23817562b546ac50a8716f33e01, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da89429d18d3f44c9febf8aae0d94da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleSpeed: 5
+  scaleAmount: 0.075
+  scaleX: 1
+  scaleY: 1
 --- !u!1 &7141845522669670118
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +611,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1001 &8442847015908891639
+--- !u!1001 &8435705939376497830
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -674,8 +668,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83969645744b1fa499b9789aa1789be7, type: 3}
---- !u!4 &22880831807434328 stripped
+--- !u!4 &30373483557622025 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8465163516527736239, guid: 83969645744b1fa499b9789aa1789be7, type: 3}
-  m_PrefabInstance: {fileID: 8442847015908891639}
+  m_PrefabInstance: {fileID: 8435705939376497830}
   m_PrefabAsset: {fileID: 0}

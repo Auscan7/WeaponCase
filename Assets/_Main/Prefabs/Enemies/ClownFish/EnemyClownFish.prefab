@@ -300,7 +300,7 @@ MonoBehaviour:
   - prefab: {fileID: 8977979752866054712, guid: 20e563ab5f0bc704f94df6a64d0c02cc, type: 3}
     dropChance: 0.4
   - prefab: {fileID: 8977979752866054712, guid: c082e8c41ee4364449061b259f8ef4ca, type: 3}
-    dropChance: 0.2
+    dropChance: 0.4
   - prefab: {fileID: 8977979752866054712, guid: f939cdffc2a0fc5478a29e5c6df45244, type: 3}
     dropChance: 0.4
   dropPoint: {fileID: 2714442251322780456}
@@ -405,7 +405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7608606556829224412}
   - component: {fileID: 699542617674658730}
-  - component: {fileID: 5523631659689973751}
+  - component: {fileID: 8723309373230545206}
   m_Layer: 6
   m_Name: Visual
   m_TagString: Untagged
@@ -423,8 +423,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2714442251322780456}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -472,39 +472,33 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0fd2d4c6f92cba4418b8b738c112ff17, type: 3}
+  m_Sprite: {fileID: 8798082667579980142, guid: 981483ee3a21c1b4e9d87fb5411c0b4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 4.97, y: 3.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5523631659689973751
-Animator:
-  serializedVersion: 7
+--- !u!114 &8723309373230545206
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6604457279454923096}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0db7c23817562b546ac50a8716f33e01, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da89429d18d3f44c9febf8aae0d94da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleSpeed: 5
+  scaleAmount: 0.075
+  scaleX: 1
+  scaleY: 1
 --- !u!1 &7141845522669670118
 GameObject:
   m_ObjectHideFlags: 0
