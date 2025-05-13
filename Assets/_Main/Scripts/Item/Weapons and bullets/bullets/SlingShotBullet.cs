@@ -5,9 +5,6 @@ public class SlingShotBullet : MonoBehaviour
     [Header("Rocket Damage Settings")]
     [SerializeField] float explosionRadius = 1f; // Radius of the explosion
 
-    [Header("Explosion Effects")]
-    [SerializeField] GameObject explosionEffectPrefab; // Optional visual effect for explosion
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -25,12 +22,9 @@ public class SlingShotBullet : MonoBehaviour
 
     private void Explode(CharacterStatManager excludeTarget)
     {
-        AudioManager.instance.PlaySoundSFX(AudioManager.instance.rocketExplosionSFX);
-
-        if (explosionEffectPrefab != null)
-        {
-            Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
-        }
+        CameraShakeManager.Instance.Shake(0.25f, 0.04f);
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.slingShotSFX);
+        EffectsManager.instance.PlayVFX(EffectsManager.instance.slingShotVFX, transform.position, Quaternion.identity);
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(
             transform.position,

@@ -71,24 +71,40 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c2153dcd0edd22f40bdebf613271bae7, type: 3}
   - {fileID: 8300000, guid: 8b3f676fe7b41044495a2964396b8ba3, type: 3}
   - {fileID: 8300000, guid: f01c623f724825e44a923d1ae50256f2, type: 3}
+  grenadeSFX:
+  - {fileID: 8300000, guid: 79c3cb7a26813d146b07c293b0324039, type: 3}
+  - {fileID: 8300000, guid: 2d99c166c2da2b14f835eb0d6d418369, type: 3}
+  slingShotSFX:
+  - {fileID: 8300000, guid: 64fb9477894fa2e4a997518fbb1c2f15, type: 3}
+  - {fileID: 8300000, guid: 5cd691c7632755d499fbbb55bc1f0fac, type: 3}
+  orbitalStrikeSFX:
+  - {fileID: 8300000, guid: e4a2a98ee03890d40a06b28d95d492a0, type: 3}
+  - {fileID: 8300000, guid: 3e06c45e3372dd345b50a642fe86616d, type: 3}
   hammerheadSFX:
   - {fileID: 8300000, guid: 101b70a5091c966478dee86476a88524, type: 3}
   - {fileID: 8300000, guid: 43c9ec74a7e27e645a1f5cdc3620d8d3, type: 3}
   - {fileID: 8300000, guid: 436fafe320a6c3949917917e194d2509, type: 3}
   enemyTakeDamageSFX:
-  - {fileID: 8300000, guid: e605b55619f0ded42b5ec622e5f47611, type: 3}
-  - {fileID: 8300000, guid: 9c2697dafffbeea4aa0b9f642f659446, type: 3}
   - {fileID: 8300000, guid: f6e16f1335dcf7a4890942ebef564e73, type: 3}
   - {fileID: 8300000, guid: 0f059e190583a6d4fb184c088aed6fb3, type: 3}
+  enemyDeathSFX:
+  - {fileID: 8300000, guid: 96bbf34d7aee725449bb8a5f1a46bfbb, type: 3}
+  - {fileID: 8300000, guid: 1fcfd83e3d859db4585f34930d88477c, type: 3}
+  - {fileID: 8300000, guid: cd42fc3c60305214daafa1fa16a8cb46, type: 3}
   UIClickSFX:
   - {fileID: 8300000, guid: 81652031b64c342cc8dbc59c138d77c5, type: 3}
   UIHoverSFX:
   - {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
-  - {fileID: 8300000, guid: 0994c12e202f342459a4212e7287f7e8, type: 3}
   wrenchPickUpSFX:
   - {fileID: 8300000, guid: 46578e31047a4c84089678cf52b4cfe4, type: 3}
   - {fileID: 8300000, guid: 634944ea6a7f4e141b1f3cfdec7933f0, type: 3}
   - {fileID: 8300000, guid: 576d05e8c680de04a9fefcda92b8e719, type: 3}
+  magnetPickUpSFX:
+  - {fileID: 8300000, guid: 74ea4a2ad98acb241bdb9753be6cd8c4, type: 3}
+  damagePickUpSFX:
+  - {fileID: 8300000, guid: 32f565ba94f200f49adb407cce64e873, type: 3}
+  coinPickUpSFX:
+  - {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
   gemPickUp:
   - {fileID: 8300000, guid: ccd481ebc89ed804882d898ae5033836, type: 3}
   - {fileID: 8300000, guid: d4dfd2c513841d34eaeea314892ecfa9, type: 3}

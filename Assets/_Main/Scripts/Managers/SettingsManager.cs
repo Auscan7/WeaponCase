@@ -2,27 +2,32 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class VolumeSettings : MonoBehaviour
+public class SettingsManager : MonoBehaviour
 {
-    public AudioMixer audioMixer; // Reference to your AudioMixer
-    public Slider musicSlider;    // Slider for music volume
-    public Slider sfxSlider;      // Slider for SFX volume
+    public AudioMixer audioMixer;
+    public Slider musicSlider;
+    public Slider sfxSlider;
+    public Toggle shakeToggle;
     public GameObject Settings;
     private bool isSettingsOpen = false;
-
+    private AudioManager audioManager;
     private void Start()
     {
-        // Load saved preferences
+        audioManager = AudioManager.instance;
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
         sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", 0.75f);
+        bool shakeEnabled = PlayerPrefs.GetInt("CameraShakeEnabled", 1) == 1;
 
         SetMusicVolume(musicSlider.value);
         SetSFXVolume(sfxSlider.value);
+        SetCameraShake(shakeEnabled);
 
-        // Add listeners for slider changes
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
         sfxSlider.onValueChanged.AddListener(SetSFXVolume);
+        shakeToggle.isOn = shakeEnabled;
+        shakeToggle.onValueChanged.AddListener(SetCameraShake);
     }
+
 
     private void Update()
     {
@@ -32,6 +37,14 @@ public class VolumeSettings : MonoBehaviour
             Settings.SetActive(false);
         }
     }
+
+    public void SetCameraShake(bool isEnabled)
+    {
+        PlayerPrefs.SetInt("CameraShakeEnabled", isEnabled ? 1 : 0);
+        CameraShakeManager.Instance.ShakeEnabled = isEnabled;
+        audioManager.PlaySoundSFX(audioManager.UIClickSFX); // Play click sound
+    }
+
 
     public void SetMusicVolume(float volume)
     {
@@ -47,7 +60,7 @@ public class VolumeSettings : MonoBehaviour
 
     public void OpenSettings()
     {
-        AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX); // Play click sound
+        audioManager.PlaySoundSFX(audioManager.UIClickSFX); // Play click sound
         if (!isSettingsOpen)
         {
             isSettingsOpen = true;
@@ -62,6 +75,7 @@ public class VolumeSettings : MonoBehaviour
 
     public void TestSFXButton()
     {
-        AudioManager.instance.PlaySoundSFX(AudioManager.instance.pistolFireSFX);
+        if(audioManager != null)
+            audioManager.PlaySoundSFX(audioManager.pistolFireSFX);
     }
 }

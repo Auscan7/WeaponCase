@@ -1,8 +1,9 @@
+using TMPro;
 using UnityEngine;
 
 public class CameraFollowPlayer : MonoBehaviour
 {
-    private Transform player; // Reference to the player's transform
+    [SerializeField]private Transform player; // Reference to the player's transform
     [SerializeField] private float followSpeed = 5f; // Speed of following
     [SerializeField] private Vector3 offset = new Vector3(0, 0, -10); // Default offset to keep the camera at the correct Z position
 
@@ -20,7 +21,7 @@ public class CameraFollowPlayer : MonoBehaviour
 
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
+
     }
 
     void Update()
@@ -38,4 +39,18 @@ public class CameraFollowPlayer : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
         }
     }
+
+    public void SnapToPlayer()
+    {
+        if (player == null)
+        {
+            player = GameObject.FindWithTag("Player")?.transform;
+        }
+
+        if (player != null)
+        {
+            transform.position = player.position + offset;
+        }
+    }
+
 }

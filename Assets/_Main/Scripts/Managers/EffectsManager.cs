@@ -4,9 +4,22 @@ public class EffectsManager : MonoBehaviour
 {
     public static EffectsManager instance;
 
-    [Header("VFX")]
+    [Header("WeaponFireVFX")]
     public GameObject bulletVFX;
     public GameObject pelletVFX;
+    public GameObject rocketVFX;
+
+    [Header("WeaponHitVFX")]
+    public GameObject bulletHitVFX;
+    public GameObject orbitalVFX;
+    public GameObject slingShotVFX;
+    public GameObject grenadeVFX;
+
+    [Header("VFX")]
+    public GameObject enemyDeathVFX;
+    public GameObject coinPickUpVFX;
+    public GameObject healPickUpVFX;
+    public GameObject damagePickUpVFX;
 
     private void Awake()
     {
@@ -25,11 +38,12 @@ public class EffectsManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void PlayVFX(GameObject VFXToPlay, Vector2 spawnPos, Quaternion rotation)
+    public void PlayVFX(GameObject VFXToPlay, Vector2 spawnPos, Quaternion rotation, float duration = 4f)
     {
         if (VFXToPlay != null)
         {
-            Instantiate(VFXToPlay, spawnPos, rotation);
+            GameObject vfxInstance = Instantiate(VFXToPlay, spawnPos, rotation);
+            Destroy(vfxInstance, duration);
         }
     }
 }

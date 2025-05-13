@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6bd6a7b9b901fe34988196dfb694e231
+guid: b84dd897bd6e88e49859f1ba20d87f26
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -154139334052807852
-    second: catapult_0
+      213: 5309537436013353504
+    second: Vignette-PNG-File_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: catapult_0
+      name: Vignette-PNG-File_0
       rect:
         serializedVersion: 2
-        x: 25
+        x: 0
         y: 0
-        width: 462
-        height: 512
+        width: 640
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 45bfdd3a7136cddf0800000000000000
-      internalID: -154139334052807852
+      spriteID: 02ad63bba244fa940800000000000000
+      internalID: 5309537436013353504
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      catapult_0: -154139334052807852
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

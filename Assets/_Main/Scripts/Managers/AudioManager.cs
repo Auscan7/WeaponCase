@@ -19,10 +19,14 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] shotgunFireSFX;
     public AudioClip[] rocketFireSFX;
     public AudioClip[] rocketExplosionSFX;
+    public AudioClip[] grenadeSFX;
+    public AudioClip[] slingShotSFX;
+    public AudioClip[] orbitalStrikeSFX;
 
     [Header("Enemy SFX")]
     public AudioClip[] hammerheadSFX;
     public AudioClip[] enemyTakeDamageSFX;
+    public AudioClip[] enemyDeathSFX;
 
     [Header("UI")]
     public AudioClip[] UIClickSFX;
@@ -30,6 +34,9 @@ public class AudioManager : MonoBehaviour
 
     [Header("DropSFX")]
     public AudioClip[] wrenchPickUpSFX;
+    public AudioClip[] magnetPickUpSFX;
+    public AudioClip[] damagePickUpSFX;
+    public AudioClip[] coinPickUpSFX;
     public AudioClip[] gemPickUp;
 
     private int lastPlayedIndex = -1;

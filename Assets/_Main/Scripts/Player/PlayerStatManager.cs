@@ -17,10 +17,22 @@ public class PlayerStatManager : CharacterStatManager
     [Header("Magnet")]
     [SerializeField] private CircleCollider2D magnetCollider;
 
+    [Header("Damage Vignette")]
+    [SerializeField] private Image redVignetteOverlay;
+    [SerializeField] private float lowHealthThreshold = 0.3f; // 30% HP
+    [SerializeField] private float vignetteFadeSpeed = 2f;
+
+
     protected override void Start()
     {
         PlayerUpgradeManager.Instance.playerCurrentHealth = PlayerUpgradeManager.Instance.playerMaxHealth;
         StartCoroutine(HealthRegenCoroutine()); // Start regen system
+
+        if (CameraFollowPlayer.instance != null)
+        {
+            CameraFollowPlayer.instance.SnapToPlayer();
+        }
+
     }
 
     protected override void Update()
@@ -34,6 +46,8 @@ public class PlayerStatManager : CharacterStatManager
         {
             HPText.text = "HP: " + Mathf.RoundToInt(PlayerUpgradeManager.Instance.playerCurrentHealth);
         }
+
+        UpdateVignetteEffect();
     }
 
     private void FixedUpdate()
@@ -61,9 +75,68 @@ public class PlayerStatManager : CharacterStatManager
         PlayerUpgradeManager.Instance.playerCurrentHealth = Mathf.Max(0, Mathf.Round(PlayerUpgradeManager.Instance.playerCurrentHealth - reducedDamage));
 
         UpdateHealthBar();
+        
+        //Visual feedback
         FloatingTextManager.Instance.ShowFloatingText(transform.position, reducedDamage.ToString("F0"), Color.red, 1.35f, 0.25f, 0.65f);
+        FlashVignetteOnDamage();
+        CameraShakeManager.Instance.Shake(0.1f, 0.03f);
+
         StartCoroutine(DamageCooldownCoroutine());
     }
+
+    private void UpdateVignetteEffect()
+    {
+        if (redVignetteOverlay == null) return;
+
+        float healthPercent = PlayerUpgradeManager.Instance.playerCurrentHealth / PlayerUpgradeManager.Instance.playerMaxHealth;
+
+        float targetAlpha = healthPercent < lowHealthThreshold ? Mathf.Lerp(0f, 0.7f, 1f - (healthPercent / lowHealthThreshold)) : 0f;
+
+        Color currentColor = redVignetteOverlay.color;
+        Color targetColor = new Color(currentColor.r, currentColor.g, currentColor.b, targetAlpha);
+
+        redVignetteOverlay.color = Color.Lerp(currentColor, targetColor, Time.deltaTime * vignetteFadeSpeed);
+    }
+
+    public void FlashVignetteOnDamage()
+    {
+        StartCoroutine(VignetteFlashRoutine());
+    }
+
+    private IEnumerator VignetteFlashRoutine()
+    {
+        float flashInDuration = 0.05f;
+        float flashOutDuration = 0.2f;
+        float maxAlpha = 0.4f;
+
+        if (redVignetteOverlay == null) yield break;
+
+        Color c = redVignetteOverlay.color;
+
+        // Flash in
+        float elapsed = 0f;
+        while (elapsed < flashInDuration)
+        {
+            float t = elapsed / flashInDuration;
+            redVignetteOverlay.color = new Color(c.r, c.g, c.b, Mathf.Lerp(c.a, maxAlpha, t));
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        // Flash out
+        elapsed = 0f;
+        while (elapsed < flashOutDuration)
+        {
+            float t = elapsed / flashOutDuration;
+            redVignetteOverlay.color = new Color(c.r, c.g, c.b, Mathf.Lerp(maxAlpha, 0f, t));
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        redVignetteOverlay.color = new Color(c.r, c.g, c.b, 0f);
+    }
+
+
 
     // Magnet radius calculation at runtime
     private void UpdateMagnetRadius()
@@ -115,25 +188,28 @@ public class PlayerStatManager : CharacterStatManager
             case "Wrench":
                 HandleWrenchPickup();
                 AudioManager.instance.PlaySoundSFX(AudioManager.instance.wrenchPickUpSFX);
+                EffectsManager.instance.PlayVFX(EffectsManager.instance.healPickUpVFX, collision.transform.position, Quaternion.identity);
                 break;
 
             case "Magnet":
                 StartCoroutine(IncreaseMagnetRadiusTemporarily());
-                AudioManager.instance.PlaySoundSFX(AudioManager.instance.wrenchPickUpSFX);
+                AudioManager.instance.PlaySoundSFX(AudioManager.instance.magnetPickUpSFX);
                 break;
 
             case "Damage":
                 StartDamageBoost(20f);
-                AudioManager.instance.PlaySoundSFX(AudioManager.instance.wrenchPickUpSFX);
+                AudioManager.instance.PlaySoundSFX(AudioManager.instance.damagePickUpSFX);
+                EffectsManager.instance.PlayVFX(EffectsManager.instance.damagePickUpVFX, transform.position, Quaternion.identity);
                 break;
 
             case "Pearl":
                 HandlePearlPickup();
-                AudioManager.instance.PlaySoundSFX(AudioManager.instance.wrenchPickUpSFX);
+                AudioManager.instance.PlaySoundSFX(AudioManager.instance.coinPickUpSFX);
+                EffectsManager.instance.PlayVFX(EffectsManager.instance.coinPickUpVFX, collision.transform.position, Quaternion.identity);
                 break;
 
             default:
-                return; // Exit if it's not a relevant tag
+                return;
         }
 
         StartCoroutine(PlayPickupAnimationAndDestroy(collision.gameObject));

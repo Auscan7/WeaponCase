@@ -58,6 +58,12 @@ public class EnemyStatManager : CharacterStatManager
         gemDrop.DropGem();
         itemDrop.DropItem();
 
+        EffectsManager effectsManager = EffectsManager.instance;
+        AudioManager audioManager = AudioManager.instance;
+
+        effectsManager.PlayVFX(effectsManager.enemyDeathVFX, transform.position, Quaternion.identity);
+        audioManager.PlaySoundSFX(audioManager.enemyDeathSFX);
+
         // Return enemy to the pool
         EnemyPoolManager.Instance.ReturnEnemy(gameObject, enemyPrefabReference);
     }

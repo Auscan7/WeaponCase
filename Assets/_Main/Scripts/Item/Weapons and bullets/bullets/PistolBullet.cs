@@ -8,6 +8,8 @@ public class PistolBullet : MonoBehaviour
         {
             collision.gameObject.GetComponentInParent<CharacterStatManager>().TakeDamage(PlayerUpgradeManager.Instance.pistolStats.damage);
 
+            EffectsManager.instance.PlayVFX(EffectsManager.instance.bulletHitVFX, collision.transform.position, Quaternion.identity);
+
             Destroy(gameObject);
         }
     }

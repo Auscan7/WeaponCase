@@ -235,7 +235,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.11, y: 0.11, z: 0.11}
+  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6265759957225918779}
@@ -271,7 +271,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4722767060693112874, guid: da83d01105c5d714aac1a318164c0a6e, type: 3}
   projectileSpawnPoint: {fileID: 6265759957225918779}
   projectileSpeed: 7
-  weaponIcon: {fileID: -154139334052807852, guid: 6bd6a7b9b901fe34988196dfb694e231, type: 3}
+  weaponIcon: {fileID: 21300000, guid: 35c6a7e300c7361419b64585ed77cb38, type: 3}
   weaponRange: 0
   isManualWeapon: 0
   shouldMountToSlot: 1
@@ -319,12 +319,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 200
-  m_Sprite: {fileID: -154139334052807852, guid: 6bd6a7b9b901fe34988196dfb694e231, type: 3}
-  m_Color: {r: 0.18396229, g: 1, b: 0.4125721, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 35c6a7e300c7361419b64585ed77cb38, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 5.2, y: 5.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -18668,7 +18668,7 @@ Transform:
   m_GameObject: {fileID: 7584474670492704017}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.44, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19032,8 +19032,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.16, y: 0.16, z: 0.16}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.25, y: 0.42, z: 0.25}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 472410057383244973}
   m_Father: {fileID: 3536651635202710348}
@@ -19068,7 +19068,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   projectileSpawnPoint: {fileID: 472410057383244973}
   projectileSpeed: 6.5
-  weaponIcon: {fileID: -6808977425318316616, guid: 769574c1b8f5a7545ab768a069be2667, type: 3}
+  weaponIcon: {fileID: 1788878278462605030, guid: 2b780ba643c1b7f47b371d4f189ea0d7, type: 3}
   weaponRange: 0
   isManualWeapon: 1
   shouldMountToSlot: 1
@@ -19122,7 +19122,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 200
-  m_Sprite: {fileID: -6808977425318316616, guid: 769574c1b8f5a7545ab768a069be2667, type: 3}
+  m_Sprite: {fileID: 1788878278462605030, guid: 2b780ba643c1b7f47b371d4f189ea0d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -19274,17 +19274,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.05292821, y: 0.026463985}
+  m_Offset: {x: -0.027240515, y: -0.0069396794}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.38, y: 1.58}
+    oldSize: {x: 5.19, y: 0.71}
     newSize: {x: 6.38, y: 1.58}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 6.4858565, y: 1.8446404}
+  m_Size: {x: 5.2672944, y: 0.70891947}
   m_EdgeRadius: 0
 --- !u!50 &4133801272843533867
 Rigidbody2D:

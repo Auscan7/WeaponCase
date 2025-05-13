@@ -543,8 +543,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da89429d18d3f44c9febf8aae0d94da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleSpeed: 5
-  scaleAmount: 0.5
+  scaleSpeed: 4
+  scaleAmount: 0.05
   scaleX: 1
   scaleY: 1
 --- !u!1 &7141845522669670118

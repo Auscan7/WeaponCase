@@ -5,9 +5,6 @@ public class Rocket : MonoBehaviour
     [Header("Rocket Damage Settings")]
     [SerializeField] float explosionRadius = 1f;
 
-    [Header("Explosion Effects")]
-    [SerializeField] GameObject explosionEffectPrefab;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -25,12 +22,9 @@ public class Rocket : MonoBehaviour
 
     private void Explode(CharacterStatManager excludeTarget)
     {
+        CameraShakeManager.Instance.Shake(0.3f, 0.05f);
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.rocketExplosionSFX);
-
-        if (explosionEffectPrefab != null)
-        {
-            Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
-        }
+        EffectsManager.instance.PlayVFX(EffectsManager.instance.rocketVFX, transform.position, Quaternion.identity);
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(
             transform.position,

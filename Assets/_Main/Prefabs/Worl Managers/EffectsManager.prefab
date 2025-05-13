@@ -46,3 +46,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletVFX: {fileID: 4952325379883675290, guid: 4a669c5a69c510d4c9fd72d03266a130, type: 3}
   pelletVFX: {fileID: 4952325379883675290, guid: c0751eca127276e48adb21a643c062e4, type: 3}
+  rocketVFX: {fileID: 1753279311565200, guid: a5986da717b87c046b2b6f8a0c583b45, type: 3}
+  bulletHitVFX: {fileID: 1887386285058682, guid: 79eb65b00125a9a43ae9eaa75cb41e3d, type: 3}
+  orbitalVFX: {fileID: 130346, guid: 07bf9ced87963e24299c2c2a22bfeeb6, type: 3}
+  slingShotVFX: {fileID: 1503414589296656, guid: 505f0a9187a0d514ca9afdc34c51a984, type: 3}
+  grenadeVFX: {fileID: 180702, guid: a7c694f0877ea874fa57e033221095c3, type: 3}
+  enemyDeathVFX: {fileID: 1889919486439536, guid: 35ad08272de78064cbd645a70f31f454, type: 3}
+  coinPickUpVFX: {fileID: 143964, guid: 09d9de58ef3bf5444ac94afa0e6013cb, type: 3}
+  healPickUpVFX: {fileID: 152564, guid: 0e4a7fa9fd28f154b91c98ee6fe8ebea, type: 3}
+  damagePickUpVFX: {fileID: 1260984136241199202, guid: 5fb8e716d5079f641b7f1e0ef3a9cd5c, type: 3}
