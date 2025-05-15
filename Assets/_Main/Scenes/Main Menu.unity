@@ -438,6 +438,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4335210920344013628, guid: 387f0f2090fb2ac448a7839d4af3deda, type: 3}
+      propertyPath: bulletVFX
+      value: 
+      objectReference: {fileID: 195376, guid: 346f3bf3686d682498113714ee132099, type: 3}
+    - target: {fileID: 4335210920344013628, guid: 387f0f2090fb2ac448a7839d4af3deda, type: 3}
+      propertyPath: pelletVFX
+      value: 
+      objectReference: {fileID: 195376, guid: 346f3bf3686d682498113714ee132099, type: 3}
+    - target: {fileID: 4335210920344013628, guid: 387f0f2090fb2ac448a7839d4af3deda, type: 3}
+      propertyPath: rocketVFX
+      value: 
+      objectReference: {fileID: 105310, guid: e6ea0c2b13012484ba2f5dc1054e6d75, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -619,6 +631,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2439349432307432187, guid: 65e632399734fd044b49c0dcc915509a, type: 3}
+      propertyPath: pistolFireSFX.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2439349432307432187, guid: 65e632399734fd044b49c0dcc915509a, type: 3}
+      propertyPath: 'pistolFireSFX.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 57909b1936d432f45978442463575b51, type: 3}
+    - target: {fileID: 2439349432307432187, guid: 65e632399734fd044b49c0dcc915509a, type: 3}
+      propertyPath: 'pistolFireSFX.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: e1ceeda486ac25a4b8354a119830a363, type: 3}
+    - target: {fileID: 2439349432307432187, guid: 65e632399734fd044b49c0dcc915509a, type: 3}
+      propertyPath: 'pistolFireSFX.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 52521095e0ffb5b4fa121abde5aa5d1a, type: 3}
     - target: {fileID: 2982005139311146351, guid: 65e632399734fd044b49c0dcc915509a, type: 3}
       propertyPath: m_Name
       value: Audio Manager
