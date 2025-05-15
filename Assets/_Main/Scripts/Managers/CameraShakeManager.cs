@@ -69,6 +69,8 @@ public class CameraShakeManager : MonoBehaviour
 
         while (elapsed < duration)
         {
+            if (camTransform == null) yield break;
+
             float x = Random.Range(-1f, 1f) * magnitude;
             float y = Random.Range(-1f, 1f) * magnitude;
 
@@ -78,7 +80,10 @@ public class CameraShakeManager : MonoBehaviour
             yield return null;
         }
 
-        camTransform.localPosition = originalLocalPos;
+        if (camTransform != null)
+            camTransform.localPosition = originalLocalPos;
+
         shakeCoroutine = null;
     }
+
 }
