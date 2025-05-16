@@ -135,7 +135,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 6
   m_TargetDisplay: 0
 --- !u!114 &6866018312965699636
 MonoBehaviour:
@@ -445,8 +445,8 @@ Transform:
   m_GameObject: {fileID: 5910781188211157733}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.238, y: 0.151, z: 0}
-  m_LocalScale: {x: 0.5272243, y: 0.46693885, z: 0.46273723}
+  m_LocalPosition: {x: 3.2697, y: 0.1679, z: 0}
+  m_LocalScale: {x: 0.5399831, y: 0.4772893, z: 0.46273723}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7608606556829224412}
@@ -494,7 +494,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -3360323776499699576, guid: 2b8aaec78e48eb5418de308def7c0165, type: 3}
   m_Color: {r: 1, g: 0.2783019, b: 0.2783019, a: 0.78431374}
   m_FlipX: 0
@@ -583,7 +583,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 3484287900037411390, guid: f562b4d2a1184184cb05e0b3adf469e6, type: 3}
   m_Color: {r: 1, g: 0.9198113, b: 0.9996573, a: 1}
   m_FlipX: 0

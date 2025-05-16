@@ -106,6 +106,7 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     [Header("Base Weapon Projectile Count")]
     public int baseShotgunProjectileCount = 3;
+    public int baseBowAndArrowHopCount = 2;
     public int baseGrenadeProjectileCount = 3;
 
     [Header("Boats")]

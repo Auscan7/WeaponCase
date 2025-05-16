@@ -15,5 +15,5 @@ MonoBehaviour:
   upgradeName: Orbital Strike
   positiveDescription: Rain Hell Fire
   negativeDescription: 
-  icon: {fileID: -3561148701943319872, guid: 8dbb2588305470b4183e9034cb2523f8, type: 3}
+  icon: {fileID: -7644438938001306466, guid: bf7ce50d702c0104dbaefa5c4c53c0f5, type: 3}
   border: {fileID: -8326712265333833893, guid: ad1460a1f0c26c146ad42410a98906ac, type: 3}

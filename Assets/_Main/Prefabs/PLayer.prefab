@@ -193,7 +193,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
   m_FlipX: 0
@@ -662,12 +662,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4722767060693112874, guid: 7f8b24733f23fa6489b96210706a555e, type: 3}
   projectileSpawnPoint: {fileID: 7384604786668778150}
-  projectileSpeed: 4
+  projectileSpeed: 6
   weaponIcon: {fileID: 7856409591847296691, guid: 1baf19739cdf21141986469837aa9337, type: 3}
   weaponRange: 0
   isManualWeapon: 1
   shouldMountToSlot: 1
-  spreadAngle: 45
+  spreadAngle: 35
 --- !u!212 &8698870030363030042
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -893,13 +893,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4722767060693112874, guid: 001e78c227e523c4f87870e84e553ba4, type: 3}
   projectileSpawnPoint: {fileID: 2642464509737796994}
-  projectileSpeed: 16
-  weaponIcon: {fileID: -3561148701943319872, guid: 8dbb2588305470b4183e9034cb2523f8, type: 3}
+  projectileSpeed: 30
+  weaponIcon: {fileID: -7644438938001306466, guid: bf7ce50d702c0104dbaefa5c4c53c0f5, type: 3}
   weaponRange: 0
   isManualWeapon: 0
   shouldMountToSlot: 0
   crosshairPrefab: {fileID: 5938404052151523123, guid: 9c7c17e9f093f584c9b4039b83c9eafe, type: 3}
-  spawnHeight: 25
+  spawnHeight: 40
   rocketsPerCluster: 3
   rocketSpawnDelay: 0.25
   targetOffsetRange: 1.5
@@ -1206,7 +1206,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
   m_FlipX: 0
@@ -1283,7 +1283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4722767060693112874, guid: 0a9df0e3d7515554cb9fc04784b5428e, type: 3}
   projectileSpawnPoint: {fileID: 3999304211068789902}
-  projectileSpeed: 5.5
+  projectileSpeed: 10
   weaponIcon: {fileID: -8270769010555799131, guid: 2e78c1af7ff838743a5616277b9a3472, type: 3}
   weaponRange: 0
   isManualWeapon: 1
@@ -1556,7 +1556,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
   m_FlipX: 0
@@ -1643,7 +1643,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.9811321, g: 0.77457297, b: 0.6062656, a: 1}
   m_FlipX: 0
@@ -1943,7 +1943,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.9811321, g: 0.77457297, b: 0.6062656, a: 1}
   m_FlipX: 0
@@ -2333,7 +2333,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
   m_FlipX: 0
@@ -2648,7 +2648,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.9811321, g: 0.77457297, b: 0.6062656, a: 1}
   m_FlipX: 0
@@ -7780,7 +7780,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
   m_FlipX: 0
@@ -8049,7 +8049,7 @@ Transform:
   m_GameObject: {fileID: 5281711763006064146}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.93, y: 1.04, z: 0}
+  m_LocalPosition: {x: 2.49, y: 1.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12953,7 +12953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4722767060693112874, guid: 83ebaae2461977c4a809e96b89817a6e, type: 3}
   projectileSpawnPoint: {fileID: 7078230612172693297}
-  projectileSpeed: 3
+  projectileSpeed: 4
   weaponIcon: {fileID: -7856493677412862020, guid: d8309cc2aa5916442b973db84ac356c0, type: 3}
   weaponRange: 0
   isManualWeapon: 1
@@ -13195,7 +13195,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.9811321, g: 0.77457297, b: 0.6062656, a: 1}
   m_FlipX: 0
@@ -18824,6 +18824,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8338453198446981470}
+  - component: {fileID: 347376653946443874}
   m_Layer: 3
   m_Name: Cases
   m_TagString: Untagged
@@ -18849,6 +18850,22 @@ Transform:
   - {fileID: 414046865277112248}
   m_Father: {fileID: 7186793037216869759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &347376653946443874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7830788421335500891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da89429d18d3f44c9febf8aae0d94da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleSpeed: 1.5
+  scaleAmount: 0.03
+  scaleX: 1
+  scaleY: 1
 --- !u!1 &7893314235415567378
 GameObject:
   m_ObjectHideFlags: 0
@@ -18924,7 +18941,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.9811321, g: 0.77457297, b: 0.6062656, a: 1}
   m_FlipX: 0
@@ -18961,7 +18978,7 @@ Transform:
   m_GameObject: {fileID: 7995742940403419581}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7, y: 0.82, z: 0}
+  m_LocalPosition: {x: 2.19, y: 0.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19069,7 +19086,7 @@ GameObject:
   - component: {fileID: 8357550572328571521}
   - component: {fileID: 5194578370806301525}
   - component: {fileID: 4133801272843533867}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Spear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19121,7 +19138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 0}
   projectileSpawnPoint: {fileID: 472410057383244973}
-  projectileSpeed: 6.5
+  projectileSpeed: 9
   weaponIcon: {fileID: 1788878278462605030, guid: 2b780ba643c1b7f47b371d4f189ea0d7, type: 3}
   weaponRange: 0
   isManualWeapon: 1
@@ -19132,6 +19149,7 @@ MonoBehaviour:
   defaultDamage: 15
   defaultRange: 5
   defaultFireRate: 1
+  spearTip: {fileID: 472410057383244973}
 --- !u!212 &3132377717055119048
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19812,7 +19830,7 @@ MonoBehaviour:
     poisonDamage: 0
     areaDamage: 0
     firerate: 0.33
-    range: 6
+    range: 5
   blowDartStats:
     damage: 10
     poisonDamage: 3
@@ -19886,6 +19904,7 @@ MonoBehaviour:
   baseOrbitalStrikeFirerate: 0.3
   baseGrenadeFirerate: 0.33
   baseShotgunProjectileCount: 3
+  baseBowAndArrowHopCount: 1
   baseGrenadeProjectileCount: 3
   Default: {fileID: 4612179880373492636}
   Second: {fileID: 4354568289528624014}

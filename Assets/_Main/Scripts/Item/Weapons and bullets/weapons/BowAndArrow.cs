@@ -19,7 +19,11 @@ public class BowAndArrow : Weapon
         GameObject projectile = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
 
         Vector2 direction = (targetPosition - (Vector2)spawnPos).normalized;
-        projectile.GetComponent<Rigidbody2D>().linearVelocity = direction * projectileSpeed;
+        Vector2 velocity = direction * projectileSpeed;
+
+        // Initialize arrow with velocity, hop count, and hop range
+        Arrow arrow = projectile.GetComponent<Arrow>();
+        arrow.Initialize(velocity, hops: PlayerUpgradeManager.Instance.baseBowAndArrowHopCount, range: 5f);
 
         projectile.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
 

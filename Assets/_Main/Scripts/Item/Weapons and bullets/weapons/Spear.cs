@@ -9,6 +9,7 @@ public class Spear : Weapon
     [SerializeField] private float defaultRange = 5f;
     [SerializeField] private float defaultFireRate = 1f;
 
+    [SerializeField] private Transform spearTip;
     private Vector3 originalLocalPosition;
     private Quaternion originalLocalRotation;
     private bool isThrown = false;
@@ -50,8 +51,8 @@ public class Spear : Weapon
             aimLine = gameObject.AddComponent<LineRenderer>();
         }
         aimLine.positionCount = 2;
-        aimLine.startWidth = 0.1f;
-        aimLine.endWidth = 0.1f;
+        aimLine.startWidth = 0.05f;
+        aimLine.endWidth = 0.05f;
         aimLine.material = new Material(Shader.Find("Sprites/Default"));
         aimLine.startColor = new Color(1f, 0f, 0f, 0.5f);
         aimLine.endColor = new Color(1f, 0f, 0f, 0.5f);
@@ -127,7 +128,7 @@ public class Spear : Weapon
 
                 // Check if we've reached max distance
                 float distanceFromStart = Vector2.Distance(worldThrowStartPosition, transform.position);
-                if (distanceFromStart >= weaponRange)
+                if (distanceFromStart >= PlayerUpgradeManager.Instance.spearStats.range)
                 {
                     StartReturning();
                 }
@@ -157,7 +158,7 @@ public class Spear : Weapon
         {
             // Update aiming line when not thrown
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 spearPos = transform.position;
+            Vector2 spearPos = spearTip.position;
             
             aimLine.SetPosition(0, spearPos);
             aimLine.SetPosition(1, mousePos);
@@ -218,7 +219,7 @@ public class Spear : Weapon
     {
         if (isThrown) return; // Don't update aiming line while thrown
         
-        Vector2 spearPos = transform.position;
+        Vector2 spearPos = spearTip.position;
         
         aimLine.SetPosition(0, spearPos);
         aimLine.SetPosition(1, targetPosition);

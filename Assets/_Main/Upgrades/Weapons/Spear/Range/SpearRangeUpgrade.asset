@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e8af91e7f6ce7348ab95af1106d8c78, type: 3}
+  m_Name: SpearRangeUpgrade
+  m_EditorClassIdentifier: 
+  upgradeName: Range
+  positiveDescription: Spear Range +0.75
+  negativeDescription: 
+  icon: {fileID: 1788878278462605030, guid: 2b780ba643c1b7f47b371d4f189ea0d7, type: 3}
+  border: {fileID: -8220459746488438067, guid: 432a1acf00022b44190d156e3fe73681, type: 3}
+  rangeIncrease: 0.75

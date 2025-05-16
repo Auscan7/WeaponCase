@@ -38,6 +38,7 @@ public class Grenade : Weapon
         float firerate = PlayerUpgradeManager.Instance.grenadeStats.firerate;
 
         WeaponCooldownUIManager.Instance.TriggerCooldown("Grenade", firerate);
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.grenadeSFX);
 
         float angleStep = 360f / PlayerUpgradeManager.Instance.baseGrenadeProjectileCount;
         float currentAngle = 0f;

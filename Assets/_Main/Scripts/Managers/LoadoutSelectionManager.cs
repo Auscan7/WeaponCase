@@ -15,7 +15,6 @@ public class LoadoutSelectionManager : MonoBehaviour
 
     public GameObject loadoutSelectionPanel;
     public GameObject gameTimeText;
-    public GameObject Tutorial;
     public GameObject XPLevel;
     public GameObject PlayerHP;
     public GameObject WeaponCooldownSlots;
@@ -236,7 +235,6 @@ public class LoadoutSelectionManager : MonoBehaviour
         AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIClickSFX);
 
         loadoutSelectionPanel.SetActive(false);
-        Tutorial.SetActive(true);
         PlayerUpgradeManager.Instance.ActivateWeapon(selectedWeapon.name);
 
         if (selectedWeapon != null)

@@ -34,7 +34,7 @@ public class GrenadeProjectile : MonoBehaviour
         if (hasExploded) return;
         hasExploded = true;
 
-        AudioManager.instance.PlaySoundSFX(AudioManager.instance.grenadeSFX);
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.grenadeExplodeSFX);
         CameraShakeManager.Instance.Shake(0.2f, 0.05f);
         EffectsManager.instance.PlayVFX(EffectsManager.instance.grenadeVFX, transform.position, Quaternion.identity);
 

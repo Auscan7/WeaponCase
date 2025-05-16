@@ -20,6 +20,7 @@ public class EffectsManager : MonoBehaviour
     public GameObject coinPickUpVFX;
     public GameObject healPickUpVFX;
     public GameObject damagePickUpVFX;
+    public GameObject levelUpVFX;
 
     private void Awake()
     {

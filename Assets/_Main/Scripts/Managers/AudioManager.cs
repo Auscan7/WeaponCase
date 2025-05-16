@@ -20,6 +20,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] rocketFireSFX;
     public AudioClip[] rocketExplosionSFX;
     public AudioClip[] grenadeSFX;
+    public AudioClip[] grenadeExplodeSFX;
     public AudioClip[] slingShotSFX;
     public AudioClip[] orbitalStrikeSFX;
 
@@ -31,6 +32,7 @@ public class AudioManager : MonoBehaviour
     [Header("UI")]
     public AudioClip[] UIClickSFX;
     public AudioClip[] UIHoverSFX;
+    public AudioClip[] LevelUpSFX;
 
     [Header("DropSFX")]
     public AudioClip[] wrenchPickUpSFX;

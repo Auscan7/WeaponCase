@@ -3,10 +3,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using System.Collections;
 
 public class PlayerLevelSystem : MonoBehaviour
 {
     public static PlayerLevelSystem instance;
+    [SerializeField]private Transform playerTransform;
 
     [Header("Level System Settings")]
     public Image levelBar;
@@ -87,7 +89,9 @@ public class PlayerLevelSystem : MonoBehaviour
         CalculateXPRequiredForNextLevel();
         UpdateLevelBar();
 
-        ShowUpgradeScreen();
+        EffectsManager.instance.PlayVFX(EffectsManager.instance.levelUpVFX, playerTransform.position, Quaternion.identity);
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.LevelUpSFX);
+        StartCoroutine(ShowUpgradeScreen());
     }
 
     private void CalculateXPRequiredForNextLevel()
@@ -110,8 +114,9 @@ public class PlayerLevelSystem : MonoBehaviour
         }
     }
 
-    private void ShowUpgradeScreen()
+    private IEnumerator ShowUpgradeScreen()
     {
+        yield return new WaitForSeconds(0.55f); // Wait for a short duration before showing the upgrade screen
         if (upgradeScreen != null && !isUpgradeScreenActive)
         {
             upgradeScreen.SetActive(true);

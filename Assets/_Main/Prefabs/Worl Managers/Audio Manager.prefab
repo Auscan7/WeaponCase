@@ -72,6 +72,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8b3f676fe7b41044495a2964396b8ba3, type: 3}
   - {fileID: 8300000, guid: f01c623f724825e44a923d1ae50256f2, type: 3}
   grenadeSFX:
+  - {fileID: 8300000, guid: a76b32836dc7cc44aa9a52f0694ee199, type: 3}
+  - {fileID: 8300000, guid: ab7f421ad803a894fb4f2fae8fa250a4, type: 3}
+  - {fileID: 8300000, guid: c6d45d69015ca934fbd95932874c5b59, type: 3}
+  grenadeExplodeSFX:
   - {fileID: 8300000, guid: 79c3cb7a26813d146b07c293b0324039, type: 3}
   - {fileID: 8300000, guid: 2d99c166c2da2b14f835eb0d6d418369, type: 3}
   slingShotSFX:
@@ -95,6 +99,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 81652031b64c342cc8dbc59c138d77c5, type: 3}
   UIHoverSFX:
   - {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
+  LevelUpSFX:
+  - {fileID: 8300000, guid: 657578e4be6b64dbf9b09deada272e55, type: 3}
   wrenchPickUpSFX:
   - {fileID: 8300000, guid: 46578e31047a4c84089678cf52b4cfe4, type: 3}
   - {fileID: 8300000, guid: 634944ea6a7f4e141b1f3cfdec7933f0, type: 3}
