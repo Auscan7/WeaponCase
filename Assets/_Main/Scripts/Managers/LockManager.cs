@@ -64,7 +64,7 @@ public class LockManager : MonoBehaviour
 
         if (priceText != null)
         {
-            priceText.text = $"{unlockPrice} Pearls";
+            priceText.text = $"{unlockPrice} Coins";
             priceText.gameObject.SetActive(isLocked);
         }
     }

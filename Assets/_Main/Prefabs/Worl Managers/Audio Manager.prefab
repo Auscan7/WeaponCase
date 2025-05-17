@@ -50,8 +50,8 @@ MonoBehaviour:
   audioSourceSFX: {fileID: 6041800605129208568}
   audioSourceMenuMusic: {fileID: 3511591386719951176}
   audioSourceLevelMusic: {fileID: 4528186854474830775}
-  menuMusic: {fileID: 8300000, guid: f644b97744dc2d343b3f9f7949924806, type: 3}
-  levelMusic: {fileID: 8300000, guid: 422e783c8c3a98a47be8df6729d40e1e, type: 3}
+  menuMusic: {fileID: 8300000, guid: dc702e79e37c2834ca3fd17d5e74ae9f, type: 3}
+  levelMusic: {fileID: 8300000, guid: 5fb33d6336cfab943b4891d438b5039b, type: 3}
   bowAndArrowFireSFX:
   - {fileID: 8300000, guid: a506953ddad4ad3419aa9cc9a6f142bf, type: 3}
   - {fileID: 8300000, guid: 898f8b1e0d99bb1448e54d2999639ee7, type: 3}
@@ -101,6 +101,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
   LevelUpSFX:
   - {fileID: 8300000, guid: 657578e4be6b64dbf9b09deada272e55, type: 3}
+  BoatUnlockSFX:
+  - {fileID: 8300000, guid: 49fd8f26329a7d447b6232131cfd5e71, type: 3}
+  NotEnoughMoneySFX:
+  - {fileID: 8300000, guid: fcad7d2908b3dbf4caf9c998c47b6b1f, type: 3}
   wrenchPickUpSFX:
   - {fileID: 8300000, guid: 46578e31047a4c84089678cf52b4cfe4, type: 3}
   - {fileID: 8300000, guid: 634944ea6a7f4e141b1f3cfdec7933f0, type: 3}

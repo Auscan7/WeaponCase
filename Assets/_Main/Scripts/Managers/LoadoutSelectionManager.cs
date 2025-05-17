@@ -177,7 +177,7 @@ public class LoadoutSelectionManager : MonoBehaviour
     {
         currentLockedBoat = boat;
         unlockBoatPreviewImage.sprite = boat.boatIconImage.sprite;
-        unlockBoatPriceText.text = $"{boat.lockManager.unlockPrice} Pearls";
+        unlockBoatPriceText.text = $"{boat.lockManager.unlockPrice} Coins";
 
         unlockBoatButton.onClick.RemoveAllListeners();
         unlockBoatButton.onClick.AddListener(UnlockCurrentBoat);
@@ -196,11 +196,12 @@ public class LoadoutSelectionManager : MonoBehaviour
 
         if (currentLockedBoat.lockManager.UnlockBoat())
         {
+            AudioManager.instance.PlaySoundSFX(AudioManager.instance.BoatUnlockSFX);
             SelectBoat(currentLockedBoat, playAudio: false);
         }
         else
         {
-            AudioManager.instance.PlaySoundSFX(AudioManager.instance.wrenchPickUpSFX);
+            AudioManager.instance.PlaySoundSFX(AudioManager.instance.NotEnoughMoneySFX);
             ShowNotEnoughMoneyPopup();
             return;
         }

@@ -33,6 +33,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] UIClickSFX;
     public AudioClip[] UIHoverSFX;
     public AudioClip[] LevelUpSFX;
+    public AudioClip[] BoatUnlockSFX;
+    public AudioClip[] NotEnoughMoneySFX;
 
     [Header("DropSFX")]
     public AudioClip[] wrenchPickUpSFX;

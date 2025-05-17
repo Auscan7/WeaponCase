@@ -3,17 +3,20 @@ using System.Collections.Generic;
 
 public class Arrow : MonoBehaviour
 {
-    public int maxHops = 3; // adjustable hop count
-    private float hopRange = 7.5f; // range to search for next target
+    public int maxHops = 3;
+    private float hopRange = 7.5f;
     private int currentHopCount = 0;
     private Transform currentTarget;
     private float speed;
     private Rigidbody2D rb;
 
+    // Keep track of already hit enemies
+    private HashSet<Transform> hitEnemies = new HashSet<Transform>();
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        speed = rb.linearVelocity.magnitude; // maintain initial speed
+        speed = rb.linearVelocity.magnitude;
     }
 
     private void Update()
@@ -32,9 +35,15 @@ public class Arrow : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            Transform hitTarget = collision.transform;
+
+            // Avoid processing same enemy again
+            if (hitEnemies.Contains(hitTarget)) return;
+
             // Damage logic
             collision.GetComponentInParent<CharacterStatManager>()?.TakeDamage(PlayerUpgradeManager.Instance.bowAndArrowStats.damage);
 
+            hitEnemies.Add(hitTarget);
             currentHopCount++;
 
             if (currentHopCount >= maxHops)
@@ -43,21 +52,20 @@ public class Arrow : MonoBehaviour
                 return;
             }
 
-            // Find next target
-            Transform nextTarget = FindNextTarget(collision.transform);
-
+            // Find next valid target
+            Transform nextTarget = FindNextTarget();
             if (nextTarget != null)
             {
                 currentTarget = nextTarget;
             }
             else
             {
-                Destroy(gameObject); // no valid targets left
+                Destroy(gameObject);
             }
         }
     }
 
-    private Transform FindNextTarget(Transform currentHit)
+    private Transform FindNextTarget()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -66,20 +74,21 @@ public class Arrow : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-            if (enemy.transform == currentHit) continue;
+            Transform enemyTransform = enemy.transform;
 
-            float dist = Vector2.Distance(transform.position, enemy.transform.position);
+            if (hitEnemies.Contains(enemyTransform)) continue;
+
+            float dist = Vector2.Distance(transform.position, enemyTransform.position);
             if (dist < minDist && dist <= hopRange)
             {
                 minDist = dist;
-                closest = enemy.transform;
+                closest = enemyTransform;
             }
         }
 
         return closest;
     }
 
-    // Optional setup from BowAndArrow script
     public void Initialize(Vector2 initialVelocity, int hops, float range)
     {
         rb = GetComponent<Rigidbody2D>();
