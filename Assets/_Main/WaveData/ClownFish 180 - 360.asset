@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36ce8dc6823e47945ab892f66199ca8a, type: 3}
+  m_Name: ClownFish 180 - 360
+  m_EditorClassIdentifier: 
+  spawnEvents:
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
+    spawnTime: 180
+    amount: 12
+    spawnInterval: 6
+    spawnZoneName: SpawnerTop
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
+    spawnTime: 185
+    amount: 11
+    spawnInterval: 8
+    spawnZoneName: SpawnerBottom
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
+    spawnTime: 188
+    amount: 12
+    spawnInterval: 7
+    spawnZoneName: SpawnerLeft
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
+    spawnTime: 195
+    amount: 14
+    spawnInterval: 4
+    spawnZoneName: SpawnerTopRight
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
+    spawnTime: 235
+    amount: 14
+    spawnInterval: 0
+    spawnZoneName: SpawnerRight
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
+    spawnTime: 245
+    amount: 22
+    spawnInterval: 5
+    spawnZoneName: SpawnerBottomRight
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
+    spawnTime: 248
+    amount: 20
+    spawnInterval: 4
+    spawnZoneName: SpawnerBottomLeft
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
+    spawnTime: 251
+    amount: 19
+    spawnInterval: 6
+    spawnZoneName: SpawnerTop
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
+    spawnTime: 251
+    amount: 17
+    spawnInterval: 0
+    spawnZoneName: SpawnerBottom

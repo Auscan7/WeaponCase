@@ -15,6 +15,6 @@ MonoBehaviour:
   upgradeName: Crit Damage
   positiveDescription: Crit Damage +30%
   negativeDescription: 
-  icon: {fileID: 21300000, guid: 3c6f5b7a54bd84489ba7d655c5b7b812, type: 3}
+  icon: {fileID: 21300000, guid: f6e2a230245c5439bae9bedc6572e336, type: 3}
   border: {fileID: -8220459746488438067, guid: 432a1acf00022b44190d156e3fe73681, type: 3}
   critDamageIncrease: 0.3

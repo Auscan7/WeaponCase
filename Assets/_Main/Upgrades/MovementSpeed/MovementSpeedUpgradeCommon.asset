@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9661d68f13840642ba2dd8ac60425c7, type: 3}
+  m_Name: MovementSpeedUpgradeCommon
+  m_EditorClassIdentifier: 
+  upgradeName: Speed
+  positiveDescription: Sailing Speed +15%
+  negativeDescription: 
+  icon: {fileID: 21300000, guid: a2646f4f567c14e9ba80f11f76857220, type: 3}
+  border: {fileID: -4739412847751887214, guid: 457f3f38e845c2543bbeac3632250325, type: 3}
+  movementSpeedIncrease: 0.15

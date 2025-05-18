@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CritChanceUpgrade", menuName = "Upgrades/Universal/CritChance/CritChanceUpgrade")]
+[CreateAssetMenu(fileName = "CritChanceUpgrade", menuName = "Upgrades/Universal/CritChanceUpgrade")]
 public class CritChanceUpgrade : Upgrade
 {
     public float critChanceIncrease;

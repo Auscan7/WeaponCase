@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36ce8dc6823e47945ab892f66199ca8a, type: 3}
+  m_Name: Stingray 360-720
+  m_EditorClassIdentifier: 
+  spawnEvents:
+  - enemyPrefab: {fileID: 4871557909895165438, guid: bd3dda995321f6343b97a46360e45e69, type: 3}
+    spawnTime: 365
+    amount: 10
+    spawnInterval: 25
+    spawnZoneName: SpawnerTop
+  - enemyPrefab: {fileID: 4871557909895165438, guid: bd3dda995321f6343b97a46360e45e69, type: 3}
+    spawnTime: 425
+    amount: 20
+    spawnInterval: 10
+    spawnZoneName: SpawnerBottom
+  - enemyPrefab: {fileID: 4871557909895165438, guid: bd3dda995321f6343b97a46360e45e69, type: 3}
+    spawnTime: 495
+    amount: 4
+    spawnInterval: 0
+    spawnZoneName: SpawnerBottom
+  - enemyPrefab: {fileID: 4871557909895165438, guid: bd3dda995321f6343b97a46360e45e69, type: 3}
+    spawnTime: 375
+    amount: 12
+    spawnInterval: 25
+    spawnZoneName: SpawnerTopLeft

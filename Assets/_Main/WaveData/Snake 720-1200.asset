@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36ce8dc6823e47945ab892f66199ca8a, type: 3}
+  m_Name: Snake 720-1200
+  m_EditorClassIdentifier: 
+  spawnEvents:
+  - enemyPrefab: {fileID: 4871557909895165438, guid: c3634c317befa0747a956c13714bbc5d, type: 3}
+    spawnTime: 720
+    amount: 60
+    spawnInterval: 10
+    spawnZoneName: SpawnerTop
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 3ac3c96060044484b83fce9d2e2b1d61, type: 3}
+    spawnTime: 790
+    amount: 60
+    spawnInterval: 8
+    spawnZoneName: SpawnerBottom
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 3ac3c96060044484b83fce9d2e2b1d61, type: 3}
+    spawnTime: 850
+    amount: 15
+    spawnInterval: 0
+    spawnZoneName: SpawnerRight
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 3ac3c96060044484b83fce9d2e2b1d61, type: 3}
+    spawnTime: 720
+    amount: 48
+    spawnInterval: 15
+    spawnZoneName: SpawnerLeft
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 3ac3c96060044484b83fce9d2e2b1d61, type: 3}
+    spawnTime: 735
+    amount: 40
+    spawnInterval: 12
+    spawnZoneName: SpawnerTop
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 3ac3c96060044484b83fce9d2e2b1d61, type: 3}
+    spawnTime: 735
+    amount: 40
+    spawnInterval: 12
+    spawnZoneName: SpawnerBottom

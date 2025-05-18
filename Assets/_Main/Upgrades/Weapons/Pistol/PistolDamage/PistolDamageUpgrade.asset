@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PistolDamageUpgrade
   m_EditorClassIdentifier: 
   upgradeName: Damage
-  positiveDescription: Pistol Damage +20%
+  positiveDescription: Pistol Damage +25%
   negativeDescription: 
   icon: {fileID: -8270769010555799131, guid: 2e78c1af7ff838743a5616277b9a3472, type: 3}
-  border: {fileID: -4739412847751887214, guid: 457f3f38e845c2543bbeac3632250325, type: 3}
-  damageIncrease: 2
+  border: {fileID: -8220459746488438067, guid: 432a1acf00022b44190d156e3fe73681, type: 3}
+  damageIncrease: 2.5

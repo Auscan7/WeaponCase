@@ -251,7 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMovementManager: {fileID: 0}
   currentHealth: 0
-  maxHealth: 1500
+  maxHealth: 1600
   healthBar: {fileID: 1297005040029400982}
   healthBarParent: {fileID: 7141845522669670118}
   enemyPrefabReference: {fileID: 4871557909895165438}
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  moveSpeed: 1
+  moveSpeed: 1.1
   spriteTransform: {fileID: 7608606556829224412}
   rotationSpeed: 5
   stoppingDistance: 1
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d2ef4881367e5a46b729b377a21c4e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coneAttackDamage: 80
+  coneAttackDamage: 120
   coneAngle: 30
   coneRange: 5.5
   attackCooldown: 3
