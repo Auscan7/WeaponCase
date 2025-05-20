@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: MagnetUpgradeUnCommon
   m_EditorClassIdentifier: 
   upgradeName: Magnet
-  positiveDescription: Magnet Range +4
+  positiveDescription: Magnet Range +5
   negativeDescription: 
-  icon: {fileID: 21300000, guid: 5d13a0f26748d7046a6d6d00efb725f1, type: 3}
+  icon: {fileID: 21300000, guid: e4a7e7c076bc74236bd04800fb334a8b, type: 3}
   border: {fileID: -8220459746488438067, guid: 432a1acf00022b44190d156e3fe73681, type: 3}
-  magnetRadiusIncrease: 0.4
+  magnetRadiusIncrease: 0.5

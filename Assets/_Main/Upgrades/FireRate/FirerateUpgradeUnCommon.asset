@@ -15,6 +15,6 @@ MonoBehaviour:
   upgradeName: Fire Rate
   positiveDescription: All Fire Rate +15%
   negativeDescription: 
-  icon: {fileID: 21300000, guid: 60759695e45b0de46931d82d35be6e00, type: 3}
+  icon: {fileID: 21300000, guid: da2823c22a785446a85645b64701ee80, type: 3}
   border: {fileID: -8220459746488438067, guid: 432a1acf00022b44190d156e3fe73681, type: 3}
   fireRateMultiplierIncrease: 0.15

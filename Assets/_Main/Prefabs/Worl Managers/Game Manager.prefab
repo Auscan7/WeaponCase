@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3558812063020903176}
   - component: {fileID: 4874332663972484453}
   - component: {fileID: 5800821656016653949}
+  - component: {fileID: 5766024639618474752}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -142,7 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df726c18376523541932c823e5e232bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vortexSpawner: {fileID: 0}
 --- !u!114 &5800821656016653949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,3 +172,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 676c7c5164f9b7c41b2be1a0f8b0964e, type: 2}
   - {fileID: 11400000, guid: e74986dbf424c164aa9ae401106917c0, type: 2}
   - {fileID: 11400000, guid: df15bd8c9826d504cb55725d721ad5a7, type: 2}
+--- !u!114 &5766024639618474752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3438171215213273933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473e4e0a97eb04e458644a356aef1759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  superSize: 1

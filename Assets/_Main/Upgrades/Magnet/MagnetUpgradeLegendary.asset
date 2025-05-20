@@ -15,6 +15,6 @@ MonoBehaviour:
   upgradeName: Magnet
   positiveDescription: Magnet Range +2
   negativeDescription: 
-  icon: {fileID: 21300000, guid: 5d13a0f26748d7046a6d6d00efb725f1, type: 3}
+  icon: {fileID: 21300000, guid: e4a7e7c076bc74236bd04800fb334a8b, type: 3}
   border: {fileID: -8326712265333833893, guid: ad1460a1f0c26c146ad42410a98906ac, type: 3}
   magnetRadiusIncrease: 2

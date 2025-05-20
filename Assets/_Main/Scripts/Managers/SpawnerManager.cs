@@ -7,8 +7,6 @@ public class SpawnerManager : MonoBehaviour
 
     private List<EnemySpawner> spawners = new List<EnemySpawner>();
 
-    [SerializeField]private VortexSpawner vortexSpawner;
-
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -29,15 +27,11 @@ public class SpawnerManager : MonoBehaviour
     {
         foreach (var spawner in spawners)
             spawner.PauseSpawning();
-
-        vortexSpawner.PauseSpawning();
     }
 
     public void ResumeAllSpawners()
     {
         foreach (var spawner in spawners)
             spawner.ResumeSpawning();
-
-        vortexSpawner.ResumeSpawning();
     }
 }

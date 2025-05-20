@@ -249,7 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMovementManager: {fileID: 0}
   currentHealth: 0
-  maxHealth: 4000
+  maxHealth: 50000
   healthBar: {fileID: 1297005040029400982}
   healthBarParent: {fileID: 7141845522669670118}
   enemyPrefabReference: {fileID: 4871557909895165438}
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edbcc1895d6e24458976271270887d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 80
+  damageAmount: 100
 --- !u!114 &4526318695741246110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37d3ed17747538f41806b987a4d6720b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tentacleDamage: 80
+  tentacleDamage: 150
   attackCooldown: 3
   windupTime: 1
   tentacleLifetime: 0.55

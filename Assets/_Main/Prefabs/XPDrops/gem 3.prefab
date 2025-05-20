@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gemType: 3
-  xpValue: 40
+  xpValue: 50
   moveSpeed: 7
   collectDistance: 0.5
 --- !u!58 &6053777753935474727

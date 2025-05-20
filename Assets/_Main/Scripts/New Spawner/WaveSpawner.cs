@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -72,11 +72,35 @@ public class WaveSpawner : MonoBehaviour
             GameObject enemy = EnemyPoolManager.Instance.GetEnemy(spawn.enemyPrefab);
             if (enemy != null)
             {
-                enemy.transform.position = spawnZone.position;
+                Vector3 spawnPosition = spawnZone.position;
+                bool foundFreeSpot = false;
+                float searchRadius = 2f;
+                float checkRadius = 0.3f;
+                int maxAttempts = 15;
+
+                for (int attempt = 0; attempt < maxAttempts; attempt++)
+                {
+                    Vector2 randomOffset = Random.insideUnitCircle * searchRadius;
+                    Vector3 candidatePosition = spawnZone.position + new Vector3(randomOffset.x, randomOffset.y, 0f);
+
+                    if (!Physics2D.OverlapCircle(candidatePosition, checkRadius))
+                    {
+                        spawnPosition = candidatePosition;
+                        foundFreeSpot = true;
+                        break;
+                    }
+                }
+
+                if (!foundFreeSpot)
+                {
+                    Debug.LogWarning($"[{spawn.enemyPrefab.name}] could not find non-overlapping spawn spot after {maxAttempts} tries. Using default zone position.");
+                }
+
+                enemy.transform.position = spawnPosition;
                 enemy.transform.rotation = Quaternion.identity;
             }
 
-            if (i < spawn.amount - 1) // Wait between spawns, skip after last
+            if (i < spawn.amount - 1)
             {
                 yield return new WaitForSeconds(spawn.spawnInterval);
             }
