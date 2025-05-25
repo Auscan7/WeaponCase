@@ -53,6 +53,14 @@ public class EnemyStatManager : CharacterStatManager
         }
     }
 
+    protected override void Start()
+    {
+        float multiplier = DifficultyManager.instance.GetCurrentEnemyHealthMultiplier();
+        maxHealth = Mathf.RoundToInt(maxHealth * multiplier);
+        currentHealth = maxHealth;
+    }
+
+
     public override void HandleDeath()
     {
         gemDrop.DropGem();

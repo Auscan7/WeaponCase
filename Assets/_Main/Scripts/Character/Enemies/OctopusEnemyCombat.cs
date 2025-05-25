@@ -34,6 +34,9 @@ public class OctopusEnemyCombat : MonoBehaviour
         InitializePool(tentaclePool, tentaclePrefab, poolSize);
         InitializePool(indicatorPool, indicatorPrefab, poolSize);
         StartCoroutine(TentacleAttackRoutine());
+
+        float multiplier = DifficultyManager.instance.GetCurrentEnemyDamageMultiplier();
+        tentacleDamage *= multiplier;
     }
 
     private void InitializePool(Queue<GameObject> pool, GameObject prefab, int size)

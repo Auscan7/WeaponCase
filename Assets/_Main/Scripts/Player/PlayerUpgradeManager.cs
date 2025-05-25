@@ -24,6 +24,7 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     [Header("Weapon Damage Multipliers")]
     public float pistolDamageMultiplier = 1f;
+    public float boatColliderDamageMultiplier = 1f;
     public float bowAndArrowDamageMultiplier = 1f;
     public float spearDamageMultiplier = 1f;
     public float blowDartDamageMultiplier = 1f;
@@ -278,6 +279,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     public void ResetWeaponDamage()
     {
         pistolStats.damage = basePistolDamage * playerDamageMultiplier;
+        boatColliderStats.damage = baseBoatColliderDamage * playerDamageMultiplier;
         bowAndArrowStats.damage = baseBowAndArrowDamage * playerDamageMultiplier;
         spearStats.damage = baseSpearDamage * playerDamageMultiplier;
         blowDartStats.damage = baseBlowDartDamage * playerDamageMultiplier;
@@ -314,6 +316,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     {
         // Apply both player-wide and weapon-specific multipliers
         pistolStats.damage = basePistolDamage * playerDamageMultiplier * pistolDamageMultiplier;
+        boatColliderStats.damage = baseBoatColliderDamage * boatColliderDamageMultiplier;
         bowAndArrowStats.damage = baseBowAndArrowDamage * playerDamageMultiplier * bowAndArrowDamageMultiplier;
         spearStats.damage = baseSpearDamage * playerDamageMultiplier * spearDamageMultiplier;
         blowDartStats.damage = baseBlowDartDamage * playerDamageMultiplier * blowDartDamageMultiplier;

@@ -12,12 +12,13 @@ public class CharacterCombatManager : MonoBehaviour
 
     protected virtual void Start()
     {
-        
+
     }
 
     protected virtual void Attack(GameObject target)
     {
         CharacterStatManager targetStats = target.GetComponentInParent<CharacterStatManager>();
+
         if (targetStats != null)
         {
             targetStats.TakeDamage(damageAmount);

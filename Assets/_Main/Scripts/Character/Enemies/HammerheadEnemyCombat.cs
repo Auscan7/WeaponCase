@@ -28,6 +28,9 @@ public class HammerheadCombat : MonoBehaviour
 
     private void Start()
     {
+        float multiplier = DifficultyManager.instance.GetCurrentEnemyDamageMultiplier();
+        coneAttackDamage *= multiplier;
+
         attackIndicator?.SetActive(false);
         savedDirection = transform.right;
     }

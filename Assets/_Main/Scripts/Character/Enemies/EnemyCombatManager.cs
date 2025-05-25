@@ -14,6 +14,8 @@ public class EnemyCombatManager : CharacterCombatManager
     override protected void Start()
     {
         enemyManager = GetComponent<EnemyManager>();
+        float multiplier = DifficultyManager.instance.GetCurrentEnemyDamageMultiplier();
+        damageAmount *= multiplier;
     }
 
     protected override void Update()

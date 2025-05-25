@@ -74,6 +74,7 @@ public class GameTimeManager : MonoBehaviour
 
     public void LevelCompletedTrigger()
     {
+        DifficultyManager.instance.UnlockNextDifficulty();
         int earnedThisSession = CurrencyManager.Instance.Currency - startingCurrency;
         winEarningsText.text = "Earnings: " + earnedThisSession.ToString();
 

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class JuicyButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    private Button buttonComponent;
     private Vector3 originalScale;
     private Image buttonImage;
     private Color originalColor;
@@ -24,6 +25,7 @@ public class JuicyButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void Awake()
     {
+        buttonComponent = GetComponent<Button>();
         originalScale = transform.localScale;
         buttonImage = GetComponent<Image>();
         if (buttonImage != null)
@@ -33,7 +35,7 @@ public class JuicyButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void Update()
     {
-        if (enableHoverBounce && isHovering)
+        if (IsButtonInteractable() && enableHoverBounce && isHovering)
         {
             bounceTimer += Time.unscaledDeltaTime * bounceSpeed;
             float scaleOffset = Mathf.Sin(bounceTimer) * bounceAmount;
@@ -41,8 +43,15 @@ public class JuicyButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
     }
 
+    private bool IsButtonInteractable()
+    {
+        return buttonComponent == null || buttonComponent.interactable;
+    }
+
     public void OnPointerDown(PointerEventData eventData)
     {
+        if (!IsButtonInteractable()) return;
+
         StopAllCoroutines();
         StartCoroutine(ScaleButton(originalScale * punchScale, punchTime));
         if (buttonImage != null)
@@ -54,6 +63,8 @@ public class JuicyButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        if (!IsButtonInteractable()) return;
+
         StopAllCoroutines();
         StartCoroutine(ScaleButton(originalScale, punchTime));
         if (buttonImage != null)
@@ -64,9 +75,11 @@ public class JuicyButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (!IsButtonInteractable()) return;
+
         isHovering = true;
-        bounceTimer = 0f; // reset the timer for smooth start
-        AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIHoverSFX); // Play hover sound
+        bounceTimer = 0f;
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.UIHoverSFX);
         if (buttonImage != null)
             buttonImage.color = Color.Lerp(originalColor, flashColor, 0.3f);
     }
@@ -74,7 +87,7 @@ public class JuicyButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerExit(PointerEventData eventData)
     {
         isHovering = false;
-        transform.localScale = originalScale; // Reset scale immediately
+        transform.localScale = originalScale;
         if (buttonImage != null)
             buttonImage.color = originalColor;
     }
