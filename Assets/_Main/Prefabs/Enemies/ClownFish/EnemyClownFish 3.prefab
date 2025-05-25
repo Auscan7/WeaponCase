@@ -234,7 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMovementManager: {fileID: 0}
   currentHealth: 0
-  maxHealth: 400
+  maxHealth: 100
   healthBar: {fileID: 1297005040029400982}
   healthBarParent: {fileID: 7141845522669670118}
   enemyPrefabReference: {fileID: 4871557909895165438}

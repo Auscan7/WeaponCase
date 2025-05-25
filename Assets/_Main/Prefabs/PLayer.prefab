@@ -118,6 +118,101 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &813421029631570149
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8858545579985479479}
+  - component: {fileID: 8969071682043223774}
+  - component: {fileID: 3520598804323547462}
+  m_Layer: 7
+  m_Name: Smasher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8858545579985479479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813421029631570149}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00044588334, y: 0, z: 0}
+  m_LocalScale: {x: 0.68333334, y: 0.68333334, z: 0.68333334}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5590250442942977430}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8969071682043223774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813421029631570149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272a8dfe55e785d46985064c2dda334a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!60 &3520598804323547462
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813421029631570149}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.3454897, y: 1.7381955}
+      - {x: 1.4442296, y: -2.0129728}
+      - {x: 3.1520557, y: -0.094811715}
+  m_UseDelaunayMesh: 0
 --- !u!1 &844430462081782139
 GameObject:
   m_ObjectHideFlags: 0
@@ -2386,6 +2481,7 @@ Transform:
   - {fileID: 4981075485327419988}
   - {fileID: 331384754050351842}
   - {fileID: 8588293623616301939}
+  - {fileID: 8858545579985479479}
   m_Father: {fileID: 8338453198446981470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1870937498231256014
@@ -2481,10 +2577,7 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: 2.061367, y: -0.01130867}
-  - {x: 1.7836381, y: -0.4180574}
-  - {x: 1.2043798, y: -1.0616848}
-  - {x: 1.0025129, y: -1.2222992}
-  - {x: 0.7221508, y: -1.204927}
+  - {x: 1.9560145, y: -0.07715386}
   - {x: 0.59793293, y: -1.3097073}
   - {x: -0.10111351, y: -1.273647}
   - {x: -0.57696605, y: -1.3782445}
@@ -2501,15 +2594,106 @@ EdgeCollider2D:
   - {x: -1.5830816, y: 1.2217075}
   - {x: -1.214204, y: 1.2361068}
   - {x: 0.6653281, y: 1.176615}
-  - {x: 0.7878071, y: 1.1641326}
-  - {x: 0.94025236, y: 1.1235769}
-  - {x: 1.5778319, y: 0.50230366}
-  - {x: 1.7257525, y: 0.3412162}
-  - {x: 2.0428562, y: -0.002033025}
+  - {x: 0.7878071, y: 1.100804}
+  - {x: 0.8927558, y: 1.0681643}
+  - {x: 1.5224192, y: 0.46272314}
+  - {x: 1.6663818, y: 0.30955184}
+  - {x: 1.9557792, y: -0.061403677}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!1 &4469345161935460870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7005348782693149690}
+  - component: {fileID: 1460361439408619609}
+  - component: {fileID: 4158221138986514671}
+  m_Layer: 7
+  m_Name: Smasher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7005348782693149690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4469345161935460870}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2733444258366913235}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1460361439408619609
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4469345161935460870}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 1.7557098, y: -0.059321404}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.0707734, y: 4.01353}
+  m_EdgeRadius: 0
+--- !u!114 &4158221138986514671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4469345161935460870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272a8dfe55e785d46985064c2dda334a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4574355789620577631
 GameObject:
   m_ObjectHideFlags: 0
@@ -2638,6 +2822,7 @@ Transform:
   - {fileID: 2594617120848049431}
   - {fileID: 6854055689070514953}
   - {fileID: 8344843884343840561}
+  - {fileID: 7005348782693149690}
   m_Father: {fileID: 8338453198446981470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6885125599670599767
@@ -2729,7 +2914,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.05196047, y: -0.063999295}
+  m_Offset: {x: 0.05196047, y: -0.063999176}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2739,7 +2924,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.3873634, y: 4.0870495}
+  m_Size: {x: 4.279358, y: 4.0870495}
   m_EdgeRadius: 0
 --- !u!1 &4654485288395074705
 GameObject:
@@ -19715,7 +19900,7 @@ MonoBehaviour:
   playerCritDamageMultiplier: 2
   playerCritChancePercent: 5
   playerXpMultiplier: 1
-  playerMagnetRadius: 1.75
+  playerMagnetRadius: 2
   pistolDamageMultiplier: 1
   bowAndArrowDamageMultiplier: 1
   spearDamageMultiplier: 1
@@ -19755,6 +19940,12 @@ MonoBehaviour:
     areaDamage: 0
     firerate: 1
     range: 4
+  boatColliderStats:
+    damage: 10
+    poisonDamage: 0
+    areaDamage: 0
+    firerate: 0
+    range: 0
   bowAndArrowStats:
     damage: 25
     poisonDamage: 0
@@ -19816,6 +20007,7 @@ MonoBehaviour:
     firerate: 0.2
     range: 4
   basePistolDamage: 18
+  baseBoatColliderDamage: 10
   baseBowAndArrowDamage: 25
   baseSpearDamage: 15
   baseBlowDartDamage: 5

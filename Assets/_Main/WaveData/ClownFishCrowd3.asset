@@ -10,102 +10,87 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36ce8dc6823e47945ab892f66199ca8a, type: 3}
-  m_Name: ClownFishCrowd1
+  m_Name: ClownFishCrowd3
   m_EditorClassIdentifier: 
   spawnEvents:
   - enemyPrefab: {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
-    spawnTime: 70
-    amount: 25
-    spawnInterval: 0
-    spawnZoneName: SpawnerTop
-  - enemyPrefab: {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
-    spawnTime: 70
-    amount: 25
-    spawnInterval: 0
-    spawnZoneName: SpawnerTopLeft
-  - enemyPrefab: {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
-    spawnTime: 75
-    amount: 25
-    spawnInterval: 0
-    spawnZoneName: SpawnerTopRight
-  - enemyPrefab: {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
-    spawnTime: 140
-    amount: 30
+    spawnTime: 240
+    amount: 20
     spawnInterval: 0
     spawnZoneName: SpawnerBottom
   - enemyPrefab: {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
-    spawnTime: 140
-    amount: 30
+    spawnTime: 240
+    amount: 20
     spawnInterval: 0
     spawnZoneName: SpawnerBottomRight
   - enemyPrefab: {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
-    spawnTime: 150
-    amount: 30
+    spawnTime: 250
+    amount: 20
     spawnInterval: 0
     spawnZoneName: SpawnerBottomLeft
   - enemyPrefab: {fileID: 4871557909895165438, guid: 4f71d17382d52f044862188e36cd0617, type: 3}
-    spawnTime: 320
-    amount: 25
+    spawnTime: 420
+    amount: 20
     spawnInterval: 0
     spawnZoneName: SpawnerRight
   - enemyPrefab: {fileID: 4871557909895165438, guid: 4f71d17382d52f044862188e36cd0617, type: 3}
-    spawnTime: 320
-    amount: 30
+    spawnTime: 420
+    amount: 20
     spawnInterval: 0
     spawnZoneName: SpawnerBottomRight
   - enemyPrefab: {fileID: 4871557909895165438, guid: 4f71d17382d52f044862188e36cd0617, type: 3}
-    spawnTime: 320
-    amount: 30
+    spawnTime: 420
+    amount: 20
     spawnInterval: 0
     spawnZoneName: SpawnerTopRight
   - enemyPrefab: {fileID: 4871557909895165438, guid: 4f71d17382d52f044862188e36cd0617, type: 3}
-    spawnTime: 600
-    amount: 40
+    spawnTime: 520
+    amount: 30
     spawnInterval: 0
     spawnZoneName: SpawnerTopLeft
   - enemyPrefab: {fileID: 4871557909895165438, guid: 4f71d17382d52f044862188e36cd0617, type: 3}
-    spawnTime: 600
-    amount: 40
+    spawnTime: 520
+    amount: 30
     spawnInterval: 0
     spawnZoneName: SpawnerBottomLeft
   - enemyPrefab: {fileID: 4871557909895165438, guid: 4f71d17382d52f044862188e36cd0617, type: 3}
-    spawnTime: 600
-    amount: 40
+    spawnTime: 550
+    amount: 30
     spawnInterval: 0
     spawnZoneName: SpawnerLeft
   - enemyPrefab: {fileID: 4871557909895165438, guid: 4f71d17382d52f044862188e36cd0617, type: 3}
     spawnTime: 800
-    amount: 40
+    amount: 20
     spawnInterval: 0
     spawnZoneName: SpawnerBottom
   - enemyPrefab: {fileID: 4871557909895165438, guid: 4f71d17382d52f044862188e36cd0617, type: 3}
     spawnTime: 800
-    amount: 40
+    amount: 20
     spawnInterval: 0
     spawnZoneName: SpawnerBottomRight
   - enemyPrefab: {fileID: 4871557909895165438, guid: 4f71d17382d52f044862188e36cd0617, type: 3}
-    spawnTime: 800
-    amount: 40
+    spawnTime: 790
+    amount: 20
     spawnInterval: 0
     spawnZoneName: SpawnerBottomLeft
   - enemyPrefab: {fileID: 4871557909895165438, guid: 4f71d17382d52f044862188e36cd0617, type: 3}
-    spawnTime: 800
-    amount: 40
+    spawnTime: 790
+    amount: 20
     spawnInterval: 0
     spawnZoneName: SpawnerTopLeft
   - enemyPrefab: {fileID: 4871557909895165438, guid: 4f71d17382d52f044862188e36cd0617, type: 3}
-    spawnTime: 800
-    amount: 40
+    spawnTime: 790
+    amount: 20
     spawnInterval: 0
     spawnZoneName: SpawnerTopRight
   - enemyPrefab: {fileID: 4871557909895165438, guid: 4f71d17382d52f044862188e36cd0617, type: 3}
     spawnTime: 800
-    amount: 40
+    amount: 20
     spawnInterval: 0
     spawnZoneName: SpawnerTop
   - enemyPrefab: {fileID: 4871557909895165438, guid: 4f71d17382d52f044862188e36cd0617, type: 3}
-    spawnTime: 800
-    amount: 40
+    spawnTime: 795
+    amount: 20
     spawnInterval: 0
     spawnZoneName: SpawnerRight
   - enemyPrefab: {fileID: 4871557909895165438, guid: 4f71d17382d52f044862188e36cd0617, type: 3}
@@ -114,82 +99,47 @@ MonoBehaviour:
     spawnInterval: 0
     spawnZoneName: SpawnerLeft
   - enemyPrefab: {fileID: 4871557909895165438, guid: e5abb07a9c3bf1e4fbd35b07f0c4e6b1, type: 3}
-    spawnTime: 1000
-    amount: 50
+    spawnTime: 920
+    amount: 100
     spawnInterval: 0
     spawnZoneName: SpawnerTop
   - enemyPrefab: {fileID: 4871557909895165438, guid: e5abb07a9c3bf1e4fbd35b07f0c4e6b1, type: 3}
-    spawnTime: 1000
-    amount: 50
+    spawnTime: 920
+    amount: 100
     spawnInterval: 0
     spawnZoneName: SpawnerBottom
   - enemyPrefab: {fileID: 4871557909895165438, guid: e5abb07a9c3bf1e4fbd35b07f0c4e6b1, type: 3}
-    spawnTime: 1000
-    amount: 50
+    spawnTime: 920
+    amount: 100
     spawnInterval: 0
     spawnZoneName: SpawnerRight
-  - enemyPrefab: {fileID: 4871557909895165438, guid: e5abb07a9c3bf1e4fbd35b07f0c4e6b1, type: 3}
-    spawnTime: 1100
-    amount: 50
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 09787401de30cf9469b30c97537594be, type: 3}
+    spawnTime: 1050
+    amount: 120
     spawnInterval: 0
     spawnZoneName: SpawnerBottomLeft
-  - enemyPrefab: {fileID: 4871557909895165438, guid: e5abb07a9c3bf1e4fbd35b07f0c4e6b1, type: 3}
-    spawnTime: 1100
-    amount: 50
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 09787401de30cf9469b30c97537594be, type: 3}
+    spawnTime: 1055
+    amount: 120
     spawnInterval: 0
     spawnZoneName: SpawnerBottomRight
-  - enemyPrefab: {fileID: 4871557909895165438, guid: e5abb07a9c3bf1e4fbd35b07f0c4e6b1, type: 3}
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 09787401de30cf9469b30c97537594be, type: 3}
+    spawnTime: 1050
+    amount: 120
+    spawnInterval: 0
+    spawnZoneName: SpawnerBottom
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 09787401de30cf9469b30c97537594be, type: 3}
     spawnTime: 1100
-    amount: 50
-    spawnInterval: 0
-    spawnZoneName: SpawnerBottom
-  - enemyPrefab: {fileID: 4871557909895165438, guid: e5abb07a9c3bf1e4fbd35b07f0c4e6b1, type: 3}
-    spawnTime: 660
-    amount: 50
-    spawnInterval: 0
-    spawnZoneName: SpawnerBottom
-  - enemyPrefab: {fileID: 4871557909895165438, guid: e5abb07a9c3bf1e4fbd35b07f0c4e6b1, type: 3}
-    spawnTime: 660
-    amount: 50
-    spawnInterval: 0
-    spawnZoneName: SpawnerBottomRight
-  - enemyPrefab: {fileID: 4871557909895165438, guid: e5abb07a9c3bf1e4fbd35b07f0c4e6b1, type: 3}
-    spawnTime: 660
-    amount: 50
-    spawnInterval: 0
-    spawnZoneName: SpawnerBottomLeft
-  - enemyPrefab: {fileID: 4871557909895165438, guid: e5abb07a9c3bf1e4fbd35b07f0c4e6b1, type: 3}
-    spawnTime: 690
-    amount: 50
-    spawnInterval: 0
-    spawnZoneName: SpawnerTopLeft
-  - enemyPrefab: {fileID: 4871557909895165438, guid: e5abb07a9c3bf1e4fbd35b07f0c4e6b1, type: 3}
-    spawnTime: 690
-    amount: 50
+    amount: 120
     spawnInterval: 0
     spawnZoneName: SpawnerTop
-  - enemyPrefab: {fileID: 4871557909895165438, guid: e5abb07a9c3bf1e4fbd35b07f0c4e6b1, type: 3}
-    spawnTime: 690
-    amount: 50
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 09787401de30cf9469b30c97537594be, type: 3}
+    spawnTime: 1100
+    amount: 120
     spawnInterval: 0
     spawnZoneName: SpawnerTopRight
-  - enemyPrefab: {fileID: 4871557909895165438, guid: e5abb07a9c3bf1e4fbd35b07f0c4e6b1, type: 3}
-    spawnTime: 720
-    amount: 60
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 09787401de30cf9469b30c97537594be, type: 3}
+    spawnTime: 1100
+    amount: 120
     spawnInterval: 0
-    spawnZoneName: SpawnerRight
-  - enemyPrefab: {fileID: 4871557909895165438, guid: e5abb07a9c3bf1e4fbd35b07f0c4e6b1, type: 3}
-    spawnTime: 720
-    amount: 60
-    spawnInterval: 0
-    spawnZoneName: SpawnerLeft
-  - enemyPrefab: {fileID: 4871557909895165438, guid: e5abb07a9c3bf1e4fbd35b07f0c4e6b1, type: 3}
-    spawnTime: 750
-    amount: 60
-    spawnInterval: 0
-    spawnZoneName: SpawnerTop
-  - enemyPrefab: {fileID: 4871557909895165438, guid: e5abb07a9c3bf1e4fbd35b07f0c4e6b1, type: 3}
-    spawnTime: 750
-    amount: 60
-    spawnInterval: 0
-    spawnZoneName: SpawnerBottom
+    spawnZoneName: SpawnerTopLeft

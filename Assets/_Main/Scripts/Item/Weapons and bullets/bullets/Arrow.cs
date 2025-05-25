@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class Arrow : MonoBehaviour
 {
     public int maxHops = 3;
-    private float hopRange = 7.5f;
+    private float hopRange = 10f;
     private int currentHopCount = 0;
     private Transform currentTarget;
     private float speed;
@@ -23,6 +23,13 @@ public class Arrow : MonoBehaviour
     {
         if (currentTarget != null)
         {
+            // Check if the target is still active
+            if (!currentTarget.gameObject.activeInHierarchy)
+            {
+                TryFindNewTargetOrDestroy();
+                return;
+            }
+
             Vector2 direction = ((Vector2)currentTarget.position - rb.position).normalized;
             rb.linearVelocity = direction * speed;
 
@@ -30,6 +37,7 @@ public class Arrow : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, angle);
         }
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -62,6 +70,19 @@ public class Arrow : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+        }
+    }
+
+    private void TryFindNewTargetOrDestroy()
+    {
+        Transform nextTarget = FindNextTarget();
+        if (nextTarget != null)
+        {
+            currentTarget = nextTarget;
+        }
+        else
+        {
+            currentTarget = null; // Fly straight in current direction
         }
     }
 

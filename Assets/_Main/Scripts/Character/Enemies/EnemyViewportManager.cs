@@ -21,7 +21,7 @@ public class EnemyViewportManager : MonoBehaviour
         Vector3 viewportPoint = mainCamera.WorldToViewportPoint(transform.position);
 
         // Define an offset to extend the viewport boundaries
-        float offset = 0.2f;
+        float offset = 2f;
 
         // Check if the enemy is visible in the viewport with the offset
         bool isVisible = viewportPoint.x >= -offset && viewportPoint.x <= 1 + offset &&

@@ -19,7 +19,12 @@ MonoBehaviour:
     spawnInterval: 12
     spawnZoneName: SpawnerTop
   - enemyPrefab: {fileID: 4871557909895165438, guid: c3634c317befa0747a956c13714bbc5d, type: 3}
+    spawnTime: 115
+    amount: 4
+    spawnInterval: 0
+    spawnZoneName: SpawnerLeft
+  - enemyPrefab: {fileID: 4871557909895165438, guid: c3634c317befa0747a956c13714bbc5d, type: 3}
     spawnTime: 130
-    amount: 5
+    amount: 7
     spawnInterval: 0
     spawnZoneName: SpawnerBottom

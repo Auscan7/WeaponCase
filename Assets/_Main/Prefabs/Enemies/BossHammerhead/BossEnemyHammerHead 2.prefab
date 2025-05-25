@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 2629275203821640451}
   - component: {fileID: 8589061251653951356}
   - component: {fileID: 9159814487147863469}
-  m_Layer: 6
+  m_Layer: 14
   m_Name: BossEnemyHammerHead 2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMovementManager: {fileID: 0}
   currentHealth: 0
-  maxHealth: 12000
+  maxHealth: 10000
   healthBar: {fileID: 1297005040029400982}
   healthBarParent: {fileID: 7141845522669670118}
   enemyPrefabReference: {fileID: 4871557909895165438}
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  moveSpeed: 1.2
+  moveSpeed: 2.5
   spriteTransform: {fileID: 7608606556829224412}
   rotationSpeed: 5
   stoppingDistance: 1
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d2ef4881367e5a46b729b377a21c4e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coneAttackDamage: 220
+  coneAttackDamage: 300
   coneAngle: 30
   coneRange: 5.5
   attackCooldown: 3
@@ -583,7 +583,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 3484287900037411390, guid: f562b4d2a1184184cb05e0b3adf469e6, type: 3}
   m_Color: {r: 1, g: 0.6933962, b: 1, a: 1}
   m_FlipX: 0

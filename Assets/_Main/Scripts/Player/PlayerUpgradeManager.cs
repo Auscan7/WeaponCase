@@ -63,6 +63,7 @@ public class PlayerUpgradeManager : MonoBehaviour
 
     [Header("Weapon Stats")]
     public WeaponStats pistolStats;
+    public WeaponStats boatColliderStats;
     public WeaponStats bowAndArrowStats;
     public WeaponStats spearStats;
     public WeaponStats blowDartStats;
@@ -77,6 +78,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     // Store the base damage values for recalculation
     [Header("Base Weapon Damage")]
     public float basePistolDamage = 10f;
+    public float baseBoatColliderDamage = 10f;
     public float baseBowAndArrowDamage = 15f;
     public float baseSpearDamage = 15f;
     public float baseBlowDartDamage = 5f;

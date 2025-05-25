@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: DamageUpgradeRare
   m_EditorClassIdentifier: 
   upgradeName: Damage
-  positiveDescription: All Damage +25%
+  positiveDescription: All Damage +30%
   negativeDescription: 
   icon: {fileID: 21300000, guid: dd8ffd53653b14dc390ad4a986d3612f, type: 3}
   border: {fileID: -5648912583701459738, guid: 71445dd38271814458caba9f1630ecca, type: 3}
-  damageMultiplierIncrease: 0.25
+  damageMultiplierIncrease: 0.3

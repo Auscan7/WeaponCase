@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: CritChanceUpgradeLegendary
   m_EditorClassIdentifier: 
   upgradeName: Crit Chance
-  positiveDescription: Crit Chance +15%
+  positiveDescription: Crit Chance +10%
   negativeDescription: 
   icon: {fileID: 21300000, guid: bc47e554558ed41a5b44e1fbeacad42b, type: 3}
   border: {fileID: -8326712265333833893, guid: ad1460a1f0c26c146ad42410a98906ac, type: 3}
-  critChanceIncrease: 15
+  critChanceIncrease: 10
