@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ArmorLegendary
   m_EditorClassIdentifier: 
   upgradeName: Armor
-  positiveDescription: +7 Armor
+  positiveDescription: +10 Armor
   negativeDescription: 
   icon: {fileID: 21300000, guid: 3dfe5b5109b67429dae6b016513faeec, type: 3}
   border: {fileID: -8326712265333833893, guid: ad1460a1f0c26c146ad42410a98906ac, type: 3}
-  armorIncreaseAmount: 7
+  armorIncreaseAmount: 10

@@ -13,7 +13,7 @@ public class BlowDart : Weapon
         float fireRate = PlayerUpgradeManager.Instance.blowDartStats.firerate;
         WeaponCooldownUIManager.Instance.TriggerCooldown("BlowDart", fireRate);
 
-        AudioManager.instance.PlaySoundSFX(AudioManager.instance.bowAndArrowFireSFX);
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.dartFireSFX);
 
         Vector3 spawnPos = projectileSpawnPoint.position;
         GameObject projectile = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);

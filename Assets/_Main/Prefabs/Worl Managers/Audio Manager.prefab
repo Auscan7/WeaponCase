@@ -55,6 +55,15 @@ MonoBehaviour:
   bowAndArrowFireSFX:
   - {fileID: 8300000, guid: a506953ddad4ad3419aa9cc9a6f142bf, type: 3}
   - {fileID: 8300000, guid: 898f8b1e0d99bb1448e54d2999639ee7, type: 3}
+  spearFireSFX:
+  - {fileID: 8300000, guid: e97f54da2878da544ab19196bb5b34dc, type: 3}
+  dartFireSFX:
+  - {fileID: 8300000, guid: 36c401f67b93941448b624f8553587ba, type: 3}
+  - {fileID: 8300000, guid: d604c4eeb94c8474ba2a2f31b5d0c466, type: 3}
+  - {fileID: 8300000, guid: fa786c0d2c2825f46af675ea8dc7dcaa, type: 3}
+  - {fileID: 8300000, guid: 4b6cdebe0ccebc844b8602c2d16ee9a8, type: 3}
+  slingShotFireSFX:
+  - {fileID: 8300000, guid: 555853f94d4b96b468494652f2cd6c5c, type: 3}
   pistolFireSFX:
   - {fileID: 8300000, guid: 57909b1936d432f45978442463575b51, type: 3}
   - {fileID: 8300000, guid: e1ceeda486ac25a4b8354a119830a363, type: 3}

@@ -59,10 +59,10 @@ public class GameTimeManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            LevelCompletedTrigger();
-        }
+        //if (Input.GetKeyDown(KeyCode.B))
+        //{
+        //    LevelCompletedTrigger();
+        //}
     }
 
     private void UpdateTimerText()

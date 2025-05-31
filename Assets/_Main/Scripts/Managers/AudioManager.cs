@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,12 +10,28 @@ public class AudioManager : MonoBehaviour
     public AudioSource audioSourceMenuMusic;
     public AudioSource audioSourceLevelMusic;
 
+    private int sfxSourceCount = 20;
+    private List<AudioSource> sfxSources = new List<AudioSource>();
+    private int currentSFXIndex = 0;
+
+    // Cooldowns
+    private float lastGemPickUpTime = -1999;
+    private float lastEnemyTakeDamageTime = -1999;
+    private float lastEnemyDeathTime = -1999;
+
+    [SerializeField] private float gemPickUpCooldown = 0.1f;
+    [SerializeField] private float enemyTakeDamageCooldown = 0.1f;
+    [SerializeField] private float enemyDeathCooldown = 0.1f;
+
     [Header("Music")]
     public AudioClip menuMusic;
     public AudioClip levelMusic;
 
     [Header("Weapon SFX")]
     public AudioClip[] bowAndArrowFireSFX;
+    public AudioClip[] spearFireSFX;
+    public AudioClip[] dartFireSFX;
+    public AudioClip[] slingShotFireSFX;
     public AudioClip[] pistolFireSFX;
     public AudioClip[] shotgunFireSFX;
     public AudioClip[] rocketFireSFX;
@@ -52,15 +69,23 @@ public class AudioManager : MonoBehaviour
         else
             Destroy(gameObject);
 
+        DontDestroyOnLoad(gameObject);
+        InitializeSFXSources();
         PlayMainMenuMusic();
     }
 
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
-
         // When the scene changes, run this logic
         SceneManager.activeSceneChanged += OnSceneChange;
+    }
+    private void InitializeSFXSources()
+    {
+        for (int i = 0; i < sfxSourceCount; i++)
+        {
+            AudioSource source = gameObject.AddComponent<AudioSource>();
+            sfxSources.Add(source);
+        }
     }
 
     private void OnSceneChange(Scene oldScene, Scene newScene)
@@ -75,22 +100,68 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySoundSFX(AudioClip[] soundFXArray)
+    public void PlayGemPickUpSound()
     {
-        if (audioSourceSFX != null && soundFXArray.Length > 0)
+        if (Time.time - lastGemPickUpTime >= gemPickUpCooldown)
         {
-            // Choose a random index, ensuring it's not the same as the last played
             int randomIndex;
             do
             {
-                randomIndex = Random.Range(0, soundFXArray.Length);
-            } while (randomIndex == lastPlayedIndex && soundFXArray.Length > 1);
+                randomIndex = Random.Range(0, gemPickUp.Length);
+            } while (randomIndex == lastPlayedIndex && gemPickUp.Length > 1);
 
-            lastPlayedIndex = randomIndex;
-
-            // Play the randomly selected sound
-            audioSourceSFX.PlayOneShot(soundFXArray[randomIndex]);
+            PlaySoundSFX(gemPickUp);
+            lastGemPickUpTime = Time.time;
         }
+    }
+
+    public void PlayEnemyTakeDamageSound()
+    {
+        if (Time.time - lastEnemyTakeDamageTime >= enemyTakeDamageCooldown)
+        {
+            int randomIndex;
+            do
+            {
+                randomIndex = Random.Range(0, enemyTakeDamageSFX.Length);
+            } while (randomIndex == lastPlayedIndex && enemyTakeDamageSFX.Length > 1);
+
+            PlaySoundSFX(enemyTakeDamageSFX);
+            lastEnemyTakeDamageTime = Time.time;
+        }
+    }
+
+    public void PlayEnemyDeathSound()
+    {
+        if (Time.time - lastEnemyDeathTime >= enemyDeathCooldown)
+        {
+            int randomIndex;
+            do
+            {
+                randomIndex = Random.Range(0, enemyDeathSFX.Length);
+            } while (randomIndex == lastPlayedIndex && enemyDeathSFX.Length > 1);
+
+            PlaySoundSFX(enemyDeathSFX);
+            lastEnemyDeathTime = Time.time;
+        }
+    }
+
+
+    public void PlaySoundSFX(AudioClip[] soundFXArray)
+    {
+        if (soundFXArray.Length == 0) return;
+
+        int randomIndex;
+        do
+        {
+            randomIndex = Random.Range(0, soundFXArray.Length);
+        } while (randomIndex == lastPlayedIndex && soundFXArray.Length > 1);
+
+        lastPlayedIndex = randomIndex;
+
+        AudioSource currentSource = sfxSources[currentSFXIndex];
+        currentSource.PlayOneShot(soundFXArray[randomIndex]);
+
+        currentSFXIndex = (currentSFXIndex + 1) % sfxSources.Count;
     }
 
     private void PlayMainMenuMusic()

@@ -3436,17 +3436,10 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 476ad9b71a3b7ca4bb6f442d30ab5c7a, type: 2}
     - {fileID: 11400000, guid: bd6a2f28486a97c4292259c6f0bcd591, type: 2}
     - {fileID: 11400000, guid: c0c489f1f9c48fb4a8aa654a17f3e269, type: 2}
+    - {fileID: 11400000, guid: 8effa1631c0984b48993706b5cbbd04c, type: 2}
     selectionWeight: 50
   - poolName: Rarity 2
     upgrades:
-    - {fileID: 11400000, guid: 6391a547a858515408154a190f848ef6, type: 2}
-    - {fileID: 11400000, guid: 5733d6b2331ccec48904653f0c58eafb, type: 2}
-    - {fileID: 11400000, guid: b78c607c2a0cf0742a904bd07c04a262, type: 2}
-    - {fileID: 11400000, guid: 10ff4066ea2cf85479a2dcd455756221, type: 2}
-    - {fileID: 11400000, guid: 08403b4b7256b2a489dbf24b7bcd017d, type: 2}
-    - {fileID: 11400000, guid: c26a775c4e31c564dbb140f90d15757e, type: 2}
-    - {fileID: 11400000, guid: f3a22d53a2499c84a9f27a8f2088af86, type: 2}
-    - {fileID: 11400000, guid: 66254468c84fc984d98febe9395c2c1b, type: 2}
     - {fileID: 11400000, guid: be8ee33c9012dd34383e104af06a322e, type: 2}
     - {fileID: 11400000, guid: e8ecb77e63d12e849910c2f6983aa806, type: 2}
     - {fileID: 11400000, guid: f40c236f6a76de04a9e6550ff5a3520e, type: 2}
@@ -3455,20 +3448,16 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 071bc37a0f4c7bb4c80bce852af5d344, type: 2}
     - {fileID: 11400000, guid: 66bd726d7236774478e7117aa60b6098, type: 2}
     - {fileID: 11400000, guid: ccfe1a721b4b72d41a1c908572e93e97, type: 2}
-    - {fileID: 11400000, guid: 3fd09a53d55c60746bc511bcb07fe75f, type: 2}
-    - {fileID: 11400000, guid: 09b19423ca2b2624ebafa810a3e186ff, type: 2}
+    - {fileID: 11400000, guid: d2d30350825708c469326a6c210586b7, type: 2}
+    - {fileID: 11400000, guid: 73808da35bd50714dbf61d0ca8d234fc, type: 2}
     selectionWeight: 27
   - poolName: Rarity 3
     upgrades:
-    - {fileID: 11400000, guid: a75889cf47e99e54898d61c17442967d, type: 2}
     - {fileID: 11400000, guid: 10c9ee261b7396d4eae73e09f2757c99, type: 2}
-    - {fileID: 11400000, guid: b3b2d9b01c489b64bb6808d7a9acd9ac, type: 2}
     - {fileID: 11400000, guid: 91709a5cb3d0a7d46ba0e9d465aebb3c, type: 2}
     - {fileID: 11400000, guid: b5b14a2c3c0620a44891320dbb03f7a3, type: 2}
-    - {fileID: 11400000, guid: 4767ebc686f33d04db7093b88684e93e, type: 2}
     - {fileID: 11400000, guid: 2d49ff1856cba5f498076411ddd2ec2b, type: 2}
     - {fileID: 11400000, guid: ab39c26054be095439dccf7aed536416, type: 2}
-    - {fileID: 11400000, guid: 73808da35bd50714dbf61d0ca8d234fc, type: 2}
     - {fileID: 11400000, guid: c51ee85aa9ba7cf4ea7954e07691ba99, type: 2}
     - {fileID: 11400000, guid: 50fda9b871447174da34cb5b7cca72ba, type: 2}
     - {fileID: 11400000, guid: 28de7de0559651b4d81c949dac2fab97, type: 2}
@@ -3487,6 +3476,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: ff009384451c3064ea93561dfaccb84f, type: 2}
     - {fileID: 11400000, guid: 6fa5592795c79c14d9a08ae68a07d25f, type: 2}
     - {fileID: 11400000, guid: dc7e1d62dbee6594b9ee1a08d2283601, type: 2}
+    - {fileID: 11400000, guid: 8dbd76997cfd63444b76bc7ae812dbe5, type: 2}
     selectionWeight: 6
   - poolName: Rarity 5
     upgrades:
@@ -3495,6 +3485,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: f04cfa61bee209e418e8217a1fcd80ca, type: 2}
     - {fileID: 11400000, guid: c1b6ea7ab6004c04eb3e12eb5158ceb2, type: 2}
     - {fileID: 11400000, guid: 03ee9414a35a2304b82638cd4b1bf6a5, type: 2}
+    - {fileID: 11400000, guid: e073d673d07d3314084ae7e14ba7f17a, type: 2}
     selectionWeight: 3
 --- !u!114 &2489446866029720285
 MonoBehaviour:
@@ -20963,6 +20954,7 @@ RectTransform:
   - {fileID: 1016145322914048838}
   - {fileID: 1192090229422734154}
   - {fileID: 4025490147189382863}
+  - {fileID: 1653473999930822996}
   m_Father: {fileID: 8946381825008429100}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -21604,6 +21596,142 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &8987047657180062752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1653473999930822996}
+  - component: {fileID: 1476835093144943482}
+  - component: {fileID: 5387615304666394030}
+  m_Layer: 5
+  m_Name: HPRegen Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1653473999930822996
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8987047657180062752}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1021626642885875651}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 246, y: 0}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1476835093144943482
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8987047657180062752}
+  m_CullTransparentMesh: 1
+--- !u!114 &5387615304666394030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8987047657180062752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: c1482dbce654844b9ba1c753cbea5d80, type: 2}
+  m_sharedMaterial: {fileID: 7374927986402738804, guid: c1482dbce654844b9ba1c753cbea5d80, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 25
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 20
+  m_fontSizeMax: 25
+  m_fontStyle: 0
+  m_HorizontalAlignment: 4
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
   m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0

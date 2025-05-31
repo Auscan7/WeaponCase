@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BowAndArrowDamageUpgrade
   m_EditorClassIdentifier: 
   upgradeName: Damage
-  positiveDescription: Bow and Arrow Damage +15%
+  positiveDescription: Bow and Arrow Damage +25%
   negativeDescription: 
   icon: {fileID: -7856493677412862020, guid: d8309cc2aa5916442b973db84ac356c0, type: 3}
   border: {fileID: -4739412847751887214, guid: 457f3f38e845c2543bbeac3632250325, type: 3}
-  damageIncrease: 1.5
+  damageIncrease: 0.25

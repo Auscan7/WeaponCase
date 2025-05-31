@@ -13,7 +13,7 @@ public class SlingShot : Weapon
         float fireRate = PlayerUpgradeManager.Instance.slingShotStats.firerate;
 
         WeaponCooldownUIManager.Instance.TriggerCooldown("SlingShot", fireRate);
-        AudioManager.instance.PlaySoundSFX(AudioManager.instance.bowAndArrowFireSFX);
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.slingShotFireSFX);
         Vector3 spawnPos = projectileSpawnPoint.position;
         GameObject projectile = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
         Vector2 direction = (targetPosition - (Vector2)spawnPos).normalized;

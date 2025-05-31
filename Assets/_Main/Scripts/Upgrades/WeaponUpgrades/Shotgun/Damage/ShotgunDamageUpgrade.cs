@@ -8,7 +8,7 @@ public class ShotgunDamageUpgrade : Upgrade, IConditionalUpgrade
 
     public override void ApplyUpgrade(PlayerUpgradeManager upgradeManager)
     {
-        upgradeManager.shotgunDamageMultiplier += damageIncrease / 10f;
+        upgradeManager.shotgunDamageMultiplier += damageIncrease;
         upgradeManager.UpdateWeaponDamage();
     }
 

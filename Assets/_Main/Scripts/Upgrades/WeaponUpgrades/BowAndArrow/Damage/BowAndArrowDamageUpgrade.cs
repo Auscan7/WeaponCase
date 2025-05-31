@@ -8,7 +8,7 @@ public class BowAndArrowDamageUpgrade : Upgrade, IConditionalUpgrade
 
     public override void ApplyUpgrade(PlayerUpgradeManager upgradeManager)
     {
-        upgradeManager.bowAndArrowDamageMultiplier += damageIncrease / 10f;
+        upgradeManager.bowAndArrowDamageMultiplier += damageIncrease;
         upgradeManager.UpdateWeaponDamage();
     }
 

@@ -9,6 +9,7 @@ public class PlayerStatManager : CharacterStatManager
     private float regenCooldown = 1f; // Time between ticks
     private bool isOnCooldown = false;
     public TMP_Text HPText;
+    public TMP_Text HPRegenText;
 
     [Header("UI Buff Indicators")]
     [SerializeField] private GameObject damageBoostIcon;
@@ -45,6 +46,11 @@ public class PlayerStatManager : CharacterStatManager
         if (HPText != null)
         {
             HPText.text = "HP: " + Mathf.RoundToInt(PlayerUpgradeManager.Instance.playerCurrentHealth);
+        }
+
+        if (HPRegenText != null)
+        {
+            HPRegenText.text = "+" + PlayerUpgradeManager.Instance.playerHealthRegenAmount.ToString("0.#") + "/s";
         }
 
         UpdateVignetteEffect();

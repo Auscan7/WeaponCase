@@ -97,7 +97,7 @@ public class Spear : Weapon
         // Only play sound if the audio manager exists
         if (AudioManager.instance != null)
         {
-            AudioManager.instance.PlaySoundSFX(AudioManager.instance.bowAndArrowFireSFX);
+            AudioManager.instance.PlaySoundSFX(AudioManager.instance.spearFireSFX);
         }
 
         isThrown = true;

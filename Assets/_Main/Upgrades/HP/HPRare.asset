@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: HPRare
   m_EditorClassIdentifier: 
   upgradeName: Health
-  positiveDescription: +30 HP
+  positiveDescription: +75 Max HP
   negativeDescription: 
-  icon: {fileID: 21300000, guid: bdda24789f0a54d70ad4de6bfa7fceac, type: 3}
+  icon: {fileID: 21300000, guid: c55f443156bfe423a9041e55ab7f669f, type: 3}
   border: {fileID: -8220459746488438067, guid: 432a1acf00022b44190d156e3fe73681, type: 3}
-  hpIncreaseAmount: 30
+  hpIncreaseAmount: 75

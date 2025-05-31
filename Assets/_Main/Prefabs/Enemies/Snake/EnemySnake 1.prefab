@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edbcc1895d6e24458976271270887d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 18
+  damageAmount: 15
 --- !u!114 &5019166438803031756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  moveSpeed: 2.25
+  moveSpeed: 2.2
   spriteTransform: {fileID: 7608606556829224412}
   rotationSpeed: 6
   stoppingDistance: 1.2
@@ -312,13 +312,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropItems:
   - prefab: {fileID: 8977979752866054712, guid: 1534ea73940bce74385c715f3c1d2e01, type: 3}
-    dropChance: 0.6
+    dropChance: 0.3
   - prefab: {fileID: 8977979752866054712, guid: 20e563ab5f0bc704f94df6a64d0c02cc, type: 3}
-    dropChance: 0.75
+    dropChance: 0.3
   - prefab: {fileID: 8977979752866054712, guid: c082e8c41ee4364449061b259f8ef4ca, type: 3}
-    dropChance: 0.5
+    dropChance: 0.3
   - prefab: {fileID: 8977979752866054712, guid: f939cdffc2a0fc5478a29e5c6df45244, type: 3}
-    dropChance: 0.75
+    dropChance: 0.2
   dropPoint: {fileID: 2714442251322780456}
 --- !u!50 &2629275203821640451
 Rigidbody2D:

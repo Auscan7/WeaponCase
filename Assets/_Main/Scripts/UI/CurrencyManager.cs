@@ -30,20 +30,20 @@ public class CurrencyManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            AddCurrency(100);
-        }
+        //if (Input.GetKeyDown(KeyCode.C))
+        //{
+        //    AddCurrency(100);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            AddCurrency(-10);
-        }
+        //if (Input.GetKeyDown(KeyCode.V))
+        //{
+        //    AddCurrency(-10);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            PlayerPrefs.DeleteAll();
-        }
+        //if (Input.GetKeyDown(KeyCode.K))
+        //{
+        //    PlayerPrefs.DeleteAll();
+        //}
     }
 
     public void AddCurrency(int amount)

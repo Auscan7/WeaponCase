@@ -70,7 +70,8 @@ public class EnemyStatManager : CharacterStatManager
         AudioManager audioManager = AudioManager.instance;
 
         effectsManager.PlayVFX(effectsManager.enemyDeathVFX, transform.position, Quaternion.identity);
-        audioManager.PlaySoundSFX(audioManager.enemyDeathSFX);
+
+        AudioManager.instance.PlayEnemyDeathSound();
 
         // Return enemy to the pool
         EnemyPoolManager.Instance.ReturnEnemy(gameObject, enemyPrefabReference);
@@ -169,8 +170,8 @@ public class EnemyStatManager : CharacterStatManager
         {
             color = Color.white;
         }
-        
-        AudioManager.instance.PlaySoundSFX(AudioManager.instance.enemyTakeDamageSFX);
+
+        AudioManager.instance.PlayEnemyTakeDamageSound();
 
         int critChance = Random.Range(0, 101);
         bool isCrit = critChance < PlayerUpgradeManager.Instance.playerCritChancePercent;

@@ -54,7 +54,8 @@ public class Gem : MonoBehaviour
 
             if (Vector2.Distance(transform.position, playerTransform.position) < collectDistance)
             {
-                AudioManager.instance.PlaySoundSFX(AudioManager.instance.gemPickUp);
+                AudioManager.instance.PlayGemPickUpSound();
+
                 PlayerLevelSystem.instance.AddXP(xpValue);
 
                 // Return gem to the pool

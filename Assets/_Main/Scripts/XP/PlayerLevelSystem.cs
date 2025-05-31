@@ -48,18 +48,18 @@ public class PlayerLevelSystem : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            LevelUp();
-        }
+        //if (Input.GetKeyDown(KeyCode.L))
+        //{
+        //    LevelUp();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            if (upgradeSelection != null)
-            {
-                upgradeSelection.SetUpgradeCards();
-            }
-        }
+        //if (Input.GetKeyDown(KeyCode.O))
+        //{
+        //    if (upgradeSelection != null)
+        //    {
+        //        upgradeSelection.SetUpgradeCards();
+        //    }
+        //}
 
         if (waitForKeyPress && Input.anyKeyDown)
         {

@@ -296,13 +296,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropItems:
   - prefab: {fileID: 8977979752866054712, guid: 1534ea73940bce74385c715f3c1d2e01, type: 3}
-    dropChance: 0.3
+    dropChance: 0.25
   - prefab: {fileID: 8977979752866054712, guid: 20e563ab5f0bc704f94df6a64d0c02cc, type: 3}
-    dropChance: 0.4
+    dropChance: 0.35
   - prefab: {fileID: 8977979752866054712, guid: c082e8c41ee4364449061b259f8ef4ca, type: 3}
-    dropChance: 0.4
+    dropChance: 0.35
   - prefab: {fileID: 8977979752866054712, guid: f939cdffc2a0fc5478a29e5c6df45244, type: 3}
-    dropChance: 0.4
+    dropChance: 0.35
   dropPoint: {fileID: 2714442251322780456}
 --- !u!114 &2054558257689030374
 MonoBehaviour:

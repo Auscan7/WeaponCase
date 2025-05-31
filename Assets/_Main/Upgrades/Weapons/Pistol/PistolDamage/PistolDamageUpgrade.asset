@@ -17,4 +17,4 @@ MonoBehaviour:
   negativeDescription: 
   icon: {fileID: -8270769010555799131, guid: 2e78c1af7ff838743a5616277b9a3472, type: 3}
   border: {fileID: -8220459746488438067, guid: 432a1acf00022b44190d156e3fe73681, type: 3}
-  damageIncrease: 2.5
+  damageIncrease: 0.25
