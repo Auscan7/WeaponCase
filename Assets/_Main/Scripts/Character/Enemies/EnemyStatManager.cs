@@ -10,6 +10,8 @@ public class EnemyStatManager : CharacterStatManager
     private Material flashMaterial;
     private SpriteRenderer spriteRenderer;
 
+    public bool ignoreSpawnLimit = false;
+
     // Poison status tracking
     private bool isPoisoned = false;
     private float poisonTimer = 0f;
@@ -74,6 +76,7 @@ public class EnemyStatManager : CharacterStatManager
         AudioManager.instance.PlayEnemyDeathSound();
 
         // Return enemy to the pool
+        EnemyLimitManager.Instance.UnregisterEnemy();
         EnemyPoolManager.Instance.ReturnEnemy(gameObject, enemyPrefabReference);
     }
 

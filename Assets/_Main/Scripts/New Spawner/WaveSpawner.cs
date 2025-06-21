@@ -69,6 +69,20 @@ public class WaveSpawner : MonoBehaviour
     {
         for (int i = 0; i < spawn.amount; i++)
         {
+            bool ignoreLimit = false;
+            EnemyStatManager statManager = spawn.enemyPrefab.GetComponent<EnemyStatManager>();
+            if (statManager != null && statManager.ignoreSpawnLimit)
+            {
+                ignoreLimit = true;
+            }
+
+            if (!EnemyLimitManager.Instance.CanSpawnEnemy(ignoreLimit))
+            {
+                yield return new WaitForSeconds(spawn.spawnInterval); // Delay then retry
+                i--; // Try again in next loop iteration
+                continue;
+            }
+
             GameObject enemy = EnemyPoolManager.Instance.GetEnemy(spawn.enemyPrefab);
             if (enemy != null)
             {
@@ -98,6 +112,7 @@ public class WaveSpawner : MonoBehaviour
 
                 enemy.transform.position = spawnPosition;
                 enemy.transform.rotation = Quaternion.identity;
+                EnemyLimitManager.Instance.RegisterEnemy();
             }
 
             if (i < spawn.amount - 1)
