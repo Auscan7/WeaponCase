@@ -101,25 +101,25 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 4871557909895165438, guid: 017bf53dc5cf85045afacb92f085af77, type: 3}
     poolSize: 10
   - enemyPrefab: {fileID: 4871557909895165438, guid: 3bae9c853d9f6e3419d1b68e5c6a37ae, type: 3}
-    poolSize: 100
-  - enemyPrefab: {fileID: 4871557909895165438, guid: 4f71d17382d52f044862188e36cd0617, type: 3}
-    poolSize: 150
-  - enemyPrefab: {fileID: 4871557909895165438, guid: e5abb07a9c3bf1e4fbd35b07f0c4e6b1, type: 3}
     poolSize: 200
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 4f71d17382d52f044862188e36cd0617, type: 3}
+    poolSize: 250
+  - enemyPrefab: {fileID: 4871557909895165438, guid: e5abb07a9c3bf1e4fbd35b07f0c4e6b1, type: 3}
+    poolSize: 300
   - enemyPrefab: {fileID: 4871557909895165438, guid: 09787401de30cf9469b30c97537594be, type: 3}
     poolSize: 300
   - enemyPrefab: {fileID: 4871557909895165438, guid: 12b1499d52c50cf4b8a12f06484d94fb, type: 3}
-    poolSize: 50
+    poolSize: 20
   - enemyPrefab: {fileID: 4871557909895165438, guid: 7033e964adf724b469820cf9c02d287d, type: 3}
-    poolSize: 50
+    poolSize: 40
   - enemyPrefab: {fileID: 4871557909895165438, guid: 005cfd2ec8c6c764494b0d0be9cb2a03, type: 3}
-    poolSize: 50
+    poolSize: 60
   - enemyPrefab: {fileID: 4871557909895165438, guid: c3634c317befa0747a956c13714bbc5d, type: 3}
     poolSize: 50
   - enemyPrefab: {fileID: 4871557909895165438, guid: a982a02eaabe2fc45a9b22297b0f548a, type: 3}
-    poolSize: 100
+    poolSize: 120
   - enemyPrefab: {fileID: 4871557909895165438, guid: 3ac3c96060044484b83fce9d2e2b1d61, type: 3}
-    poolSize: 150
+    poolSize: 200
   - enemyPrefab: {fileID: 4871557909895165438, guid: 69670a6c8d489314fba429fe6a97fde3, type: 3}
     poolSize: 20
   - enemyPrefab: {fileID: 4871557909895165438, guid: bd3dda995321f6343b97a46360e45e69, type: 3}
@@ -197,4 +197,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76bfe7d50a723d446a73d5b19beaa195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxActiveEnemies: 350
+  maxActiveEnemies: 300

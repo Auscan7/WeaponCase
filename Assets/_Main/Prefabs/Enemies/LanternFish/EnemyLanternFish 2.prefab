@@ -329,6 +329,7 @@ MonoBehaviour:
   maxHealth: 3000
   healthBar: {fileID: 1297005040029400982}
   healthBarParent: {fileID: 7141845522669670118}
+  ignoreSpawnLimit: 0
   enemyPrefabReference: {fileID: 4871557909895165438}
 --- !u!114 &-4820772247653231708
 MonoBehaviour:
@@ -363,8 +364,6 @@ MonoBehaviour:
     dropChance: 1
   - prefab: {fileID: 8977979752866054712, guid: c082e8c41ee4364449061b259f8ef4ca, type: 3}
     dropChance: 0.5
-  - prefab: {fileID: 8977979752866054712, guid: f939cdffc2a0fc5478a29e5c6df45244, type: 3}
-    dropChance: 2
   dropPoint: {fileID: 2714442251322780456}
 --- !u!50 &2629275203821640451
 Rigidbody2D:

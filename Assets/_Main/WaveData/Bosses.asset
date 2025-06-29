@@ -14,37 +14,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnEvents:
   - enemyPrefab: {fileID: 4871557909895165438, guid: ac5b319f2a5dd394a9dfed603b11cc08, type: 3}
-    spawnTime: 180
+    spawnTime: 240
     amount: 1
     spawnInterval: 0
     spawnZoneName: SpawnerTop
   - enemyPrefab: {fileID: 4871557909895165438, guid: ac5b319f2a5dd394a9dfed603b11cc08, type: 3}
-    spawnTime: 360
+    spawnTime: 420
     amount: 2
     spawnInterval: 0
     spawnZoneName: SpawnerBottom
   - enemyPrefab: {fileID: 4871557909895165438, guid: 045c5a13291c3df4f9380bc9c431cda7, type: 3}
-    spawnTime: 540
+    spawnTime: 600
     amount: 1
     spawnInterval: 0
     spawnZoneName: SpawnerTopRight
   - enemyPrefab: {fileID: 4871557909895165438, guid: 045c5a13291c3df4f9380bc9c431cda7, type: 3}
-    spawnTime: 720
+    spawnTime: 750
     amount: 2
     spawnInterval: 0
     spawnZoneName: SpawnerTopLeft
   - enemyPrefab: {fileID: 4871557909895165438, guid: 017bf53dc5cf85045afacb92f085af77, type: 3}
-    spawnTime: 900
+    spawnTime: 920
     amount: 1
     spawnInterval: 0
     spawnZoneName: SpawnerTopRight
   - enemyPrefab: {fileID: 4871557909895165438, guid: 017bf53dc5cf85045afacb92f085af77, type: 3}
-    spawnTime: 1080
+    spawnTime: 1050
     amount: 2
     spawnInterval: 0
-    spawnZoneName: SpawnerTopLeft
+    spawnZoneName: SpawnerBottom
   - enemyPrefab: {fileID: 4871557909895165438, guid: 5a3170471c686b045b2343a87e0d4ef6, type: 3}
-    spawnTime: 1130
+    spawnTime: 1100
     amount: 1
     spawnInterval: 0
-    spawnZoneName: SpawnerTopRight
+    spawnZoneName: SpawnerTop

@@ -4,11 +4,10 @@ public class DifficultyManager : MonoBehaviour
 {
     public static DifficultyManager instance;
 
-    public float[] enemyHealthMultipliers; // Array for each difficulty level
-    public float[] enemyDamageMultipliers; // Array for each difficulty level
-    public int currentDifficulty = 0; // Starts at 0 (Easy)
+    public float[] enemyHealthMultipliers;
+    public float[] enemyDamageMultipliers;
+    public int currentDifficulty = 0;
     private const string UNLOCKED_KEY = "UnlockedDifficulty";
-    private const string SELECTED_KEY = "SelectedDifficulty";
 
     public int unlockedDifficulty = 0;
 
@@ -17,8 +16,11 @@ public class DifficultyManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // Optional
+            DontDestroyOnLoad(gameObject);
             LoadDifficultyProgress();
+
+            // Always reset to easiest difficulty at the start of each run
+            currentDifficulty = 0;
         }
         else
         {
@@ -31,7 +33,7 @@ public class DifficultyManager : MonoBehaviour
         if (level <= unlockedDifficulty)
         {
             currentDifficulty = level;
-            PlayerPrefs.SetInt(SELECTED_KEY, currentDifficulty);
+            Debug.Log("Difficulty set to: " + level);
         }
     }
 
@@ -51,16 +53,16 @@ public class DifficultyManager : MonoBehaviour
 
     public void UnlockNextDifficulty()
     {
-        if (unlockedDifficulty < enemyHealthMultipliers.Length - 1)
+        if (currentDifficulty == unlockedDifficulty && unlockedDifficulty < enemyHealthMultipliers.Length - 1)
         {
             unlockedDifficulty++;
             PlayerPrefs.SetInt(UNLOCKED_KEY, unlockedDifficulty);
+            PlayerPrefs.Save();
         }
     }
 
     private void LoadDifficultyProgress()
     {
         unlockedDifficulty = PlayerPrefs.GetInt(UNLOCKED_KEY, 0);
-        currentDifficulty = PlayerPrefs.GetInt(SELECTED_KEY, 0);
     }
 }

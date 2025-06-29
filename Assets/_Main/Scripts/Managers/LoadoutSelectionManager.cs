@@ -21,14 +21,6 @@ public class LoadoutSelectionManager : MonoBehaviour
     [SerializeField] private CanvasGroup coolDownSlotCanvasGroup;
     [SerializeField] private CanvasGroup statScreenCanvasGroup;
 
-    [Header("Boat Unlock Popup")]
-    public GameObject boatUnlockPopup;
-    public Image unlockBoatPreviewImage;
-    public TextMeshProUGUI unlockBoatPriceText;
-    public TextMeshProUGUI notEnoughMoneyText;
-    public Button unlockBoatButton;
-    public Button cancelUnlockBoatButton;
-
     private BoatData currentLockedBoat;
 
     [Header("Weapon Buttons")]
@@ -126,16 +118,6 @@ public class LoadoutSelectionManager : MonoBehaviour
     // This method is called when a boat button is clicked
     private void SelectBoat(BoatData boat, bool playAudio)
     {
-        if (boat.lockManager != null)
-        {
-            if (boat.lockManager.isLocked)
-            {
-                ShowUnlockPopup(boat);
-
-                return;
-            }
-        }
-
         //if (lastAppliedBoat == boat.boatName)
         //    return;
 
@@ -170,64 +152,6 @@ public class LoadoutSelectionManager : MonoBehaviour
         {
             SelectBoat(boat, playAudio: false); // Auto-select once unlocked
         }
-    }
-
-    // This method shows the unlock popup for the selected boat
-    private void ShowUnlockPopup(BoatData boat)
-    {
-        currentLockedBoat = boat;
-        unlockBoatPreviewImage.sprite = boat.boatIconImage.sprite;
-        unlockBoatPriceText.text = $"{boat.lockManager.unlockPrice} Coins";
-
-        unlockBoatButton.onClick.RemoveAllListeners();
-        unlockBoatButton.onClick.AddListener(UnlockCurrentBoat);
-
-        cancelUnlockBoatButton.onClick.RemoveAllListeners();
-        cancelUnlockBoatButton.onClick.AddListener(() => boatUnlockPopup.SetActive(false));
-
-        boatUnlockPopup.SetActive(true);
-    }
-
-    // This method is called when the unlock button is clicked
-    private void UnlockCurrentBoat()
-    {
-        if(currentLockedBoat == null) 
-            return;
-
-        if (currentLockedBoat.lockManager.UnlockBoat())
-        {
-            AudioManager.instance.PlaySoundSFX(AudioManager.instance.BoatUnlockSFX);
-            SelectBoat(currentLockedBoat, playAudio: false);
-        }
-        else
-        {
-            AudioManager.instance.PlaySoundSFX(AudioManager.instance.NotEnoughMoneySFX);
-            ShowNotEnoughMoneyPopup();
-            return;
-        }
-
-        boatUnlockPopup.SetActive(false);
-    }
-
-    // This method shows a popup if the player doesn't have enough money to unlock a boat
-    private void ShowNotEnoughMoneyPopup()
-    {
-        // Kill any running tween to prevent stacking
-        notEnoughMoneyTween?.Kill();
-
-        RectTransform rect = notEnoughMoneyText.GetComponent<RectTransform>();
-        notEnoughMoneyText.gameObject.SetActive(true);
-
-        // Reset position and color
-        Vector2 startPos = new Vector2(0, 215); // Adjust as needed
-        rect.anchoredPosition = startPos;
-        notEnoughMoneyText.color = Color.red;
-
-        // Animate position and alpha
-        notEnoughMoneyTween = DOTween.Sequence()
-            .Join(rect.DOAnchorPos(startPos + new Vector2(0, 50f), 2f))
-            .Join(notEnoughMoneyText.DOFade(0.1f, 2f))
-            .OnComplete(() => notEnoughMoneyText.gameObject.SetActive(false));
     }
 
     // This method is called when the "Battle" button is clicked

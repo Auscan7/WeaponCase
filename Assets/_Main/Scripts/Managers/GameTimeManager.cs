@@ -17,11 +17,6 @@ public class GameTimeManager : MonoBehaviour
     public GameObject WinScreen;
     public GameObject LoseScreen;
 
-    [Header("Earnings")]
-    public TextMeshProUGUI winEarningsText;
-    public TextMeshProUGUI loseEarningsText;
-    private int startingCurrency;
-
     private void Awake()
     {
         if (Instance == null)
@@ -38,8 +33,6 @@ public class GameTimeManager : MonoBehaviour
     {
         remainingTime = triggerTime;
         UpdateTimerText();
-
-        startingCurrency = CurrencyManager.Instance.Currency;
     }
 
     void Update()
@@ -75,8 +68,6 @@ public class GameTimeManager : MonoBehaviour
     public void LevelCompletedTrigger()
     {
         DifficultyManager.instance.UnlockNextDifficulty();
-        int earnedThisSession = CurrencyManager.Instance.Currency - startingCurrency;
-        winEarningsText.text = "Earnings: " + earnedThisSession.ToString();
 
         timerRunning = false;
         PauseManager.instance.PauseGame();
@@ -85,9 +76,6 @@ public class GameTimeManager : MonoBehaviour
 
     public void LevelFailedTrigger()
     {
-        int earnedThisSession = CurrencyManager.Instance.Currency - startingCurrency;
-        loseEarningsText.text = "Earnings: " + earnedThisSession.ToString();
-
         timerRunning = false;
         PauseManager.instance.PauseGame();
         LoseScreen.SetActive(true);
