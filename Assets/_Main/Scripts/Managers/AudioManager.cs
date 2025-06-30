@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
+    [Header("Mixer Groups")]
+    public UnityEngine.Audio.AudioMixerGroup sfxMixerGroup;
+
     public static AudioManager instance;
 
     public AudioSource audioSourceSFX;
@@ -84,6 +87,7 @@ public class AudioManager : MonoBehaviour
         for (int i = 0; i < sfxSourceCount; i++)
         {
             AudioSource source = gameObject.AddComponent<AudioSource>();
+            source.outputAudioMixerGroup = sfxMixerGroup; // <- THIS LINE IS CRITICAL
             sfxSources.Add(source);
         }
     }

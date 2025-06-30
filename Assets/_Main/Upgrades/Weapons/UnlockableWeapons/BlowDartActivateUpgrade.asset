@@ -17,3 +17,4 @@ MonoBehaviour:
   negativeDescription: 
   icon: {fileID: 8999077736052753832, guid: 8480ca38524df98498a05009900dbe95, type: 3}
   border: {fileID: -8220459746488438067, guid: 432a1acf00022b44190d156e3fe73681, type: 3}
+  upgradeType: 1

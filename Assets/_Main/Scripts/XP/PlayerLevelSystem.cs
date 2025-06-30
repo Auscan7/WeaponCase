@@ -7,6 +7,14 @@ using System.Collections;
 
 public class PlayerLevelSystem : MonoBehaviour
 {
+    [Header("Weapon Offer Quota Settings")]
+    public int weaponQuotaWindow = 9; // Check weapon offers in first 10 levels
+    public int minWeaponOffersInQuota = 2; // Must offer at least 3 in first 10 levels
+    [HideInInspector] public int currentWeaponOffers = 0;
+    [HideInInspector] public int levelsCheckedForWeapon = 0;
+
+    public int CurrentLevel => currentLevel;
+
     public static PlayerLevelSystem instance;
     [SerializeField]private Transform playerTransform;
 
@@ -84,6 +92,13 @@ public class PlayerLevelSystem : MonoBehaviour
     {
         currentXP -= xpRequiredForNextLevel;
         currentLevel++;
+
+        if (currentLevel > weaponQuotaWindow)
+        {
+            currentWeaponOffers = 0;
+            levelsCheckedForWeapon = 0;
+        }
+
         currentLevelText.text = "Lvl " + currentLevel.ToString();
 
         CalculateXPRequiredForNextLevel();

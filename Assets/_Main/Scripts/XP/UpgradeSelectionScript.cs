@@ -10,8 +10,8 @@ public class UpgradeSelectionScript : MonoBehaviour
     public class UpgradePool
     {
         public string poolName;
-        public List<Upgrade> upgrades; // List of upgrades in this pool
-        public float selectionWeight;  // Percentage chance of this pool being chosen
+        public List<Upgrade> upgrades;
+        public float selectionWeight;
     }
 
     public Button[] upgradeCards;
@@ -19,16 +19,16 @@ public class UpgradeSelectionScript : MonoBehaviour
     public TMP_Text[] negativeUpgradeDescriptions;
     public TMP_Text[] upgradeNames;
     public Image[] upgradeIcons;
+    public Image[] weaponCardIcon;
     public Image[] upgradeBorders;
 
     [Header("Upgrade Pools")]
-    public List<UpgradePool> upgradePools; // List of upgrade pools
+    public List<UpgradePool> upgradePools;
 
     private Upgrade[] selectedUpgrades;
 
     private void Start()
     {
-        // Attach each button a listener that calls OnUpgradeSelected for that specific button.
         foreach (Button card in upgradeCards)
         {
             card.onClick.AddListener(() => OnUpgradeSelected(card));
@@ -38,14 +38,43 @@ public class UpgradeSelectionScript : MonoBehaviour
     public void SetUpgradeCards()
     {
         selectedUpgrades = new Upgrade[upgradeCards.Length];
-
-        // Use a HashSet to track already selected upgrades (using reference equality)
         HashSet<Upgrade> selectedUpgradeSet = new HashSet<Upgrade>();
 
-        for (int i = 0; i < upgradeCards.Length; i++)
+        bool forceWeapon = false;
+        List<Upgrade> weaponEligibleUpgrades = GetEligibleUpgradesByType(Upgrade.UpgradeType.Weapon);
+
+        // Weapon quota logic (e.g., 3 weapons in first 10 level-ups)
+        if (PlayerLevelSystem.instance.CurrentLevel <= PlayerLevelSystem.instance.weaponQuotaWindow)
+        {
+            PlayerLevelSystem.instance.levelsCheckedForWeapon++;
+
+            int levelsRemaining = PlayerLevelSystem.instance.weaponQuotaWindow - PlayerLevelSystem.instance.levelsCheckedForWeapon;
+            int offersRemaining = PlayerLevelSystem.instance.minWeaponOffersInQuota - PlayerLevelSystem.instance.currentWeaponOffers;
+
+            if (offersRemaining > 0 && offersRemaining >= levelsRemaining)
+            {
+                forceWeapon = true;
+            }
+            else
+            {
+                forceWeapon = Random.value < 0.35f; // 35% chance if not forced
+            }
+        }
+
+        // Add a weapon upgrade if needed
+        if (forceWeapon && weaponEligibleUpgrades.Count > 0)
+        {
+            Upgrade forcedWeapon = weaponEligibleUpgrades[Random.Range(0, weaponEligibleUpgrades.Count)];
+            selectedUpgrades[0] = forcedWeapon;
+            selectedUpgradeSet.Add(forcedWeapon);
+            AssignUpgradeCardUI(0, forcedWeapon);
+            PlayerLevelSystem.instance.currentWeaponOffers++;
+        }
+
+        for (int i = selectedUpgrades[0] != null ? 1 : 0; i < upgradeCards.Length; i++)
         {
             Upgrade selectedUpgrade = null;
-            int attempts = 0; // Prevent infinite loops if pools are too small
+            int attempts = 0;
 
             while (attempts < 100)
             {
@@ -60,37 +89,75 @@ public class UpgradeSelectionScript : MonoBehaviour
 
             if (selectedUpgrade != null)
             {
-                // Assign the upgrade to the current card
                 selectedUpgrades[i] = selectedUpgrade;
-                upgradeNames[i].text = selectedUpgrade.upgradeName;
-                upgradeDescriptions[i].text = selectedUpgrade.positiveDescription;
-                negativeUpgradeDescriptions[i].text = selectedUpgrade.negativeDescription;
-                upgradeIcons[i].sprite = selectedUpgrade.icon;
-                upgradeBorders[i].sprite = selectedUpgrade.border;
+                AssignUpgradeCardUI(i, selectedUpgrade);
             }
             else
             {
-                Debug.LogWarning("Failed to select a unique upgrade. Check your upgrade pool setup.");
+                Debug.LogWarning("Failed to select a unique upgrade.");
             }
         }
     }
 
+    private void AssignUpgradeCardUI(int index, Upgrade upgrade)
+    {
+        upgradeNames[index].text = upgrade.upgradeName;
+        upgradeDescriptions[index].text = upgrade.positiveDescription;
+        negativeUpgradeDescriptions[index].text = upgrade.negativeDescription;
+
+        upgradeIcons[index].sprite = upgrade.icon;
+
+        if (upgrade.upgradeType == Upgrade.UpgradeType.Weapon)
+        {
+            weaponCardIcon[index].gameObject.SetActive(true);
+        }
+        else
+        {
+            weaponCardIcon[index].gameObject.SetActive(false);
+        }
+
+        upgradeBorders[index].sprite = upgrade.border;
+    }
+
+    private List<Upgrade> GetEligibleUpgradesByType(Upgrade.UpgradeType type)
+    {
+        List<Upgrade> eligible = new List<Upgrade>();
+
+        foreach (var pool in upgradePools)
+        {
+            foreach (var upgrade in pool.upgrades)
+            {
+                if (upgrade.upgradeType != type) continue;
+
+                if (upgrade is IConditionalUpgrade conditional)
+                {
+                    if (conditional.CanOffer())
+                        eligible.Add(upgrade);
+                }
+                else
+                {
+                    eligible.Add(upgrade);
+                }
+            }
+        }
+
+        return eligible;
+    }
+
     private Upgrade SelectRandomUpgrade()
     {
-        // Calculate the total weight from pools that have at least one eligible upgrade.
         float totalWeight = 0f;
         List<UpgradePool> validPools = new List<UpgradePool>();
 
         foreach (var pool in upgradePools)
         {
-            // Check if the pool has any eligible upgrades.
             bool hasEligible = false;
+
             foreach (var upgrade in pool.upgrades)
             {
-                // If the upgrade implements IConditionalUpgrade, check eligibility.
-                if (upgrade is IConditionalUpgrade conditionalUpgrade)
+                if (upgrade is IConditionalUpgrade conditional)
                 {
-                    if (conditionalUpgrade.CanOffer())
+                    if (conditional.CanOffer())
                     {
                         hasEligible = true;
                         break;
@@ -98,11 +165,11 @@ public class UpgradeSelectionScript : MonoBehaviour
                 }
                 else
                 {
-                    // If not conditional, it's always eligible.
                     hasEligible = true;
                     break;
                 }
             }
+
             if (hasEligible)
             {
                 totalWeight += pool.selectionWeight;
@@ -116,10 +183,11 @@ public class UpgradeSelectionScript : MonoBehaviour
             return null;
         }
 
-        // Pick a pool based on selection weight.
         float randomValue = Random.Range(0, totalWeight);
         float cumulativeWeight = 0f;
+
         UpgradePool selectedPool = null;
+
         foreach (var pool in validPools)
         {
             cumulativeWeight += pool.selectionWeight;
@@ -136,13 +204,12 @@ public class UpgradeSelectionScript : MonoBehaviour
             return null;
         }
 
-        // From the selected pool, filter eligible upgrades.
         List<Upgrade> eligibleUpgrades = new List<Upgrade>();
         foreach (var upgrade in selectedPool.upgrades)
         {
-            if (upgrade is IConditionalUpgrade conditionalUpgrade)
+            if (upgrade is IConditionalUpgrade conditional)
             {
-                if (conditionalUpgrade.CanOffer())
+                if (conditional.CanOffer())
                     eligibleUpgrades.Add(upgrade);
             }
             else
@@ -157,10 +224,8 @@ public class UpgradeSelectionScript : MonoBehaviour
             return null;
         }
 
-        int randomIndex = Random.Range(0, eligibleUpgrades.Count);
-        return eligibleUpgrades[randomIndex];
+        return eligibleUpgrades[Random.Range(0, eligibleUpgrades.Count)];
     }
-
 
     private void OnUpgradeSelected(Button clickedCard)
     {
@@ -168,8 +233,6 @@ public class UpgradeSelectionScript : MonoBehaviour
         if (selectedIndex != -1)
         {
             Upgrade selectedUpgrade = selectedUpgrades[selectedIndex];
-
-            // Apply the upgrade effect directly using the new logic.
             selectedUpgrade.ApplyUpgrade(PlayerUpgradeManager.Instance);
             PlayerStatsUIManager.Instance.UpdateStats();
             PlayerLevelSystem.instance.CloseUpgradeScreen();

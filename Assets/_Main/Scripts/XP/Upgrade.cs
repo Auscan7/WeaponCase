@@ -8,14 +8,13 @@ public abstract class Upgrade : ScriptableObject
     public Sprite icon;
     public Sprite border;
 
-    // Each upgrade will define its own logic
+    public enum UpgradeType { Stat, Weapon, Other }
+    public UpgradeType upgradeType;
+
     public abstract void ApplyUpgrade(PlayerUpgradeManager upgradeManager);
 
     public interface IConditionalUpgrade
     {
-        /// <summary>
-        /// Returns true if the upgrade should be offered.
-        /// </summary>
         bool CanOffer();
     }
 }

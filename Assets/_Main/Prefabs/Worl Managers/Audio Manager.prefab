@@ -47,9 +47,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc98c051cd77cca4cb6b9804a7353a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxMixerGroup: {fileID: -3738581272277782097, guid: 80010413767c24a41b8acecf43fd5d80, type: 2}
   audioSourceSFX: {fileID: 6041800605129208568}
   audioSourceMenuMusic: {fileID: 3511591386719951176}
   audioSourceLevelMusic: {fileID: 4528186854474830775}
+  gemPickUpCooldown: 0.2
+  enemyTakeDamageCooldown: 0.1
+  enemyDeathCooldown: 0.3
   menuMusic: {fileID: 8300000, guid: dc702e79e37c2834ca3fd17d5e74ae9f, type: 3}
   levelMusic: {fileID: 8300000, guid: 5fb33d6336cfab943b4891d438b5039b, type: 3}
   bowAndArrowFireSFX:
@@ -140,7 +144,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -3738581272277782097, guid: 80010413767c24a41b8acecf43fd5d80, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
