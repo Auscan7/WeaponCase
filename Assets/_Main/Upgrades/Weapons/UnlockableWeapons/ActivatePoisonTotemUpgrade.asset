@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aef355cddb46214c9ded89f6e65c841, type: 3}
+  m_Name: ActivatePoisonTotemUpgrade
+  m_EditorClassIdentifier: 
+  upgradeName: PoisonTotem
+  positiveDescription: Leave a trail of poison clouds behind you
+  negativeDescription: 
+  icon: {fileID: 257549796547058883, guid: d452f9e787c25cb4982f3c6cddeb2473, type: 3}
+  border: {fileID: -5381781119884701127, guid: 118aaa07d73372d4a946fe6bb94703b5, type: 3}
+  upgradeType: 1

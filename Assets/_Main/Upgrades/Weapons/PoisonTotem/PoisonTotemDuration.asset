@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2583b813fb6f8c743bc71c3a21b368a7, type: 3}
+  m_Name: PoisonTotemDuration
+  m_EditorClassIdentifier: 
+  upgradeName: Poison Duration
+  positiveDescription: Poison Duration +1s
+  negativeDescription: 
+  icon: {fileID: 257549796547058883, guid: d452f9e787c25cb4982f3c6cddeb2473, type: 3}
+  border: {fileID: -8220459746488438067, guid: 432a1acf00022b44190d156e3fe73681, type: 3}
+  upgradeType: 0
+  durationIncrease: 1

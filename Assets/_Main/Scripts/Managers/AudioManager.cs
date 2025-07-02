@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -30,6 +31,11 @@ public class AudioManager : MonoBehaviour
     public AudioClip menuMusic;
     public AudioClip levelMusic;
 
+    [Header("Boss Music")]
+    public AudioClip bossMusic;
+    public AudioSource audioSourceBossMusic;
+    [SerializeField] private float musicFadeDuration = 2f;
+
     [Header("Weapon SFX")]
     public AudioClip[] bowAndArrowFireSFX;
     public AudioClip[] spearFireSFX;
@@ -42,12 +48,16 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] grenadeSFX;
     public AudioClip[] grenadeExplodeSFX;
     public AudioClip[] slingShotSFX;
+    public AudioClip[] iceTotemSFX;
+    public AudioClip[] poisonTotemSFX;
     public AudioClip[] orbitalStrikeSFX;
 
     [Header("Enemy SFX")]
     public AudioClip[] hammerheadSFX;
     public AudioClip[] enemyTakeDamageSFX;
     public AudioClip[] enemyDeathSFX;
+    public AudioClip[] octopusTentacleSFX;
+    public AudioClip[] octopusProjectileSFX;
 
     [Header("UI")]
     public AudioClip[] UIClickSFX;
@@ -173,6 +183,7 @@ public class AudioManager : MonoBehaviour
         audioSourceMenuMusic.clip = menuMusic;
         audioSourceMenuMusic.Play();
         audioSourceLevelMusic.Stop();
+        audioSourceBossMusic.Stop();
     }
 
     private void PlayLevelMusic()
@@ -180,5 +191,36 @@ public class AudioManager : MonoBehaviour
         audioSourceLevelMusic.clip = levelMusic;
         audioSourceLevelMusic.Play();
         audioSourceMenuMusic.Stop();
+        audioSourceBossMusic.Stop();
+    }
+
+    public void PlayBossMusicWithFade()
+    {
+        StartCoroutine(FadeToBossMusic());
+    }
+
+    private IEnumerator FadeToBossMusic()
+    {
+        float t = 0f;
+
+        float startVolume = audioSourceLevelMusic.volume;
+        float targetVolume = 1f;
+
+        audioSourceBossMusic.clip = bossMusic;
+        audioSourceBossMusic.Play();
+
+        while (t < musicFadeDuration)
+        {
+            t += Time.deltaTime;
+            float normalizedTime = t / musicFadeDuration;
+
+            audioSourceLevelMusic.volume = Mathf.Lerp(startVolume, 0f, normalizedTime);
+            audioSourceBossMusic.volume = Mathf.Lerp(0f, targetVolume, normalizedTime);
+
+            yield return null;
+        }
+
+        audioSourceLevelMusic.Stop();
+        audioSourceLevelMusic.volume = startVolume;
     }
 }

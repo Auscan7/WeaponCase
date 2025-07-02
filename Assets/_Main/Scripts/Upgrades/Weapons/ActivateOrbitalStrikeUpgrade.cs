@@ -11,6 +11,7 @@ public class ActivateOrbitalStrikeUpgrade : Upgrade, IConditionalUpgrade
     public bool CanOffer()
     {
         return !PlayerUpgradeManager.Instance.IsWeaponActive("OrbitalStrike") &&
-               PlayerUpgradeManager.Instance.SelectedBoatName == "Battle Ship";
+               PlayerUpgradeManager.Instance.SelectedBoatName == "Battle Ship" &&
+           PlayerUpgradeManager.Instance.HasFreeWeaponSlot();
     }
 }

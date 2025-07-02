@@ -2189,7 +2189,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -157.5}
+  m_AnchoredPosition: {x: 0, y: -178.9}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4808881611899946667
@@ -2859,6 +2859,7 @@ GameObject:
   - component: {fileID: 8108919516392336936}
   - component: {fileID: 8274290747154989677}
   - component: {fileID: 5016523105017044698}
+  - component: {fileID: 8889549085539269295}
   m_Layer: 5
   m_Name: Win Screen
   m_TagString: Untagged
@@ -2926,6 +2927,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &8889549085539269295
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298944750460212387}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1346279520808240337
 GameObject:
   m_ObjectHideFlags: 0
@@ -3307,14 +3320,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f4731b46b5121b4b9fd08983666fe50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guaranteedWeaponUpgradeLevels: 3
+  weaponQuotaWindow: 9
+  minWeaponOffersInQuota: 2
+  currentWeaponOffers: 0
+  levelsCheckedForWeapon: 0
   playerTransform: {fileID: 0}
   levelBar: {fileID: 8247542022363990682}
   currentLevelText: {fileID: 4738889345316219991}
   baseXPPerLevel: 3
   xpMultiplier: 1.35
   xpPerGem: 1
-  customXPRequirements: 1e0000003c0000007800000078000000780000009600000096000000fa000000fa0000002c0100002c0100005e0100005e010000f4010000f4010000ee020000ee020000e8030000e8030000b0040000b0040000e2040000e20400001405000014050000dc050000dc050000d0070000d0070000d0070000600900006009000060090000c4090000c4090000c4090000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000ac0d0000ac0d0000ac0d0000ac0d0000ac0d0000ac0d0000ac0d0000ac0d0000ac0d0000ac0d0000ac0d0000ac0d0000ac0d0000ac0d0000ac0d0000ac0d0000ac0d0000ac0d0000ac0d0000ac0d0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000a00f0000
+  customXPRequirements: 1e0000003c0000007800000078000000780000009600000096000000fa000000fa0000002c0100002c0100005e0100005e010000f4010000f4010000ee020000ee020000e8030000e8030000b0040000b0040000e2040000e20400001405000014050000dc050000dc050000d0070000d0070000d0070000600900006009000060090000c4090000c4090000c4090000b80b0000b80b0000b80b0000b80b000070170000701700007017000070170000701700007017000070170000701700007017000070170000282300002823000028230000282300002823000028230000282300002823000028230000282300000429000004290000042900000429000004290000042900000429000004290000042900000429000004290000042900000429000004290000042900000429000004290000042900000429000004290000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000e02e0000
   upgradeScreen: {fileID: 7056149784034595499}
 --- !u!114 &4444228535925690204
 MonoBehaviour:
@@ -3379,6 +3395,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: ccfe1a721b4b72d41a1c908572e93e97, type: 2}
     - {fileID: 11400000, guid: d2d30350825708c469326a6c210586b7, type: 2}
     - {fileID: 11400000, guid: 73808da35bd50714dbf61d0ca8d234fc, type: 2}
+    - {fileID: 11400000, guid: 12d3f4ada431bbb4f9806a5504d34f00, type: 2}
+    - {fileID: 11400000, guid: fea2ba45ceecc1f47b580f1ae3ef2239, type: 2}
     selectionWeight: 27
   - poolName: Rarity 3
     upgrades:
@@ -3392,6 +3410,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 28de7de0559651b4d81c949dac2fab97, type: 2}
     - {fileID: 11400000, guid: 7fc6557a5481b744c8556fdbb8fc39be, type: 2}
     - {fileID: 11400000, guid: c1c0811f20c226848ae4e9a02902b2e1, type: 2}
+    - {fileID: 11400000, guid: 2677d2415791fc1438dc188ff25362af, type: 2}
+    - {fileID: 11400000, guid: 6edba33caafadc94eb19bd02c21f06c3, type: 2}
     selectionWeight: 15
   - poolName: Rarity 4
     upgrades:
@@ -3399,11 +3419,11 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 657518e3ef1a6754485ef23dc9edc6e2, type: 2}
     - {fileID: 11400000, guid: 66b7e8f66d431954e92433769afba244, type: 2}
     - {fileID: 11400000, guid: ef18b4251879ed14389f58a671c7b171, type: 2}
-    - {fileID: 11400000, guid: 6edba33caafadc94eb19bd02c21f06c3, type: 2}
     - {fileID: 11400000, guid: ff009384451c3064ea93561dfaccb84f, type: 2}
     - {fileID: 11400000, guid: 6fa5592795c79c14d9a08ae68a07d25f, type: 2}
     - {fileID: 11400000, guid: dc7e1d62dbee6594b9ee1a08d2283601, type: 2}
     - {fileID: 11400000, guid: 8dbd76997cfd63444b76bc7ae812dbe5, type: 2}
+    - {fileID: 11400000, guid: 832dfbb664dac3446ba77da6c2cb71b9, type: 2}
     selectionWeight: 6
   - poolName: Rarity 5
     upgrades:
@@ -3445,6 +3465,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f714aa36ea3b844b66edfb4489e393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endBossPrefab: {fileID: 4871557909895165438, guid: 5a3170471c686b045b2343a87e0d4ef6, type: 3}
+  endBossSpawnPoint: {fileID: 0}
   loadingScreen: {fileID: 6048730974226799963}
   sceneToLoad: Main Menu
   timerText: {fileID: 613846865720323607}
@@ -3452,6 +3474,8 @@ MonoBehaviour:
   timerRunning: 1
   WinScreen: {fileID: 1298944750460212387}
   LoseScreen: {fileID: 6666279910400148639}
+  winScreenCanvasGroup: {fileID: 8889549085539269295}
+  loseScreenCanvasGroup: {fileID: 2653998026590067034}
 --- !u!114 &7780146686222702658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9404,10 +9428,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 8108919516392336936}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -157.5}
-  m_SizeDelta: {x: 300, y: 60}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 78.8}
+  m_SizeDelta: {x: 464.4132, y: 104.0695}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8814416997495071407
 CanvasRenderer:
@@ -9437,7 +9461,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You Survived
+  m_text: You have cleared the level!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7659f6d6ec9b642db8be29bc45fe97cc, type: 2}
   m_sharedMaterial: {fileID: 8690591861142563998, guid: 7659f6d6ec9b642db8be29bc45fe97cc, type: 2}
@@ -9446,8 +9470,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278445312
-  m_fontColor: {r: 0, g: 0.8962264, b: 0.013618278, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -15489,6 +15513,7 @@ GameObject:
   - component: {fileID: 3622782517672781182}
   - component: {fileID: 3438299590408826775}
   - component: {fileID: 3665136375313872749}
+  - component: {fileID: 2653998026590067034}
   m_Layer: 5
   m_Name: Lose Screen
   m_TagString: Untagged
@@ -15556,6 +15581,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &2653998026590067034
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6666279910400148639}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6693987012887157448
 GameObject:
   m_ObjectHideFlags: 0

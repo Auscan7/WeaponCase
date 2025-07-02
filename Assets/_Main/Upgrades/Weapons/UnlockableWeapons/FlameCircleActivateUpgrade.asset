@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71aa60d0e05418448cae03b841ac8d8, type: 3}
   m_Name: FlameCircleActivateUpgrade
   m_EditorClassIdentifier: 
-  upgradeName: Flame Circle
+  upgradeName: Fire Totem
   positiveDescription: Deals continious damage to enemies around the player
   negativeDescription: 
-  icon: {fileID: 21300000, guid: aa3451f3d2fe4e34ba436738e0e6f65b, type: 3}
+  icon: {fileID: 5899369325019403351, guid: 9f949e48826c5a24f9a6d1cd89f3bcdd, type: 3}
   border: {fileID: -5648912583701459738, guid: 71445dd38271814458caba9f1630ecca, type: 3}
   upgradeType: 1

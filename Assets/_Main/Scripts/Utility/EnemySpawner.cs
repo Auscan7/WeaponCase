@@ -70,11 +70,13 @@ public class EnemySpawner : MonoBehaviour
     // Call these methods to control the pause state
     public void PauseSpawning()
     {
+        Debug.Log(name + " paused");
         isPaused = true;
     }
 
     public void ResumeSpawning()
     {
+        Debug.Log(name + " resumed");
         isPaused = false;
     }
 }

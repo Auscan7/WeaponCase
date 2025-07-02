@@ -14,6 +14,7 @@ public class ActivatePistolUpgrade : Upgrade, IConditionalUpgrade
         // Only offer if the player selected the battle ship boat.
         // Assuming your UpgradeManager stores a weaponDict.
         return !PlayerUpgradeManager.Instance.IsWeaponActive("Pistol") &&
-               PlayerUpgradeManager.Instance.SelectedBoatName == "Battle Ship";
+               PlayerUpgradeManager.Instance.SelectedBoatName == "Battle Ship" &&
+           PlayerUpgradeManager.Instance.HasFreeWeaponSlot();
     }
 }

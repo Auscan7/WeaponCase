@@ -33,6 +33,7 @@ Transform:
   m_Children:
   - {fileID: 6108086143740747566}
   - {fileID: 1477862918907108318}
+  - {fileID: 6183242319912072404}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2439349432307432187
@@ -56,6 +57,9 @@ MonoBehaviour:
   enemyDeathCooldown: 0.3
   menuMusic: {fileID: 8300000, guid: dc702e79e37c2834ca3fd17d5e74ae9f, type: 3}
   levelMusic: {fileID: 8300000, guid: 5fb33d6336cfab943b4891d438b5039b, type: 3}
+  bossMusic: {fileID: 8300000, guid: fd867c6756e25d74c84ec8034c3550c0, type: 3}
+  audioSourceBossMusic: {fileID: 1925894301243607115}
+  musicFadeDuration: 2
   bowAndArrowFireSFX:
   - {fileID: 8300000, guid: a506953ddad4ad3419aa9cc9a6f142bf, type: 3}
   - {fileID: 8300000, guid: 898f8b1e0d99bb1448e54d2999639ee7, type: 3}
@@ -94,6 +98,12 @@ MonoBehaviour:
   slingShotSFX:
   - {fileID: 8300000, guid: 64fb9477894fa2e4a997518fbb1c2f15, type: 3}
   - {fileID: 8300000, guid: 5cd691c7632755d499fbbb55bc1f0fac, type: 3}
+  iceTotemSFX:
+  - {fileID: 8300000, guid: 32f565ba94f200f49adb407cce64e873, type: 3}
+  - {fileID: 8300000, guid: df0ec39bb7429284fb2f1c3413e68098, type: 3}
+  poisonTotemSFX:
+  - {fileID: 8300000, guid: ce4eab13c40dd5c46983f3e002a4f869, type: 3}
+  - {fileID: 8300000, guid: b7a210df23bd255428bdf4def67109f2, type: 3}
   orbitalStrikeSFX:
   - {fileID: 8300000, guid: e4a2a98ee03890d40a06b28d95d492a0, type: 3}
   - {fileID: 8300000, guid: 3e06c45e3372dd345b50a642fe86616d, type: 3}
@@ -108,6 +118,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 96bbf34d7aee725449bb8a5f1a46bfbb, type: 3}
   - {fileID: 8300000, guid: 1fcfd83e3d859db4585f34930d88477c, type: 3}
   - {fileID: 8300000, guid: cd42fc3c60305214daafa1fa16a8cb46, type: 3}
+  octopusTentacleSFX:
+  - {fileID: 8300000, guid: 459917b52688dc34096745c5a94db379, type: 3}
+  - {fileID: 8300000, guid: 3a0e3471cca4f314685eaa9f91440f43, type: 3}
+  - {fileID: 8300000, guid: fede019e27028bd4296cf7d5ee9efa41, type: 3}
+  octopusProjectileSFX:
+  - {fileID: 8300000, guid: 4e9bff56ee93c6f42b214141e44e763d, type: 3}
+  - {fileID: 8300000, guid: 8124281487721774a9b4d5101358b50a, type: 3}
   UIClickSFX:
   - {fileID: 8300000, guid: 81652031b64c342cc8dbc59c138d77c5, type: 3}
   UIHoverSFX:
@@ -275,6 +292,135 @@ AudioSource:
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.9
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &5524817140892607087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6183242319912072404}
+  - component: {fileID: 1925894301243607115}
+  m_Layer: 0
+  m_Name: Boss Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6183242319912072404
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5524817140892607087}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6524671380278889797}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1925894301243607115
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5524817140892607087}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 8541383523188836774, guid: 80010413767c24a41b8acecf43fd5d80, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0

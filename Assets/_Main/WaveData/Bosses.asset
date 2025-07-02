@@ -43,8 +43,3 @@ MonoBehaviour:
     amount: 2
     spawnInterval: 0
     spawnZoneName: SpawnerBottom
-  - enemyPrefab: {fileID: 4871557909895165438, guid: 5a3170471c686b045b2343a87e0d4ef6, type: 3}
-    spawnTime: 1100
-    amount: 1
-    spawnInterval: 0
-    spawnZoneName: SpawnerTop

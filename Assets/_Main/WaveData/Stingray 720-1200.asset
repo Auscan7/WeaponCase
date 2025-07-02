@@ -15,26 +15,26 @@ MonoBehaviour:
   spawnEvents:
   - enemyPrefab: {fileID: 4871557909895165438, guid: 3aab2b51252909b4db6514acf8694ecb, type: 3}
     spawnTime: 725
-    amount: 20
+    amount: 17
     spawnInterval: 25
     spawnZoneName: SpawnerTop
   - enemyPrefab: {fileID: 4871557909895165438, guid: 3aab2b51252909b4db6514acf8694ecb, type: 3}
     spawnTime: 785
-    amount: 40
+    amount: 35
     spawnInterval: 10
     spawnZoneName: SpawnerBottom
   - enemyPrefab: {fileID: 4871557909895165438, guid: 3aab2b51252909b4db6514acf8694ecb, type: 3}
     spawnTime: 855
-    amount: 10
+    amount: 8
     spawnInterval: 0
     spawnZoneName: SpawnerLeft
   - enemyPrefab: {fileID: 4871557909895165438, guid: 3aab2b51252909b4db6514acf8694ecb, type: 3}
     spawnTime: 735
-    amount: 30
+    amount: 25
     spawnInterval: 25
     spawnZoneName: SpawnerRight
   - enemyPrefab: {fileID: 4871557909895165438, guid: 3aab2b51252909b4db6514acf8694ecb, type: 3}
     spawnTime: 735
-    amount: 30
+    amount: 25
     spawnInterval: 25
     spawnZoneName: SpawnerTop

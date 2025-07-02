@@ -15,6 +15,7 @@ public class ActivateBlowDartUpgrade : Upgrade, IConditionalUpgrade
         // Only offer if the player selected the wooden boat.
         // Assuming your UpgradeManager stores a weaponDict.
         return !PlayerUpgradeManager.Instance.IsWeaponActive("BlowDart") &&
-               PlayerUpgradeManager.Instance.SelectedBoatName == "Raft";
+               PlayerUpgradeManager.Instance.SelectedBoatName == "Raft" &&
+           PlayerUpgradeManager.Instance.HasFreeWeaponSlot();
     }
 }

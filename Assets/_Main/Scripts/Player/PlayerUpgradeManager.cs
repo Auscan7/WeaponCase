@@ -30,6 +30,8 @@ public class PlayerUpgradeManager : MonoBehaviour
     public float blowDartDamageMultiplier = 1f;
     public float slingShotDamageMultiplier = 1f;
     public float flameCircleDamageMultiplier = 1f;
+    public float iceTotemDamageMultiplier = 1f;
+    public float poisonTotemDamageMultiplier = 1f;
     public float smgDamageMultiplier = 1f;
     public float shotgunDamageMultiplier = 1f;
     public float rocketDamageMultiplier = 1f;
@@ -43,6 +45,8 @@ public class PlayerUpgradeManager : MonoBehaviour
     public float BlowDartFirerateMultiplier = 1f;
     public float SlingShotFirerateMultiplier = 1f;
     public float FlameCircleFirerateMultiplier = 1f;
+    public float IceTotemFirerateMultiplier = 1f;
+    public float PoisonTotemFirerateMultiplier = 1f;
     public float SMGFirerateMultiplier = 1f;
     public float ShotgunFirerateMultiplier = 1f;
     public float RocketFirerateMultiplier = 1f;
@@ -56,6 +60,8 @@ public class PlayerUpgradeManager : MonoBehaviour
     public GameObject blowDart;
     public GameObject slingShot;
     public GameObject flameCircle;
+    public GameObject iceTotem;
+    public GameObject poisonTotem;
     public GameObject smg;
     public GameObject shotgun;
     public GameObject rocket;
@@ -70,6 +76,8 @@ public class PlayerUpgradeManager : MonoBehaviour
     public WeaponStats blowDartStats;
     public WeaponStats slingShotStats;
     public WeaponStats flameCircleStats;
+    public WeaponStats iceTotemStats;
+    public WeaponStats poisonTotemStats;
     public WeaponStats smgStats;
     public WeaponStats shotgunStats;
     public WeaponStats rocketStats;
@@ -85,6 +93,8 @@ public class PlayerUpgradeManager : MonoBehaviour
     public float baseBlowDartDamage = 5f;
     public float baseSlingShotDamage = 18f;
     public float baseFlameCircleDamage = 5f;
+    public float baseIceTotemDamage = 5f;
+    public float basePoisonTotemDamage = 5f;
     public float baseSlingShotAreaDamage = 6f;
     public float baseSMGDamage = 2f;
     public float baseShotgunDamage = 6f;
@@ -101,6 +111,8 @@ public class PlayerUpgradeManager : MonoBehaviour
     public float baseBlowDartFirerate;
     public float baseSlingShotFirerate;
     public float baseFlameCircleFirerate;
+    public float baseIceTotemFirerate;
+    public float basePoisonTotemFirerate;
     public float baseSMGFirerate;
     public float baseShotgunFirerate;
     public float baseRocketFirerate;
@@ -111,6 +123,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     public int baseShotgunProjectileCount = 3;
     public int baseBowAndArrowHopCount = 2;
     public int baseGrenadeProjectileCount = 3;
+    public int baseIceTotemProjectileCount = 3;
 
     [Header("Boats")]
     public GameObject Default;
@@ -160,7 +173,7 @@ public class PlayerUpgradeManager : MonoBehaviour
         boatModifiers = new Dictionary<string, BoatStats>
         {
             { "Raft", new BoatStats(1f, 1f, 1f, 1f) },
-            { "Battle Ship", new BoatStats(1.25f, 1.25f, 0.75f, 0.75f) },
+            { "Battle Ship", new BoatStats(1.2f, 1.2f, 0.8f, 0.9f) },
             //{ "Third Boat", new BoatStats(0.5f, 0.5f, 1.5f, 1.2f) }
         };
     }
@@ -176,6 +189,8 @@ public class PlayerUpgradeManager : MonoBehaviour
             { "BlowDart", blowDart },
             { "SlingShot", slingShot },
             { "FlameCircle", flameCircle },
+            { "IceTotem", iceTotem },
+            { "PoisonTotem", poisonTotem },
             { "SMG", smg },
             { "Shotgun", shotgun },
             { "Rocket", rocket },
@@ -286,6 +301,8 @@ public class PlayerUpgradeManager : MonoBehaviour
         slingShotStats.damage = baseSlingShotDamage * playerDamageMultiplier;
         slingShotStats.areaDamage = baseSlingShotAreaDamage * playerDamageMultiplier;
         flameCircleStats.damage = baseFlameCircleDamage * playerDamageMultiplier;
+        iceTotemStats.damage = baseIceTotemDamage * playerDamageMultiplier;
+        poisonTotemStats.damage = basePoisonTotemDamage * playerDamageMultiplier;
         smgStats.damage = baseSMGDamage * playerDamageMultiplier;
         shotgunStats.damage = baseShotgunDamage * playerDamageMultiplier;
         rocketStats.damage = baseRocketDamage * playerDamageMultiplier;
@@ -302,6 +319,8 @@ public class PlayerUpgradeManager : MonoBehaviour
         blowDartStats.firerate = baseBlowDartFirerate * playerFireRateMultiplier;
         slingShotStats.firerate = baseSlingShotFirerate * playerFireRateMultiplier;
         flameCircleStats.firerate = baseFlameCircleFirerate * playerFireRateMultiplier;
+        iceTotemStats.firerate = baseIceTotemFirerate * playerFireRateMultiplier;
+        poisonTotemStats.firerate = basePoisonTotemFirerate * playerFireRateMultiplier;
         smgStats.firerate = baseSMGFirerate * playerFireRateMultiplier;
         shotgunStats.firerate = baseShotgunFirerate * playerFireRateMultiplier;
         rocketStats.firerate = baseRocketFirerate * playerFireRateMultiplier;
@@ -323,6 +342,8 @@ public class PlayerUpgradeManager : MonoBehaviour
         slingShotStats.damage = baseSlingShotDamage * playerDamageMultiplier * slingShotDamageMultiplier;
         slingShotStats.areaDamage = baseSlingShotAreaDamage * playerDamageMultiplier * slingShotDamageMultiplier;
         flameCircleStats.damage = baseFlameCircleDamage * playerDamageMultiplier * flameCircleDamageMultiplier;
+        iceTotemStats.damage = baseIceTotemDamage * playerDamageMultiplier * iceTotemDamageMultiplier;
+        poisonTotemStats.damage = basePoisonTotemDamage * playerDamageMultiplier * poisonTotemDamageMultiplier;
         smgStats.damage = baseSMGDamage * playerDamageMultiplier * smgDamageMultiplier;
         shotgunStats.damage = baseShotgunDamage * playerDamageMultiplier * shotgunDamageMultiplier;
         rocketStats.damage = baseRocketDamage * playerDamageMultiplier * rocketDamageMultiplier;
@@ -343,6 +364,8 @@ public class PlayerUpgradeManager : MonoBehaviour
         blowDartStats.firerate = baseBlowDartFirerate * playerFireRateMultiplier * BlowDartFirerateMultiplier;
         slingShotStats.firerate = baseSlingShotFirerate * playerFireRateMultiplier * SlingShotFirerateMultiplier;
         flameCircleStats.firerate = baseFlameCircleFirerate * playerFireRateMultiplier * FlameCircleFirerateMultiplier;
+        iceTotemStats.firerate = baseIceTotemFirerate * playerFireRateMultiplier * IceTotemFirerateMultiplier;
+        poisonTotemStats.firerate = basePoisonTotemFirerate * playerFireRateMultiplier * PoisonTotemFirerateMultiplier;
         smgStats.firerate = baseSMGFirerate * playerFireRateMultiplier * SMGFirerateMultiplier;
         shotgunStats.firerate = baseShotgunFirerate * playerFireRateMultiplier * ShotgunFirerateMultiplier;
         rocketStats.firerate = baseRocketFirerate * playerFireRateMultiplier * RocketFirerateMultiplier;
@@ -352,6 +375,10 @@ public class PlayerUpgradeManager : MonoBehaviour
         PlayerStatsUIManager.Instance.UpdateStats();
     }
 
+    public bool HasFreeWeaponSlot()
+    {
+        return GetComponent<WeaponSlotManager>().HasFreeAutoSlot();
+    }
 }
 
 [System.Serializable]
@@ -379,4 +406,5 @@ public class WeaponStats
     public float areaDamage;
     public float firerate;
     public float range;
+    public float duration;
 }

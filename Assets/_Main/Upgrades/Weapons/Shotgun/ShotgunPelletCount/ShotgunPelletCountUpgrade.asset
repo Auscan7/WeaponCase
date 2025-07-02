@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af54a1fad8a5454f9e53a3304708f32, type: 3}
   m_Name: ShotgunPelletCountUpgrade
   m_EditorClassIdentifier: 
-  upgradeName: More Pellets
+  upgradeName: Shotgun Pellet
   positiveDescription: Pellet Count +1
   negativeDescription: 
   icon: {fileID: 7856409591847296691, guid: 1baf19739cdf21141986469837aa9337, type: 3}
-  border: {fileID: -5381781119884701127, guid: 118aaa07d73372d4a946fe6bb94703b5, type: 3}
+  border: {fileID: -5648912583701459738, guid: 71445dd38271814458caba9f1630ecca, type: 3}
+  upgradeType: 0
   pelletCountIncrease: 1

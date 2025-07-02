@@ -25,13 +25,19 @@ public class SpawnerManager : MonoBehaviour
 
     public void PauseAllSpawners()
     {
+        Debug.Log("Pausing all spawners: " + spawners.Count);
         foreach (var spawner in spawners)
+        {
+            Debug.Log("Pausing spawner: " + spawner.name);
             spawner.PauseSpawning();
+        }
     }
 
     public void ResumeAllSpawners()
     {
         foreach (var spawner in spawners)
+        {
             spawner.ResumeSpawning();
+        }
     }
 }

@@ -184,4 +184,9 @@ public class FlameCircle : Weapon
         Gizmos.color = new Color(1f, 0f, 0f, 0.1f);
         Gizmos.DrawSphere(transform.position, weaponRange);
     }
+
+    public override void RotateTowardsTarget(Vector2 targetPosition)
+    {
+        
+    }
 }

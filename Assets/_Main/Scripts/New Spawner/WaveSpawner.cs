@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
+    public bool isPaused = false;
+
     public List<EnemyWaveData> waveDatas;  // List of enemy wave data
     private Dictionary<string, Transform> spawnZones;
 
@@ -40,6 +42,10 @@ public class WaveSpawner : MonoBehaviour
 
         while (pendingSpawns.Count > 0)
         {
+            // Pause check - wait here while paused
+            while (isPaused)
+                yield return null;
+
             float elapsed = Time.time - waveStartTime;
 
             for (int i = pendingSpawns.Count - 1; i >= 0; i--)
@@ -69,6 +75,10 @@ public class WaveSpawner : MonoBehaviour
     {
         for (int i = 0; i < spawn.amount; i++)
         {
+            // Pause check - wait here while paused
+            while (isPaused)
+                yield return null;
+
             bool ignoreLimit = false;
             EnemyStatManager statManager = spawn.enemyPrefab.GetComponent<EnemyStatManager>();
             if (statManager != null && statManager.ignoreSpawnLimit)

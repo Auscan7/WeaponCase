@@ -6,7 +6,6 @@ public class Grenade : Weapon
     [Header("Grenade Settings")]
     private float throwDistance;
     private float explosionRadius = 2f;
-    private float grenadeDamage;
     private float grenadeSpeed = 5f;
 
     [SerializeField] private GameObject explosionEffectPrefab;
@@ -15,7 +14,6 @@ public class Grenade : Weapon
     private void Start()
     {
         throwDistance = PlayerUpgradeManager.Instance.grenadeStats.range;
-        grenadeDamage = PlayerUpgradeManager.Instance.grenadeStats.damage;
 
         StartCoroutine(GrenadeThrowRoutine());
     }
@@ -52,7 +50,7 @@ public class Grenade : Weapon
             GrenadeProjectile grenadeScript = grenade.GetComponent<GrenadeProjectile>();
             if (grenadeScript != null)
             {
-                grenadeScript.SetTarget(grenadeTarget, explosionRadius, grenadeDamage, grenadeSpeed);
+                grenadeScript.SetTarget(grenadeTarget, explosionRadius, grenadeSpeed);
             }
 
             currentAngle += angleStep;

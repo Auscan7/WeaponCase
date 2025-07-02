@@ -187,7 +187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2714442251322780456}
   - component: {fileID: -4395357321800890130}
-  - component: {fileID: 2910664139029674070}
+  - component: {fileID: 3789471594329109298}
   - component: {fileID: 2631936208237584358}
   - component: {fileID: 6206941498358351729}
   - component: {fileID: 4526318695741246110}
@@ -235,7 +235,7 @@ MonoBehaviour:
   characterMovementManager: {fileID: 0}
   characterStatManager: {fileID: 0}
   characterCombatManager: {fileID: 0}
---- !u!114 &2910664139029674070
+--- !u!114 &3789471594329109298
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -244,12 +244,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4871557909895165438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29c29e0a99e236c47a9a3dae4925dab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 660ed936ed2957e4a88ca8c3d1514e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMovementManager: {fileID: 0}
   currentHealth: 0
-  maxHealth: 60000
+  maxHealth: 50000
   healthBar: {fileID: 1297005040029400982}
   healthBarParent: {fileID: 7141845522669670118}
   ignoreSpawnLimit: 1
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  moveSpeed: 0.75
+  moveSpeed: 1.5
   spriteTransform: {fileID: 7608606556829224412}
   rotationSpeed: 1
   stoppingDistance: 1
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edbcc1895d6e24458976271270887d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 100
+  damageAmount: 80
 --- !u!114 &4526318695741246110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37d3ed17747538f41806b987a4d6720b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tentacleDamage: 150
+  tentacleDamage: 125
   attackCooldown: 3
   windupTime: 1
   tentacleLifetime: 0.55
@@ -396,6 +396,38 @@ MonoBehaviour:
     - {x: 0.19, y: 4.84}
     - {x: -1.41, y: -2.22}
   selectedPatternIndex: 5
+  projectileAttackPatterns:
+  - patternType: 0
+    projectileCount: 12
+    spreadAngle: 0
+    radius: 0.5
+  - patternType: 1
+    projectileCount: 6
+    spreadAngle: 90
+    radius: 0
+  - patternType: 2
+    projectileCount: 8
+    spreadAngle: 0
+    radius: 0
+  - patternType: 2
+    projectileCount: 14
+    spreadAngle: 0
+    radius: 0
+  - patternType: 0
+    projectileCount: 16
+    spreadAngle: 0
+    radius: 0.5
+  - patternType: 1
+    projectileCount: 15
+    spreadAngle: 130
+    radius: 0
+  projectilePrefab: {fileID: 4722767060693112874, guid: c2e30db1784fcbc4faaa3c6d7ccb451b, type: 3}
+  projectileDamage: 60
+  projectileSpeed: 2
+  minProjectiles: 5
+  maxProjectiles: 25
+  projectileCooldown: 4.5
+  projectileSpreadAngle: 360
 --- !u!114 &887206026406901528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,7 +601,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 6
   m_Sprite: {fileID: 8268731965568694924, guid: 456cfb163df58de48af8a8210597675e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -12,7 +12,8 @@ public class ActivateFlameCircleUpgrade : Upgrade, IConditionalUpgrade
     {
         // Only offer if the Flame Circle is not active yet.
         // Assuming your UpgradeManager stores a weaponDict.
-        return !PlayerUpgradeManager.Instance.IsWeaponActive("FlameCircle");
+        return !PlayerUpgradeManager.Instance.IsWeaponActive("FlameCircle") &&
+           PlayerUpgradeManager.Instance.HasFreeWeaponSlot();
     }
 }
 

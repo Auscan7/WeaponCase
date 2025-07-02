@@ -92,8 +92,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPoolItems:
-  - enemyPrefab: {fileID: 4871557909895165438, guid: 5a3170471c686b045b2343a87e0d4ef6, type: 3}
-    poolSize: 1
   - enemyPrefab: {fileID: 4871557909895165438, guid: ac5b319f2a5dd394a9dfed603b11cc08, type: 3}
     poolSize: 10
   - enemyPrefab: {fileID: 4871557909895165438, guid: 045c5a13291c3df4f9380bc9c431cda7, type: 3}
@@ -120,6 +118,8 @@ MonoBehaviour:
     poolSize: 120
   - enemyPrefab: {fileID: 4871557909895165438, guid: 3ac3c96060044484b83fce9d2e2b1d61, type: 3}
     poolSize: 200
+  - enemyPrefab: {fileID: 4871557909895165438, guid: edba3ed7b9d7b2c49a3e6e43db227c90, type: 3}
+    poolSize: 200
   - enemyPrefab: {fileID: 4871557909895165438, guid: 69670a6c8d489314fba429fe6a97fde3, type: 3}
     poolSize: 20
   - enemyPrefab: {fileID: 4871557909895165438, guid: bd3dda995321f6343b97a46360e45e69, type: 3}
@@ -128,6 +128,8 @@ MonoBehaviour:
     poolSize: 60
   - enemyPrefab: {fileID: 4871557909895165438, guid: 875186e074ac9ca41b48940794f89c3f, type: 3}
     poolSize: 100
+  - enemyPrefab: {fileID: 4871557909895165438, guid: 5a3170471c686b045b2343a87e0d4ef6, type: 3}
+    poolSize: 2
 --- !u!114 &4874332663972484453
 MonoBehaviour:
   m_ObjectHideFlags: 0

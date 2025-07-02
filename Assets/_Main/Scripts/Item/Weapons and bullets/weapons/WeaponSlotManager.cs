@@ -49,4 +49,14 @@ public class WeaponSlotManager : MonoBehaviour
     {
         usedAutoSlots.Clear();
     }
+
+    public bool HasFreeAutoSlot()
+    {
+        foreach (Transform slot in autoWeaponSlots)
+        {
+            if (!usedAutoSlots.Contains(slot))
+                return true;
+        }
+        return false;
+    }
 }

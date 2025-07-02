@@ -4,16 +4,14 @@ public class GrenadeProjectile : MonoBehaviour
 {
     private Vector2 targetPosition;
     private float explosionRadius;
-    private float grenadeDamage;
     private float speed;
     private bool hasExploded = false;
     [SerializeField] private LayerMask enemyLayers; // Allow multiple layers to be set in the Inspector
 
-    public void SetTarget(Vector2 target, float radius, float damage, float grenadeSpeed)
+    public void SetTarget(Vector2 target, float radius, float grenadeSpeed)
     {
         targetPosition = target;
         explosionRadius = radius;
-        grenadeDamage = damage;
         speed = grenadeSpeed;
     }
 
@@ -43,7 +41,7 @@ public class GrenadeProjectile : MonoBehaviour
         {
             if (enemy.TryGetComponent(out CharacterStatManager enemyStats))
             {
-                enemyStats.TakeDamage(grenadeDamage);
+                enemyStats.TakeDamage(PlayerUpgradeManager.Instance.grenadeStats.damage);
             }
         }
 
