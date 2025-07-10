@@ -1647,6 +1647,26 @@ PrefabInstance:
       propertyPath: redVignetteOverlay
       value: 
       objectReference: {fileID: 2085292024}
+    - target: {fileID: 2248396393127584045, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951872476236515986, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999304211068789902, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3999304211068789902, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354568289528624014, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7186793037216869759, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1687,9 +1707,57 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7688807297822161400, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8980302650507591044, guid: 0f4981fb1244aa040884e6bc55d41422, type: 3}
+    - target: {fileID: 7688807297822161400, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8937789
+      objectReference: {fileID: 0}
+    - target: {fileID: 7688807297822161400, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 7688807297822161400, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9628155
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254187446837523302, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254187446837523302, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254187446837523302, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.16
+      objectReference: {fileID: 0}
     - target: {fileID: 8732246841202081208, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
       propertyPath: m_Name
       value: PLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 9009489239581774821, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: weaponIcon
+      value: 
+      objectReference: {fileID: -3280374943839456144, guid: e887e24407b38314691e39e79a4e0d46, type: 3}
+    - target: {fileID: 9206120071397033233, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6962852040520158616, guid: ff5b18416318aa248a88fb30248ec022, type: 3}
+    - target: {fileID: 9206120071397033233, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8937789
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206120071397033233, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206120071397033233, guid: ee56e01e8110d8442952edffbc3703d8, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9628155
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1809,10 +1877,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3133617523489737475, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
-      propertyPath: triggerTime
-      value: 1200
-      objectReference: {fileID: 0}
-    - target: {fileID: 3133617523489737475, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
       propertyPath: endBossSpawnPoint
       value: 
       objectReference: {fileID: 438697241}
@@ -1904,6 +1968,10 @@ PrefabInstance:
       propertyPath: boats.Array.data[1].boatObject
       value: 
       objectReference: {fileID: 4537704616888661696}
+    - target: {fileID: 7780146686222702658, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
+      propertyPath: boats.Array.data[1].defaultWeaponName
+      value: Murk45 Cannon
+      objectReference: {fileID: 0}
     - target: {fileID: 7780146686222702658, guid: b963fe79e78329746a7c15410e5411ee, type: 3}
       propertyPath: boats.Array.data[0].defaultWeaponPrefab
       value: 

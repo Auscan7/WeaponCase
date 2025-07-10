@@ -37,7 +37,7 @@ public class SMG : Weapon
 
     private void FireSingleShot(Vector2 targetPosition)
     {
-        AudioManager.instance.PlaySoundSFX(AudioManager.instance.pistolFireSFX);
+        AudioManager.instance.PlaySoundSFX(AudioManager.instance.smgFireSFX);
 
         Vector3 spawnPos = projectileSpawnPoint.position;
 

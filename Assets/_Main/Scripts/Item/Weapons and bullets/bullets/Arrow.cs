@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 public class Arrow : MonoBehaviour
 {
-    public int maxHops = 3;
-    private float hopRange = 10f;
+    public int maxHops = 10;
+    private float hopRange = 15f;
     private int currentHopCount = 0;
     private Transform currentTarget;
     private float speed;

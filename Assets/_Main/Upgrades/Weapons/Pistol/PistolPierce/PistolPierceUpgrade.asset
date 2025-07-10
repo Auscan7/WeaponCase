@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7de22bfe919c31488c91631f13a4dbe, type: 3}
-  m_Name: PistolFireRateUpgrade
+  m_Script: {fileID: 11500000, guid: c3989e57fbd69d045be52910290a7ce9, type: 3}
+  m_Name: PistolPierceUpgrade
   m_EditorClassIdentifier: 
-  upgradeName: Fire Rate
-  positiveDescription: Murk45 Cannon Fire Rate + 7.5%
+  upgradeName: Pierce Count
+  positiveDescription: +1 Cannon Pierce
   negativeDescription: 
   icon: {fileID: -3280374943839456144, guid: e887e24407b38314691e39e79a4e0d46, type: 3}
   border: {fileID: -8220459746488438067, guid: 432a1acf00022b44190d156e3fe73681, type: 3}
   upgradeType: 0
-  fireRateIncrease: 0.75

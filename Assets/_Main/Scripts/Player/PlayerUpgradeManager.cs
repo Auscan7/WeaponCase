@@ -122,6 +122,7 @@ public class PlayerUpgradeManager : MonoBehaviour
     [Header("Base Weapon Projectile Count")]
     public int baseShotgunProjectileCount = 3;
     public int baseBowAndArrowHopCount = 2;
+    public int basePistolPierceCount = 1;
     public int baseGrenadeProjectileCount = 3;
     public int baseIceTotemProjectileCount = 3;
 

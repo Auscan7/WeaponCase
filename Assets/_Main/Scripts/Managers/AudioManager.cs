@@ -42,6 +42,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] dartFireSFX;
     public AudioClip[] slingShotFireSFX;
     public AudioClip[] pistolFireSFX;
+    public AudioClip[] smgFireSFX;
     public AudioClip[] shotgunFireSFX;
     public AudioClip[] rocketFireSFX;
     public AudioClip[] rocketExplosionSFX;

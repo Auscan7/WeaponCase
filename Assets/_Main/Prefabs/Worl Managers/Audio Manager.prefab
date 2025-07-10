@@ -73,6 +73,9 @@ MonoBehaviour:
   slingShotFireSFX:
   - {fileID: 8300000, guid: 555853f94d4b96b468494652f2cd6c5c, type: 3}
   pistolFireSFX:
+  - {fileID: 8300000, guid: c6585c5690c364946b6aae9fce8e1de6, type: 3}
+  - {fileID: 8300000, guid: cca581f0caab42342898a33be3c3578f, type: 3}
+  smgFireSFX:
   - {fileID: 8300000, guid: 57909b1936d432f45978442463575b51, type: 3}
   - {fileID: 8300000, guid: e1ceeda486ac25a4b8354a119830a363, type: 3}
   - {fileID: 8300000, guid: 52521095e0ffb5b4fa121abde5aa5d1a, type: 3}

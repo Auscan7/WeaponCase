@@ -2698,6 +2698,7 @@ GameObject:
   - component: {fileID: 1803974222329466951}
   - component: {fileID: 4998937390176103198}
   - component: {fileID: 8215297320313357709}
+  - component: {fileID: 8535863996449464068}
   m_Layer: 5
   m_Name: UpgradeCard2
   m_TagString: Untagged
@@ -2811,6 +2812,24 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8535863996449464068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197647894333256307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 031455721d152ac4daae5934bbb7537d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  punchScale: 1.1
+  punchTime: 0.1
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHoverBounce: 1
+  bounceAmount: 0.05
+  bounceSpeed: 2
 --- !u!1 &1216734564218999737
 GameObject:
   m_ObjectHideFlags: 0
@@ -3397,6 +3416,9 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 73808da35bd50714dbf61d0ca8d234fc, type: 2}
     - {fileID: 11400000, guid: 12d3f4ada431bbb4f9806a5504d34f00, type: 2}
     - {fileID: 11400000, guid: fea2ba45ceecc1f47b580f1ae3ef2239, type: 2}
+    - {fileID: 11400000, guid: de12cd4ff18fc4e44995ed203f3d8629, type: 2}
+    - {fileID: 11400000, guid: 6391a547a858515408154a190f848ef6, type: 2}
+    - {fileID: 11400000, guid: c26a775c4e31c564dbb140f90d15757e, type: 2}
     selectionWeight: 27
   - poolName: Rarity 3
     upgrades:
@@ -3412,6 +3434,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: c1c0811f20c226848ae4e9a02902b2e1, type: 2}
     - {fileID: 11400000, guid: 2677d2415791fc1438dc188ff25362af, type: 2}
     - {fileID: 11400000, guid: 6edba33caafadc94eb19bd02c21f06c3, type: 2}
+    - {fileID: 11400000, guid: a75889cf47e99e54898d61c17442967d, type: 2}
+    - {fileID: 11400000, guid: 4767ebc686f33d04db7093b88684e93e, type: 2}
     selectionWeight: 15
   - poolName: Rarity 4
     upgrades:
@@ -4030,6 +4054,7 @@ GameObject:
   - component: {fileID: 4403241600229608098}
   - component: {fileID: 6643291537517106597}
   - component: {fileID: 5749460841888091885}
+  - component: {fileID: 1637727980172587292}
   m_Layer: 5
   m_Name: UpgradeCard3
   m_TagString: Untagged
@@ -4143,6 +4168,24 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1637727980172587292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596564482527254192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 031455721d152ac4daae5934bbb7537d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  punchScale: 1.1
+  punchTime: 0.1
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHoverBounce: 1
+  bounceAmount: 0.05
+  bounceSpeed: 2
 --- !u!1 &1613055847268660833
 GameObject:
   m_ObjectHideFlags: 0
@@ -4381,7 +4424,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pistol
+  m_text: Murk45 Cannon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7659f6d6ec9b642db8be29bc45fe97cc, type: 2}
   m_sharedMaterial: {fileID: 8690591861142563998, guid: 7659f6d6ec9b642db8be29bc45fe97cc, type: 2}
@@ -7463,7 +7506,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8270769010555799131, guid: 2e78c1af7ff838743a5616277b9a3472, type: 3}
+  m_Sprite: {fileID: -3280374943839456144, guid: e887e24407b38314691e39e79a4e0d46, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -12013,6 +12056,7 @@ GameObject:
   - component: {fileID: 9021711264710017756}
   - component: {fileID: 3978726138180409753}
   - component: {fileID: 5613743352739366421}
+  - component: {fileID: 7292334234558568568}
   m_Layer: 5
   m_Name: UpgradeCard1
   m_TagString: Untagged
@@ -12126,6 +12170,24 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7292334234558568568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4867844304180993102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 031455721d152ac4daae5934bbb7537d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  punchScale: 1.1
+  punchTime: 0.1
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  enableHoverBounce: 1
+  bounceAmount: 0.05
+  bounceSpeed: 2
 --- !u!1 &4875293210609276935
 GameObject:
   m_ObjectHideFlags: 0

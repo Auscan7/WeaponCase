@@ -23,7 +23,7 @@ public class BowAndArrow : Weapon
 
         // Initialize arrow with velocity, hop count, and hop range
         Arrow arrow = projectile.GetComponent<Arrow>();
-        arrow.Initialize(velocity, hops: PlayerUpgradeManager.Instance.baseBowAndArrowHopCount, range: 5f);
+        arrow.Initialize(velocity, hops: PlayerUpgradeManager.Instance.baseBowAndArrowHopCount, range: 15f);
 
         projectile.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
 

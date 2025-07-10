@@ -91,7 +91,7 @@ public class LoadoutSelectionManager : MonoBehaviour
             SelectWeapon(PlayerUpgradeManager.Instance.spear, spearButton, spearIconImage, "Spear", playAudio: true));
 
         pistolButton.onClick.AddListener(() =>
-            SelectWeapon(PlayerUpgradeManager.Instance.pistol, pistolButton, pistolIconImage, "Pistol", playAudio: true));
+            SelectWeapon(PlayerUpgradeManager.Instance.pistol, pistolButton, pistolIconImage, "Murk45 Cannon", playAudio: true));
 
         shotgunButton.onClick.AddListener(() =>
             SelectWeapon(PlayerUpgradeManager.Instance.shotgun, shotgunButton, shotgunIconImage, "Shotgun", playAudio: true));
