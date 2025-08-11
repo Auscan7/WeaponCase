@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c07658cfa51e1c41ad8e1df484b3503, type: 3}
   m_Name: SMGActivateUpgrade
   m_EditorClassIdentifier: 
-  upgradeName: SMG
+  upgradeName: Machine Gun
   positiveDescription: Fast fire rate
   negativeDescription: 
-  icon: {fileID: 7591463974754732465, guid: 50728eeb8c84d6043b9e197e82ff4202, type: 3}
+  icon: {fileID: 141252921838562410, guid: ceae52ddaa0fa23469f7f0b92e3fe2b6, type: 3}
   border: {fileID: -8220459746488438067, guid: 432a1acf00022b44190d156e3fe73681, type: 3}
   upgradeType: 1

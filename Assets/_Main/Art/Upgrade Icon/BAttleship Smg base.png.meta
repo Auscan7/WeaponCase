@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0f4981fb1244aa040884e6bc55d41422
+guid: d541046ed55c8ed4996db09b066ed04b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8980302650507591044
-    second: BattleShip Gun 1 barrel_0
+      213: -1224333864546986003
+    second: BAttleship Smg base_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BattleShip Gun 1 barrel_0
+      name: BAttleship Smg base_0
       rect:
         serializedVersion: 2
-        x: 231
-        y: 334
-        width: 39
-        height: 141
+        x: 293
+        y: 233
+        width: 274
+        height: 375
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 48df0035ea170ac70800000000000000
-      internalID: 8980302650507591044
+      spriteID: de7123546da420fe0800000000000000
+      internalID: -1224333864546986003
       vertices: []
       indices: 
       edges: []

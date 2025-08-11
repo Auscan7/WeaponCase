@@ -76,9 +76,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c6585c5690c364946b6aae9fce8e1de6, type: 3}
   - {fileID: 8300000, guid: cca581f0caab42342898a33be3c3578f, type: 3}
   smgFireSFX:
-  - {fileID: 8300000, guid: 57909b1936d432f45978442463575b51, type: 3}
-  - {fileID: 8300000, guid: e1ceeda486ac25a4b8354a119830a363, type: 3}
-  - {fileID: 8300000, guid: 52521095e0ffb5b4fa121abde5aa5d1a, type: 3}
+  - {fileID: 8300000, guid: b5e6d95345a5bc247890ffa2164f7432, type: 3}
+  - {fileID: 8300000, guid: d5dc1ba0c5b7bb1438fc4632cc734e88, type: 3}
   shotgunFireSFX:
   - {fileID: 8300000, guid: 6e2edb499d9937640817d91c7b727c0e, type: 3}
   - {fileID: 8300000, guid: 6e9f8e22d585824498824fe3a81d1a7b, type: 3}

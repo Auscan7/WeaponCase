@@ -116,10 +116,10 @@ TextureImporter:
       name: BattleShip Gun 1 whole_0
       rect:
         serializedVersion: 2
-        x: 325
-        y: 197
-        width: 389
-        height: 790
+        x: 158
+        y: 95
+        width: 184
+        height: 381
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
